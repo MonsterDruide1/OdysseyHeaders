@@ -19,7 +19,7 @@ public:
         void setContainMax(int type, int count);
         void setContainMax(const TypeInfo* type, int count) { setContainMax(type->id, count); }
 
-    protected:
+    public:
         sead::SafeArray<int, 0x80> mCounts;
         int mTotal = 0;
     };

@@ -13,7 +13,7 @@ public:
     const ByamlIter& getPlacementIter() const { return mPlacementIter; }
     const ByamlIter& getZoneIter() const { return mZoneIter; }
 
-private:
+public:
     ByamlIter mPlacementIter;
     ByamlIter mZoneIter;
 };

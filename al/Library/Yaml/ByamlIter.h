@@ -60,7 +60,7 @@ public:
 
     const ByamlHeader* getHeader() const { return mHeader; }
 
-private:
+public:
     union {
         const u8* mData;
         const ByamlHeader* mHeader;

@@ -17,7 +17,7 @@ public:
                              const sead::Vector3f&) const override;
     bool calcLocalBoundingBox(sead::BoundBox3f*) const override;
 
-private:
+public:
     AreaShapeCylinder::OriginType mOriginType;
 };
 

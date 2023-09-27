@@ -16,7 +16,7 @@ public:
 
     void trace(const void*);
 
-protected:
+public:
     virtual void clear_() = 0;
     virtual void push_(uintptr_t addr) = 0;
     virtual bool isFull_() = 0;
@@ -37,7 +37,7 @@ public:
 
     s32 size() const override { return mSize; }
 
-protected:
+public:
     void clear_() override { mSize = 0; }
 
     void push_(uintptr_t addr) override
@@ -48,7 +48,7 @@ protected:
 
     bool isFull_() override { return mSize >= mBuffer.size(); }
 
-private:
+public:
     SafeArray<uintptr_t, Capacity> mBuffer{};
     s32 mSize{};
 };

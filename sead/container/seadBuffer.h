@@ -51,7 +51,7 @@ public:
         T* operator->() const { return &mBuffer[mIndex]; }
         s32 getIndex() const { return mIndex; }
 
-    private:
+    public:
         s32 mIndex;
         T* mBuffer;
     };
@@ -74,7 +74,7 @@ public:
         const T* operator->() const { return &mBuffer[mIndex]; }
         s32 getIndex() const { return mIndex; }
 
-    private:
+    public:
         s32 mIndex;
         const T* mBuffer;
     };
@@ -119,7 +119,7 @@ public:
         T* operator->() const { return &mBuffer[mIndex]; }
         s32 getIndex() const { return mIndex; }
 
-    private:
+    public:
         s32 mIndex;
         T* mBuffer;
     };
@@ -422,7 +422,7 @@ public:
         std::sort_heap(mBuffer + start_idx, mBuffer + end_idx, cmp_);
     }
 
-protected:
+public:
     static s32 compareT(const T* lhs, const T* rhs)
     {
         if (*lhs < *rhs)

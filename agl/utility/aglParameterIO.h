@@ -28,7 +28,7 @@ public:
     void listenPropertyEventIO(sead::hostio::Reflexible* reflexible,
                                sead::hostio::PropertyEvent* event);
 
-protected:
+public:
     virtual void callbackInvalidVersion_(ResParameterArchive) {}
 
 #ifdef SEAD_DEBUG

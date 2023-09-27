@@ -14,7 +14,7 @@ public:
 
     bool calc() override;
 
-protected:
+public:
     virtual void startRumbleImpl_() = 0;
     virtual void stopRumbleImpl_() = 0;
 
@@ -23,7 +23,7 @@ public:
     void startPattern(const char* pattern, u32 duration);
     void stopPattern();
 
-protected:
+public:
     const char* mPattern;
     u32 mPatternIdx;
     u32 mPatternDuration;

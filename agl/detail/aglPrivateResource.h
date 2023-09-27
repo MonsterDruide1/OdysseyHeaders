@@ -18,7 +18,7 @@ public:
     sead::Heap* getWorkHeap() const { return mWorkHeap; }
     sead::Heap* getDebugHeap() const { return mDebugHeap; }
 
-private:
+public:
     static void debugPrintFn(const sead::SafeString& str);
 
     sead::Heap* mWorkHeap{};

@@ -24,7 +24,7 @@ public:
     ResourceSystem* getResourceSystem() { return mResourceSystem; }
     SaveDataDirector* getSaveDataDirector() { return mSaveDataDirector; }
 
-private:
+public:
     MemorySystem* mMemorySystem;
     FileLoader* mFileLoader;
     ResourceSystem* mResourceSystem;

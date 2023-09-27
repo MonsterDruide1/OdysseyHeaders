@@ -21,7 +21,7 @@ public:
 
     ControllerDefine::DeviceId getId() const { return mId; }
 
-protected:
+public:
     ListNode mListNode;
     ControllerDefine::DeviceId mId;
     ControllerMgr* mMgr;

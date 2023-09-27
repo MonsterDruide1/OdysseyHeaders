@@ -24,7 +24,7 @@ public:
     void loadWorldResource(s32, s32, bool, const char*);
     f32 calcWorldResourceHeapSize() const;
 
-private:
+public:
     al::AsyncFunctorThread* mWorldResourceLoader = nullptr;  // WorldResourceLoader::loadResource
     sead::Heap* mWorldResourceHeap = nullptr;
     sead::FrameHeap* mCapWorldHeap = nullptr;

@@ -16,7 +16,7 @@ public:
 
     nn::gfx::CommandBuffer* getCommandBuffer() { return &mCommandBuffer; }
 
-private:
+public:
     nn::gfx::CommandBuffer mCommandBuffer;
 };
 static_assert(sizeof(DrawContext) == 0xF0);

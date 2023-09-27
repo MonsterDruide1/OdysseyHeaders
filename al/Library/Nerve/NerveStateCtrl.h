@@ -25,7 +25,7 @@ public:
     bool isCurrentStateEnd() const;
     void tryEndCurrentState();
 
-private:
+public:
     s32 mMaxStates;
     s32 mStateCount;
     State* mStates;

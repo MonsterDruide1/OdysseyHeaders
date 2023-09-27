@@ -25,7 +25,7 @@ public:
     void freeToHeap(GPUMemBlockBase*);
     bool isAllocatable(const MemoryPoolType&, u64, s32) const;
 
-private:
+public:
     GPUMemBlockBase* _120;
 };
 

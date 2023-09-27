@@ -33,7 +33,7 @@ public:
         const StringBuilderBase* getBuilder() const { return mBuilder; }
         s32 getIndex() const { return mIndex; }
 
-    protected:
+    public:
         const StringBuilderBase* mBuilder;
         s32 mIndex;
     };
@@ -167,7 +167,7 @@ public:
     s32 prepend(const T* str, s32 prepend_length);
     s32 prepend(T c, s32 num);
 
-protected:
+public:
     StringBuilderBase(T* buffer, s32 buffer_size)
         : mBuffer(buffer), mLength(0), mBufferSize(buffer_size)
     {
@@ -196,7 +196,7 @@ class FixedStringBuilder : public StringBuilder
 public:
     FixedStringBuilder() : StringBuilder(mStorage, N) {}
 
-private:
+public:
     char mStorage[N];
 };
 

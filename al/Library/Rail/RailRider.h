@@ -28,7 +28,7 @@ public:
     bool isReachedRailStart();
     bool isReachedEdge();
 
-private:
+public:
     const Rail* mRail;
     sead::Vector3f mPosition;
     sead::Vector3f mDirection;

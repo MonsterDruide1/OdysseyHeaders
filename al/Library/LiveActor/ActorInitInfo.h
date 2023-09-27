@@ -76,7 +76,7 @@ public:
 
     const PlacementInfo& getPlacementInfo() const { return *mPlacementInfo; }
 
-private:
+public:
     LiveActorGroup* mKitDrawingGroup;
     const PlacementInfo* mPlacementInfo;
     const LayoutInitInfo* mLayoutInitInfo;

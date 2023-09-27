@@ -12,7 +12,7 @@ public:
     GameDataHolderAccessor(const al::IUseSceneObjHolder*);
     GameDataHolderAccessor(const al::SceneObjHolder*);
 
-private:
+public:
     al::ISceneObj* mSceneObj;
 };
 

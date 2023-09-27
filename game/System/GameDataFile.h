@@ -24,7 +24,7 @@ public:
 
         bool testFunc(s32, bool, s32, bool) const;
 
-    private:
+    public:
         sead::FixedSafeString<0x80> mStageName;
         sead::FixedSafeString<0x80> mObjId;
         sead::FixedSafeString<0x40> mScenarioName;
@@ -58,7 +58,7 @@ public:
     void wearCostume(const char*);
     void wearCap(const char*);
 
-private:
+public:
     unsigned char padding_6A8[0x6A8];
     GameProgressData* mGameProgressData;
     char padding_9F0[0x340];

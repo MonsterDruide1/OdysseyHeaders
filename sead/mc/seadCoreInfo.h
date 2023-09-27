@@ -46,7 +46,7 @@ public:
     void clear() volatile { mMask = 0; }
     u32 countOnBits() const;
 
-protected:
+public:
     static u32 makeCoreMask_(CoreId id) { return 1u << u32(int(id)); }
 
     // It seems that mMask is a u32 and not a BitFlag32 because this class is intended to be
@@ -105,7 +105,7 @@ public:
     static nn::os::TlsSlot getCoreNumberTlsSlot() { return sCoreNumberTlsSlot; }
 #endif
 
-protected:
+public:
     static u32 sNumCores;
     static u32 sPlatformCoreId[32];
     static CoreId sCoreIdFromPlatformCoreIdTable[32];

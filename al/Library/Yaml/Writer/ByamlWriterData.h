@@ -28,7 +28,7 @@ public:
     void write(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     bool mValue;
 };
 
@@ -39,7 +39,7 @@ public:
     void write(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     s32 mValue;
 };
 
@@ -50,7 +50,7 @@ public:
     void write(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     f32 mValue;
 };
 
@@ -61,7 +61,7 @@ public:
     void write(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     u32 mValue;
 };
 
@@ -81,7 +81,7 @@ public:
     void write(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     const char* mString;
     ByamlWriterStringTable* mStringTable;
 };
@@ -98,7 +98,7 @@ public:
 
     void setOffset(s32 offset) { mOffset = offset; }
 
-private:
+public:
     al::ByamlWriterBigDataList* mList;
     s32 mOffset = 0;
 };
@@ -111,7 +111,7 @@ public:
     void writeBigData(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     long mValue;
 };
 
@@ -123,7 +123,7 @@ public:
     void writeBigData(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     u64 mValue;
 };
 
@@ -135,7 +135,7 @@ public:
     void writeBigData(sead::WriteStream*) const override;
     void print(s32) const override;
 
-private:
+public:
     double mValue;
 };
 
@@ -179,7 +179,7 @@ public:
     s32 getOffset() const { return mOffset; }
     void setOffset(s32 offset) { mOffset = offset; }
 
-private:
+public:
     s32 mOffset = 0;  // FIXME shouldn't be public
 };
 
@@ -210,7 +210,7 @@ public:
     void print(s32) const override;
     bool isArray() const override;
 
-private:
+public:
     sead::TList<ByamlWriterData*> mList;
     al::ByamlWriterStringTable* mStringTable;
 };
@@ -223,7 +223,7 @@ public:
     const char* getKey() { return mKey; }
     al::ByamlWriterData* getValue() { return mValue; }
 
-private:
+public:
     void* selfReference = this;
     void* test2 = nullptr;
     const char* mKey;
@@ -258,7 +258,7 @@ public:
     void print(s32) const override;  // TODO implementation missing
     bool isHash() const override;
 
-private:
+public:
     sead::TList<ByamlWriterHashPair> mList;  // TODO not really... it's something different here.
     al::ByamlWriterStringTable* mStringTable1;
     al::ByamlWriterStringTable* mStringTable2;

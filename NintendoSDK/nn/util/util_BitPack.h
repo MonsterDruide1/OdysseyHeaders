@@ -41,7 +41,7 @@ struct BitPack {
         typedef T Type;
     };
 
-private:
+public:
     static int MakeMask(int p) { return 1 << p; }
 
     Tag ReadValue(bool*, int, int) const;

@@ -10,7 +10,7 @@ public:
     DepthShadowModel(LiveActor*, const ActorInitInfo&, const char*, const char*, bool);
     void initAfterPlacement() override;
 
-private:
+public:
     void* field_108;
     s32 field_110;
     bool field_114;

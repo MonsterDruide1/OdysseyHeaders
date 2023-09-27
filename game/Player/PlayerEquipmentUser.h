@@ -21,7 +21,7 @@ public:
     void endEquip();
     void noticeDamage();
 
-private:
+public:
     al::HitSensor* mSourceSensor = nullptr;
     al::HitSensor* mEquipmentSensor = nullptr;
     const EquipmentInfo* mEquipmentInfo = nullptr;

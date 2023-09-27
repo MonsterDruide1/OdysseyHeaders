@@ -35,7 +35,7 @@ public:
     void update();
     void updateShapeVisible(const al::LiveActor* actor);
 
-private:
+public:
     al::LiveActor* mLiveActor;
     sead::Vector3f lightDir;
     bool mIsAppendSubActor;

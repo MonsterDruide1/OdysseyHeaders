@@ -62,7 +62,7 @@ public:
     bool isInvisibleHead() const;
     s32 calcWarmLevel(s32) const;
 
-private:
+public:
     const PlayerBodyCostumeInfo* mPlayerBodyCostumeInfo = nullptr;
     const PlayerHeadCostumeInfo* mPlayerHeadCostumeInfo = nullptr;
 };

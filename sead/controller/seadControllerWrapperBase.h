@@ -19,7 +19,7 @@ public:
     virtual void calc(u32 prev_hold, bool prev_pointer_on) = 0;
     virtual void setIdle();
 
-protected:
+public:
     virtual bool isIdle_();
 
 public:
@@ -29,7 +29,7 @@ public:
     void setEnable(bool enable);
     void setEnableOtherWrappers(bool enable) const;
 
-protected:
+public:
     Controller* mController;
     bool mIsEnable;
     ListNode mListNode;

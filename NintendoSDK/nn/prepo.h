@@ -14,7 +14,7 @@ public:
     PlayReportGenerator() = default;
     void Initialize();
 
-private:
+public:
     void* m_Data = nullptr;
 };
 }  // namespace detail
@@ -41,7 +41,7 @@ public:
 
     static u32 CalcBufferSize(s32 num_entries) { return size_t(0x82) * num_entries + 3; }
 
-private:
+public:
     char m_EventId[32];
     void* m_Buffer;
     size_t m_BufferSize;

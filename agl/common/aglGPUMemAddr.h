@@ -21,7 +21,7 @@ public:
     void flushCPUCache(u64);
     void invalidateCPUCache(u64);
 
-private:
+public:
     detail::MemoryPool* mMemoryPool;
     int mAlignmentAddr;
     GPUMemBlockBase* mMemoryBlock;

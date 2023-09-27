@@ -114,7 +114,7 @@ public:
         T& operator*() const { return *mPtr; }
         T* operator->() const { return mPtr; }
 
-    private:
+    public:
         T* mPtr;
         s32 mOffset;
     };
@@ -145,7 +145,7 @@ public:
         T& operator*() const { return *mPtr; }
         T* operator->() const { return mPtr; }
 
-    private:
+    public:
         T* mPtr;
         ListNode* mNextNode;
         s32 mOffset;
@@ -171,7 +171,7 @@ public:
     };
     RobustRange robustRange() const { return {*this}; }
 
-protected:
+public:
     static int compareT(const T* lhs, const T* rhs)
     {
         if (lhs < rhs)

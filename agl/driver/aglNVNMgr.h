@@ -13,7 +13,7 @@ public:
     NVNMgr();
     ~NVNMgr() override;
 
-private:
+public:
 };
 
 // TODO: need sead::Graphics reversing...

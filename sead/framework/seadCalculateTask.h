@@ -26,7 +26,7 @@ public:
     MethodTreeNode* getMethodTreeNode(s32 method_type) override;
     virtual void calc() {}
 
-protected:
+public:
     MethodTreeNode mCalcNode{nullptr};
 };
 }  // namespace sead

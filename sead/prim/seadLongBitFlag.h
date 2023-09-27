@@ -37,7 +37,7 @@ public:
 
     static Word makeMask(int bit) { return 1u << (bit % BitsPerWord); }
 
-protected:
+public:
     static constexpr s32 BitsPerWord = 8 * sizeof(Word);
     static constexpr s32 Shift = log2(BitsPerWord);
 

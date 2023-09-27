@@ -11,7 +11,7 @@ public:
 
     HitSensor* getSensor(s32) const;
 
-private:
+public:
     s32 _0;
     s32 mSensorCount;
     HitSensor** mSensors;

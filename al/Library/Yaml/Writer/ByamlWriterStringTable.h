@@ -22,7 +22,7 @@ public:
     void write(sead::WriteStream*) const;
     void print() const;
 
-private:
+public:
     sead::TList<const char*> mList;
 };
 

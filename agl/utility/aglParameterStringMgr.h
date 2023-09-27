@@ -22,7 +22,7 @@ public:
     void genMessage(sead::hostio::Context* context) override;
 #endif
 
-private:
+public:
     sead::Heap* mHeap = nullptr;
     sead::PtrArray<sead::SafeString> mStrings;
     sead::CriticalSection mCS;

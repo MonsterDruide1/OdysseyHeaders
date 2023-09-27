@@ -24,7 +24,7 @@ public:
     s32 calcMoonGetTotalNum(GameDataHolderAccessor) const;
     Achievement* tryGetNewAchievement(GameDataHolderAccessor) const;
 
-private:
+public:
     sead::PtrArray<Achievement> mArray;
     AchievementInfoReader* mAchievementInfoReader = nullptr;
 };

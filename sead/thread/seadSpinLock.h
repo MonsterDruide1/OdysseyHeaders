@@ -22,7 +22,7 @@ public:
 
     bool try_lock() { return tryLock(); }
 
-private:
+public:
     Atomic<Thread*> mOwnerThread;
     u32 mCount = 0;
 };

@@ -14,7 +14,7 @@ public:
 
     f32 findParamF32(const char*);
 
-private:
+public:
     ActorParamHolder(LiveActor* actor, const Resource* resource, const char* suffix);
 };
 }  // namespace al

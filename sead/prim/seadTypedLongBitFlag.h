@@ -34,7 +34,7 @@ public:
     /// Popcount.
     int countOnBit() const;
 
-protected:
+public:
     template <typename T>
     auto getWord(Enum bit, const T& fn)
     {

@@ -16,7 +16,7 @@ class SceneCameraInfo;
 class ScreenCapture;
 
 class ScreenCaptureExecutor : IUseHioNode {
-private:
+public:
     sead::PtrArray<ScreenCapture> mArray;
     bool mIsCaptured;
 
@@ -38,7 +38,7 @@ public:
 };
 
 class ScreenCoverCtrl {
-private:
+public:
     s32 mFrameTimer;
     bool mIsActive;
 

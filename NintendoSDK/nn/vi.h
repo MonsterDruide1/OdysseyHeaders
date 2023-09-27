@@ -60,7 +60,7 @@ struct LayerCreationSettings {
     void SetVisibility(bool isVisible);
     bool IsVisible(void) const;
 
-private:
+public:
     s32 width;
     s32 height;
 

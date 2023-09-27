@@ -73,7 +73,7 @@ public:
     bool isThrowTypeSpiral(const sead::Vector2f&) const;
     bool isThrowTypeRolling(const sead::Vector2f&) const;
 
-private:
+public:
     const al::LiveActor* mLiveActor;
     const IUsePlayerCollision* mPlayerCollision;
     const IUseDimension* mDimension;

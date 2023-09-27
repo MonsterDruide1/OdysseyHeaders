@@ -12,7 +12,7 @@ public:
     void onApplyTextureData_();
     void initRegs_(u32) const;
 
-private:
+public:
     s32 _128;
     u32 _12c;
     u32 _130;
@@ -35,7 +35,7 @@ public:
     void onApplyTextureData_();
     void initRegs_(u32) const;
 
-private:
+public:
     s32 _128;
     u32 _12c;
     void* _130;

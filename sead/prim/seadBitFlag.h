@@ -114,7 +114,7 @@ public:
             return BitFlagUtil::findOnBitFromRight64(mBits, num);
     }
 
-protected:
+public:
     T mBits;
 };
 

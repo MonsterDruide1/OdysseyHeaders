@@ -52,7 +52,7 @@ public:
     bool hasMountedSd() const { return mMountedSd; }
 #endif
 
-private:
+public:
     typedef TList<FileDevice*> DeviceList;
 
     void mount_(Heap* heap);

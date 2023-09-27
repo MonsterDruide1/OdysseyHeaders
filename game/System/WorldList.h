@@ -47,7 +47,7 @@ public:
     void tryFindTransOnMainStageByStageName(sead::Vector3f*, const char*, s32);
     void tryFindHintTransByScenarioNo(sead::Vector3f*, s32, s32);
 
-private:
+public:
     sead::PtrArray<WorldListEntry> mWorldList;
     sead::StrTreeMap<128, StagePosInfo*> mStagePosList;
     sead::PtrArrayImpl field_30;

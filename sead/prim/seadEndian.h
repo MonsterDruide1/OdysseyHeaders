@@ -105,7 +105,7 @@ public:
     }
     static u32 fromHostF32(Types to, const f32* ptr) { return convertF32(cHostEndian, to, ptr); }
 
-private:
+public:
     static const Types cHostEndian;
     static const ConvFuncTable cConvFuncTable;
 };

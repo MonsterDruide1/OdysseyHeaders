@@ -23,7 +23,7 @@ public:
     void setUp();
     void setUp_(bool);
 
-private:
+public:
     void* _20;
     ResBinaryShaderArchive* mBinaryShaderArchive;
     ResShaderArchive* mResShaderArchive;

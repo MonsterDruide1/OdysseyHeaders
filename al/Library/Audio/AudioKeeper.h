@@ -39,7 +39,7 @@ public:
     BgmKeeper* getBgmKeeper() const { return mBgmKeeper; };
     AudioMic* getAudioMic() const { return mAudioMic; };
 
-private:
+public:
     AudioEventController* mAudioEventController;
     AudioEffectController* mAudioEffectController;
     AudioRequestKeeperSyncedBgm* mAudioRequestKeeperSyncedBgm;

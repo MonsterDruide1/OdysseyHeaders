@@ -29,7 +29,7 @@ public:
     bool calcWorldDir(sead::Vector3f* worldDir, const sead::Vector3f& trans) const;
     void calcTrans(sead::Vector3f* trans) const;
 
-private:
+public:
     const sead::Matrix34f* mBaseMtxPtr = nullptr;
     sead::Vector3f mScale = {1.0f, 1.0f, 1.0f};
 };

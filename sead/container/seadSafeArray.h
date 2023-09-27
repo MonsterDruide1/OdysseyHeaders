@@ -84,7 +84,7 @@ public:
         T* operator->() const { return &mBuffer[mIdx]; }
         T& operator*() const { return mBuffer[mIdx]; }
 
-    private:
+    public:
         T* mBuffer;
         s32 mIdx;
     };
@@ -114,7 +114,7 @@ public:
         const T* operator->() const { return &mBuffer[mIdx]; }
         const T& operator*() const { return mBuffer[mIdx]; }
 
-    private:
+    public:
         const T* mBuffer;
         s32 mIdx;
     };
@@ -179,7 +179,7 @@ public:
         T* operator->() const { return &mBuffer[mIdx]; }
         T& operator*() const { return mBuffer[mIdx]; }
 
-    private:
+    public:
         T* mBuffer;
         s32 mIdx;
     };
@@ -209,7 +209,7 @@ public:
         const T* operator->() const { return &mBuffer[mIdx]; }
         const T& operator*() const { return mBuffer[mIdx]; }
 
-    private:
+    public:
         const T* mBuffer;
         s32 mIdx;
     };

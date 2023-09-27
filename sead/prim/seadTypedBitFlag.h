@@ -105,7 +105,7 @@ public:
             return BitFlagUtil::findOnBitFromRight64(mBits, num);
     }
 
-protected:
+public:
     static constexpr UnderlyingType orEnums_(std::initializer_list<Enum> list)
     {
         UnderlyingType value{};

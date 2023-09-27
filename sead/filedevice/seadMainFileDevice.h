@@ -21,7 +21,7 @@ public:
     void resolveFilePath(BufferedSafeString* out, const SafeString& path) const override;
     void resolveDirectoryPath(BufferedSafeString* out, const SafeString& path) const override;
 
-protected:
+public:
     bool doIsAvailable_() const override { return mFileDevice->isAvailable(); }
 
     FileDevice* doOpen_(FileHandle* handle, const SafeString& path, FileOpenFlag flag) override

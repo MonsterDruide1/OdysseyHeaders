@@ -20,7 +20,7 @@ public:
     s32 setOffset(s32);
     void write(sead::WriteStream*);
 
-private:
+public:
     sead::TList<ByamlWriterBigData*> mList;
 };
 

@@ -40,7 +40,7 @@ public:
     void setDebugLabel(const sead::SafeString& debug_label);
     void getDebugLabel() const;
 
-private:
+public:
     void* _0;
     u32 _8;
     u32 _c;

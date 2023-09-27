@@ -18,7 +18,7 @@ public:
 
     void setReference_() const;
 
-private:
+public:
     NVNtexture mTexture;
     s32 mTextureID;
     u8 _c4;

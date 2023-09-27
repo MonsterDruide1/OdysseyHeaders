@@ -22,7 +22,7 @@ class Matrix44;
 template <typename T>
 class Matrix22 : public Policies<T>::Mtx22Base
 {
-private:
+public:
     using Self = Matrix22<T>;
 
 public:
@@ -52,7 +52,7 @@ public:
 template <typename T>
 class Matrix33 : public Policies<T>::Mtx33Base
 {
-private:
+public:
     using Self = Matrix33<T>;
     using Mtx34 = Matrix34<T>;
 
@@ -100,7 +100,7 @@ public:
 template <typename T>
 class Matrix34 : public Policies<T>::Mtx34Base
 {
-private:
+public:
     using Self = Matrix34<T>;
     using Mtx33 = Matrix33<T>;
     using Mtx44 = Matrix44<T>;
@@ -192,7 +192,7 @@ public:
 template <typename T>
 class Matrix44 : public Policies<T>::Mtx44Base
 {
-private:
+public:
     using Self = Matrix44<T>;
     using Mtx33 = Matrix33<T>;
     using Mtx34 = Matrix34<T>;

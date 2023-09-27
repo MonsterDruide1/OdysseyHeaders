@@ -69,7 +69,7 @@ public:                                                                         
         return *this;                                                                              \
     }                                                                                              \
                                                                                                    \
-private:                                                                                           \
+public:                                                                                           \
     s32 m_value;
 
 namespace al {
@@ -108,7 +108,7 @@ public:
     static SubActorKeeper* create(LiveActor*);
     static SubActorKeeper* tryCreate(LiveActor*, const char*, s32);
 
-private:
+public:
     LiveActor* mRootActor;
     s32 mMaxActorCount = 0;
     s32 mCurActorCount = 0;

@@ -19,7 +19,7 @@ public:
     void printInfo() const;
     void copyFrom(const NVNtexture&);
 
-private:
+public:
     u16 _0;
     u16 _2;
     u16 _4;

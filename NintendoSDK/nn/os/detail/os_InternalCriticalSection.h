@@ -17,7 +17,7 @@ public:
     void unlock();
     InternalCriticalSectionImpl* Get();
 
-private:
+public:
     InternalCriticalSectionImpl m_Impl;
 };
 

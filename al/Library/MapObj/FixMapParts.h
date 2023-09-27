@@ -12,7 +12,7 @@ public:
     void calcAnim() override;
     bool receiveMsg(const SensorMsg* message, HitSensor* source, HitSensor* target) override;
 
-private:
+public:
     bool mStatic = false;
 };
 }  // namespace al

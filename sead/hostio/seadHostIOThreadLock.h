@@ -17,7 +17,7 @@ public:
     static void lock();
     static void unlock();
 
-private:
+public:
     static CriticalSection& getCS();
     static Atomic<u32> sLockCnt;
 };

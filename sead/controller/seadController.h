@@ -60,12 +60,12 @@ public:
     template <typename T>
     T getAddonAs() const;
 
-protected:
+public:
     virtual void calcImpl_() = 0;
     virtual bool isIdle_();
     virtual void setIdle_();
 
-private:
+public:
     ControllerDefine::ControllerId mId;
     ControllerMgr* mMgr;
     OffsetList<ControllerAddon> mAddons;

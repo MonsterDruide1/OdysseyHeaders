@@ -59,7 +59,7 @@ public:
                                       const sead::hostio::PropertyEvent* event);
 #endif
 
-protected:
+public:
     friend class IParameterList;
 
     virtual bool preWrite_() const { return true; }

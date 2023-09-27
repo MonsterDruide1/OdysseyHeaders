@@ -16,7 +16,7 @@ public:
 
     bool isDead() const { return mIsDead; }
 
-private:
+public:
     bool mIsDead = true;
 };
 
@@ -26,7 +26,7 @@ class ActorStateBase : public NerveStateBase {
 public:
     ActorStateBase(const char* stateName, LiveActor* actor);
 
-private:
+public:
     LiveActor* mActor;
 };
 
@@ -35,7 +35,7 @@ class HostStateBase : public NerveStateBase {
 public:
     HostStateBase(const char* name, T* host);
 
-private:
+public:
     T* mHost;
 };
 

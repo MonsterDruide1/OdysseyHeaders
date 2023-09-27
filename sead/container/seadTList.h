@@ -109,7 +109,7 @@ public:
         friend bool operator==(iterator it1, iterator it2) { return it1.mPtr == it2.mPtr; }
         friend bool operator!=(iterator it1, iterator it2) { return !(it1 == it2); }
 
-    private:
+    public:
         TListNode<T>* mPtr;
     };
 
@@ -155,7 +155,7 @@ public:
         }
         friend bool operator!=(robustIterator it1, robustIterator it2) { return !(it1 == it2); }
 
-    private:
+    public:
         TListNode<T>* mPtr;
         TListNode<T>* mPtrNext;
     };
@@ -178,7 +178,7 @@ public:
     };
     RobustRange robustRange() const { return {*this}; }
 
-private:
+public:
     static int compareT(const T* a, const T* b)
     {
         if (*a < *b)

@@ -14,7 +14,7 @@ class ModelObj {
 public:
     SkeletonObj* GetSkeleton() const { return m_Skeleton; }
 
-private:
+public:
     struct InitializeArgument;
 
     bool Initialize(const InitializeArgument& arg, void* buffer, size_t bufferSize);

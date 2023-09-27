@@ -24,7 +24,7 @@ public:
     void makeActorAliveAll();
     void makeActorDeadAll();
 
-private:
+public:
     const char* mGroupName;
     s32 mMaxActorCount;
     s32 mActorCount;

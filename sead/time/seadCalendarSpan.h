@@ -16,7 +16,7 @@ public:
         s32 getValue() const { return mValue; }                                                    \
         void setValue(s32 v) { mValue = v; }                                                       \
                                                                                                    \
-    private:                                                                                       \
+    public:                                                                                       \
         s32 mValue;                                                                                \
     };
 
@@ -43,7 +43,7 @@ public:
     void setMinutes(s32 minutes) { mMinute.setValue(minutes); }
     void setSeconds(s32 seconds) { mSecond.setValue(seconds); }
 
-private:
+public:
     Day mDay;
     Hour mHour;
     Minute mMinute;

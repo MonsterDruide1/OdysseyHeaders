@@ -18,7 +18,7 @@ public:
     void getCategoryName();  // unknown return type
     const char* tryGetCategoryName(const char* a1);
 
-private:
+public:
     inline void allocArray();
     inline void putEntry(s32 index, const ByamlIter& iter);
 

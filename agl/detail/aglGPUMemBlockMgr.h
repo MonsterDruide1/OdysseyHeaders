@@ -29,7 +29,7 @@ public:
 
     void MarkValid() { *this = *this | cValidPoolType; }
 
-private:
+public:
     static const MemoryPoolType cInvalidPoolType;
     static const MemoryPoolType cValidPoolType;
 };
@@ -44,7 +44,7 @@ public:
 
     void finalize();
 
-private:
+public:
     NVNmemoryPool mDriverPool;
     MemoryPoolType mMemoryType;
     uint32_t idk;
@@ -58,7 +58,7 @@ public:
 
     void finalize();
 
-private:
+public:
     s32 mAllowSharing;
     void* m08;
     void* m10;
@@ -88,7 +88,7 @@ public:
     void genMessage(sead::hostio::Context* context) override;
 #endif
 
-private:
+public:
     GPUMemBlockMgrHeapEx* findGPUMemBlockMgrHeapEx_(sead::Heap* p_heap, int* p_outIndex);
 
     sead::CriticalSection mCS;

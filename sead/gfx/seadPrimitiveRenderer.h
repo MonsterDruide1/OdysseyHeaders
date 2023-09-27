@@ -57,7 +57,7 @@ public:
         void setCornerAndSize(const Vector3f& corner, const Vector3f& size);
         void setBoundBox(const BoundBox3f& box);
 
-    private:
+    public:
         Vector3f mCenter;
         Vector3f mSize;
         Color4f mColor0;
@@ -69,7 +69,7 @@ public:
     public:
         UVArg(const Vector2f& v1, const Vector2f& v2) : vec1(v1), vec2(v2) {}
 
-    private:
+    public:
         Vector2f vec1;
         Vector2f vec2;
     };
@@ -128,7 +128,7 @@ public:
     void drawCylinder32(const Vector3f&, float, float, const Color4f&);
     void drawAxis(const Vector3f&, float);
 
-private:
+public:
     Matrix34f* mModel;
     Matrix34f* mCamera;
     Matrix44f* mProjection;
@@ -225,7 +225,7 @@ public:
 
     void drawAxis(const Vector3f&, float);
 
-private:
+public:
     void doPrepare_(Heap* heap);
 
     PrimitiveDrawer mDrawer;

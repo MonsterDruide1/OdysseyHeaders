@@ -44,7 +44,7 @@ public:
         return size;
     }
 
-private:
+public:
     static int ExtractRefBit(const string_view& key, int refBit) {
         int charIndex = refBit >> 3;
         if (static_cast<size_t>(charIndex) < key.length()) {

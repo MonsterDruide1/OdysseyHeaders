@@ -94,7 +94,7 @@ public:                                                                         
     CLASS(CLASS&&) = delete;                                                                       \
     CLASS& operator=(CLASS&&) = delete;                                                            \
                                                                                                    \
-protected:                                                                                         \
+public:                                                                                         \
     static CLASS* sInstance;                                                                       \
                                                                                                    \
     friend class SingletonDisposer_;                                                               \

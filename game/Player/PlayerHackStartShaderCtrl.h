@@ -17,7 +17,7 @@ public:
     void update();
     void end();
 
-private:
+public:
     al::LiveActor* mParent;
     s32 mTime;
     bool mActive;

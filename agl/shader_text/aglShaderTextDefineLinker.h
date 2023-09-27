@@ -24,7 +24,7 @@ public:
     DefineLinker* clone(sead::Heap*, sead::Heap*) const;
     DefineLinker* cloneAll(sead::Heap*, sead::Heap*) const;
 
-private:
+public:
     DefineLinker* _0;  // seems to copy itself twice
     DefineLinker* _8;
     Clause* _10;

@@ -39,7 +39,7 @@ public:
 
     void updateViewMatrix() { doUpdateMatrix(&mMatrix); }
 
-private:
+public:
     Matrix34f mMatrix = Matrix34f::ident;
 };
 
@@ -60,7 +60,7 @@ public:
     const Vector3f& getAt() const { return mAt; }
     const Vector3f& getUp() const { return mUp; }
 
-private:
+public:
     Vector3f mPos = {0.0f, 0.0f, 10.0f};
     Vector3f mAt = {0.0f, 0.0f, 0.0f};
     Vector3f mUp = {0.0f, 1.0f, 0.0f};
@@ -74,7 +74,7 @@ public:
 
     void doUpdateMatrix(Matrix34f* dst) const override;
 
-private:
+public:
     Matrix34f mDirectMatrix = Matrix34f::ident;
 };
 

@@ -23,7 +23,7 @@ public:
 
     void setBinary(const void* shaderBinary);
 
-private:
+public:
     void* mShaderBinary;  // _8
     void* _10;
     void* _18;

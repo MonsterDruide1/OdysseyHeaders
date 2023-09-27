@@ -18,7 +18,7 @@ public:
     f32 calcSqrtValue(f32 value);
     f32 calcSquareValue(f32 value);
 
-private:
+public:
     f32 mInMin;
     f32 mInMax;
     f32 mOutMin;

@@ -26,7 +26,7 @@ class ShaderCompileInfo : public sead::hostio::Node {
     void calcCompileSource(ShaderType, sead::BufferedSafeString*, Target, bool);
     const sead::SafeString& getRegitserUniformBlockName();  // "RegisterUBO"
 
-private:
+public:
     void* _8;
     const char* mName;
     void* _18;

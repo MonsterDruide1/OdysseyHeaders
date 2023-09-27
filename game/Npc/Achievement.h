@@ -9,7 +9,7 @@ public:
     Achievement(const AchievementInfo*);
     bool isGet(GameDataHolderAccessor) const;
 
-private:
+public:
     bool mGet = false;
     const AchievementInfo* mInfo;
 };

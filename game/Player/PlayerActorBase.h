@@ -44,7 +44,7 @@ public:
     virtual void sendCollisionMsg();
     virtual bool receivePushMsg(const al::SensorMsg*, al::HitSensor*, al::HitSensor*);
 
-private:
+public:
     void* mViewMtx = nullptr;  // NOTE: unknown type
     u32 mPortNo = 0;
 };

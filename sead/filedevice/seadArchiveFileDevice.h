@@ -18,7 +18,7 @@ public:
     s32 tryConvertPathToEntryID(const SafeString& path);
     bool setCurrentDirectory(const SafeString& dir);
 
-protected:
+public:
     struct ArchiveFileHandle;
 
     bool doIsAvailable_() const override { return true; }

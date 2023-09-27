@@ -36,7 +36,7 @@ public:
 
     DrawSystemInfo* getDrawInfo() const { return mDrawSystemInfo; }
 
-private:
+public:
     sead::FixedSafeString<0x40> mName;
     Scene* mNextScene;
     Scene* mCurrentScene;

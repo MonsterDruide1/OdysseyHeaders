@@ -21,7 +21,7 @@ public:
     const MessageSystem* getMessageSystem() const { return mMessageSystem; }
     const GamePadSystem* getGamePadSystem() const { return mGamePadSystem; }
 
-private:
+public:
     eui::FontMgr* mFontMgr = nullptr;
     CameraDirector* mCameraDirector = nullptr;
     PadRumbleDirector* mPadRumbleDirector = nullptr;

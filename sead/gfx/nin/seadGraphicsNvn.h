@@ -22,7 +22,7 @@ public:
     int getTextureSamplerID() const { return mTextureSamplerID; }
     CriticalSection* getCriticalSection2() { return &mCriticalSection2; }
 
-private:
+public:
     NVNdevice* mNvnDevice;
     void* _38;
     void* _40;

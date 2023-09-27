@@ -77,7 +77,7 @@ public:
     void checkUseList() const;
     bool tryCheckUseList() const;
 
-protected:
+public:
     ExpHeap(const SafeString& name, Heap* parent, void* address, size_t size,
             HeapDirection direction, bool);
     ~ExpHeap() override;

@@ -10,7 +10,7 @@ public:
     virtual void executeList() const;
     virtual bool isActive() const;
 
-private:
+public:
     const char* mName;
 };
 

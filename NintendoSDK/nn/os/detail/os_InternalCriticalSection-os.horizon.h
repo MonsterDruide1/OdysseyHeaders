@@ -16,7 +16,7 @@ public:
     void lock();
     void unlock();
 
-private:
+public:
     Bit32 m_ThreadHandle;
 };
 

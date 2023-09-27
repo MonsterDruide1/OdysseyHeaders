@@ -38,7 +38,7 @@ public:
         return *reinterpret_cast<const T*>(&val);
     }
 
-private:
+public:
     u32 mValue = 0;
     ByamlDataType mType = ByamlDataType::TYPE_INVALID;
 };
@@ -49,7 +49,7 @@ public:
     ByamlDataType getType() const;
     s32 getValue(bool isRev) const;
 
-private:
+public:
     const s32 mData = 0;
     const s32 mValue = 0;
 };
@@ -67,7 +67,7 @@ public:
     const ByamlHashPair* getPairTable() const;
     u32 getSize() const;
 
-private:
+public:
     const u8* mData;
     bool isRev;
 };
@@ -83,7 +83,7 @@ public:
     u32 getSize() const;
     const u8* getTypeTable() const;
 
-private:
+public:
     const u8* mData;
     bool isRev;
 };

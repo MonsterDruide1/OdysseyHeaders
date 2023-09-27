@@ -32,7 +32,7 @@ public:
     void drawList(const char*, const char*) const;
     bool isActiveDraw(const char*) const;
 
-private:
+public:
     s32 mRequestCount = 0;
     s32 mUpdateTableCount = 0;
     ExecuteTableHolderUpdate** mUpdateTables = nullptr;

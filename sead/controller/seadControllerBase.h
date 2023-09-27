@@ -58,7 +58,7 @@ public:
     void setPointerBound(const BoundBox2f& bound);
     const BoundBox2f& getPointerBound() const { return mPointerBound; }
 
-protected:
+public:
     bool isIdleBase_();
     void setIdleBase_();
     void setPointerWithBound_(bool is_on, bool touchkey_hold, const Vector2f& pos);
@@ -67,7 +67,7 @@ protected:
                       f32 release_threshold, s32 start_bit);
     u32 createStickCrossMask_();
 
-private:
+public:
     enum
     {
         cPadIdx_MaxBase = 32

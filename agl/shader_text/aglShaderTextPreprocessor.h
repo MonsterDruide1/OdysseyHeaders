@@ -37,7 +37,7 @@ public:
     bool construct(sead::BufferedSafeString* dest) const;
     u64 calcConstructLength() const;
 
-private:
+public:
     void* _0;
     void* _8;  // some sort of size
     void* _10;

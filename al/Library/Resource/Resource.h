@@ -38,7 +38,7 @@ public:
     void getOtherFile(const sead::SafeString& name) const;
     const char* getArchiveName() const;
 
-private:
+public:
     sead::ArchiveRes* mArchive;
     sead::ArchiveFileDevice* mDevice;
     sead::FixedSafeString<0x80> mName;
@@ -70,7 +70,7 @@ public:
     static InitResourceDataActionAnim* tryCreate(Resource*, InitResourceDataAnim const*,
                                                  char const*);
 
-private:
+public:
     s32 mLength = 0;
     ActionAnimCtrlInfo** mInfos;  // ActionAnimCtrlInfo*[mLength];
 };
@@ -86,7 +86,7 @@ public:
 
     void initResourceData(char const*, bool);
 
-private:
+public:
     sead::FixedSafeString<0x80> unkStr;
     Resource* mResourceModel;
     Resource* mResourceAnim;

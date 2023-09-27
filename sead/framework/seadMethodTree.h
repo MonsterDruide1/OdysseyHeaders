@@ -68,7 +68,7 @@ public:
         unlock_();
     }
 
-private:
+public:
     void attachMutexRec_(CriticalSection* m) const;
     void callRec_();
 

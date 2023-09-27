@@ -33,7 +33,7 @@ public:
     void unproject(Vector3f*, const Vector2f&, const Projection&, const Camera&) const;
     void unproject(Ray<Vector3f>*, const Vector2f&, const Projection&, const Camera&) const;
 
-private:
+public:
     Graphics::DevicePosture mDevicePosture;
 };
 }  // namespace sead

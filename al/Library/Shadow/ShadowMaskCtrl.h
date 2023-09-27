@@ -33,7 +33,7 @@ public:
     void show();
     void validate();
 
-private:
+public:
     sead::PtrArray<ShadowMaskBase> mShadowMasks;
     sead::Matrix34f mMtx;
     void* mLiveActor;

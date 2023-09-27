@@ -29,7 +29,7 @@ public:
     bool compare(const Clause&, u32) const;
     s32 calcHash(const void*, u32, u32) const;
 
-private:
+public:
     Clause* _0;
     Clause* _8;
     u8 mClauseType;

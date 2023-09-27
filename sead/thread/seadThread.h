@@ -89,7 +89,7 @@ public:
 
     static const s32 cDefaultPriority;
 
-protected:
+public:
 #ifdef NNSDK
     Thread(Heap* heap, nn::os::ThreadType*, u32);
 #endif
@@ -167,7 +167,7 @@ public:
     void listenPropertyEvent(const hostio::PropertyEvent* event) override;
 #endif
 
-protected:
+public:
     friend class Thread;
 
     void addThread_(Thread* thread)
@@ -186,7 +186,7 @@ protected:
     void destroyMainThread_();
     static u32 getCurrentThreadID_();
 
-private:
+public:
     ThreadList mList;
     CriticalSection mListCS;
     Thread* mMainThread = nullptr;
@@ -213,7 +213,7 @@ public:
     }
     void setPriority(s32) override { SEAD_ASSERT_MSG(false, "Main thread can not set priority"); }
 
-protected:
+public:
     void calc_(MessageQueue::Element) override {}
 };
 }  // namespace sead

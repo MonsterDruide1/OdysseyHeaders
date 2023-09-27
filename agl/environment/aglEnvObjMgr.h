@@ -11,7 +11,7 @@ public:
     public:
         InitArg();
 
-    private:
+    public:
         u32 _20c = 0x100;
         u32 _210 = 1;
     };

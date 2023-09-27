@@ -28,7 +28,7 @@ public:
         return count;
     }
 
-private:
+public:
     static void skipToWordEnd_(char** p_ptr, char** p_next);
     static void skipToWordStart_(char** p_ptr);
 };
@@ -167,14 +167,14 @@ private:
             }                                                                                      \
             NAME operator*() const { return NAME(mIdx); }                                          \
                                                                                                    \
-        private:                                                                                   \
+        public:                                                                                   \
             int mIdx;                                                                              \
         };                                                                                         \
                                                                                                    \
         static iterator begin() { return iterator(0); }                                            \
         static iterator end() { return iterator(size()); }                                         \
                                                                                                    \
-    private:                                                                                       \
+    public:                                                                                       \
         /* Returns nullptr when not found. */                                                      \
         static const char* text_(int idx)                                                          \
         {                                                                                          \
@@ -329,14 +329,14 @@ private:
             NAME get() const { return NAME(IndexTag{}, mIdx); }                                    \
             int getIndex() const { return mIdx; }                                                  \
                                                                                                    \
-        private:                                                                                   \
+        public:                                                                                   \
             int mIdx;                                                                              \
         };                                                                                         \
                                                                                                    \
         static iterator begin() { return iterator(0); }                                            \
         static iterator end() { return iterator(getArray_().size()); }                             \
                                                                                                    \
-    private:                                                                                       \
+    public:                                                                                       \
         class ValueArray                                                                           \
         {                                                                                          \
         public:                                                                                    \
@@ -367,7 +367,7 @@ private:
                 return &mBuffer[idx];                                                              \
             }                                                                                      \
                                                                                                    \
-        private:                                                                                   \
+        public:                                                                                   \
             s32 mSize = 0;                                                                         \
             int* mBuffer = nullptr;                                                                \
         };                                                                                         \

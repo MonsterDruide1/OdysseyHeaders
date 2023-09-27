@@ -21,7 +21,7 @@ public:
     void start();
     bool isDone() const;
 
-private:
+public:
     sead::DelegateThread* mDelegateThread = nullptr;
     FunctorBase* mFunctor = nullptr;
     bool mIsDone = true;

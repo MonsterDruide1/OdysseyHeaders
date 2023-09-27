@@ -40,7 +40,7 @@ public:
 
     static constexpr size_t cLoadDataAlignment = 4;
 
-protected:
+public:
     u8* mRawData = 0;
     u32 mRawSize = 0;
     u32 mBufferSize = 0;
@@ -63,7 +63,7 @@ public:
     const SafeString& getExt() const { return mExt; }
     void setExt(const SafeString& ext) { mExt = ext; }
 
-protected:
+public:
     FixedSafeString<32> mExt;
 };
 

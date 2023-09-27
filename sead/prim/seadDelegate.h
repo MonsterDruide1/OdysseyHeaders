@@ -118,7 +118,7 @@ public:
         setFunction(fn);
     }
 
-protected:
+public:
     T* mInstance = nullptr;
     PTMF mFunctionPtr = nullptr;
 };
@@ -134,7 +134,7 @@ public:
 
     void setFunction(FunctionPointer fn) { mFunctionPtr = fn; }
 
-protected:
+public:
     FunctionPointer mFunctionPtr = nullptr;
 };
 
@@ -350,7 +350,7 @@ public:
     auto operator()() const { return mLambda(); }
     auto clone(Heap* heap) const override { return new (heap) LambdaDelegate(*this); }
 
-protected:
+public:
     Lambda mLambda;
 };
 
@@ -363,7 +363,7 @@ public:
     auto operator()() const { return mLambda(); }
     auto clone(Heap* heap) const override { return new (heap) LambdaDelegateR(*this); }
 
-protected:
+public:
     Lambda mLambda;
 };
 
@@ -376,7 +376,7 @@ public:
     auto operator()(A1 a1) const { return mLambda(a1); }
     auto clone(Heap* heap) const override { return new (heap) LambdaDelegate1(*this); }
 
-protected:
+public:
     Lambda mLambda;
 };
 
@@ -389,7 +389,7 @@ public:
     auto operator()(A1 a1) const { return mLambda(a1); }
     auto clone(Heap* heap) const override { return new (heap) LambdaDelegate1R(*this); }
 
-protected:
+public:
     Lambda mLambda;
 };
 
@@ -402,7 +402,7 @@ public:
     auto operator()(A1 a1, A2 a2) const { return mLambda(a1, a2); }
     auto clone(Heap* heap) const override { return new (heap) LambdaDelegate2(*this); }
 
-protected:
+public:
     Lambda mLambda;
 };
 
@@ -415,7 +415,7 @@ public:
     auto operator()(A1 a1, A2 a2) const { return mLambda(a1, a2); }
     auto clone(Heap* heap) const override { return new (heap) LambdaDelegate2R(*this); }
 
-protected:
+public:
     Lambda mLambda;
 };
 
@@ -510,7 +510,7 @@ public:
     Interface* getDelegate() { return reinterpret_cast<Interface*>(&mStorage); }
     const Interface* getDelegate() const { return reinterpret_cast<const Interface*>(&mStorage); }
 
-protected:
+public:
     using Interface_ = Interface;
     std::aligned_storage_t<StorageSize, alignof(Interface)> mStorage;
 };

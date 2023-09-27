@@ -108,7 +108,7 @@ public:
         return span;
     }
 
-private:
+public:
     s64 mSpan;
 
     /// Number of ticks per second. This is platform specific.

@@ -32,7 +32,7 @@ public:
     void setVariationMacroValue(s32, s32, const sead::SafeString&);
     void createVariation(sead::Heap*);
 
-private:
+public:
     u64* _8;
     DisplayList mShaderDisplayList;  // _10
     u32 _278;

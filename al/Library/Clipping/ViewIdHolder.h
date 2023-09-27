@@ -14,7 +14,7 @@ public:
 
     static ViewIdHolder* tryCreate(const PlacementInfo& placementInfo);
 
-private:
+public:
     s32 mNumPlacements = 0;
     PlacementId* mPlacementIds = nullptr;
 };

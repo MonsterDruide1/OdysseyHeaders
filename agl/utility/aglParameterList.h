@@ -59,7 +59,7 @@ public:
                                       const sead::hostio::PropertyEvent* event);
 #endif
 
-protected:
+public:
     virtual bool preWrite_() const { return true; }
     virtual void postWrite_() const {}
     virtual bool preRead_() { return true; }

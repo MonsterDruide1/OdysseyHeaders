@@ -22,7 +22,7 @@ public:
 
     virtual bool calc() = 0;
 
-protected:
+public:
     ListNode mListNode;
     ControllerDefine::AddonId mId;
     Controller* mController;

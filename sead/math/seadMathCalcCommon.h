@@ -155,7 +155,7 @@ public:
 
     static T lerp(T a, T b, f32 ratio);
 
-protected:
+public:
     static u32 atanIdx_(T t);
     static T expLn2_(T x);
     static T log1_2_(T x);

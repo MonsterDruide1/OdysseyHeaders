@@ -48,7 +48,7 @@ public:
     bool isOnCollisionExpandCheck() const;
     bool tryGetRecMaterialCode(const char**) const;
 
-private:
+public:
     sead::BitFlag32 mCollisionTrigger = 0;
     sead::BitFlag32 mAttackSensorTrigger;
     sead::BitFlag64 mActionTrigger = 0;

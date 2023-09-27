@@ -38,7 +38,7 @@ public:
 
     bool try_lock() { return tryLock(); }
 
-private:
+public:
     void setInitialized([[maybe_unused]] bool initialized)
     {
 #ifdef SEAD_DEBUG

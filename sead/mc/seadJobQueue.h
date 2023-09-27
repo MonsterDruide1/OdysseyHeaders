@@ -35,7 +35,7 @@ public:
     void attachProcessMeter();
     void detachProcessMeter();
 
-private:
+public:
     Buffer<MultiProcessMeterBar<512>> mBars;
     Buffer<u32> mInts;
     MultiProcessMeterBar<1> mProcessMeterBar;
@@ -59,7 +59,7 @@ public:
             continue;
     }
 
-private:
+public:
     Atomic<u32> mSpinLock = 0;
 };
 
@@ -100,7 +100,7 @@ public:
     void resetFinishEvent() { mFinishEvent.resetSignal(); }
     u32 addNumDoneJobs(u32 num) { return mNumDoneJobs.fetchAdd(num); }
 
-protected:
+public:
     virtual bool isDone_();
 
     SyncType mSyncType = SyncType::cNoSync;
@@ -145,7 +145,7 @@ public:
 
     bool debug_IsAllJobDone();
 
-protected:
+public:
     Buffer<Job*> mJobs;
     u32 mNumJobs;
     u32 mNumProcessedJobs;

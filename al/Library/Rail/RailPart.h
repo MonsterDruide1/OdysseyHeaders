@@ -27,7 +27,7 @@ public:
     f32 getTotalDistance() const { return mTotalDistance; }
     bool isBezierCurve() const { return mBezierCurve != nullptr; }
 
-private:
+public:
     BezierCurve* mBezierCurve = nullptr;
     LinearCurve* mLinearCurve = nullptr;
     f32 mTotalDistance = 0;

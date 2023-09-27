@@ -59,7 +59,7 @@ public:
     void write(sead::WriteStream*);
     void print() const;
 
-private:
+public:
     sead::Heap* mHeap;
     ByamlWriterStringTable* mStringTable1 = nullptr;
     ByamlWriterStringTable* mStringTable2 = nullptr;

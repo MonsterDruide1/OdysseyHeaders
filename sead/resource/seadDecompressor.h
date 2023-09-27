@@ -29,7 +29,7 @@ public:
     const SafeString& getName() const { return mExt; }
     void setName(const SafeString& name) { mExt = name; }
 
-protected:
+public:
     FixedSafeString<32> mExt;
 };
 

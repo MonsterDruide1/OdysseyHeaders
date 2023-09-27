@@ -14,7 +14,7 @@ public:
     void init(StageSwitchDirector*, const PlacementInfo&);
     StageSwitchAccesser* tryGetStageSwitchAccesser(const char* name);
 
-private:
+public:
     StageSwitchAccesser* mStageSwitchAccessers;
     s32 mAccesserNum;
     void* field_10;

@@ -28,7 +28,7 @@ public:
 
     virtual const char* convertName(const char* name) const { return name; }
 
-private:
+public:
     const char* mFactoryName;
     NameToCreator<T>* mFactoryEntries;
     s32 mNumFactoryEntries;

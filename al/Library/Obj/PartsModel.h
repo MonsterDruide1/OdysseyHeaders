@@ -27,7 +27,7 @@ public:
     void offSyncAppearAndHide();
     void onSyncAppearAndHide();
 
-private:
+public:
     LiveActor* mParentModel = nullptr;
     const sead::Matrix34f* mJointMtx = nullptr;
     bool mIsUseLocalPos = false;

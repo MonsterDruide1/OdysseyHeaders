@@ -12,7 +12,7 @@ public:
     void reset();
     void setup(s32 no_reduce_frame, s32 reduce_frame, s32 recovery_frame, s32 damage_interval);
 
-private:
+public:
     f32 mOxygenLevel = 1.0;
     s32 mFramesReducing = 0;
     s32 mFramesWithoutOxygen = 0;

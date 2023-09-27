@@ -5,7 +5,7 @@
 
 // todo: verify ENUM and BITS' void ctor funcitonality
 #define NVN_ENUM(CLASS)                                                                            \
-private:                                                                                           \
+public:                                                                                           \
     Enum m_value;                                                                                  \
                                                                                                    \
 public:                                                                                            \
@@ -29,7 +29,7 @@ public:                                                                         
     }
 
 #define NVN_BITS(CLASS)                                                                            \
-private:                                                                                           \
+public:                                                                                           \
     int m_value;                                                                                   \
                                                                                                    \
 public:                                                                                            \
@@ -1151,7 +1151,7 @@ typedef void (*CommandBufferMemoryCallbackFunc)(CommandBuffer*, CommandBufferMem
 typedef void (*WalkDebugDatabaseCallbackFunc)(void*, void*);
 
 class DeviceBuilder {
-protected:
+public:
     char reserved[64];
 
 public:
@@ -1161,7 +1161,7 @@ public:
 };
 
 class Device {
-protected:
+public:
     char reserved[12288];
 
     Device(const Device&) = delete;
@@ -1202,7 +1202,7 @@ public:
 };
 
 class QueueBuilder {
-protected:
+public:
     char reserved[64];
 
 public:
@@ -1230,7 +1230,7 @@ public:
 };
 
 class Queue {
-protected:
+public:
     char reserved[8192];
 
     Queue(const Queue&) = delete;
@@ -1257,7 +1257,7 @@ public:
 };
 
 class CommandBuffer {
-protected:
+public:
     char reserved[160];
 
     CommandBuffer(const CommandBuffer&) = delete;
@@ -1425,7 +1425,7 @@ public:
 };
 
 class BlendState {
-protected:
+public:
     char reserved[8];
 
 public:
@@ -1447,7 +1447,7 @@ public:
 };
 
 class ChannelMaskState {
-protected:
+public:
     char reserved[4];
 
 public:
@@ -1457,7 +1457,7 @@ public:
 };
 
 class ColorState {
-protected:
+public:
     char reserved[4];
 
 public:
@@ -1471,7 +1471,7 @@ public:
 };
 
 class DepthStencilState {
-protected:
+public:
     char reserved[8];
 
 public:
@@ -1491,7 +1491,7 @@ public:
 };
 
 class MultisampleState {
-protected:
+public:
     char reserved[24];
 
 public:
@@ -1521,7 +1521,7 @@ public:
 };
 
 class PolygonState {
-protected:
+public:
     char reserved[4];
 
 public:
@@ -1537,7 +1537,7 @@ public:
 };
 
 class VertexAttribState {
-protected:
+public:
     char reserved[4];
 
 public:
@@ -1549,7 +1549,7 @@ public:
 };
 
 class VertexStreamState {
-protected:
+public:
     char reserved[8];
 
 public:
@@ -1561,7 +1561,7 @@ public:
 };
 
 class Program {
-protected:
+public:
     char reserved[192];
 
     Program(const Program&) = delete;
@@ -1582,7 +1582,7 @@ public:
 };
 
 class MemoryPoolBuilder {
-protected:
+public:
     char reserved[64];
 
 public:
@@ -1597,7 +1597,7 @@ public:
 };
 
 class MemoryPool {
-protected:
+public:
     char reserved[256];
 
     MemoryPool(const MemoryPool&) = delete;
@@ -1619,7 +1619,7 @@ public:
 };
 
 class TexturePool {
-protected:
+public:
     char reserved[32];
 
     TexturePool(const TexturePool&) = delete;
@@ -1639,7 +1639,7 @@ public:
 };
 
 class SamplerPool {
-protected:
+public:
     char reserved[32];
 
     SamplerPool(const SamplerPool&) = delete;
@@ -1659,7 +1659,7 @@ public:
 };
 
 class BufferBuilder {
-protected:
+public:
     char reserved[64];
 
 public:
@@ -1673,7 +1673,7 @@ public:
 };
 
 class Buffer {
-protected:
+public:
     char reserved[48];
 
     Buffer(const Buffer&) = delete;
@@ -1696,7 +1696,7 @@ public:
 };
 
 class Texture {
-protected:
+public:
     char reserved[192];
 
     Texture(const Texture&) = delete;
@@ -1744,7 +1744,7 @@ public:
 };
 
 class TextureBuilder {
-protected:
+public:
     char reserved[128];
 
 public:
@@ -1797,7 +1797,7 @@ public:
 };
 
 class TextureView {
-protected:
+public:
     char reserved[40];
 
 public:
@@ -1818,7 +1818,7 @@ public:
 };
 
 class SamplerBuilder {
-protected:
+public:
     char reserved[96];
 
 public:
@@ -1850,7 +1850,7 @@ public:
 };
 
 class Sampler {
-protected:
+public:
     char reserved[96];
 
     Sampler(const Sampler&) = delete;
@@ -1877,7 +1877,7 @@ public:
 };
 
 class Sync {
-protected:
+public:
     char reserved[64];
 
     Sync(const Sync&) = delete;
@@ -1893,7 +1893,7 @@ public:
 };
 
 class Window {
-protected:
+public:
     char reserved[384];
 
     Window(const Window&) = delete;
@@ -1914,7 +1914,7 @@ public:
 };
 
 class WindowBuilder {
-protected:
+public:
     char reserved[64];
 
 public:
@@ -1931,7 +1931,7 @@ public:
 };
 
 class EventBuilder {
-protected:
+public:
     char reserved[32];
 
 public:
@@ -1941,7 +1941,7 @@ public:
 };
 
 class Event {
-protected:
+public:
     char reserved[64];
 
     Event(const Event&) = delete;

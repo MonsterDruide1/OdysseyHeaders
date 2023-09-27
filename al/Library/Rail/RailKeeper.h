@@ -12,7 +12,7 @@ public:
     RailKeeper(const PlacementInfo&);
     RailRider* getRailRider() const override;
 
-private:
+public:
     RailRider* mRailRider;
 };
 }  // namespace al

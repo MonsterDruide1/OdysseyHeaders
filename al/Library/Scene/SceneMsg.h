@@ -9,7 +9,7 @@ public:
     void clear();
     void setMsg(const char*, const char*);
 
-private:
+public:
     void* field_00;
     sead::FixedSafeString<128> field_08;
     sead::FixedSafeString<128> field_a0;

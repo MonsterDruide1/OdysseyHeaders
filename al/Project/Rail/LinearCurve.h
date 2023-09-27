@@ -21,7 +21,7 @@ public:
 
     f32 getLength() const { return mDistance; }
 
-private:
+public:
     sead::Vector3f mStart = sead::Vector3f::zero;
     sead::Vector3f mDiff = sead::Vector3f::zero;
     f32 mDistance = 0;

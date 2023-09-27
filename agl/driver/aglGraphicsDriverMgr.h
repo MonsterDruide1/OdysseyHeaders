@@ -29,10 +29,10 @@ public:
     void genMessage(sead::hostio::Context* context) override;
 #endif
 
-protected:
+public:
     void initialize_(sead::Heap p_heap);
 
-private:
+public:
     agl::DisplayList* mDefaultCommandBuffer;
     void* _30;
 };

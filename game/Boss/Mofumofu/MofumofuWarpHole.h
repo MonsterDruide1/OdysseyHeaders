@@ -28,6 +28,6 @@ public:
     void exeDashSign();
     void exeDashSignEnd();
 
-private:
+public:
     sead::Quatf gap = sead::Quatf::unit;
 };

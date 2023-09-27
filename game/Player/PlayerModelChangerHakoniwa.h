@@ -40,7 +40,7 @@ public:
     bool isHiddenModel() override;
     bool isHiddenShadowMask() override;
 
-private:
+public:
     const al::LiveActor* mLiveActor;
     bool mIsChange;
     bool mModeIs2D;

@@ -14,7 +14,7 @@ public:
     ListNode* prev() const { return mPrev; }
     bool isLinked() const { return mNext || mPrev; }
 
-private:
+public:
     friend class ListImpl;
 
     void init_() { *this = {}; }
@@ -43,7 +43,7 @@ public:
     void shuffle(Random* random);
     bool checkLinks() const;
 
-protected:
+public:
     using CompareCallbackImpl = int (*)(const void*, const void*);
 
     template <class T, class ComparePredicate>
@@ -111,7 +111,7 @@ protected:
     static void mergeSortImpl_(ListNode* front, ListNode* back, s32 num, s32 offset,
                                const ComparePredicate& predicate);
 
-protected:
+public:
     ListNode mStartEnd;
     s32 mCount;
 };

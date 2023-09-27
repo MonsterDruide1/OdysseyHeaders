@@ -31,7 +31,7 @@ public:
     void setSignal();
     void resetSignal();
 
-private:
+public:
     void setInitialized([[maybe_unused]] bool initialized)
     {
 #ifdef SEAD_DEBUG

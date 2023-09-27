@@ -39,7 +39,7 @@ public:
 
     const char* getName() { return mName; }
 
-private:
+public:
     const char* mName;
     sead::PtrArray<ExecutorListBase> mActiveExecutors;
     sead::PtrArray<ExecutorListBase> mExecutorsAll;

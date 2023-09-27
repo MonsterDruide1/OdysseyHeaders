@@ -53,7 +53,7 @@ public:
     /// @return true if and only if the value was modified
     bool compareExchange(T expected, T desired, T* original = nullptr);
 
-protected:
+public:
 #ifdef NNSDK
     // Nintendo appears to have manually implemented atomics with volatile and platform specific
     // intrinsics (e.g. __builtin_arm_ldrex).

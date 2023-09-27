@@ -75,7 +75,7 @@ public:
     void startSnapShotMode(bool);
     void endSnapShotMode();
 
-private:
+public:
     s32 mCountCameraPoseUpdaters;
     SceneCameraInfo* mSceneCameraInfo;
     SceneCameraCtrl* mSceneCameraCtrl;

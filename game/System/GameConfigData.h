@@ -38,7 +38,7 @@ public:
     void write(al::ByamlWriter*) override;
     void read(const al::ByamlIter&) override;
 
-private:
+public:
     s32 mCameraStickSensitivityLevel = -1;
     bool mIsCameraReverseInputH = false;
     bool mIsCameraReverseInputV = false;

@@ -43,7 +43,7 @@ public:
     void setPhysicalArea(f32 x, f32 y, f32 w, f32 h) { mPhysicalArea.set(x, y, x + w, y + h); }
     void setPhysicalArea(f32 x, f32 y, u32 w, u32 h) { mPhysicalArea.set(x, y, x + w, y + h); }
 
-private:
+public:
     Vector2f mVirtualSize;
     BoundBox2f mPhysicalArea;
 };

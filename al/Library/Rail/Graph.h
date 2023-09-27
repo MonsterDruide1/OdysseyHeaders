@@ -24,7 +24,7 @@ public:
             addEdge(edge);
         }
 
-    private:
+    public:
         sead::PtrArray<Edge> mEdges;
         s32 mIndex;
     };
@@ -39,7 +39,7 @@ public:
         Vertex* getVertex1() const { return mVertex1; }
         Vertex* getVertex2() const { return mVertex2; }
 
-    private:
+    public:
         Vertex* mVertex1;
         Vertex* mVertex2;
         f32 mWeight;
@@ -57,7 +57,7 @@ public:
     void appendEdge(s32 indexVertex1, s32 indexVertex2, f32 weight);
     bool tryAppendEdge(s32 indexVertex1, s32 indexVertex2, f32 weight);
 
-private:
+public:
     sead::PtrArray<Vertex> mVertices;
     sead::PtrArray<Edge> mEdges;
 };

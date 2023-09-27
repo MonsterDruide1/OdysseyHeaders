@@ -54,7 +54,7 @@ public:
     void pauseSystem(bool, const char*, bool, f32, bool, bool, bool) override;
     AreaObjDirector* getAreaObjDirector() const override;
 
-private:
+public:
     SeDirector* mSeDirector;
     BgmDirector* mBgmDirector;
     AudioMic* mAudioMic;

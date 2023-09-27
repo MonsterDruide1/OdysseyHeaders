@@ -30,7 +30,7 @@ public:
         Value& value() { return mValue; }
         const Value& value() const { return mValue; }
 
-    private:
+    public:
         friend class StrTreeMap;
 
         Value mValue;
@@ -53,7 +53,7 @@ public:
     template <typename Callable>
     void forEach(const Callable& delegate) const;
 
-private:
+public:
     void eraseNodeForClear_(typename MapImpl::Node* node);
 
     FreeList mFreeList;

@@ -20,7 +20,7 @@ public:
     al::StageSwitchDirector* getStageSwitchDirector() const { return mStageSwitchDirector; }
     al::SceneObjHolder* getSceneObjHolder() const { return mSceneObjHolder; }
 
-private:
+public:
     al::PlacementInfo mPlacementInfo;
     al::StageSwitchDirector* mStageSwitchDirector;
     al::SceneObjHolder* mSceneObjHolder;

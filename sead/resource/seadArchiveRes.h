@@ -67,7 +67,7 @@ public:
 
     bool isExistFile(const SafeString& path) const { return isExistFileImpl_(path); }
 
-protected:
+public:
     virtual const void* getFileImpl_(const SafeString& file_path,
                                      FileInfo* file_info = nullptr) const = 0;
     virtual const void* getFileFastImpl_(s32 entry_id, FileInfo* file_info) const = 0;

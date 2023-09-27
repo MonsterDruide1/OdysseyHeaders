@@ -38,7 +38,7 @@ public:
         return *this;
     }
 
-private:
+public:
     u64 mTick;
 };
 }  // namespace sead

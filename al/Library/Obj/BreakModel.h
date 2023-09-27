@@ -14,7 +14,7 @@ public:
     void exeWait();
     void exeBreak();
 
-private:
+public:
     const LiveActor* mParent;
     const sead::Matrix34f* mRootMtx;
     const char* mModelName;

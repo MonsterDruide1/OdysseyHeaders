@@ -28,7 +28,7 @@ public:
 
     InfLoopEvent& getEvent() { return mEvent; }
 
-private:
+public:
     void onInfLoop_();
 
     u32 mLoopCount;

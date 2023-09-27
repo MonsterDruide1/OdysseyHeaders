@@ -20,13 +20,13 @@ class ControllerMgr : public CalculateTask
     SEAD_TASK_SINGLETON(ControllerMgr)
     SEAD_RTTI_OVERRIDE(ControllerMgr, CalculateTask)
 
-private:
+public:
     class ConstructArg : public TaskConstructArg
     {
     public:
         ConstructArg() : TaskConstructArg(), mHeapArray() { heap_array = &mHeapArray; }
 
-    private:
+    public:
         HeapArray mHeapArray;
     };
 
@@ -76,7 +76,7 @@ public:
 
     Controller* getController(int port) { return mControllers[port]; }
 
-private:
+public:
     OffsetList<ControlDevice> mDevices;
     PtrArray<Controller> mControllers;
 };

@@ -32,7 +32,7 @@ public:
     Reflexible* searchNode(const SafeString& name) override;
     void calcURL(BufferedSafeString* url) const override { calcURLImpl_(url, true); }
 
-protected:
+public:
     void genChildNode(Context* context) override;
     bool isHaveChild() const override { return mTreeNode.child() != nullptr; }
     void disposeHostIO() override
@@ -41,7 +41,7 @@ protected:
         Reflexible::disposeHostIO();
     }
 
-private:
+public:
     void disposeHostIOImpl_();
     void calcURLImpl_(BufferedSafeString* url, bool) const;
 

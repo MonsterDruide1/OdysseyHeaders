@@ -7,7 +7,7 @@ class SceneMsgCtrl {
 public:
     SceneMsgCtrl();
 
-private:
+public:
     SceneMsg mMessages[32];
 };
 }  // namespace al

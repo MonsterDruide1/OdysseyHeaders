@@ -22,6 +22,6 @@ public:
 
     ActorDimensionKeeper* getActorDimensionKeeper() const override;
 
-private:
+public:
     ActorDimensionKeeper* mActorDimensionKeeper = nullptr;
 };

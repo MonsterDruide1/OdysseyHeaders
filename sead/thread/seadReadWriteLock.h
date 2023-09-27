@@ -17,7 +17,7 @@ public:
     void writeLock();
     void writeUnlock();
 
-private:
+public:
     class SemaphoreLock
     {
     public:
@@ -25,7 +25,7 @@ private:
         void lock();
         void unlock();
 
-    private:
+    public:
         Semaphore mSemaphore{0, 0x7FFF};
         Atomic<u32> mLockCount{0};
     };

@@ -122,7 +122,7 @@ public:
         return static_cast<const T*>(ptr());
     }
 
-protected:
+public:
     friend class IParameterObj;
 
     template <typename T>
@@ -295,7 +295,7 @@ public:
         return *this;
     }
 
-protected:
+public:
     T mValue;
 };
 
@@ -350,7 +350,7 @@ public:
     bool isBinary() const override { return true; }
     bool isBinaryInternalBuffer() const override { return mBufferAllocated; }
 
-protected:
+public:
     s32 mBufferSize;
     bool mBufferAllocated;
 };
@@ -400,7 +400,7 @@ public:
 
     static constexpr u32 cUnitCurveParamNum = 30;
 
-protected:
+public:
     std::array<sead::hostio::Curve<f32>, N> mCurves;
     std::array<sead::hostio::CurveData, N> mCurveData;
 };

@@ -27,7 +27,7 @@ public:
     void update() override;
     bool judge() const override;
 
-private:
+public:
     s32 field_10;
     s32 field_14;
     al::LiveActor* mParent;
@@ -48,7 +48,7 @@ public:
     void update() override;
     bool judge() const override;
 
-private:
+public:
     al::LiveActor* mParent;
     s32 field_18;
     al::LiveActor* field_20;

@@ -20,7 +20,7 @@ public:
     bool isExistPadRumbleKeeper(s32 index) const;
     PadRumbleKeeper* getPadRumbleKeeper(s32 index) const;
 
-private:
+public:
     struct Player {
         LiveActor* mActor = nullptr;
         PadRumbleKeeper* mPadRumbleKeeper = nullptr;

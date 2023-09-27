@@ -21,7 +21,7 @@ public:
     Clause* createClause(u32) const;
     bool execute(bool);
 
-private:
+public:
     sead::Heap* _0;
     Clause* _8;
     const char* mRefName;

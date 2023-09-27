@@ -25,6 +25,6 @@ public:
     s32 size() { return array.size(); }
     s32 capacity() { return array.capacity(); }
 
-private:
+public:
     sead::PtrArray<AchievementInfo> array;
 };

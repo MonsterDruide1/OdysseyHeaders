@@ -22,7 +22,7 @@ public:
     public:
         CreateArg();
 
-    private:
+    public:
         u32 mArg;
     };
 
@@ -30,7 +30,7 @@ public:
     public:
         DialogArg();
 
-    private:
+    public:
         u64* _0;
         u64* _8;
         void* _10;
@@ -65,7 +65,7 @@ public:
     void genMessage(sead::hostio::Context* unused);
     void listenPropertyEvent(const sead::hostio::PropertyEvent* unused);
 
-private:
+public:
     sead::NinHostIOFileDevice* _28;
 };
 

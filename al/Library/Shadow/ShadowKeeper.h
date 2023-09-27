@@ -15,7 +15,7 @@ public:
     void hide();
     void show();
 
-private:
+public:
     ShadowMaskCtrl* mShadowMaskCtrl = nullptr;
     DepthShadowMapCtrl* mDepthShadowMapCtrl = nullptr;
 };

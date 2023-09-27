@@ -46,7 +46,7 @@ public:
     void dumpYAML(WriteStream& stream, int i) const override;
     void genInformation_(hostio::Context* context) override;
 
-protected:
+public:
     FrameHeap(const SafeString& name, Heap* parent, void* address, size_t size,
               HeapDirection direction, bool);
     ~FrameHeap() override;

@@ -29,7 +29,7 @@ public:
 
     void exePlay();
 
-private:
+public:
     al::Sequence* mSequence;
     al::GameSystemInfo* mSystemInfo;
     al::AudioSystem* mAudioSystem;

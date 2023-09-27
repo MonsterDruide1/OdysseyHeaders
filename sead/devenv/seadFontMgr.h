@@ -26,7 +26,7 @@ public:
 
     u32 get_0() const { return _0; }
 
-private:
+public:
     Atomic<u32> _0, _4;
 };
 
@@ -72,7 +72,7 @@ public:
     void swapUniformBlockBuffer();
     u32 searchCharIndexFormCharCode_(u32 code) const;
 
-private:
+public:
     NVNprogram mNvnProgram;
     NVNtexture mNvnTexture;
     NVNtextureHandle mNvnTextureHandle;
@@ -110,7 +110,7 @@ public:
     void swapUniformBlockBuffer();
     u32 searchCharIndexFormCharCode_(u32 code) const;
 
-private:
+public:
     NVNprogram nvnProgram;
     NVNtexture nvnTexture;
     NVNtextureHandle nvnTextureHandle;

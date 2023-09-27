@@ -169,7 +169,7 @@ public:
         T& operator*() const { return *mPtr; }
         T* operator->() const { return mPtr; }
 
-    private:
+    public:
         T* mPtr;
     };
 
@@ -179,7 +179,7 @@ public:
 
     static constexpr size_t calculateWorkBufferSize(size_t n) { return n * ElementSize; }
 
-private:
+public:
     struct Node
     {
         static constexpr auto getListNodeOffset() { return offsetof(Node, node); }
@@ -236,7 +236,7 @@ public:
     bool tryAllocBuffer(s32 ptrNumMax, Heap* heap, s32 alignment = sizeof(void*)) = delete;
     void freeBuffer() = delete;
 
-private:
+public:
     std::aligned_storage_t<ObjList<T>::calculateWorkBufferSize(N),
                            std::max(alignof(T), alignof(T*))>
         mWork;

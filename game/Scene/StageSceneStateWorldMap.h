@@ -59,7 +59,7 @@ public:
                                               const al::ActorInitInfo&, const al::LayoutInitInfo&,
                                               StageSceneStateCollectionList*);
 
-private:
+public:
     al::SimpleLayoutAppearWaitEnd* mWorldSelectLyt;
     al::SimpleLayoutAppearWaitEnd* mWorldSelectMovieLyt;
     al::LayoutActor* mWorldSelectFooter;

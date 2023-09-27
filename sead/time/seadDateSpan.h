@@ -73,7 +73,7 @@ public:
         return *this;
     }
 
-private:
+public:
     s64 setTimeImpl_(s32 d, s32 h, s32 m, s32 s);
 
     /// In seconds.

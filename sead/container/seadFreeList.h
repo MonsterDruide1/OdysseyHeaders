@@ -21,7 +21,7 @@ public:
 
     static const size_t cPtrSize = sizeof(void*);
 
-private:
+public:
     struct Node
     {
         Node* nextFree;

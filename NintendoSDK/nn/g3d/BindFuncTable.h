@@ -22,7 +22,7 @@ class BindFuncTable {
         nn::g3d::BindFuncTable::StringLength* string;
     };
 
-private:
+public:
     int lengths[4];
     nn::g3d::BindFuncTable::EntryPointer strings[4];
 };

@@ -99,7 +99,7 @@ public:
         return lhs.compare(rhs) != 0;
     }
 
-private:
+public:
     const_pointer m_Str;
     size_type m_Len;
 };

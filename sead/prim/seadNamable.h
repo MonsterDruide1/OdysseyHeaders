@@ -14,7 +14,7 @@ public:
     const SafeString& getName() const { return mINamableName; }
     void setName(const SafeString& name) { mINamableName = name; }
 
-private:
+public:
     SafeString mINamableName = "";
 };
 

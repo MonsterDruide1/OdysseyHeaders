@@ -41,7 +41,7 @@ public:
     void findMtxPtr(const char*);
     void tryFindEffect(const char*);
 
-private:
+public:
     const char* mName;
     u32 mEffectCount;
     Effect** mEffects;

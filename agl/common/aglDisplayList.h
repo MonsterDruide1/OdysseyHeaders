@@ -30,7 +30,7 @@ public:
     void resume(void*, u64);  // unused parameters
     u64 calcRemainingSize();
 
-private:
+public:
     GPUMemAddr<u8> mBuffer;
     u32 mUsedSize;
     u32 _24;

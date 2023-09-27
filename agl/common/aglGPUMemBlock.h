@@ -37,7 +37,7 @@ public:
 
     // TODO: the rest of the methods...
 
-private:
+public:
     void* mMemoryBuffer;
     u64 mMemoryBufferSize;
     detail::MemoryPool* mpMemoryPool;

@@ -13,7 +13,7 @@ public:
     NVNimage_ operator=(const NVNimage_& other);
     void updateImageId(s32 id);
 
-private:
+public:
     u64 mImageId;
 };
 

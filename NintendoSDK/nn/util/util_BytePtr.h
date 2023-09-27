@@ -51,7 +51,7 @@ public:
     BytePtr operator--(int) { return BytePtr(*this) - 1; }
     BytePtr& operator--() { return Advance(-1); }
 
-private:
+public:
     void* m_Ptr;
 };
 
@@ -91,7 +91,7 @@ public:
     ConstBytePtr operator--(int);
     ConstBytePtr& operator--();
 
-private:
+public:
     const void* m_Ptr;
 };
 

@@ -33,7 +33,7 @@ public:
     bool isIncludeBezierRailPart() const;
     bool isBezierRailPart(s32) const;
 
-private:
+public:
     PlacementInfo** mRailPoints = nullptr;
     RailPart* mRailPart = nullptr;
     s32 mRailPartCount = 0;

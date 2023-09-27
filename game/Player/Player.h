@@ -15,7 +15,7 @@ public:
     void exeFall();
     void exeDamage();
 
-private:
+public:
     const char* mArchiveName;
     s32 mPort;
     s32 mAirTime;

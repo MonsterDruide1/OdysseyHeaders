@@ -16,7 +16,7 @@ public:
                      PlayerDamageKeeper* damageKeeper, const IPlayerModelChanger* modelChanger,
                      const IUsePlayerHeightCheck* heightCheck);
 
-private:
+public:
     char padding[0x68];
     al::LiveActor* currentHackActor;
 };

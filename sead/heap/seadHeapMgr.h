@@ -65,7 +65,7 @@ public:
     using RootHeaps = FixedPtrArray<Heap, 4>;
     using IndependentHeaps = FixedPtrArray<Heap, 4>;
 
-private:
+public:
     friend class ScopedCurrentHeapSetter;
 
     /// Set the current heap to the specified heap and returns the previous "current heap".
@@ -101,7 +101,7 @@ public:
             HeapMgr::instance()->setCurrentHeap_(getPreviousHeap_());
     }
 
-protected:
+public:
     /// @warning Only call this if hasPreviousHeap returns true.
     Heap* getPreviousHeap_() const { return reinterpret_cast<Heap*>(mPreviousHeap); }
     void setPreviousHeap_(Heap* heap) { mPreviousHeap = reinterpret_cast<uintptr_t>(heap); }

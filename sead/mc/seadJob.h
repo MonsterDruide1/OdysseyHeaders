@@ -19,7 +19,7 @@ public:
     Job0(const Delegate<T>& delegate) : mDelegate(delegate) {}
     void invoke() override { mDelegate.invoke(); }
 
-protected:
+public:
     Delegate<T> mDelegate;
 };
 }  // namespace sead

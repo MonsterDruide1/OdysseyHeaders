@@ -31,7 +31,7 @@ public:
 
     static Graphics* instance() { return sInstance; }
 
-private:
+public:
     UnknownCallback _20;
     DrawLockContext* mDrawLockContext;
 };

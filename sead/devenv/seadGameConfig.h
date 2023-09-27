@@ -14,7 +14,7 @@ class GameConfig : public hostio::Node
 
     static const SafeString cNodeName;
 
-protected:
+public:
     struct FileWriteCallback
     {
         virtual ~FileWriteCallback();

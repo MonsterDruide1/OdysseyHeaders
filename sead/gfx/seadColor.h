@@ -133,7 +133,7 @@ public:
     static const Color4u8 cMagenta;
     static const Color4u8 cCyan;
 
-private:
+public:
     template <typename Callable>
     Color4u8& apply_(Callable fn)
     {

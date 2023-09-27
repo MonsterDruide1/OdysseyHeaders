@@ -15,7 +15,7 @@ class AudioDirector;
 class Scene;
 
 class SceneCreator {
-private:
+public:
     GameSystemInfo* mGameSystemInfo;
     GameDataHolderBase* mGameDataHolder;
     ScreenCaptureExecutor* mScreenCaptureExecutor;

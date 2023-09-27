@@ -17,7 +17,7 @@ public:
     void Wait(InternalCriticalSection*);
     ConditionVariableStatus TimedWait(InternalCriticalSection*, const TimeoutHelper&);
 
-private:
+public:
     uint32_t m_Value;
 };
 

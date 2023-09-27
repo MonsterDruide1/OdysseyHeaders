@@ -13,7 +13,7 @@ public:
 
     static u32 getOffset() { return offsetof(MemBlock, mListNode); }
 
-protected:
+public:
     ListNode mListNode;
     u16 mHeapCheckTag;
     u16 mOffset;

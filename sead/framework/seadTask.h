@@ -29,7 +29,7 @@ public:
     virtual void calc() {}
     virtual void draw() {}
 
-protected:
+public:
     MethodTreeNode mCalcNode{nullptr};
     MethodTreeNode mDrawNode{nullptr};
 };

@@ -20,7 +20,7 @@ public:
     void setValue(uintptr_t value);
     uintptr_t getValue() const;
 
-private:
+public:
 #ifdef NNSDK
     nn::os::TlsSlot mTlsSlot;
 #endif

@@ -624,7 +624,7 @@ public:
     virtual f32 getCoinDashSpeedLimit() const;
     virtual f32 getAdditionalSpeedLimit() const;
 
-private:
+public:
     f32 mGravity;
     f32 mFrictionAttack;
     f32 mPushPower;

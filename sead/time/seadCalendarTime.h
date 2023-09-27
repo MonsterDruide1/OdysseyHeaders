@@ -23,7 +23,7 @@ public:
         u32 getValue() const { return mValue; }                                                    \
         void setValue(u32 VARIABLE_NAME);                                                          \
                                                                                                    \
-    private:                                                                                       \
+    public:                                                                                       \
         u32 mValue;                                                                                \
     };
 
@@ -49,7 +49,7 @@ public:
         static Month makeFromValueOneOrigin(u32 month);
         static SafeString makeStringOneOrigin(u32 month);
 
-    private:
+    public:
         s32 mValue;
     };
 
@@ -131,7 +131,7 @@ public:
     void genHostIOMessage(hostio::Context*);
     void listenHostIOPropertyEvent(const hostio::PropertyEvent*, hostio::Reflexible*);
 
-private:
+public:
     Date mDate;
     Time mTime;
 

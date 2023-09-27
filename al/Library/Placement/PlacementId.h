@@ -17,7 +17,7 @@ public:
     bool isValid() const;
     bool makeString(sead::BufferedSafeString*) const;
 
-private:
+public:
     const char* mId;
     const char* mUnitConfigName;
     const char* mZoneId;

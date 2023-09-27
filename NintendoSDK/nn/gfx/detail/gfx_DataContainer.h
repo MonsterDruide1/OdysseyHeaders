@@ -4,7 +4,7 @@ namespace nn::gfx::detail {
 
 template <class T>
 class CasterBase {
-protected:
+public:
     T* m_Value;
 
 public:

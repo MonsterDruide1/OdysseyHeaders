@@ -13,7 +13,7 @@ public:
     void addUpdater(ExecutorActorExecuteBase* updater);
     void addDrawer(ModelDrawerBase* drawer);
 
-private:
+public:
     ExecuteRequestKeeper* mRequestKeeper;
     s32 mUpdaterCount = 0;
     ExecutorActorExecuteBase* mUpdaters[4] = {};

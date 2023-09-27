@@ -17,7 +17,7 @@ public:
     void setRotateWithInterpole(const sead::Vector3f&);
     void setInterpoleFrame(s32);
 
-private:
+public:
     LiveActor* mRootActor;
     sead::Vector3f mOffsetInterpole;
     bool field_11C;

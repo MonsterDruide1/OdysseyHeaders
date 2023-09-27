@@ -15,7 +15,7 @@ public:
     static void registerFinalCallback(IDelegate1<const char*>* cb);
     static void execCallbacks(const char* assertMessage);
 
-private:
+public:
     static AssertEvent sAssertEvent;
     static IDelegate1<char const*>* sFinalCallback;
 };

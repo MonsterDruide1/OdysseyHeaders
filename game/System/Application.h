@@ -25,7 +25,7 @@ public:
     al::AccountHolder* getAccountHolder() const { return mAccountHolder; }
     al::DrawSystemInfo* getDrawSystemInfo() const { return mDrawSystemInfo; }
 
-private:
+public:
     al::SystemKit* mSystemKit;
     al::GameFrameworkNx* mGameFramework;
     al::AccountHolder* mAccountHolder;

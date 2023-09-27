@@ -42,7 +42,7 @@ public:
     void resolveParenthesis(sead::ObjArray<SyntaxLeash>*, Clause*, Clause*);
     void resolve(Clause*, Clause*, bool);
 
-private:
+public:
     sead::Heap* _0;
     sead::Heap* _8;
     sead::AnyDelegate1Const<Clause*>* _10;

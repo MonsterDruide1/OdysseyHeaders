@@ -30,7 +30,7 @@ public:
     void createModelDrawDisplayList(s32);
     bool isDraw() const;
 
-private:
+public:
     const char* mName;
     agl::DrawContext* mDrawCtx;
     const ModelKeeper* mModelKeeper;

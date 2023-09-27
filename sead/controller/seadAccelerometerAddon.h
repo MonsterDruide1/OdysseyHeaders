@@ -23,7 +23,7 @@ public:
     bool isEnable() const { return mIsEnable; }
     const Vector3f& getAcceleration() const { return mAcceleration; }
 
-protected:
+public:
     bool mIsEnable;
     Vector3f mAcceleration;
 };

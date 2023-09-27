@@ -34,7 +34,7 @@ public:
     virtual void copyPose(const ActorPoseKeeperBase* other);
     virtual void calcBaseMtx(sead::Matrix34f* mtx) const = 0;
 
-protected:  // protected so it's visible to all sub-classes (TFSV, TFGSV, ...)
+public:  // protected so it's visible to all sub-classes (TFSV, TFGSV, ...)
     sead::Vector3f mTrans{0, 0, 0};
 
     static sead::Vector3f sDefaultVelocity;
@@ -56,7 +56,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-protected:  // protected so it's visible to all sub-classes (TFGSV, TFUSV)
+public:  // protected so it's visible to all sub-classes (TFGSV, TFUSV)
     sead::Vector3f mFront = sead::Vector3f::ez;
     sead::Vector3f mScale{1.0, 1.0, 1.0};
     sead::Vector3f mVelocity{0.0, 0.0, 0.0};
@@ -74,7 +74,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Vector3f mGravity{0.0, -1.0, 0.0};
 };
 
@@ -90,7 +90,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Vector3f mUp = sead::Vector3f::ey;
     bool mIsFrontUp = false;
 };
@@ -111,7 +111,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Quatf mQuat = sead::Quatf::unit;
     sead::Vector3f mScale{1.0, 1.0, 1.0};
     sead::Vector3f mVelocity{0.0, 0.0, 0.0};
@@ -135,7 +135,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Quatf mQuat = sead::Quatf::unit;
     sead::Vector3f mGravity{0.0, -1.0, 0.0};
     sead::Vector3f mScale{1.0, 1.0, 1.0};
@@ -162,7 +162,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Quatf mQuat = sead::Quatf::unit;
     sead::Vector3f mGravity{0.0, -1.0, 0.0};
     sead::Vector3f mScale{1.0, 1.0, 1.0};
@@ -186,7 +186,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Vector3f mRotate{0.0, 0.0, 0.0};
     sead::Vector3f mScale{1.0, 1.0, 1.0};
     sead::Vector3f mVelocity{0.0, 0.0, 0.0};
@@ -210,7 +210,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Vector3f mRotate{0.0, 0.0, 0.0};
     sead::Vector3f mScale{1.0, 1.0, 1.0};
     sead::Vector3f mVelocity{0.0, 0.0, 0.0};
@@ -237,7 +237,7 @@ public:
     void updatePoseMtx(const sead::Matrix34f* mtx) override;
     void calcBaseMtx(sead::Matrix34f* mtx) const override;
 
-private:
+public:
     sead::Vector3f mRotate{0.0, 0.0, 0.0};
     sead::Vector3f mGravity{0.0, -1.0, 0.0};
     sead::Vector3f mScale{1.0, 1.0, 1.0};

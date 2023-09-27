@@ -26,7 +26,7 @@ public:
 
     static void initialize();
 
-private:
+public:
     static u32 sTable[256];
     static bool sInitialized;
 };

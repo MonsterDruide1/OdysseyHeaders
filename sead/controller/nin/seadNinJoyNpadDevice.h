@@ -14,7 +14,7 @@ public:
 
     void calc() override;
 
-private:
+public:
     u8 filler[0x8620];
 };
 

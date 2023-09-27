@@ -35,7 +35,7 @@ public:
     operator const MutexType&() const;
     MutexType* GetBase();
 
-private:
+public:
     MutexType m_Mutex;
 };
 

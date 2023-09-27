@@ -75,7 +75,7 @@ struct ResParameterObj {
             return *this;
         }
 
-    private:
+    public:
         s32 mIdx;
         ResParameterData* mPtr;
     };
@@ -146,7 +146,7 @@ struct ResParameterList {
             return *this;
         }
 
-    private:
+    public:
         s32 mIdx;
         ResParameterListData* mPtr;
     };
@@ -172,7 +172,7 @@ struct ResParameterList {
             return *this;
         }
 
-    private:
+    public:
         s32 mIdx;
         ResParameterObjData* mPtr;
     };

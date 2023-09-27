@@ -110,7 +110,7 @@ public:
         friend bool operator<=(Iterator a, Iterator b) { return a.mIdx <= b.mIdx; }
         friend bool operator>=(Iterator a, Iterator b) { return a.mIdx >= b.mIdx; }
 
-    private:
+    public:
         auto& container() const { return *mContainer; }
 
         s32 mIdx;
@@ -122,7 +122,7 @@ public:
     auto begin() const { return Iterator(mContainer, 0); }
     auto end() const { return Iterator(mContainer, mContainer->size()); }
 
-private:
+public:
     T* mContainer;
 };
 }  // namespace detail

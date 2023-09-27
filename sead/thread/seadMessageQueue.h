@@ -36,7 +36,7 @@ public:
 
     static constexpr Element cNullElement = 0;
 
-private:
+public:
 #ifdef NNSDK
     nn::os::MessageQueueType mMessageQueueInner;
     Element* mBuffer = nullptr;

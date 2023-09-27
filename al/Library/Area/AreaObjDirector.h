@@ -26,7 +26,7 @@ public:
     AreaObj* getInVolumeAreaObj(const char* name, const sead::Vector3f& position);
     AreaObjMtxConnecterHolder* getMtxConnecterHolder();
 
-private:
+public:
     AreaObjFactory* mFactory;
     AreaObjMtxConnecterHolder* mMtxConnecterHolder;
     AreaObjGroup** mAreaGroups;

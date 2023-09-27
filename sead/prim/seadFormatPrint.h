@@ -26,7 +26,7 @@ public:
     ~StringPrintOutput() override = default;
     void write(const char* string, s32 size) override;
 
-protected:
+public:
     BufferedSafeString* mBuffer;
     s32 mPos;
 };
@@ -38,7 +38,7 @@ public:
     ~StringCutOffPrintOutput() override = default;
     void write(const char* string, s32 size) override;
 
-protected:
+public:
     BufferedSafeString* mBuffer;
     s32 mPos;
 };
@@ -50,7 +50,7 @@ public:
     ~StreamPrintOutput() override;
     void write(const char* string, s32 size) override;
 
-protected:
+public:
     StreamSrc* mSrc;
 };
 
@@ -61,7 +61,7 @@ public:
     ~BufferingPrintOutput() override;
     void write(const char* string, s32 size) override;
 
-protected:
+public:
     BufferMultiByteNullTerminatedTextWriteStreamSrc mSrc;
 };
 // endregion
@@ -102,7 +102,7 @@ public:
     template <typename T>
     void out(const T&, const char*, PrintOutput* output);
 
-protected:
+public:
     bool proceedToFormatMark_(char*);
     static void outputString_(const char*, PrintOutput*, const char*, s32);
     static void outputPtr_(const char*, PrintOutput*, uintptr_t);
@@ -126,7 +126,7 @@ public:
     explicit StringPrintFormatter(BufferedSafeString* string);
     StringPrintFormatter(BufferedSafeString* string, const char*);
 
-protected:
+public:
     StringPrintOutput mOutput;
 };
 
@@ -136,7 +136,7 @@ public:
     explicit StringCutOffPrintFormatter(BufferedSafeString* string);
     StringCutOffPrintFormatter(BufferedSafeString* string, const char*);
 
-protected:
+public:
     StringCutOffPrintOutput mOutput;
 };
 
@@ -147,7 +147,7 @@ public:
     StreamPrintFormatter(StreamSrc* src, const char*);
     void flushAndWriteNullChar();
 
-protected:
+public:
     StreamPrintOutput mOutput;
 };
 
@@ -157,7 +157,7 @@ public:
     BufferingPrintFormatter();
     explicit BufferingPrintFormatter(const char*);
 
-protected:
+public:
     BufferingPrintOutput mOutput;
     char mBuffer[128];
 };

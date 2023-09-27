@@ -89,7 +89,7 @@ public:
 
     s32 findUseScenarioNo(const char*);
 
-private:
+public:
     s32 padding;
     GameDataFile** mDataFileArr;
     GameDataFile* mGameDataFile;

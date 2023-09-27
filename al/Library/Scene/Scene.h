@@ -53,7 +53,7 @@ public:
     void initScreenCoverCtrl();
     void endInit(const ActorInitInfo&);
 
-private:
+public:
     void initLiveActorKitImpl(const SceneInitInfo&, s32, s32, s32);
 
     bool mIsAlive;

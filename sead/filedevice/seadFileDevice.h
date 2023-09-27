@@ -27,7 +27,7 @@ public:
     FileDevice* getOriginalDevice() const { return mOriginalDevice; }
     bool isOpened() const { return mOriginalDevice != nullptr; }
 
-protected:
+public:
     friend class FileDevice;
 
     FileDevice* mDevice = nullptr;
@@ -313,7 +313,7 @@ public:
     static const s32 cBufferMinAlignment = 0x40;
 #endif
 
-protected:
+public:
     virtual bool doIsAvailable_() const = 0;
     virtual u8* doLoad_(LoadArg& arg);
     virtual bool doSave_(SaveArg& arg);
@@ -382,7 +382,7 @@ public:
 
     u32 getDivSize() const { return mDivSize; }
 
-protected:
+public:
     friend class FileDevice;
 
     s32 mDivSize;

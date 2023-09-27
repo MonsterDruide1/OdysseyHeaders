@@ -49,7 +49,7 @@ class PlayerInfo {
 public:
     PlayerInfo();
 
-private:
+public:
     PlayerModelChangerHakoniwa* mPlayerModelChangerHakoniwa = nullptr;
     PlayerOxygen* mPlayerOxygen = nullptr;
     PlayerAnimator* mPlayerAnimator = nullptr;

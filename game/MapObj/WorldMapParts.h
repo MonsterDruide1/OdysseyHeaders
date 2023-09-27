@@ -18,7 +18,7 @@ public:
     static WorldMapParts* create(const char*, const char*, const al::ActorInitInfo&,
                                  const sead::Matrix34f*, const sead::Matrix34f&, const char*);
 
-private:
+public:
     const sead::Matrix34f* mWorldMtx = nullptr;
     sead::Matrix34f mLocalMtx = sead::Matrix34f::ident;
 };

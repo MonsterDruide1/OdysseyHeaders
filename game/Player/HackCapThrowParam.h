@@ -10,7 +10,7 @@ class HackCapThrowParam {
 public:
     HackCapThrowParam(al::LiveActor* actor);
 
-private:
+public:
     f32* mHackThrowHeight;
     f32* mMaxVel;
     f32* mContinuousThrowSpeed;

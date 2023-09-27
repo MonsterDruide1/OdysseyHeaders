@@ -34,7 +34,7 @@ public:
     void tryResetAbsorbVecIfInCollision(const sead::Vector3f&);
     void update();
 
-private:
+public:
     const CameraPoser* mCameraPoser;
     sead::LookAtCamera mLookAtCamera;
     sead::PerspectiveProjection mProjection;

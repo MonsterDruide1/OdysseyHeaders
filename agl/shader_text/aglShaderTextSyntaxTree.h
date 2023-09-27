@@ -25,7 +25,7 @@ public:
     void constructRecursive(sead::Heap*, sead::Heap*);
     u64* construct(sead::Heap*, sead::Heap*) const;
 
-private:
+public:
     SyntaxTree* _0;
     SyntaxTree* _8;
     SyntaxTree* _10;

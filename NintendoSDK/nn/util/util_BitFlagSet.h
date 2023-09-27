@@ -81,7 +81,7 @@ struct BitFlagSet {
 
         operator bool() const { return m_Set->Test(m_Index); }
 
-    private:
+    public:
         BitFlagSet* m_Set;
         int m_Index;
 
@@ -219,12 +219,12 @@ struct BitFlagSet {
         static constexpr int Index = BitIndex;
         static constexpr BitFlagSet Mask = buildMask();
 
-    private:
+    public:
         static constexpr int StorageIndex = BitIndex / StorageBitCount;
         static constexpr StorageT StorageMask = StorageT(1) << (BitIndex % StorageBitCount);
     };
 
-private:
+public:
     BitFlagSet& SetImpl(int storageIndex, StorageT storageMask, bool isOn) {
         if (isOn) {
             _storage[storageIndex] |= storageMask;

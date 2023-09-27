@@ -37,7 +37,7 @@ public:
     void invalidateGPUCache(DrawContext* draw_context) const;
     void bind_(DrawContext* draw_context, u16 bitmap) const;
 
-private:
+public:
     RenderTargetColor* mRenderTargetColor[8];
     RenderTargetDepth* mRenderTargetDepth;
 };

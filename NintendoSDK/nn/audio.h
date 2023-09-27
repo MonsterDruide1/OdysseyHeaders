@@ -263,7 +263,7 @@ public:
     PerformanceEntry GetEntries(s32* count);
     PerformanceDetail GetDetails(s32* count);
 
-private:
+public:
     void* buffer;
     size_t bufferSize;
     void* header;

@@ -49,7 +49,7 @@ public:
 
     void getContext(u32* x, u32* y, u32* z, u32* w) const;
 
-private:
+public:
     u32 mX;
     u32 mY;
     u32 mZ;

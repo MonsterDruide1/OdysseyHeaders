@@ -30,7 +30,7 @@ public:
 
     void setState(Worker::State state) { mWorkerState = state; }
 
-protected:
+public:
     friend class WorkerMgr;
 
     void calc_(MessageQueue::Element msg) override;

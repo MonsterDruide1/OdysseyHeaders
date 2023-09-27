@@ -30,7 +30,7 @@ public:
     int GetIndexCount() const;
     void Calculate(void*, size_t, void*, size_t);
 
-protected:
+public:
     PrimitiveShape(PrimitiveShapeFormat, PrimitiveTopology);
 
     virtual void CalculateImpl(void*, size_t, void*, size_t) = 0;
@@ -41,7 +41,7 @@ protected:
     void SetVertexCount(int);
     void SetIndexCount(int);
 
-private:
+public:
     void* m_pIndexBuffer;
     void* m_pVertexBuffer;
     PrimitiveShapeFormat m_VertexFormat;
@@ -61,12 +61,12 @@ public:
 
     virtual ~SphereShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     void CalculateImpl(void*, size_t, void*, size_t);
 
-private:
+public:
     template <typename T>
     void CalculateIndexBuffer();
 
@@ -81,12 +81,12 @@ public:
     CircleShape(PrimitiveShapeFormat, PrimitiveTopology, int);
     virtual ~CircleShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     virtual void CalculateImpl(void*, size_t, void*, size_t);
 
-private:
+public:
     void* CalculateVertexBuffer();
 
     template <typename T>
@@ -100,7 +100,7 @@ public:
     CubeShape(PrimitiveShapeFormat, PrimitiveTopology);
     virtual ~CubeShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     virtual void CalculateImpl(void*, size_t, void*, size_t);
@@ -108,7 +108,7 @@ protected:
     enum CubeVertex { CubeVertexCount_Wired = 8, CubeVertexCount_Solid = 24 };
     enum CubeIndex { CubeIndexCount_Wired = 48, CubeIndexCount_Solid = 36 };
 
-private:
+public:
     void* CalculateVertexBuffer();
 
     template <typename T>
@@ -120,7 +120,7 @@ public:
     QuadShape(PrimitiveShapeFormat, PrimitiveTopology);
     virtual ~QuadShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     virtual void CalculateImpl(void*, size_t, void*, size_t);
@@ -129,7 +129,7 @@ protected:
 
     enum QuadIndex { QuadIndexCount_Wired = 5, QuadIndexCountt_Solid = 6 };
 
-private:
+public:
     void* CalculateVertexBuffer();
 
     template <typename T>
@@ -141,12 +141,12 @@ public:
     HemiSphereShape(PrimitiveShapeFormat, PrimitiveTopology, int);
     virtual ~HemiSphereShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     virtual void CalculateImpl(void*, size_t, void*, size_t);
 
-private:
+public:
     void* CalculateVertexBuffer();
 
     template <typename T>
@@ -160,12 +160,12 @@ public:
     PipeShape(PrimitiveShapeFormat, PrimitiveTopology, int);
     virtual ~PipeShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     virtual void CalculateImpl(void*, size_t, void*, size_t);
 
-private:
+public:
     void* CalculateVertexBuffer();
 
     template <typename T>
@@ -179,12 +179,12 @@ public:
     CylinderShape(PrimitiveShapeFormat, PrimitiveTopology, int);
     virtual ~CylinderShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     virtual void CalculateImpl(void*, size_t, void*, size_t);
 
-private:
+public:
     void* CalculateVertexBuffer();
 
     template <typename T>
@@ -198,12 +198,12 @@ public:
     ConeShape(PrimitiveShapeFormat, PrimitiveTopology, int);
     virtual ~ConeShape();
 
-protected:
+public:
     int CalculateVertexCount();
     int CalculateIndexCount();
     virtual void CalculateImpl(void*, size_t, void*, size_t);
 
-private:
+public:
     void* CalculateVertexBuffer();
 
     template <typename T>

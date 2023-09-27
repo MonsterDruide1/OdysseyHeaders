@@ -28,7 +28,7 @@ public:
         dismiss();
     }
 
-private:
+public:
     std::optional<Function> mFunction;
 };
 

@@ -19,7 +19,7 @@ public:
     u32 createPadMaskFromControllerPadMask_(u32 controller_mask) const;
     void setPadConfig(s32 padbit_max, const u8* pad_config, bool enable_stickcross_emulation);
 
-protected:
+public:
     u8 mPadConfig[cPadIdx_MaxBase];
 };
 #ifdef cafe

@@ -18,7 +18,7 @@ public:
     bool isEOF() override;
     bool flush() override;
 
-private:
+public:
     StreamSrc* mSrc;
     u8* mBuffer;
     u32 mBufferSize;
@@ -32,7 +32,7 @@ public:
     BufferReadStream(ReadStream* stream, const void* buffer, u32 buffer_size);
     ~BufferReadStream() override;
 
-private:
+public:
     BufferReadStreamSrc mSrc;
 };
 
@@ -49,7 +49,7 @@ public:
     bool isEOF() override { return false; }
     bool flush() override;
 
-private:
+public:
     StreamSrc* mSrc;
     u8* mBuffer;
     u32 mBufferSize;
@@ -62,7 +62,7 @@ public:
     BufferWriteStream(WriteStream* stream, void* buffer, u32 buffer_size);
     ~BufferWriteStream() override;
 
-private:
+public:
     BufferWriteStreamSrc mSrc;
 };
 
@@ -80,7 +80,7 @@ public:
     BufferMultiByteTextWriteStream(WriteStream* stream, void* buffer, u32 buffer_size);
     ~BufferMultiByteTextWriteStream() override;
 
-private:
+public:
     BufferMultiByteTextWriteStreamSrc mSrc;
 };
 

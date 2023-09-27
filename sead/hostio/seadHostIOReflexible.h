@@ -63,7 +63,7 @@ public:
     void setNodeMeta(const SafeString& meta);
     void setNodeMetaCopyString(const SafeString& meta, Heap* heap);
 
-protected:
+public:
     void disposeHostIO() override
     {
         disposeHostIOImpl_();
@@ -72,7 +72,7 @@ protected:
     virtual void genChildNode(Context* context);
     virtual bool isHaveChild() const { return false; }
 
-private:
+public:
     using ApplyEventDataToMemoryCallback = bool (*)(const PropertyEvent* event);
 
     void safeDelete_(AllocFlg flag);

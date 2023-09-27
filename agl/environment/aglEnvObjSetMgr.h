@@ -12,7 +12,7 @@ public:
         InitArg();
         virtual ~InitArg() = default;
 
-    private:
+    public:
         u32 _8 = 0x100;
         u32 _c = 0x40;
     };

@@ -7,7 +7,7 @@ class IUseSceneObjHolder {
 public:
     virtual SceneObjHolder* getSceneObjHolder() const = 0;
 
-private:
+public:
     static const char* sSceneObjName;
 };
 

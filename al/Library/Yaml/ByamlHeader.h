@@ -13,7 +13,7 @@ public:
     u32 getStringTableOffset() const;
     u32 getDataOffset() const;
 
-private:
+public:
     union {
         s32 _0;
         u16 mTag, mVersion;  // unusable due to different loading mechanisms
@@ -38,7 +38,7 @@ public:
     s32 findStringIndex(const char* str) const;
     bool isValidate() const;
 
-private:
+public:
     const u8* mData = nullptr;
     bool isRev = false;
 };

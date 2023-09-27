@@ -23,7 +23,7 @@ public:
 
     ~FunctorV0M() override;
 
-private:
+public:
     T mObjPointer = nullptr;
     F mFunctor = nullptr;
 };

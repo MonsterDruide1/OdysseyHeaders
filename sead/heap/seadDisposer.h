@@ -29,10 +29,10 @@ public:
 
     static u32 getListNodeOffset() { return offsetof(IDisposer, mListNode); }
 
-protected:
+public:
     Heap* getDisposerHeap_() const { return mDisposerHeap; }
 
-private:
+public:
     friend class Heap;
 
     Heap* mDisposerHeap;
@@ -63,7 +63,7 @@ public:                                                                         
     CLASS(CLASS&&) = delete;                                                                       \
     CLASS& operator=(CLASS&&) = delete;                                                            \
                                                                                                    \
-protected:                                                                                         \
+public:                                                                                         \
     static CLASS* sInstance;                                                                       \
                                                                                                    \
     friend class SingletonDisposer_;                                                               \

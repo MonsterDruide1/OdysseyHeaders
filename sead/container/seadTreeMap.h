@@ -62,7 +62,7 @@ public:
         return nullptr;
     }
 
-protected:
+public:
     /// Returns the left most child of a given node, marking each node with its parent
     /// along the way.
     static Node* startIterating(Node* node)
@@ -112,7 +112,7 @@ public:
 
     const Key& key() const { return mKey; }
 
-protected:
+public:
     friend class TreeMapImpl<Key>;
 
     enum class Color
@@ -182,7 +182,7 @@ public:
         Value& value() { return mValue; }
         const Value& value() const { return mValue; }
 
-    private:
+    public:
         friend class TreeMap;
 
         Value mValue;
@@ -205,7 +205,7 @@ public:
     Node* startIterating() const { return static_cast<Node*>(MapImpl::startIterating()); }
     Node* nextNode(Node* node) const { return static_cast<Node*>(MapImpl::nextNode(node)); }
 
-private:
+public:
     void eraseNodeForClear_(typename MapImpl::Node* node);
 
     FreeList mFreeList;
@@ -224,7 +224,7 @@ public:
     bool tryAllocBuffer(s32 ptrNumMax, Heap* heap, s32 alignment = sizeof(void*)) = delete;
     void freeBuffer() = delete;
 
-private:
+public:
     using NodeType = typename TreeMap<Key, Value>::Node;
     static_assert(sizeof(NodeType) >= sizeof(void*));
 

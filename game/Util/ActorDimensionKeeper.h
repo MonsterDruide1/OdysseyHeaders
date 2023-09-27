@@ -23,7 +23,7 @@ public:
     bool getIsCanChange2D() const { return isCanChange2D; }
     bool getIsCanChange3D() const { return isCanChange3D; }
 
-private:
+public:
     const al::LiveActor* mLiveActor;
     bool isValid = true;
     bool is2D = false;

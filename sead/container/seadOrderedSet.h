@@ -48,7 +48,7 @@ public:
         // Values cannot be modified.
         const Value& value() const { return this->key().value; }
 
-    private:
+    public:
         friend class OrderedSet;
         OrderedSet* mSet;
     };
@@ -78,7 +78,7 @@ public:
     Node* startIterating() const { return static_cast<Node*>(MapImpl::startIterating()); }
     Node* nextNode(Node* node) const { return static_cast<Node*>(MapImpl::nextNode(node)); }
 
-private:
+public:
     void eraseNodeForClear_(typename MapImpl::Node* node);
 
     FreeList mFreeList;

@@ -44,7 +44,7 @@ public:
     void printImpl_(const char16_t*, int, bool, BoundBox2f*);
     void printImpl_(const char*, int, bool, BoundBox2f*);
 
-private:
+public:
     Viewport* mViewport;
     Projection* mProjection;
     Camera* mCamera;

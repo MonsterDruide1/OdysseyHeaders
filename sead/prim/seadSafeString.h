@@ -36,7 +36,7 @@ public:
         const SafeStringBase* getString() const { return mString; }
         s32 getIndex() const { return mIndex; }
 
-    protected:
+    public:
         const SafeStringBase* mString;
         s32 mIndex;
     };
@@ -69,7 +69,7 @@ public:
         s32 cutOffGet(BufferedSafeStringBase<T>* out) const;
         s32 cutOffGetAndForward(BufferedSafeStringBase<T>* out);
 
-    private:
+    public:
         const SafeStringBase mDelimiter;
     };
 
@@ -138,7 +138,7 @@ public:
     static const SafeStringBase cEmptyString;
     static const s32 cMaximumLength = 0x80000;
 
-protected:
+public:
     virtual void assureTerminationImpl_() const {}
     const T& unsafeAt_(s32 idx) const { return mStringTop[idx]; }
 
@@ -292,7 +292,7 @@ public:
 
     inline void clear() { getMutableStringTop_()[0] = this->cNullChar; }
 
-protected:
+public:
     void assureTerminationImpl_() const override;
 
     T* getMutableStringTop_() { return const_cast<T*>(this->mStringTop); }

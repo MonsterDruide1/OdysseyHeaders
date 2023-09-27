@@ -22,7 +22,7 @@ public:
     void pushBackSibling(TreeNode* node);
     void pushFrontChild(TreeNode* node);
 
-protected:
+public:
     void clearChildLinksRecursively_();
 
     TreeNode* mParent;
@@ -55,7 +55,7 @@ public:
 
     // TODO: probably iterators
 
-protected:
+public:
     T mData;
 };
 

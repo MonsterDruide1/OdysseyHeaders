@@ -18,7 +18,7 @@ public:
     void exeWait();
     void exeOpen();
 
-private:
+public:
     sead::Vector3f mJointEnd;
     sead::Vector3f mJointMiddle;
     sead::Vector3f field_158;

@@ -15,7 +15,7 @@ namespace nn {
                 static const int DescriptionBits = 13;
                 static const int ReservedBits = 10;
                 static_assert(ModuleBits + DescriptionBits + ReservedBits == sizeof(BaseType) * CHAR_BIT, "ModuleBits + DescriptionBits + ReservedBits == sizeof(BaseType) * CHAR_BIT");
-            private:
+            public:
                 static BaseType GetBitsValue(BaseType v, int ofs, int num) noexcept {
                     return (v >> ofs) & ~(~BaseType() << num);
                 }
@@ -63,11 +63,11 @@ namespace nn {
 
     class Result : public result::detail::ResultBase<Result> {
         friend class result::detail::ResultInternalAccessor;
-        private:
+        public:
             using Base = typename result::detail::ResultBase<Result>;
-        private:
+        public:
             BaseType m_value;
-        private:
+        public:
             explicit Result(BaseType v) noexcept : m_value(v) { /* ... */ }
         public:
             Result() noexcept { /* ... */ }
@@ -135,7 +135,7 @@ namespace nn {
 
         template<int Module_, int Description_>
         class ErrorResultBase : public ResultBase<ErrorResultBase<Module_, Description_>> {
-            private:
+            public:
                 using Base = ResultBase<ErrorResultBase<Module_, Description_>>;
             public:
                 static constexpr int Module = Module_;

@@ -92,7 +92,7 @@ public:
 
     void addNerve(al::NerveAction* action);
 
-private:
+public:
     s32 mActionCount = 0;
     al::NerveAction* mHead = nullptr;
     al::NerveAction* mTail = nullptr;

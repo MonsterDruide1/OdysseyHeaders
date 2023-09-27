@@ -15,7 +15,7 @@ public:
     void update();
     void calcAnim(bool recursive);
 
-private:
+public:
     LayoutActor** mPartsActors = nullptr;
     s32 mNumActors = 0;
     s32 mMaxActors = 0;

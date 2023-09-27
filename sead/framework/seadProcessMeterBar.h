@@ -45,7 +45,7 @@ public:
 
     void setColor(const Color4f& color) { mColor = color; }
 
-protected:
+public:
     void measureBeginImpl_(const TickTime& start_time, Color4f color);
     void measureEndImpl_(const TickTime& end_time);
 
@@ -76,7 +76,7 @@ public:
     {
     }
 
-private:
+public:
     Section mSections[2 * N];
 };
 }  // namespace sead

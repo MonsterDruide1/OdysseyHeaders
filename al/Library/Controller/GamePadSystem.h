@@ -19,7 +19,7 @@ public:
     sead::WSafeString getPadName(u8);
     s32 getPadPlayStyle(u8);  // unknown return type
 
-private:
+public:
     bool isDisconnectPlayableImpl();
 
     s32 mMinControllerCount;

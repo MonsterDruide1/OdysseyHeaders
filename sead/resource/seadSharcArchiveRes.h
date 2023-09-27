@@ -64,7 +64,7 @@ public:
     bool isExistFileImpl_(const SafeString& path) const override;
     bool prepareArchive_(const void* archive) override;
 
-protected:
+public:
     struct HandleInner;
     HandleInner* getHandleInner_(HandleBuffer* handle, bool create = false) const;
 

@@ -106,7 +106,7 @@ public:
     sead::Vector3f getTargetTrans() const { return mTargetTrans; };
     sead::Vector3f getCameraUp() const { return mCameraUp; };
 
-private:
+public:
     const char* mPoserName;
     f32 field_38;
     sead::Vector3f mPosition;

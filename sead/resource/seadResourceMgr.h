@@ -83,7 +83,7 @@ public:
     Resource* tryLoadWithoutDecomp(const LoadArg& arg);
     void unload(Resource* res);
 
-private:
+public:
     typedef TList<ResourceFactory*> FactoryList;
     typedef TList<Decompressor*> DecompressorList;
 

@@ -32,7 +32,7 @@ public:
         reference& operator=(const reference&);
         bool operator~() const;
 
-    private:
+    public:
         reference(BitArray*, size_type);
     };
 
@@ -64,7 +64,7 @@ public:
         reference operator*() const;
         reference operator[](difference_type) const;
 
-    private:
+    public:
         iterator(BitArray*, difference_type);
     };
 
@@ -95,7 +95,7 @@ public:
         reference operator*() const;
         reference operator[](difference_type) const;
 
-    private:
+    public:
         const_iterator(const BitArray*, difference_type);
     };
 
@@ -163,7 +163,7 @@ public:
     static void LeftShift(BitArray*, const BitArray&, size_type);
     static size_t CalculateWorkMemorySize(size_type);
 
-private:
+public:
     typedef uint64_t RawType;
 
     static const size_type BitsPerBlock = 64;

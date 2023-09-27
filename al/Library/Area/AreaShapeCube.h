@@ -19,7 +19,7 @@ public:
 
     bool isInLocalVolume(const sead::Vector3f&) const;
 
-private:
+public:
     AreaShapeCube::OriginType mOriginType;
 };
 

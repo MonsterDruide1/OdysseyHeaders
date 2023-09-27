@@ -70,7 +70,7 @@ public:
 
     LayoutExecuteInfo* getExecuteInfo() { return mExecuteInfo; }
 
-private:
+public:
     sead::FixedSafeString<0x80> mName;
     NerveKeeper* mNerveKeeper;
     LayoutKeeper* mLayoutKeeper;

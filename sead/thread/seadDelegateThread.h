@@ -16,7 +16,7 @@ public:
                    MessageQueue::Element quit_msg, s32 stack_size, s32 message_queue_size);
     ~DelegateThread() override;
 
-protected:
+public:
     void calc_(MessageQueue::Element msg) override;
 
     IDelegate2<Thread*, MessageQueue::Element>* mDelegate;

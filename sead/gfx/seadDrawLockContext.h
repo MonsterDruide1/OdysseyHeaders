@@ -15,7 +15,7 @@ public:
     void unlock();
     void genMessage(hostio::Context* context);
 
-private:
+public:
     [[maybe_unused]] u32 _8 = 0;
     CriticalSection mCriticalSection{};
 };

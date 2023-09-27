@@ -182,7 +182,7 @@ public:
         T& operator*() const { return **mPPtr; }
         T* operator->() const { return *mPPtr; }
 
-    private:
+    public:
         T* const* mPPtr;
     };
 
@@ -203,7 +203,7 @@ public:
         const T& operator*() const { return **mPPtr; }
         const T* operator->() const { return *mPPtr; }
 
-    private:
+    public:
         const T* const* mPPtr;
     };
 
@@ -212,7 +212,7 @@ public:
 
     T** data() const { return reinterpret_cast<T**>(mPtrs); }
 
-private:
+public:
     union Node
     {
         void* next_node;
@@ -227,7 +227,7 @@ public:
         return n * (ElementSize + sizeof(T*));
     }
 
-protected:
+public:
     T* alloc(const T& item)
     {
         void* storage = mFreeList.alloc();
@@ -262,7 +262,7 @@ public:
     bool tryAllocBuffer(s32 ptrNumMax, Heap* heap, s32 alignment = sizeof(void*)) = delete;
     void freeBuffer() = delete;
 
-private:
+public:
     std::aligned_storage_t<ObjArray<T>::calculateWorkBufferSize(N),
                            std::max(alignof(T), alignof(T*))>
         mWork;

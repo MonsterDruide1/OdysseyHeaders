@@ -32,7 +32,7 @@ public:
     void exeSet();
     void exeComplete();
 
-private:
+public:
     CapTargetInfo* mCapTargetInfo;
     sead::Matrix34f* unkMtx;
     AnagramAlphabet* mParent;

@@ -12,7 +12,7 @@ public:
     void addUpdater(ExecutorListLayoutUpdate*);
     void addDrawer(ExecutorListLayoutDrawBase*);
 
-private:
+public:
     s32 mUpdaterCount = 0;
     ExecutorListLayoutUpdate* mUpdaters[2] = {};
     s32 mDrawerCount = 0;

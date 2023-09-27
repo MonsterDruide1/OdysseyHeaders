@@ -27,7 +27,7 @@ public:
     MessageHolder* getLayoutMessageHolder(const char*);
     MessageHolder* getStageMessageHolder(const char*);
 
-private:
+public:
     MessageProjectEx* mMessageProject;
     sead::PtrArray<MessageTreeMap> mTreeMaps;
     sead::Heap* mMessageHeap;

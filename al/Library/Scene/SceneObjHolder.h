@@ -16,7 +16,7 @@ public:
     void setSceneObj(ISceneObj*, s32);
     void initAfterPlacementSceneObj(const ActorInitInfo&);
 
-private:
+public:
     ISceneObj* (*mCreator)(s32);
     ISceneObj** mSceneObjArray;
     s32 mArraySize;

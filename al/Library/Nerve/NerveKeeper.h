@@ -28,7 +28,7 @@ public:
         return static_cast<T*>(mParent);
     }
 
-private:
+public:
     IUseNerve* mParent = nullptr;
     const Nerve* mCurrentNerve = nullptr;
     const Nerve* mNextNerve = nullptr;

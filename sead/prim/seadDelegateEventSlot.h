@@ -46,7 +46,7 @@ public:
             }
         }
 
-    private:
+    public:
         friend class DelegateEvent;
 
         void invoke_(T arg)
@@ -89,7 +89,7 @@ public:
 
     int getNumSlots() const { return mList.size(); }
 
-protected:
+public:
     SlotList mList;
 };
 

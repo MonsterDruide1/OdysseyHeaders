@@ -53,7 +53,7 @@ public:
     }
     void shuffle(Random* random);
 
-protected:
+public:
     using CompareCallbackImpl = int (*)(const void* a, const void* b);
 
     void* at(s32 idx) const
@@ -302,7 +302,7 @@ public:
         T& operator*() const { return **mPPtr; }
         T* operator->() const { return *mPPtr; }
 
-    private:
+    public:
         T* const* mPPtr;
     };
 
@@ -323,7 +323,7 @@ public:
         const T& operator*() const { return **mPPtr; }
         const T* operator->() const { return *mPPtr; }
 
-    private:
+    public:
         const T* const* mPPtr;
     };
 
@@ -334,7 +334,7 @@ public:
     T** dataBegin() const { return data(); }
     T** dataEnd() const { return data() + mPtrNum; }
 
-protected:
+public:
     static void* constCast(const T* ptr)
     {
         // Unfortunately, we need to cast away const because several PtrArrayImpl functions
@@ -366,7 +366,7 @@ public:
     bool tryAllocBuffer(s32 ptrNumMax, Heap* heap, s32 alignment = sizeof(void*)) = delete;
     void freeBuffer() = delete;
 
-private:
+public:
     // Nintendo uses an untyped u8[N*sizeof(void*)] buffer. That is undefined behavior,
     // so we will not do that.
     T* mWork[N];

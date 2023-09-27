@@ -79,7 +79,7 @@ public:
     void* storage() { return mStorage; }
     const void* storage() const { return mStorage; }
 
-private:
+public:
     alignas(T) u8 mStorage[sizeof(T)];
 };
 }  // namespace sead

@@ -31,7 +31,7 @@ public:
     void updateMatrixImpl_() const;
     const Matrix44f& getDeviceProjectionMatrix() const;
 
-private:
+public:
     mutable bool mDirty;
     mutable bool mDeviceDirty;
     Matrix44f mMatrix;
@@ -67,7 +67,7 @@ public:
     float getRight();
     void setTBLR(float top, float bottom, float left, float right);
 
-private:
+public:
     float mNear;
     float mFar;
     float mFovyRad;

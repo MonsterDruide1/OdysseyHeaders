@@ -32,7 +32,7 @@ public:
     void setMode(Modes mode);
     void setUserFormat(StreamFormat* format);
 
-protected:
+public:
     StreamFormat* mFormat;
     StreamSrc* mSrc;
     Endian::Types mEndian;
@@ -63,7 +63,7 @@ public:
     void readString(BufferedSafeString*, u32);
     u32 readMemBlock(void*, u32);
 
-private:
+public:
     f32 readF32BitImpl_(u32, u32);
     f64 readF64BitImpl_(u32, u32);
 };
@@ -91,7 +91,7 @@ public:
     void writeNullChar();
     void flush();
 
-private:
+public:
     void writeF32BitImpl_(f32, u32, u32);
     void writeF64BitImpl_(f64, u32, u32);
 };

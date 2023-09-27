@@ -11,7 +11,7 @@ namespace sead
 template <typename T>
 struct Quat : public Policies<T>::QuatBase
 {
-private:
+public:
     typedef Quat<T> Self;
     typedef Vector3<T> Vec3;
 

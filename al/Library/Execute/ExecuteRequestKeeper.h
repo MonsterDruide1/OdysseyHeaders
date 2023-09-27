@@ -7,7 +7,7 @@ class ExecuteRequestInfo {
 public:
     ExecuteRequestInfo();
 
-private:
+public:
     unsigned long _0;
 };
 
@@ -15,7 +15,7 @@ class ExecuteRequestTable {
 public:
     ExecuteRequestTable(s32 size);
 
-private:
+public:
     s32 mRequestCount;
     LiveActor** mRequestArray;
 };
@@ -37,7 +37,7 @@ public:
     void executeRequestActorDrawAllOff();
     void request(LiveActor* actor, Request request_type);
 
-private:
+public:
     ExecuteRequestTable* mMovementOn;
     ExecuteRequestTable* mMovementOff;
     ExecuteRequestTable* mDrawOn;

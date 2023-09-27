@@ -13,7 +13,7 @@ class NinFileDeviceBase : public FileDevice
 public:
     NinFileDeviceBase(const SafeString& name, const SafeString& mount_point);
 
-protected:
+public:
     struct FileHandleInner;
     struct DirectoryHandleInner;
 

@@ -44,7 +44,7 @@ public:
 
     static void initializeSystemTimeModule();
 
-protected:
+public:
     static bool mIsInitialized;
     u64 mUnixTime;
 };
@@ -88,7 +88,7 @@ public:
     DateSpan diff(DateTimeUtc time) const;
     DateSpan diffToNow() const;
 
-protected:
+public:
     u64 mUnixTime;
 };
 

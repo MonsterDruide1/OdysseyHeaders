@@ -42,7 +42,7 @@ public:
     void sync();
     bool isAllWorkerSleep() const;
 
-protected:
+public:
     void onInfLoop_(const InfLoopChecker::InfLoopParam& param);
 
     InfLoopChecker::InfLoopEvent::Slot mInfLoopEventSlot;

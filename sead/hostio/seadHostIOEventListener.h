@@ -52,10 +52,10 @@ public:
     LifeCheckable(const LifeCheckable&) = delete;
     LifeCheckable& operator=(const LifeCheckable&) = delete;
 
-protected:
+public:
     virtual void disposeHostIO() { disposeHostIOImpl_(); }
 
-private:
+public:
     class DisposeHostIOCaller : public IDisposer
     {
     public:
@@ -70,7 +70,7 @@ private:
         bool hasInstance() const { return mInstance != nullptr; }
         void clearInstance() { mInstance = nullptr; }
 
-    private:
+    public:
         LifeCheckable* mInstance;
     };
 

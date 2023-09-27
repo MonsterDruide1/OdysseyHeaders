@@ -20,7 +20,7 @@ class ActorPrePassLightKeeper {
     public:
         UserColor();
 
-    private:
+    public:
         ParameterObj* mList;
         ParameterStringRef* mName;
         ParameterC4f* mColor;
@@ -42,7 +42,7 @@ public:
     PrePassLightBase* getLightBase(s32);
     sead::Color4f* findUserColor(const char*);
 
-private:
+public:
     ParameterIo* mParameterIo;
     ParameterBool* mIsIgnoreHideModel;
     ParameterArray* mLightParameters;

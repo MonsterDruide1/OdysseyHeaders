@@ -18,7 +18,7 @@ public:
     void initNerve(const Nerve* nerve, s32 stateCount);
     void updateNerve();
 
-private:
+public:
     NerveKeeper* mKeeper = nullptr;
 };
 };  // namespace al

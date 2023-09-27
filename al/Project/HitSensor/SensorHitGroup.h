@@ -13,7 +13,7 @@ public:
     void remove(HitSensor* sensor);
     HitSensor* getSensor(s32 index) const;
 
-private:
+public:
     s32 mMaxSensors;
     s32 mSensorCount = 0;
     HitSensor** mSensors;

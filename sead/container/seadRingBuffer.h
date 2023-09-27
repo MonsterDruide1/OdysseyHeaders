@@ -42,7 +42,7 @@ public:
         T* operator->() const { return &buffer()(mIndex); }
         s32 getIndex() const { return mIndex; }
 
-    private:
+    public:
         RingBuffer& buffer() const { return *mBuffer; }
 
         s32 mIndex;
@@ -70,7 +70,7 @@ public:
         const T* operator->() const { return &buffer()(mIndex); }
         s32 getIndex() const { return mIndex; }
 
-    private:
+    public:
         const RingBuffer& buffer() const { return *mBuffer; }
 
         s32 mIndex;
@@ -300,7 +300,7 @@ public:
 
     void clear() { mHead = mSize = 0; }
 
-protected:
+public:
     s32 calcRealIdx(s32 idx) const
     {
         s32 real_idx = mHead + idx;
@@ -331,7 +331,7 @@ public:
     void freeBuffer() = delete;
     void setBuffer(s32 capacity, T* bufferptr) = delete;
 
-private:
+public:
     T mData[N];
 };
 }  // namespace sead

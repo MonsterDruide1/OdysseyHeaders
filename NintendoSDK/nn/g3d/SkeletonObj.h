@@ -9,7 +9,7 @@ class SkeletonObj {
 public:
     const ResSkeleton* GetRes() const { return m_Res; }
 
-private:
+public:
     const ResSkeleton* m_Res;
     // TODO: the rest of the members
 };

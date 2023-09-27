@@ -30,7 +30,7 @@ public:
             mLocked->unlock();
     }
 
-protected:
+public:
     bool mEngaged = true;
     T* mLocked;
 };
@@ -73,7 +73,7 @@ public:
             mLocked->unlock();
     }
 
-protected:
+public:
     bool mEngaged = true;
     T* mLocked = nullptr;
 };
