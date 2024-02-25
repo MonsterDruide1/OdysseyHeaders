@@ -1,6 +1,7 @@
 #pragma once
 
 #include <basis/seadTypes.h>
+
 #include "Library/Nerve/Nerve.h"
 #include "Library/Nerve/NerveStateBase.h"
 
@@ -31,4 +32,4 @@ public:
     State* mStates;
     State* mCurrentState;
 };
-};  // namespace al
+}  // namespace al

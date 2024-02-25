@@ -1,6 +1,7 @@
 #pragma once
 
 #include <basis/seadTypes.h>
+
 #include "Library/HostIO/HioNode.h"
 #include "Library/Nerve/IUseNerve.h"
 
@@ -21,4 +22,4 @@ public:
 public:
     NerveKeeper* mKeeper = nullptr;
 };
-};  // namespace al
+}  // namespace al

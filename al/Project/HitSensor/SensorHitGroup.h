@@ -18,4 +18,4 @@ public:
     s32 mSensorCount = 0;
     HitSensor** mSensors;
 };
-};  // namespace al
+}  // namespace al

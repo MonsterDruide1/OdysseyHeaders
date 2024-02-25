@@ -17,10 +17,6 @@ class ScreenCapture;
 
 class ScreenCaptureExecutor : IUseHioNode {
 public:
-    sead::PtrArray<ScreenCapture> mArray;
-    bool mIsCaptured;
-
-public:
     ScreenCaptureExecutor(s32);
     ~ScreenCaptureExecutor();
 
@@ -35,17 +31,21 @@ public:
     void offDraw();
 
     bool isDraw(s32) const;
+
+public:
+    sead::PtrArray<ScreenCapture> mArray;
+    bool mIsCaptured;
 };
 
 class ScreenCoverCtrl {
 public:
-    s32 mFrameTimer;
-    bool mIsActive;
-
-public:
     ScreenCoverCtrl();
     void requestCaptureScreenCover(s32 totalFrames);
     void update();
+
+public:
+    s32 mFrameTimer;
+    bool mIsActive;
 };
 
 u32 getDisplayWidth();
