@@ -85,12 +85,13 @@ namespace alNerveFunction {
 void setNerveAction(al::IUseNerve* user, const char* action);
 
 class NerveActionCollector {
-    friend class al::NerveAction;
-
 public:
     NerveActionCollector();
 
     void addNerve(al::NerveAction* action);
+
+public:
+    friend class al::NerveAction;
 
 public:
     s32 mActionCount = 0;
