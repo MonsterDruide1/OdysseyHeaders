@@ -8,7 +8,7 @@ public:
     ExecuteRequestInfo();
 
 public:
-    unsigned long _0;
+    u64 _0;
 };
 
 class ExecuteRequestTable {
