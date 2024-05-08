@@ -24,6 +24,6 @@ public:
 
 public:
     sead::PtrArray<Entry> mBuffer;
-    Entry* currentModel = nullptr;
+    Entry* mCurrentModel = nullptr;
     sead::FixedSafeString<128> _10 = sead::FixedSafeString<128>("");
 };

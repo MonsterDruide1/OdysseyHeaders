@@ -84,7 +84,7 @@ public:
     al::JoyPadAccelPoseAnalyzer* mJoyPadAccelPoseAnalyzer2;
     s32 _88;
     void* gap2[1];
-    bool mDisableInput;
-    void* fillToSize[20];
+    bool mIsDisableInput;
+    void* gap3[20];
 };
 static_assert(sizeof(PlayerInput) == 0x140);
