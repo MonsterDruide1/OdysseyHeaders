@@ -1,6 +1,6 @@
 #pragma once
 
-#include <nn/fs/fs_types.h>
+#include <nn/fs.h>
 #include "filedevice/seadFileDevice.h"
 #include "prim/seadSafeString.h"
 

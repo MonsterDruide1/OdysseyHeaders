@@ -54,8 +54,4 @@ void lerpVec(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&, f32)
 void lerpVecHV(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&, const sead::Vector3f&,
                f32, f32);
 
-f32 calcRate01(f32, f32, f32);
-
-f32 slerpQuat(sead::Quatf*, const sead::Quatf&, const sead::Quatf&, f32);
-
 }  // namespace al

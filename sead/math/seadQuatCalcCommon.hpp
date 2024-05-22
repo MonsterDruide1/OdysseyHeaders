@@ -6,6 +6,7 @@
 
 #include <limits>
 #include <math/seadMathCalcCommon.h>
+#include <math/seadQuat.h>
 
 namespace sead
 {
@@ -91,7 +92,7 @@ inline void QuatCalcCommon<T>::slerpTo(Base& out, const Base& q1, const Base& q2
 template <typename T>
 inline void QuatCalcCommon<T>::makeUnit(Base& q)
 {
-    q = Base::unit;
+    q = Quat<T>::unit;
 }
 
 template <typename T>
@@ -146,18 +147,6 @@ inline void QuatCalcCommon<T>::setRPY(Base& q, T roll, T pitch, T yaw)
     const T z = (sy_cp * cr) - (cy_sp * sr);
 
     set(q, w, x, y, z);
-}
-
-template <typename T>
-inline void QuatCalcCommon<T>::setAxisAngle(Base& q, const Vec3& axis, T angle)
-{
-    T angleRad = MathCalcCommon<T>::deg2rad(angle);
-    angleRad *= 0.5f;
-    q.w = MathCalcCommon<T>::cos(angleRad);
-    T sa = MathCalcCommon<T>::sin(angleRad);
-    q.x = sa * axis.x;
-    q.y = sa * axis.y;
-    q.z = sa * axis.z;
 }
 
 }  // namespace sead

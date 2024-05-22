@@ -77,9 +77,7 @@ inline Vector3<T>::Vector3(T x_, T y_, T z_)
 template <typename T>
 inline Vector3<T>& Vector3<T>::operator=(const Vector3<T>& other)
 {
-    this->x = other.x;
-    this->y = other.y;
-    this->z = other.z;
+    Vector3CalcCommon<T>::set(*this, other);
     return *this;
 }
 
