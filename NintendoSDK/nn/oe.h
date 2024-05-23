@@ -21,12 +21,7 @@ enum PerformanceMode {
     PerformanceMode_Invalid = -1,
 };
 
-enum FocusHandlingMode {
-    FocusHandlingMode_SuspendHomeSleep,
-    FocusHandlingMode_NoSuspend,
-    FocusHandlingMode_SuspendHomeSleepNotify,
-    FocusHandlingMode_AlwaysSuspend
-};
+typedef s32 FocusHandlingMode;
 
 struct DisplayVersion {
     char name[16];

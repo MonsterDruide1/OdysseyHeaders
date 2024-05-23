@@ -67,6 +67,7 @@ struct SemaphoreType {
     std::aligned_storage_t<0x28, 8> storage;
 };
 
+struct SystemEvent;
 struct SystemEventType {
     enum State {
         State_NotInitialized = 0,
@@ -79,9 +80,6 @@ struct SystemEventType {
         nn::os::detail::InterProcessEventType interProcessEvent;
     };
     u8 state;
-};
-struct SystemEvent {
-    SystemEventType m_SystemEventType;
 };
 
 // ARG
