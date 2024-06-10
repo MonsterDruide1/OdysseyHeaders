@@ -18,7 +18,7 @@ public:
     virtual void control();
     virtual void drawMain();
 
-    bool isEnableSave() const;
+    bool isEnableSave(void) const;
 
     // somewhere here at 0xE0: stageName
 

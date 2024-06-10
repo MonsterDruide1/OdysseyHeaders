@@ -2,7 +2,7 @@
 
 class GameProgressData {
 public:
-    s32 getHomeLevel() const;
-    void upHomeLevel();
-    void talkCapNearHomeInWaterfall();
+    s32 getHomeLevel(void) const;
+    void upHomeLevel(void);
+    void talkCapNearHomeInWaterfall(void);
 };

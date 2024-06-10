@@ -66,7 +66,7 @@ void setColliderOffsetY(ActorCollisionController*, f32);
 void resetActorCollisionController(ActorCollisionController*, s32);
 void updateActorCollisionController(ActorCollisionController*);
 void getCollidedFloorMaterialCodeName(const LiveActor*);
-void getCollidedFloorMaterialCodeName(const Collider*);
+void getCollidedFloorMaterialCodeName(Collider const*);
 void getCollidedWallMaterialCodeName(const LiveActor*);
 void getCollidedCeilingMaterialCodeName(const LiveActor*);
 bool isCollidedFloorCode(const LiveActor*, const char*);

@@ -9,7 +9,7 @@
     class SensorMsg##Type : public al::SensorMsg {                                                 \
         SEAD_RTTI_OVERRIDE(SensorMsg##Type, al::SensorMsg)                                         \
     };                                                                                             \
-    bool isMsg##Type(const al::SensorMsg* msg) {                                                   \
+    bool isMsg##Type(al::SensorMsg const* msg) {                                                   \
         return SensorMsg##Type::checkDerivedRuntimeTypeInfoStatic(msg->getRuntimeTypeInfo());      \
     }
 

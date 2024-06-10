@@ -10,6 +10,6 @@ void updateHitSensorsAll(al::LiveActor*);
 void clearHitSensors(al::LiveActor*);
 
 // TODO: find this type
-void findSensorTypeByName(const char*);
+void findSensorTypeByName(char const*);
 
 }  // namespace alSensorFunction

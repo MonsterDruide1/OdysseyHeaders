@@ -55,10 +55,10 @@ public:
 
 class ActorResource {
 public:
-    ActorResource(const sead::SafeString&, Resource*, Resource*);
+    ActorResource(sead::SafeString const&, Resource*, Resource*);
     virtual ~ActorResource();
 
-    void initResourceData(const char*, bool);
+    void initResourceData(char const*, bool);
 
     bool hasAnimData() const { return mHasAnimData; }
     Resource* getModelRes() const { return mModelRes; }

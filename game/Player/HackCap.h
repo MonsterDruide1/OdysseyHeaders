@@ -7,11 +7,11 @@ public:
     void calcReturnTargetPos(sead::Vector3f*);
 
     void hide(bool);
-    void forcePutOn();
+    void forcePutOn(void);
 
-    bool isFlying() const;
+    bool isFlying(void) const;
 
-    bool isThrowTypeSpiral() const;
+    bool isThrowTypeSpiral(void) const;
 
     unsigned char padding_to_118[0x10];
     al::LiveActor* mActorA;

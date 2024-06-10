@@ -8,7 +8,7 @@ class JoyPadAccelPoseAnalyzer {
 public:
     class HistoryInfo {
     public:
-        void calcHistory(const sead::Vector3f&, const sead::Vector3f&, f32);
+        void calcHistory(sead::Vector3f const&, sead::Vector3f const&, f32);
 
         unsigned char padding_0[0x60];
         f32 hist0;
@@ -19,7 +19,7 @@ public:
 
     class PoseAxisDir {
     public:
-        void calcHistory(const sead::Vector3f&, const sead::Vector3f&);
+        void calcHistory(sead::Vector3f const&, sead::Vector3f const&);
 
         unsigned char padding_1[0x88];
         sead::Vector2f unkVec0;

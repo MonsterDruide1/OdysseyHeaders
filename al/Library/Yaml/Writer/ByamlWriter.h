@@ -39,7 +39,7 @@ public:
     void addInt64(const char*, s64);
     void addUInt64(const char*, u64);
     void addDouble(const char*, f64);
-    void addString(const char*, const char*);
+    void addString(const char*, char const*);
     void addNull(const char*);
 
     ByamlWriterArray* getArrayCurrentContainer();
@@ -48,8 +48,8 @@ public:
     void pushHash();
     void pushContainer(ByamlWriterContainer*);
     void pushArray();
-    void pushArray(const char*);
-    void pushHash(const char*);
+    void pushArray(char const*);
+    void pushHash(char const*);
     void pushIter(const ByamlIter&);
     void pushIter(const char*, const ByamlIter&);
     void pushLocalIter(const ByamlIter&, const char*);

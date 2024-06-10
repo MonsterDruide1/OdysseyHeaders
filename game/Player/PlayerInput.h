@@ -61,7 +61,6 @@ public:
     bool isHoldCapAction() const;
     bool isHoldPoleClimbFast() const;
     bool isHoldWallCatchMoveFast() const;
-    bool isMove() const;
     bool isHoldHackAction() const;
     bool isHoldHackJump() const;
 
@@ -74,6 +73,8 @@ public:
 
     bool isThrowTypeSpiral(const sead::Vector2f&) const;
     bool isThrowTypeRolling(const sead::Vector2f&) const;
+
+    bool isMove() const;
 
 public:
     const al::LiveActor* mLiveActor;

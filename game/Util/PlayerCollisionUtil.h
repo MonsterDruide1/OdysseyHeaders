@@ -1,23 +1,19 @@
 #pragma once
 
-#include <math/seadVector.h>
+#include <basis/seadTypes.h>
 
 namespace al {
 class LiveActor;
 }
-class IUsePlayerCollision;
 class IUsePlayerHeightCheck;
-class PlayerConst;
+class IUsePlayerCollision;
 
 namespace rs {
 
 f32 getGroundHeight(const IUsePlayerHeightCheck*);
-const sead::Vector3f& getCollidedWallNormal(const IUsePlayerCollision*);
-const sead::Vector3f& getCollidedGroundNormal(const IUsePlayerCollision*);
+
 bool isCollidedGround(const IUsePlayerCollision*);
-bool isCollidedGroundRunAngle(const al::LiveActor*, const IUsePlayerCollision*, const PlayerConst*);
-bool isPlayerOnGround(const al::LiveActor*);
-bool isOnGround(const al::LiveActor*, const IUsePlayerCollision*);
-bool isJustLand(const IUsePlayerCollision*);
+
+bool isAutoRunOnGroundSkateCode(const al::LiveActor*, const IUsePlayerCollision*, float);
 
 }  // namespace rs
