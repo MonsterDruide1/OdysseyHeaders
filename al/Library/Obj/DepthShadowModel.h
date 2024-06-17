@@ -15,6 +15,7 @@ public:
     s32 field_110;
     bool field_114;
 };
+
 static_assert(sizeof(DepthShadowModel) == 0x118, "DepthShadowModel Size");
 
 }  // namespace al

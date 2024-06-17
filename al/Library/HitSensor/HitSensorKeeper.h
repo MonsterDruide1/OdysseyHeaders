@@ -28,6 +28,7 @@ public:
     s32 mSensorCount;
     HitSensor** mSensors;
 };
+
 static_assert(sizeof(HitSensorKeeper) == 0x10);
 
 }  // namespace al

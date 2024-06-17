@@ -32,6 +32,7 @@ public:
     s32 mInterpoleStep;
     s32 mInterpoleFrame;
 };
+
 static_assert(sizeof(SimpleCircleShadowXZ) == 0x180, "DepthShadowModel Size");
 
 }  // namespace al

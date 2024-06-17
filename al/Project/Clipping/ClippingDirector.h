@@ -35,6 +35,7 @@ public:
 public:
     void* filler[6];
 };
+
 static_assert(sizeof(ClippingDirector) == 0x38);
 
 }  // namespace al

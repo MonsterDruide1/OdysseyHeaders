@@ -89,4 +89,5 @@ public:
     bool mIsDisableInput;
     void* gap3[20];
 };
+
 static_assert(sizeof(PlayerInput) == 0x140);
