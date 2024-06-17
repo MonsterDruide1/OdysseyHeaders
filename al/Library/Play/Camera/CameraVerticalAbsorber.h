@@ -60,6 +60,7 @@ public:
     bool mIsStopUpdate;
     bool mIsKeepInFrame;
 };
+
 static_assert(sizeof(CameraVerticalAbsorber) == 0x1B0);
 
 }  // namespace al

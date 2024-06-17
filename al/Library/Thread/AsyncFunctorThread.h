@@ -27,5 +27,6 @@ public:
     FunctorBase* mFunctor = nullptr;
     bool mIsDone = true;
 };
+
 static_assert(sizeof(AsyncFunctorThread) == 0x20);
 }  // namespace al

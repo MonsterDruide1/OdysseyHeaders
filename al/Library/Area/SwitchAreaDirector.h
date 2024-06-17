@@ -27,6 +27,7 @@ public:
 public:
     void* filler[9];
 };
+
 static_assert(sizeof(SwitchAreaDirector) == 0x50);
 
 }  // namespace al
