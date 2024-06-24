@@ -75,7 +75,6 @@ public:
     void initViewIdHostActor(const ActorInitInfo&, const LiveActor*);
     void initNoViewId(const PlacementInfo*, const ActorInitInfo&);
 
-    const LayoutInitInfo& getLayoutInitInfo() const { return *mLayoutInitInfo; }
     const PlacementInfo& getPlacementInfo() const { return *mPlacementInfo; }
 
 public:
