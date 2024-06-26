@@ -69,8 +69,6 @@ public:
     void setMainGroupName(const char*);
     void syncAction();
 
-    bool isAlive() const { return mIsAlive; }
-
     LayoutExecuteInfo* getExecuteInfo() { return mExecuteInfo; }
 
 public:
