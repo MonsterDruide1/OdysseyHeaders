@@ -9,6 +9,8 @@ public:
     PlayerCounterAfterUpperPunch();
     void update(const PlayerTrigger* trigger);
 
+    u32 getCounter() const { return mCounter; }
+
 public:
     // yes, this is an u32, bounded by a signed s32
     u32 mCounter = sead::Mathi::maxNumber();
