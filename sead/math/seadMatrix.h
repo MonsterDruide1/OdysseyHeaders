@@ -2,7 +2,6 @@
 
 #include <basis/seadTypes.h>
 #include <math/seadMathPolicies.h>
-#include <math/seadQuat.h>
 #include <math/seadVector.h>
 
 namespace sead
@@ -55,7 +54,7 @@ class Matrix33 : public Policies<T>::Mtx33Base
 public:
     using Self = Matrix33<T>;
     using Mtx34 = Matrix34<T>;
-
+    using QuatT = typename Policies<T>::QuatBase;
     using Vec3 = Vector3<T>;
 
 public:
@@ -82,7 +81,7 @@ public:
     void setTranspose(const Self& n);
     void transpose();
 
-    void fromQuat(const Quat<T>& q);
+    void fromQuat(const QuatT& q);
     void makeR(const Vec3& r);
     void makeRIdx(u32 xr, u32 yr, u32 zr);
     void makeRzxyIdx(u32 xr, u32 yr, u32 zr);
@@ -91,7 +90,7 @@ public:
     void makeSR(const Vec3& s, const Vec3& r);
     void makeSRIdx(const Vec3& s, const Vector3<u32>& r);
     void makeSRzxyIdx(const Vec3& s, const Vector3<u32>& r);
-    void toQuat(Quat<T>& q) const;
+    void toQuat(QuatT& q) const;
 
     static const Matrix33 zero;
     static const Matrix33 ident;
@@ -105,9 +104,9 @@ public:
     using Mtx33 = Matrix33<T>;
     using Mtx44 = Matrix44<T>;
 
-    using Vec3 = Vector3<T>;
+    using Vec3 = typename Policies<T>::Vec3Base;
     using Vec4 = Vector4<T>;
-    using QuatT = Quat<T>;
+    using QuatT = typename Policies<T>::QuatBase;
 
 public:
     Matrix34() {}
@@ -199,6 +198,7 @@ public:
 
     using Vec3 = Vector3<T>;
     using Vec4 = Vector4<T>;
+    using QuatT = typename Policies<T>::QuatBase;
 
 public:
     Matrix44() {}
@@ -226,11 +226,11 @@ public:
     void setTranspose(const Self& n);
     void transpose();
 
-    void fromQuat(const Quat<T>& q);
+    void fromQuat(const QuatT& q);
     void makeR(const Vec3& r);
     void makeRIdx(u32 xr, u32 yr, u32 zr);
     void makeRzxyIdx(u32 xr, u32 yr, u32 zr);
-    void toQuat(Quat<T>& q) const;
+    void toQuat(QuatT& q) const;
 
     void getCol(Vec4& o, s32 axis) const;
     void getRow(Vec4& o, s32 row) const;

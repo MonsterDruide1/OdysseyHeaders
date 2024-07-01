@@ -23,6 +23,10 @@ public:
     void initResource();
     void createMatAnimForProgram(s32);
 
+    void update();
+    void updateLast();
+    sead::Matrix34f* getBaseMtx();
+
     ModelCtrl* getModelCtrl() const { return mModelCtrl; }
     AnimPlayerSkl* getAnimSkl() const { return mAnimSkl; }
     AnimPlayerMat* getAnimMtp() const { return mAnimMtp; }
@@ -43,6 +47,12 @@ public:
     AnimPlayerMat* mAnimMat;
     AnimPlayerVis* mAnimVisForAction;
     AnimPlayerVis* mAnimVis;
+    void* size1;
+    bool flag1;
+    bool flag2;
+    bool flag3;
+    bool flag4;
+    bool pad[4];
 };
 
 }  // namespace al

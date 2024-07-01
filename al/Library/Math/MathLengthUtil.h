@@ -20,6 +20,7 @@ bool isNormalize(const sead::Matrix34f&);
 bool isParallelDirection(const sead::Vector2f&, const sead::Vector2f&, f32);
 bool isReverseDirection(const sead::Vector3f&, const sead::Vector3f&, f32);
 bool isNearDirection(const sead::Vector2f&, const sead::Vector2f&, f32);
+bool isNearDirection(const sead::Vector3f&, const sead::Vector3f&, f32);
 bool isInRange(s32, s32, s32);
 bool isInRange(f32, f32, f32);
 
@@ -29,6 +30,7 @@ void normalize(sead::Matrix33f*);
 void normalize(sead::Matrix34f*);
 bool tryNormalizeOrZero(sead::Vector2f*);
 bool tryNormalizeOrZero(sead::Vector2f*, const sead::Vector2f&);
+bool tryNormalizeOrZero(sead::Vector3f*);
 bool tryNormalizeOrDirZ(sead::Vector3f*);
 bool tryNormalizeOrDirZ(sead::Vector3f*, const sead::Vector3f&);
 void normalizeComplement(sead::Matrix34f*);
@@ -51,4 +53,7 @@ f32 cubeRoot(f32);
 
 void clampV3f(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&);
 void clampV2f(sead::Vector2f*, const sead::Vector2f&, const sead::Vector2f&);
+
+void separateVectorParallelVertical(sead::Vector3f*,sead::Vector3f*,const sead::Vector3f &,const sead::Vector3f &);
+
 }  // namespace al

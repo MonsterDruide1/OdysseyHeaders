@@ -19,6 +19,7 @@ public:
 
     static T dot(const Base& a, const Base& b);
     static T cross(const Base& a, const Base& b);
+    static T normalize(Base& v);
     static T squaredLength(const Base& v);
     static T length(const Base& v);
 };

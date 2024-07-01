@@ -32,8 +32,8 @@ public:
     void* resizeFront(void* p_void, size_t size) override;
     void* resizeBack(void* p_void, size_t size) override;
     void freeAll() override;
-    uintptr_t getStartAddress() const override;
-    uintptr_t getEndAddress() const override;
+    const void* getStartAddress() const override;
+    const void* getEndAddress() const override;
     size_t getSize() const override;
     size_t getFreeSize() const override;
     size_t getMaxAllocatableSize(int alignment) const override;

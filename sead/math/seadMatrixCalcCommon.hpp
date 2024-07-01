@@ -1197,7 +1197,7 @@ void Matrix34CalcCommon<T>::makeQ(Base& o, const Quat& q)
 {
     // Assuming the quaternion "q" is normalized
 
-    const T yy = 2 * q.y * q.y;
+    /*const T yy = 2 * q.y * q.y;
     const T zz = 2 * q.z * q.z;
     const T xx = 2 * q.x * q.x;
     const T xy = 2 * q.x * q.y;
@@ -1218,6 +1218,37 @@ void Matrix34CalcCommon<T>::makeQ(Base& o, const Quat& q)
     o.m[2][0] = xz - wy;
     o.m[2][1] = yz + wx;
     o.m[2][2] = 1 - xx - yy;
+
+    o.m[0][3] = 0;
+    o.m[1][3] = 0;
+    o.m[2][3] = 0;*/
+
+    
+    const T zz = q.z * q.z;
+    const T ww = q.w * q.w;
+    const T xx = q.x * q.x;
+    const T yy = q.y * q.y;
+
+    const T xy = q.x * q.y;
+    const T xz = q.x * q.z;
+    const T yz = q.y * q.z;
+    const T wx = q.w * q.x;
+    const T wy = q.w * q.y;
+    const T wz = q.w * q.z;
+
+    o.m[0][0] = ww + xx - yy - zz;
+    //o.m[0][0] = (1 - yy - zz)*2;
+    o.m[0][1] = (xy - wz) * 2;
+    o.m[0][2] = (xz + wy) * 2;
+
+    o.m[1][0] = (xy + wz) * 2;
+    o.m[1][1] = (1 - xx - zz) * 2;
+    o.m[1][2] = (yz - wx) * 2;
+
+    o.m[2][0] = (xz - wy) * 2;
+    o.m[2][1] = (yz + wx) * 2;
+    o.m[2][2] = ww - xx - yy + zz;
+    //o.m[2][2] = (1 - xx - yy)*2;
 
     o.m[0][3] = 0;
     o.m[1][3] = 0;

@@ -5,7 +5,6 @@
 #endif  // cafe
 
 #include <math/seadMathCalcCommon.h>
-#include <math/seadQuatCalcCommon.h>
 #ifndef SEAD_MATH_VECTOR_CALC_COMMON_H_
 #include <math/seadVectorCalcCommon.h>
 #endif
@@ -24,6 +23,20 @@ inline void Vector2CalcCommon<T>::sub(Base& o, const Base& a, const Base& b)
 {
     o.x = a.x - b.x;
     o.y = a.y - b.y;
+}
+
+template <typename T>
+T Vector2CalcCommon<T>::normalize(Base& v)
+{
+    const T len = length(v);
+    if (len > 0)
+    {
+        const T inv_len = 1 / len;
+        v.x *= inv_len;
+        v.y *= inv_len;
+    }
+
+    return len;
 }
 
 template <typename T>

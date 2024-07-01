@@ -74,7 +74,7 @@ public:
 
     DelegateThread* getFramework() const;
 
-    Controller* getController(int port) { return mControllers[port]; }
+    Controller* getController(int port) { CRASH return mControllers[port]; }
 
 public:
     OffsetList<ControlDevice> mDevices;

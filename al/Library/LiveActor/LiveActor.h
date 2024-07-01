@@ -125,6 +125,8 @@ public:
 
     void setName(const char* newName) { mActorName = newName; }
 
+    ~LiveActor();
+
 public:
     friend class alActorFunction;
 

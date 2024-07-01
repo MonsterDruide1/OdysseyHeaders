@@ -56,6 +56,9 @@ struct Vector2 : public Policies<T>::Vec2Base
     bool operator==(const Vector2& rhs) const { return this->x == rhs.x && this->y == rhs.y; }
     bool operator!=(const Vector2& rhs) const { return !operator==(rhs); }
 
+    Vector2 operator-() const { return {-this->x, -this->y}; }
+
+    T normalize();
     void set(const Vector2& other);
     void set(T x_, T y_);
 

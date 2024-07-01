@@ -1,7 +1,6 @@
 #pragma once
 
 #include <algorithm>
-#include "basis/seadNew.h"
 #include "basis/seadRawPrint.h"
 #include "container/seadFreeList.h"
 #include "container/seadPtrArray.h"
@@ -28,7 +27,7 @@ public:
         }
 
         setBuffer(capacity,
-                  new (heap, alignment, std::nothrow) u8[calculateWorkBufferSize(capacity)]);
+                  new u8[calculateWorkBufferSize(capacity)]);
     }
 
     bool tryAllocBuffer(s32 capacity, Heap* heap, s32 alignment = sizeof(void*))
@@ -41,7 +40,7 @@ public:
             return false;
         }
 
-        auto* buf = new (heap, alignment, std::nothrow) u8[calculateWorkBufferSize(capacity)];
+        auto* buf = new u8[calculateWorkBufferSize(capacity)];
         if (!buf)
             return false;
 

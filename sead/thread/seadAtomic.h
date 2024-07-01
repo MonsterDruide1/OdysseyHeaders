@@ -193,10 +193,15 @@ template <typename T, typename F>
 inline T atomicReadModifyWrite(volatile T* value_ptr, F op)
 {
     T value;
-    do
+    /*do
     {
         value = __builtin_arm_ldrex(value_ptr);
     } while (__builtin_arm_strex(op(value), value_ptr));
+    return value;*/
+
+    //FIXME re-implement for PC
+    value = *value_ptr;
+    *value_ptr = op(value);
     return value;
 }
 }  // namespace detail

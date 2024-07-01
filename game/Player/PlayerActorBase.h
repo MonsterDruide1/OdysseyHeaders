@@ -1,5 +1,7 @@
 #pragma once
 
+#include <math/seadMatrix.h>
+
 #include "Library/LiveActor/LiveActor.h"
 
 #include "Player/IUsePlayerHack.h"
@@ -9,16 +11,16 @@ class PlayerInfo;
 class PlayerInitInfo;
 class PlayerHackKeeper;
 
-class PlayerActorBase : public al::LiveActor, public al::IUsePlayerHack {
+class PlayerActorBase : public al::LiveActor, public IUsePlayerHack {
 public:
     PlayerActorBase(const char*);
 
     virtual void init(const al::ActorInitInfo&) override;
     virtual void initPlayer(const al::ActorInitInfo&, const PlayerInitInfo&);
     virtual u32 getPortNo() const;
-    virtual void* getViewMtx() const;  // NOTE: unknown return type
+    virtual const sead::Matrix34f* getViewMtx() const;
     virtual IUsePlayerCollision* getPlayerCollision() const;
-    virtual al::PlayerHackKeeper* getPlayerHackKeeper() const override;
+    virtual PlayerHackKeeper* getPlayerHackKeeper() const override;
     virtual bool isEnableDemo();
     virtual void startDemo();
     virtual void endDemo();
@@ -43,9 +45,9 @@ public:
     virtual void movement() override;
     virtual bool checkDeathArea();
     virtual void sendCollisionMsg();
-    virtual bool receivePushMsg(const al::SensorMsg*, al::HitSensor*, al::HitSensor*);
+    virtual bool receivePushMsg(const al::SensorMsg*, al::HitSensor*, al::HitSensor*, f32);
 
 public:
-    void* mViewMtx = nullptr;  // NOTE: unknown type
+    const sead::Matrix34f* mViewMtx = nullptr;
     u32 mPortNo = 0;
 };

@@ -15,6 +15,14 @@ namespace sead
 {
 class HeapMgr : hostio::Node
 {
+public:
+    struct AllocFailedCallbackArg {
+        Heap* heap;
+        size_t request_size;
+        s32 request_alignment;
+        size_t alloc_size;
+        s32 alloc_alignment;
+    };
     struct AllocCallbackArg;
     struct CreateCallbackArg;
     struct DestroyCallbackArg;
@@ -23,9 +31,6 @@ class HeapMgr : hostio::Node
     using ICreateCallback = IDelegate1<const CreateCallbackArg*>;
     using IDestroyCallback = IDelegate1<const DestroyCallbackArg*>;
     using IFreeCallback = IDelegate1<const FreeCallbackArg*>;
-
-public:
-    struct AllocFailedCallbackArg;
     using IAllocFailedCallback = IDelegate1<const AllocFailedCallbackArg*>;
 
     HeapMgr();
@@ -58,6 +63,9 @@ public:
 
     static Heap* getRootHeap(s32 index) { return sRootHeaps[index]; }
 
+    
+    static CriticalSection* getHeapTreeLockCS_() { return &sHeapTreeLockCS; }
+
     // TODO: these should be private
     static Arena* sArena;
     static HeapMgr sInstance;
@@ -65,12 +73,12 @@ public:
 
     using RootHeaps = FixedPtrArray<Heap, 4>;
     using IndependentHeaps = FixedPtrArray<Heap, 4>;
+    
+    /// Set the current heap to the specified heap and returns the previous "current heap".
+    sead::Heap* setCurrentHeap_(sead::Heap* heap);
 
 public:
     friend class ScopedCurrentHeapSetter;
-
-    /// Set the current heap to the specified heap and returns the previous "current heap".
-    Heap* setCurrentHeap_(Heap* heap);
 
     static Arena sDefaultArena;
     static RootHeaps sRootHeaps;
@@ -134,6 +142,30 @@ public:
     void resetHeap() { mHeap.fetchAnd(~1LL); }
 
     Atomic<uintptr_t> mHeap;
+};
+
+class FindContainHeapCacheAccessor
+{
+public:
+    explicit FindContainHeapCacheAccessor(Atomic<uintptr_t>* atomic)
+        : mAtomicValue(atomic)
+        , mHeap(reinterpret_cast<Heap*>(atomic->setBitOn(static_cast<uintptr_t>(1))))
+    {
+    }
+
+    ~FindContainHeapCacheAccessor()
+    {
+        mAtomicValue->setBitOff(1);
+    }
+
+    Heap* getHeap()
+    {
+        return mHeap;
+    }
+
+public:
+    Atomic<uintptr_t>* mAtomicValue;
+    Heap* mHeap;
 };
 
 }  // namespace sead

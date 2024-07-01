@@ -52,6 +52,12 @@ inline Vector2<T>& Vector2<T>::operator=(const Vector2<T>& other)
 }
 
 template <typename T>
+inline T Vector2<T>::normalize()
+{
+    return Vector2CalcCommon<T>::normalize(*this);
+}
+
+template <typename T>
 inline void Vector2<T>::set(const Vector2<T>& other)
 {
     Vector2CalcCommon<T>::set(*this, other);

@@ -52,8 +52,8 @@ public:
     virtual void* resizeBack(void*, size_t) = 0;
     virtual void* tryRealloc(void* ptr, size_t size, s32 alignment);
     virtual void freeAll() = 0;
-    virtual uintptr_t getStartAddress() const = 0;
-    virtual uintptr_t getEndAddress() const = 0;
+    virtual const void* getStartAddress() const = 0;
+    virtual const void* getEndAddress() const = 0;
     virtual size_t getSize() const = 0;
     virtual size_t getFreeSize() const = 0;
     virtual size_t getMaxAllocatableSize(int alignment) const = 0;
@@ -67,6 +67,23 @@ public:
     virtual void dumpYAML(WriteStream& stream, int) const;
     void dumpTreeYAML(WriteStream& stream, int) const;
 
+    bool lock()
+    {
+        if (!isEnableLock())
+            return false;
+
+        mCS.lock();
+        return true;
+    }
+    bool unlock()
+    {
+        if (!isEnableLock())
+            return false;
+
+        mCS.unlock();
+        return true;
+    }
+
 #ifdef SEAD_DEBUG
     void listenPropertyEvent(const hostio::PropertyEvent* event) override;
     void genMessage(hostio::Context*) override;
@@ -79,6 +96,9 @@ public:
     void appendDisposer_(IDisposer* disposer);
     void removeDisposer_(IDisposer* disposer);
     Heap* findContainHeap_(const void* ptr);
+    void destruct_();
+    void dispose_(const void* begin, const void* end);
+    bool hasNoChild_() const { return mChildren.size() == 0; }
 
     void* alloc(size_t size, s32 alignment = sizeof(void*))
     {
@@ -100,6 +120,8 @@ public:
     bool isDebugFillUserEnabled() const { return mFlag.isOnBit(Flag::cEnableDebugFillUser); }
 
     sead::CriticalSection& getCriticalSection() { return mCS; }
+    HeapDirection getDirection() const { return mDirection; }
+    bool isEnableLock() const { return mFlag.isOnBit(Flag::cEnableLock); }
 
     using HeapList = OffsetList<Heap>;
     using DisposerList = OffsetList<IDisposer>;

@@ -85,7 +85,7 @@ void addVelocityClockwiseToDirection(LiveActor* actor, const sead::Vector3f&, f3
 void calcVelocityClockwiseToDirection(LiveActor* actor, sead::Vector3f*, const sead::Vector3f&);
 void addVelocityClockwiseToTarget(LiveActor* actor, const sead::Vector3f&, f32);
 void addVelocityJumpGroundInertia(LiveActor* actor, const sead::Vector3f&, f32);
-bool tryAddVelocityLimit(LiveActor* actor, const sead::Vector3f&, f32);
+void tryAddVelocityLimit(LiveActor* actor, const sead::Vector3f&, f32);
 void subVelocityExceptDirectionLimit(LiveActor* actor, const sead::Vector3f&, f32, f32);
 void scaleVelocity(LiveActor* actor, f32);
 void scaleVelocityLimit(LiveActor* actor, f32, f32);
@@ -141,7 +141,7 @@ bool isVelocitySlowH(const LiveActor* actor, f32);
 f32 calcSpeedH(const LiveActor* actor);
 f32 calcSpeedV(const LiveActor* actor);
 void calcSpeedDirection(const LiveActor* actor, const sead::Vector3f&);
-void calcSpeedExceptDir(const LiveActor* actor, const sead::Vector3f&);
+f32 calcSpeedExceptDir(const LiveActor* actor, const sead::Vector3f&);
 bool isNear(const LiveActor* actor, const LiveActor* target, f32);
 bool isNear(const LiveActor* actor, const sead::Vector3f&, f32);
 bool isNearXZ(const LiveActor* actor, const sead::Vector3f&, f32);

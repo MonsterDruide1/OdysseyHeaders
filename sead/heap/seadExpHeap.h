@@ -23,18 +23,22 @@ public:
         ByIteratingMemBlock = 2,
     };
 
-    // FIXME: incomplete
     enum class FindMode
     {
+        eFirstFit = 0,
+        eBestFit,
+        eMaxSize
     };
 
     static ExpHeap* create(size_t size, const SafeString& name, Heap* parent, s32 alignment,
                            HeapDirection direction, bool);
     static ExpHeap* create(void* address, size_t size, const SafeString& name, bool);
+    static ExpHeap* create(void* address, size_t size, const SafeString& name, Heap* parent, bool);
 
     static ExpHeap* tryCreate(size_t size, const SafeString& name, Heap* parent, s32 alignment,
                               HeapDirection direction, bool);
     static ExpHeap* tryCreate(void* address, size_t size, const SafeString& name, bool);
+    static ExpHeap* tryCreate(void* address, size_t size, const SafeString& name, Heap* parent, bool);
 
     static size_t getManagementAreaSize(s32);
 
@@ -46,8 +50,8 @@ public:
     void* resizeBack(void* p_void, size_t size) override;
     void* tryRealloc(void* ptr, size_t size, s32 alignment) override;
     void freeAll() override;
-    uintptr_t getStartAddress() const override;
-    uintptr_t getEndAddress() const override;
+    const void* getStartAddress() const override;
+    const void* getEndAddress() const override;
     size_t getSize() const override;
     size_t getFreeSize() const override;
     size_t getMaxAllocatableSize(int alignment) const override;
@@ -92,6 +96,8 @@ public:
     MemBlock* findLastMemBlockIfFree_();
     MemBlock* findFirstMemBlockIfFree_();
 
+    void* realloc_(void* ptr, u8* oldMem, size_t copySize, size_t newSize, s32 alignment);
+
     void pushToUseList_(MemBlock*);
     void pushToFreeList_(MemBlock*);
 
@@ -105,9 +111,12 @@ public:
 
     static s32 compareMemBlockAddr_(const MemBlock*, const MemBlock*);
 
-    SizedEnum<AllocMode, u8> mAllocMode;
+    AllocMode mAllocMode;
     SizedEnum<FindFreeBlockMode, u8> mFindFreeBlockMode;
     MemBlockList mFreeList;
     MemBlockList mUseList;
+
+    static const s32 cDefaultAlignment = 16;//alignof(void*);
+    static const s32 cMinAlignment = 16;//cDefaultAlignment;
 };
 }  // namespace sead

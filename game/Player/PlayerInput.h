@@ -4,6 +4,7 @@
 
 #include "Player/IUsePlayerCollision.h"
 #include "Util/IUseDimension.h"
+#include "math/seadMatrix.h"
 
 namespace al {
 class LiveActor;
@@ -46,7 +47,7 @@ public:
     bool isTriggerSpinCap() const;
     bool isTriggerToggleStayCap() const;
     bool isTriggerSpinAttackSeparate() const;
-    s32 getSeparatePlay1P();
+    static s32 getSeparatePlay1P();
     bool isTriggerCapReturn() const;
     bool isTriggerCapAttackSeparate() const;
     bool isTriggerSwingActionCap() const;
@@ -74,23 +75,82 @@ public:
     bool isReleaseHackAction() const;
     bool isReleaseHackJump() const;
     bool isEnableDashInput() const;
+    bool isSpinClockwise() const;
 
     bool isThrowTypeSpiral(const sead::Vector2f&) const;
     bool isThrowTypeRolling(const sead::Vector2f&) const;
+    bool isThrowTypeLeftRight(const sead::Vector2f&) const;
 
+    void calcMoveDirection(sead::Vector3f*, const sead::Vector3f&) const;
     void calcMoveInput(sead::Vector3f*, const sead::Vector3f&) const;
+    void calcMoveInputImpl(sead::Vector3f*, const sead::Vector3f&, bool, bool, bool) const;
+    void calcHoldMoveInput3D(sead::Vector3f *,sead::Vector3f const&,sead::Matrix34f const*) const;
+
+    void snapWallAlongInput(sead::Vector3<float> *,sead::Vector3<float> const&) const;
+    void snapAreaInput(sead::Vector3<float> *,sead::Vector3<float> const&) const;
+
+    void update();
+    void updateWallAlong();
+    void updateSnapMoveArea();
+    void updateInput3D();
+    void updateInput2D();
+
+    const sead::Vector2f& getCapThrowDir() const;
+    bool isTriggerSwingRightHand() const;
+    bool isEnableConsiderCapThrowDoubleSwing() const;
+
+    bool isHoldCapSeparateJump() const;
+
+    void calcCapSeparateMoveInput(sead::Vector3<float> *,sead::Vector3<float> const&);
+    void calcCapThrowInput(sead::Vector3<float> *,sead::Vector3<float> const&) const;
+
+    void resetAlongWall();
+
+    bool isSameStickMove(const sead::Vector2f& a2, float a3) const;
 
 public:
     const al::LiveActor* mLiveActor;
     const IUsePlayerCollision* mPlayerCollision;
     const IUseDimension* mDimension;
-    void* gap[11];
+    bool mIsMove = 0;
+    int convergeInUpdateWallAlong = 0;
+    float readInWalls = 0.0f;
+    sead::Vector3f anotherVectorForWalls = {0.0f, 0.0f, 0.0f};
+    sead::Vector2f anotherVector2ForWalls2 = {0.0f, 0.0f};
+    bool hasSomeSnapMoveDirArea = false;
+    sead::Vector3f someSnapMoveAreaDirVector = {0.0f, 0.0f, 0.0f};
+    sead::Vector2f usedInUpdateForAngles = {0.0f, 0.0f};
+    float usedInUpdateForSomething = 0.0f;
+    float* arrayOfSizeF0 = nullptr;
+    u32 constant60maybe = 0;
+    u32 constant60maybe2 = 0;
+    u32 somethingAboutArray = 0;
     al::SpinInputAnalyzer* mSpinInputAnalyzer;
     al::JoyPadAccelPoseAnalyzer* mJoyPadAccelPoseAnalyzer1;
     al::JoyPadAccelPoseAnalyzer* mJoyPadAccelPoseAnalyzer2;
-    s32 _88;
-    void* gap2[1];
-    bool mIsDisableInput;
-    void* gap3[20];
+    int someIntConverged15 = 0;
+    int somethingAboutP0 = 0;
+    int somethingAboutP1 = 0;
+    int convergedInUpdateToDisableInput = 0;
+    bool mIsDisableInput = false;
+    bool usedInUpdate = false;
+    bool isInInvalidatePressStickCameraArea = false;
+    bool flag2 = false;
+    bool somethingFromUpdate = false;
+    sead::Vector2f someVectorUsedInUpdate = {0.0f, 0.0f};
+    sead::Vector3f someVectorEndOfUpdate = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f someVectorEndOfUpdate2 = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f someVectorEndOfUpdate3 = {0.0f, 0.0f, 0.0f};
+    bool someFlags[2] = {false, false};
+    sead::Vector2f someVector2 = {0.0f, 0.0f};
+    sead::Vector2f some2Vector = {0.0f, 0.0f};
+    sead::Vector3f _E0;
+    sead::Vector3f _EC;
+    sead::Vector3f someVector = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f someVector4 = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f someVector5 = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f someVector3 = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f someVectorCollidedGroundPos = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f someVectorCollidedGroundNormal = {0.0f, 0.0f, 0.0f};
 };
 static_assert(sizeof(PlayerInput) == 0x140);

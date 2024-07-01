@@ -135,7 +135,7 @@ public:
 
     bool isMainThread() const;
     Thread* getMainThread() const { return mMainThread; }
-    Thread* getCurrentThread() const { return reinterpret_cast<Thread*>(mThreadPtrTLS.getValue()); }
+    Thread* getCurrentThread() const { return mMainThread; }//return reinterpret_cast<Thread*>(mThreadPtrTLS.getValue()); }
 
     static void waitDoneMultipleThread(Thread* const* threads, s32 num);
     static void quitAndWaitDoneMultipleThread(Thread** threads, s32 num, bool is_jam);

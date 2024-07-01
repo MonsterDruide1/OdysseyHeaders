@@ -174,7 +174,7 @@ inline void Matrix33<T>::transpose()
 }
 
 template <typename T>
-inline void Matrix33<T>::fromQuat(const Quat<T>& q)
+inline void Matrix33<T>::fromQuat(const QuatT& q)
 {
     Matrix33CalcCommon<T>::makeQ(*this, q);
 }
@@ -229,7 +229,7 @@ inline void Matrix33<T>::makeSRzxyIdx(const Vec3& s, const Vector3<u32>& r)
 }
 
 template <typename T>
-inline void Matrix33<T>::toQuat(Quat<T>& q) const
+inline void Matrix33<T>::toQuat(QuatT& q) const
 {
     Matrix33CalcCommon<T>::toQuat(q, *this);
 }
@@ -651,7 +651,7 @@ inline void Matrix44<T>::transpose()
 }
 
 template <typename T>
-inline void Matrix44<T>::fromQuat(const Quat<T>& q)
+inline void Matrix44<T>::fromQuat(const QuatT& q)
 {
     Matrix44CalcCommon<T>::makeQ(*this, q);
 }
@@ -675,7 +675,7 @@ inline void Matrix44<T>::makeRzxyIdx(u32 xr, u32 yr, u32 zr)
 }
 
 template <typename T>
-inline void Matrix44<T>::toQuat(Quat<T>& q) const
+inline void Matrix44<T>::toQuat(QuatT& q) const
 {
     Matrix44CalcCommon<T>::toQuat(q, *this);
 }
