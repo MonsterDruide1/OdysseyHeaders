@@ -32,4 +32,5 @@ public:
     f32 mSinkAmount;
     bool mIsSafe;
 };
+
 static_assert(sizeof(PlayerSandSinkAffect) == 0x38);

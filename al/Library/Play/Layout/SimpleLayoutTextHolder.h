@@ -22,6 +22,7 @@ public:
 
 struct SimpleLayoutTextHolderEntry {
     SimpleLayoutTextHolderEntry(SimpleLayoutText* e) : text(e) {}
+
     SimpleLayoutText* text;
 };
 

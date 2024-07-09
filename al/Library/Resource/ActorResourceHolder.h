@@ -23,6 +23,7 @@ public:
 public:
     void* filler[9];
 };
+
 static_assert(sizeof(ActorResourceHolder) == 0x48);
 
 }  // namespace al

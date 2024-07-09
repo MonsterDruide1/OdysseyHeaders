@@ -18,6 +18,7 @@ public:
     GraphicsSystemInfo* mGraphicsSystemInfo;
     void* filler[4];
 };
+
 static_assert(sizeof(ModelDisplayListController) == 0x30);
 
 }  // namespace al
