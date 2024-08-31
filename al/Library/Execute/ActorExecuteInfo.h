@@ -14,7 +14,7 @@ public:
     void addDrawer(ModelDrawerBase* drawer);
 
 public:
-    ExecuteRequestKeeper* mRequestKeeper;
+    ExecuteRequestKeeper* mRequestKeeper = nullptr;
     s32 mUpdaterCount = 0;
     ExecutorActorExecuteBase* mUpdaters[4] = {};
     s32 mDrawerCount = 0;
