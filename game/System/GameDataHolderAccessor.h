@@ -18,4 +18,5 @@ public:
 
 namespace rs {
 bool isInvalidChangeStage(const al::LiveActor*);
-}
+bool isKidsMode(const al::LiveActor*);
+}  // namespace rs
