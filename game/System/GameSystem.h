@@ -46,3 +46,7 @@ public:
     GameConfigData* mGameConfigData;
     bool mIsSequenceSetupIncomplete;
 };
+
+namespace GameSystemFunction {
+GameSystem* getGameSystem();
+}
