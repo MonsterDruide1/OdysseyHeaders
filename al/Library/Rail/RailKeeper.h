@@ -15,4 +15,6 @@ public:
 public:
     RailRider* mRailRider;
 };
+
+RailKeeper* tryCreateRailKeeper(const PlacementInfo& info, const char* linkName);
 }  // namespace al
