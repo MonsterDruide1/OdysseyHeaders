@@ -6,6 +6,7 @@ namespace al {
 class NerveStateBase : public NerveExecutor {
 public:
     NerveStateBase(const char* stateName);
+    virtual ~NerveStateBase();
 
     virtual void init();
     virtual void appear();
@@ -14,8 +15,6 @@ public:
     virtual void control();
 
     bool isDead() const { return mIsDead; }
-
-    void setDead(bool isDead) { mIsDead = isDead; }
 
 public:
     bool mIsDead = true;
@@ -34,9 +33,7 @@ public:
 template <class T>
 class HostStateBase : public NerveStateBase {
 public:
-    HostStateBase(const char* name, T* host) : NerveStateBase(name), mHost(host){};
-
-    T* getHost() { return mHost; }
+    HostStateBase(const char* name, T* host);
 
 public:
     T* mHost;
