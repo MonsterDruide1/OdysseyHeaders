@@ -5,12 +5,11 @@
 #include <prim/seadRuntimeTypeInfo.h>
 #include <thread/seadCriticalSection.h>
 
-#include "common/aglShaderEnum.h"
-
 namespace agl {
 
 class RenderBuffer;
 class DisplayList;
+enum ShaderMode {};
 enum ShaderOptimizeType {};
 
 class DrawContext : public sead::DrawContext {
