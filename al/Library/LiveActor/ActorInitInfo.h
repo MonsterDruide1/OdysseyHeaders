@@ -13,7 +13,6 @@
 #include "Library/Placement/PlacementInfo.h"
 
 namespace al {
-class ByamlIter;
 class LiveActor;
 class LiveActorGroup;
 class PlacementInfo;

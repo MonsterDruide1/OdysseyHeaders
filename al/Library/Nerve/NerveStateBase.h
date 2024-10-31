@@ -13,9 +13,9 @@ public:
     virtual bool update();
     virtual void control();
 
-    void setDead(bool isDead) { mIsDead = isDead; }
-
     bool isDead() const { return mIsDead; }
+
+    void setDead(bool isDead) { mIsDead = isDead; }
 
 public:
     bool mIsDead = true;
