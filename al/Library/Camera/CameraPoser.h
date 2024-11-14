@@ -87,11 +87,11 @@ public:
     void makeLookAtCameraLast(sead::LookAtCamera*) const;
     void makeLookAtCameraCollide(sead::LookAtCamera*) const;
 
-    void getInterpoleStep();
+    s32 getInterpoleStep();
     void setInterpoleStep(s32);
     void resetInterpoleStep();
     void setInterpoleEaseOut();
-    void getEndInterpoleStep();
+    s32 getEndInterpoleStep();
 
     void appear(const CameraStartInfo&);
     void calcCameraPose(sead::LookAtCamera*);
@@ -102,13 +102,15 @@ public:
 
     f32 getFovyDegree() const;
 
-    sead::Vector3f getPosition() const { return mPosition; };
+    const sead::Vector3f& getPosition() const { return mPosition; };
 
-    sead::Vector3f getTargetTrans() const { return mTargetTrans; };
+    const sead::Vector3f& getTargetTrans() const { return mTargetTrans; };
 
-    sead::Vector3f getCameraUp() const { return mCameraUp; };
+    const sead::Vector3f& getCameraUp() const { return mCameraUp; };
 
     const sead::Matrix34f& getViewMtx() const { return mViewMtx; };
+
+    CameraPoserFlag* getPoserFlag() const { return mPoserFlag; }
 
 public:
     const char* mPoserName;
@@ -122,7 +124,7 @@ public:
     bool field_98 = false;
     CameraViewInfo* mViewInfo;
     AreaObjDirector* mAreaDirector;
-    CameraPoserFlag* mPoserFlags;
+    CameraPoserFlag* mPoserFlag;
     CameraVerticalAbsorber* mVerticalAbsorber;
     CameraAngleCtrlInfo* mAngleCtrlInfo;
     CameraAngleSwingInfo* mAngleSwingInfo;

@@ -119,12 +119,12 @@ public:
     static void getPlayTimeAcrossFile(GameDataHolderAccessor);
     static void getSaveDataIdForPrepo(GameDataHolderAccessor);
     static void startDemoStage(GameDataHolderWriter, const char*);
-    static bool tryChangeNextStage(GameDataHolderWriter, const ChangeStageInfo*);
-    static bool tryChangeNextStageWithStartRaceFlag(GameDataHolderWriter, const ChangeStageInfo*);
-    static bool tryChangeNextStageWithStartRaceYukimaru(GameDataHolderWriter,
+    static void tryChangeNextStage(GameDataHolderWriter, const ChangeStageInfo*);
+    static void tryChangeNextStageWithStartRaceFlag(GameDataHolderWriter, const ChangeStageInfo*);
+    static void tryChangeNextStageWithStartRaceYukimaru(GameDataHolderWriter,
                                                         const ChangeStageInfo*);
-    static bool tryChangeNextStageWithDemoWorldWarp(GameDataHolderWriter, const char*);
-    static bool tryChangeNextStageWithWorldWarpHole(GameDataHolderWriter, const char*);
+    static void tryChangeNextStageWithDemoWorldWarp(GameDataHolderWriter, const char*);
+    static void tryChangeNextStageWithWorldWarpHole(GameDataHolderWriter, const char*);
     static void changeNextStageWithStartTimeBalloon(GameDataHolderWriter, s32);
     static void changeNextStageWithEndTimeBalloon(GameDataHolderWriter);
     static void changeNextStageWithCloset(GameDataHolderWriter);

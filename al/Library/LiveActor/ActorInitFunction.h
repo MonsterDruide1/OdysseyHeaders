@@ -12,7 +12,6 @@ class LiveActor;
 class Resource;
 class HitSensor;
 class ActorInitInfo;
-class PlacementInfo;
 class Nerve;
 
 bool trySyncStageSwitchAppear(LiveActor* actor);
@@ -43,8 +42,4 @@ void initMapPartsActorWithArchiveName(LiveActor* actor, const ActorInitInfo& inf
 bool trySyncStageSwitchKill(LiveActor* actor);
 void initLinksActor(LiveActor* actor, const ActorInitInfo& info, const char* linkName, s32 linkNum);
 void initMaterialCode(LiveActor* actor, const ActorInitInfo& info);
-void makeMapPartsModelName(sead::BufferedSafeString*, sead::BufferedSafeString*,
-                           const PlacementInfo& info);
-void makeMapPartsModelName(sead::BufferedSafeString*, sead::BufferedSafeString*,
-                           const ActorInitInfo& info);
 }  // namespace al
