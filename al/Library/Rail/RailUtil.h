@@ -6,7 +6,6 @@ namespace al {
 class IUseRail;
 class LiveActor;
 
-void setSyncRailToNearestPos(LiveActor* actor);
 void setRailPosToStart(IUseRail* railHolder);
 void moveSyncRail(LiveActor* actor, f32 speed);
 void moveSyncRailLoop(LiveActor* actor, f32 speed);
