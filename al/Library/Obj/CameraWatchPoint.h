@@ -3,7 +3,7 @@
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-class ActorCameraSubTarget;
+class CameraSubTargetBase;
 
 class CameraWatchPoint : public LiveActor {
 public:
@@ -14,7 +14,7 @@ public:
     void kill() override;
 
 public:
-    ActorCameraSubTarget* mCameraSubTarget = nullptr;
+    CameraSubTargetBase* mCameraSubTarget = nullptr;
 };
 
 static_assert(sizeof(CameraWatchPoint) == 0x110);

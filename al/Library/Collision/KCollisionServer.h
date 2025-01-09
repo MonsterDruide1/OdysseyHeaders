@@ -8,8 +8,6 @@
 
 namespace al {
 class ByamlIter;
-class CollisionParts;
-class LiveActor;
 
 struct KCPrismHeader {
     u32 mPositionsOffset;
@@ -189,22 +187,6 @@ public:
     f32 mStepSize;
     f32 mCurrentStep;
     f32 mPrevStep;
-};
-
-class CollisionPartsFilterBase {
-public:
-    virtual bool isInvalidParts(CollisionParts* collisionParts) = 0;
-};
-
-class CollisionPartsFilterActor : public CollisionPartsFilterBase {
-public:
-    CollisionPartsFilterActor(LiveActor* actor) : mActor(actor) {}
-
-    bool isInvalidParts(CollisionParts* collisionParts) override;
-
-public:
-    LiveActor* mActor;
-    bool mIsCompareEqual = true;
 };
 
 }  // namespace al

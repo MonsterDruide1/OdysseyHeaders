@@ -6,6 +6,8 @@
 #include "System/GameDataHolderAccessor.h"
 #include "System/GameDataHolderWriter.h"
 
+#include "System/ByamlSave.h"
+
 struct BindInfo;
 class ChangeStageInfo;
 class ScenarioStartCamera;

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <container/seadTList.h>
 #include <math/seadMatrix.h>
 #include <math/seadVector.h>
 
@@ -30,34 +29,18 @@ public:
     const HitSensor* getConnectedSensor() const { return mConnectedSensor; }
 
 public:
-    void* unk[2];
-    CollisionParts* _10;  // self-reference
-    sead::TList<CollisionParts*>* mPartsList;
-    sead::Matrix34f* mJointMtx;
-    sead::Matrix34f mSyncMtx;
+    void* _0[11];
     sead::Matrix34f mBaseMtx;
     sead::Matrix34f mBaseInvMtx;
     sead::Matrix34f mPrevBaseMtx;
-    sead::Matrix34f mPrevBaseInvMtx;
-    sead::Vector3f mMtxScaleVec;
-    f32 mMtxScale;
-    f32 mInvMtxScale;
-    s32 mPriority;
+    void* _88[9];
     KCollisionServer* mKCollisionServer;
-    HitSensor* mConnectedSensor;
-    const char* mSpecialPurpose;
-    const char* mOptionalPurpose;
-    sead::Vector3f _150;  // same as mMtxScaleVec?
-    s32 _15c;
-    f32 mBoundingSphereRange;
-    f32 mBaseMtxScale;
-    bool mIsValidatedByUser;
-    bool mIsValidatedBySystem;
-    bool _16a;
-    bool _16b;
-    bool _16c;
-    bool mIsMoving;
-    bool _16e;
+    HitSensor* mConnectedSensor = nullptr;
+    void* _140[3];
+    s32 _158;
+    s32 _15c = 0;
+    u8 _160[13];
+    bool mIsMoving = false;
 };
 
 }  // namespace al

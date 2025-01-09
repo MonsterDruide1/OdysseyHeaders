@@ -168,7 +168,6 @@ void addRotateAndRepeatZ(LiveActor* actor, f32);
 void addRandomRotateY(LiveActor* actor);
 void calcQuatSide(sead::Vector3f*, const LiveActor* actor);
 void calcQuatUp(sead::Vector3f*, const LiveActor* actor);
-void calcQuatUp(sead::Vector3f*, const sead::Quatf& quat);
 void calcQuatFront(sead::Vector3f*, const LiveActor* actor);
 void calcQuatLocalAxis(sead::Vector3f*, const LiveActor* actor, s32);
 void calcTransOffsetFront(sead::Vector3f*, const LiveActor* actor, f32);

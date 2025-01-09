@@ -12,7 +12,6 @@ class AnimPlayerSimple;
 class AnimPlayerSkl;
 class AnimPlayerVis;
 class ModelCtrl;
-class DitherAnimator;
 
 class ModelKeeper : public HioNode {
 public:
@@ -23,7 +22,6 @@ public:
     void calc(const sead::Matrix34f&, const sead::Vector3f&);
     void initResource();
     void createMatAnimForProgram(s32);
-    void setDitherAnimator(DitherAnimator* ditherAnimator);
 
     ModelCtrl* getModelCtrl() const { return mModelCtrl; }
 

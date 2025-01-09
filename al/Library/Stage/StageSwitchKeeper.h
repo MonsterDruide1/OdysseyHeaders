@@ -50,8 +50,6 @@ static_assert(sizeof(StageSwitchDirector) == 0x20);
 bool tryOnStageSwitch(IUseStageSwitch*, const char*);
 bool tryOffStageSwitch(IUseStageSwitch*, const char*);
 bool tryOnSwitchDeadOn(IUseStageSwitch* stageSwitch);
-bool listenStageSwitchOn(IUseStageSwitch* stageSwitchHolder, const char* eventName,
-                         const FunctorBase& actionOnOn);
 bool listenStageSwitchOnOff(IUseStageSwitch* stageSwitchHolder, const char* eventName,
                             const FunctorBase& actionOnOn, const FunctorBase& actionOnOff);
 bool listenStageSwitchOnOffAppear(IUseStageSwitch* stageSwitchHolder, const FunctorBase& actionOnOn,
@@ -60,5 +58,4 @@ bool listenStageSwitchOnKill(IUseStageSwitch* stageSwitchHolder, const FunctorBa
 bool listenStageSwitchOnOffKill(IUseStageSwitch* stageSwitchHolder, const FunctorBase& actionOnOn,
                                 const FunctorBase& actionOnOff);
 bool listenStageSwitchOnStart(IUseStageSwitch* stageSwitchHolder, const FunctorBase& actionOnOn);
-bool listenStageSwitchOnStop(IUseStageSwitch* stageSwitchHolder, const FunctorBase& actionOnOn);
 }  // namespace al

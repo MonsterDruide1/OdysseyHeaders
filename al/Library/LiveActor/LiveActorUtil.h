@@ -50,3 +50,9 @@ bool isEffectEmitting(const IUseEffectKeeper*, const char*);
 void registActorToDemoInfo(LiveActor* actor, const ActorInitInfo& info);
 
 }  // namespace al
+
+namespace rs {
+
+const sead::Vector3f& getPlayerPos(const al::LiveActor*);
+
+}
