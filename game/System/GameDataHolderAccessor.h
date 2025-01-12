@@ -1,5 +1,7 @@
 #pragma once
 
+#include "System/GameDataHolderWriter.h"
+
 namespace al {
 class IUseSceneObjHolder;
 class SceneObjHolder;
@@ -8,17 +10,9 @@ class LiveActor;
 class ActorInitInfo;
 }  // namespace al
 class SaveObjInfo;
-class GameDataHolder;
 
-class GameDataHolderAccessor {
+class GameDataHolderAccessor : public GameDataHolderWriter {
 public:
     GameDataHolderAccessor(const al::IUseSceneObjHolder*);
     GameDataHolderAccessor(const al::SceneObjHolder*);
-
-    operator GameDataHolder*() const { return mData; }
-
-    GameDataHolder* operator->() const { return mData; }
-
-public:
-    GameDataHolder* mData;
 };
