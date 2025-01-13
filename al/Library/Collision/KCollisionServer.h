@@ -207,4 +207,15 @@ public:
     bool mIsCompareEqual = true;
 };
 
+class CollisionPartsFilterSpecialPurpose : public CollisionPartsFilterBase {
+public:
+    CollisionPartsFilterSpecialPurpose(const char* specialPurpose)
+        : mSpecialPurpose(specialPurpose) {}
+
+    bool isInvalidParts(CollisionParts* collisionParts) override;
+
+public:
+    const char* mSpecialPurpose;
+};
+
 }  // namespace al
