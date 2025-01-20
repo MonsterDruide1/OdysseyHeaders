@@ -85,14 +85,13 @@ struct SubActorSync {
         cAll = cAppear | cClipping | cHide | cAlphaMask  // 15
     };
 
-    AL_BITS(SubActorSync)
+    AL_BITS(SubActorSync);
 };
 
 class SubActorInfo {
 public:
     SubActorInfo();
-
-    SubActorInfo(LiveActor* actor, SubActorSync syncType) : mSubActor(actor), mSyncType(syncType) {}
+    SubActorInfo(LiveActor* actor, SubActorSync syncType) : mSubActor(actor), mSyncType(syncType){};
 
     LiveActor* mSubActor = nullptr;
     void* field_8 = nullptr;
@@ -121,7 +120,7 @@ public:
 bool isExistSubActorKeeper(const LiveActor*);
 LiveActor* getSubActor(const LiveActor* actor, const char* subActorName);
 LiveActor* tryGetSubActor(const LiveActor* actor, const char* subActorName);
-LiveActor* getSubActor(const LiveActor* actor, s32 subActorInfoIndex);
+LiveActor* getSubActor(const LiveActor*, s32);
 s32 getSubActorNum(const LiveActor*);
 void offSyncClippingSubActor(LiveActor*, const LiveActor*);
 void offSyncClippingSubActor(LiveActor*, const char*);

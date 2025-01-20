@@ -82,8 +82,6 @@ public:
 
     const ActorSceneInfo& getActorSceneInfo() const { return mActorSceneInfo; }
 
-    ExecuteDirector* getExecuteDirector() const { return mExecuteDirector; }
-
 public:
     LiveActorGroup* mKitDrawingGroup;
     const PlacementInfo* mPlacementInfo;
