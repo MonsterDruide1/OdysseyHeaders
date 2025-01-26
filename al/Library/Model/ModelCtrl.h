@@ -10,7 +10,6 @@ namespace al {
 class GpuMemAllocator;
 class ModelShaderHolder;
 class Resource;
-class ActorDitherAnimator;
 
 class ModelCtrl {
 public:
@@ -24,18 +23,12 @@ public:
 
     nn::g3d::ModelObj* getModelObj() const { return mModelObj; }
 
-    ActorDitherAnimator* getActorDitherAnimator() const { return mActorDitherAnimator; }
-
 public:
     nn::g3d::ModelObj* mModelObj;
     s32 _8;
     GpuMemAllocator* mGpuMemAllocator;
     ModelShaderHolder* mShaderHolder;
     s32 mBlockBufferSize;
-    unsigned char padding1[0x354];
-    ActorDitherAnimator* mActorDitherAnimator;
-    unsigned char padding2[0xc8];
+    // note: member list not complete
 };
-
-static_assert(sizeof(ModelCtrl) == 0x448);
 }  // namespace al

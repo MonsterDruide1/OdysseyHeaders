@@ -1,6 +1,6 @@
 #pragma once
 
-#include <prim/seadSafeString.h>
+#include <resource/seadResource.h>
 
 namespace al {
 class PlacementInfo;
