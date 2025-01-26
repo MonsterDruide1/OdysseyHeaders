@@ -3,6 +3,9 @@
 namespace al {
 class IUseSceneObjHolder;
 class SceneObjHolder;
+class ISceneObj;
+class LiveActor;
+class ActorInitInfo;
 }  // namespace al
 class SaveObjInfo;
 class GameDataHolder;

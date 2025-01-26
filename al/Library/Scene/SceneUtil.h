@@ -4,9 +4,12 @@
 
 namespace al {
 
+class ISceneObj;
 class Scene;
+class IUseSceneObjHolder;
 class PlayerHolder;
 
-PlayerHolder* getScenePlayerHolder(const Scene* scene);
+ISceneObj* getSceneObj(const IUseSceneObjHolder*, s32);
+PlayerHolder* getScenePlayerHolder(const Scene*);
 
 }  // namespace al

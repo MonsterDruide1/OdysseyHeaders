@@ -15,8 +15,6 @@ public:
     void hide();
     void show();
 
-    ShadowMaskCtrl* getShadowMaskCtrl() const { return mShadowMaskCtrl; }
-
 public:
     ShadowMaskCtrl* mShadowMaskCtrl = nullptr;
     DepthShadowMapCtrl* mDepthShadowMapCtrl = nullptr;
