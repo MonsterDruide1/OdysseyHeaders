@@ -26,8 +26,6 @@ public:
     void makeActorAliveAll();
     void makeActorDeadAll();
 
-    s32 getMaxActorCount() const { return mMaxActorCount; }
-
     s32 getActorCount() const { return mActorCount; }
 
     LiveActor* getActor(s32 idx) const { return mActors[idx]; }

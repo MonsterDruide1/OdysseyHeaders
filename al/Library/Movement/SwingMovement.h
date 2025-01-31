@@ -18,8 +18,6 @@ public:
     bool isLeft() const;
     bool isStop() const;
 
-    f32 getCurrentAngle() const { return mCurrentAngle; }
-
 public:
     s32 mFrameInCycle = 0;
     s32 mDelayRate = 0;
