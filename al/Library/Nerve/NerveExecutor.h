@@ -5,9 +5,20 @@
 #include "Library/HostIO/HioNode.h"
 #include "Library/Nerve/IUseNerve.h"
 
+namespace alNerveFunction {
+class NerveActionCollector;
+}  // namespace alNerveFunction
+
 namespace al {
 class Nerve;
 class NerveKeeper;
+
+class NerveActionCtrl {
+public:
+    NerveActionCtrl(alNerveFunction::NerveActionCollector*);
+
+    NerveKeeper* findNerve(const char*) const;
+};
 
 class NerveExecutor : public IUseNerve, public HioNode {
 public:
