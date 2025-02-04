@@ -15,8 +15,8 @@ namespace al {
 class ByamlIter;
 class CollisionParts;
 class HitSensor;
-struct KCPrismData;
-struct KCPrismHeader;
+class KCPrismData;
+class KCPrismHeader;
 class LiveActor;
 
 class Triangle {

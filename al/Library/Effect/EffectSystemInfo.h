@@ -5,17 +5,10 @@
 #include <math/seadVector.h>
 
 namespace al {
-class EffectSystem;
 class IUseEffectKeeper;
 class PtclSystem;
 
-class EffectSystemInfo {
-public:
-    EffectSystemInfo();
-
-    const EffectSystem& getEffectSystem() const;
-
-public:
+struct EffectSystemInfo {
     s32 _0;
     PtclSystem* mPtclSystem;
     void* _10;

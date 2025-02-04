@@ -32,9 +32,9 @@ public:
     }
 
 public:
-    IUseNerve* mParent;
+    IUseNerve* mParent = nullptr;
     const Nerve* mCurrentNerve = nullptr;
-    const Nerve* mNextNerve;
+    const Nerve* mNextNerve = nullptr;
     s32 mStep = 0;
     NerveStateCtrl* mStateCtrl = nullptr;
     NerveActionCtrl* mActionCtrl = nullptr;

@@ -10,25 +10,17 @@ class SensorHitGroup;
 
 class HitSensorDirector : public IUseExecutor, public IUseHioNode {
 public:
-    HitSensorDirector(ExecuteDirector* parent);
+    HitSensorDirector(ExecuteDirector*);
 
     void execute() override;
-    void initGroup(HitSensor* sensor);
+
+    void initGroup(HitSensor*);
+    void executeHitCheckInSameGroup(SensorHitGroup*) const;
+    void executeHitCheckGroup(SensorHitGroup*, SensorHitGroup*) const;
+    void executeHitCheck(HitSensor*, HitSensor*) const;
 
 public:
-    void executeHitCheckInSameGroup(SensorHitGroup* group) const;
-    void executeHitCheckGroup(SensorHitGroup* group, SensorHitGroup* group2) const;
-    void executeHitCheck(HitSensor* sensor, HitSensor* otherSensor) const;
-
-public:
-    SensorHitGroup* mPlayer = nullptr;
-    SensorHitGroup* mPlayerEye = nullptr;
-    SensorHitGroup* mRide = nullptr;
-    SensorHitGroup* mEye = nullptr;
-    SensorHitGroup* mLookAt = nullptr;
-    SensorHitGroup* mSimple = nullptr;
-    SensorHitGroup* mMapObj = nullptr;
-    SensorHitGroup* mCharacter = nullptr;
+    void* filler[8];
 };
 
 static_assert(sizeof(HitSensorDirector) == 0x48);
