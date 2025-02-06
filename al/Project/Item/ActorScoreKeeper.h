@@ -19,8 +19,6 @@ public:
     const char* tryGetCategoryName(const char* a1);
 
 public:
-    inline void allocArray();
-    inline void putEntry(s32 index, const ByamlIter& iter);
 
     Entry* mArray = nullptr;
     s32 mSize = 0;
