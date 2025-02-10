@@ -1,26 +1,12 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-#include <math/seadQuat.h>
 #include <math/seadVector.h>
 
 #include "Library/LiveActor/LiveActor.h"
 
-namespace al {
-class ActorInitInfo;
-class HitSensor;
-class MtxConnector;
-}  // namespace al
-
-class CoinStateAppearRotate;
-class CoinRotateCalculator;
-class WaterSurfaceShadow;
-class SaveObjInfo;
-class ExternalForceKeeper;
-
 class Coin : public al::LiveActor {
 public:
-    Coin(const char* name, bool isDemo = false);
+    Coin(const char* name, bool);
 
     void init(const al::ActorInitInfo& initInfo) override;
     void initAfterPlacement() override;
@@ -45,8 +31,7 @@ public:
     void appearCountUp10(s32);
     void appearCountUpFixPos10(s32);
     void appearCoinRail();
-    void appearCoinChameleon(const sead::Vector3f& trans, const sead::Quatf& quat,
-                             const sead::Vector3f& position);
+    void appearCoinChameleon(const sead::Vector3f&, const sead::Vector3f&, const sead::Vector3f&);
     void appearLimitTime(s32);
     void appearBlow(const sead::Vector3f& velocity, s32 delayTime);
     void rotate();
@@ -56,7 +41,7 @@ public:
     void appearFall(const sead::Vector3f&, s32);
     void appearPlayerDead(const sead::Vector3f&, const sead::Vector3f&, bool, bool);
     void appearPlayerDeadReplace(const sead::Vector3f&);
-    void setShadowDropLength(f32 shadowLength);
+    void setShadowDropLength(f32);
     void get();
     bool isGotOrRotate() const;
     bool isWait() const;
@@ -71,27 +56,8 @@ public:
     void exeGot();
     void exeBlowUpDelay();
 
-    void setMtxConnector(al::MtxConnector* mtxConnector) { mMtxConnector = mtxConnector; }
-
 public:
-    CoinStateAppearRotate* mStateAppearRotate = nullptr;
-    sead::Vector3f mDisplayOffset = sead::Vector3f::zero;
-    sead::Quatf mStartingQuat = sead::Quatf::unit;
-    al::MtxConnector* mMtxConnector = nullptr;
-    bool mIsConnectToCollisionBack = false;
-    s32 mAppearDelay = -1;
-    sead::Vector3f mChameleonOffset = sead::Vector3f::zero;
-    ExternalForceKeeper* mExternalForceKeeper = nullptr;
-    CoinRotateCalculator* mRotateCalculator = nullptr;
-    bool mIsPlaced = false;
-    f32 mShadowSize = 0.0f;
-    sead::Vector3f mPoseTrans = sead::Vector3f::zero;
-    sead::Quatf mPoseQuat = sead::Quatf::unit;
-    WaterSurfaceShadow* mWaterSurfaceShadow = nullptr;
-    s32 mCountUpDelay = 0;
-    sead::Vector3f mBlowVelocity = sead::Vector3f::zero;
-    SaveObjInfo* mSaveObjInfo = nullptr;
-    bool mIsDemo;
+    char _108[0xA8];
 };
 
 namespace CoinFunction {
