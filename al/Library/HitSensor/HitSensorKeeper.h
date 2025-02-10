@@ -9,25 +9,23 @@ class LiveActor;
 
 class HitSensorKeeper {
 public:
-    HitSensorKeeper(s32 sensorCount);
+    HitSensorKeeper(s32);
 
-    HitSensor* addSensor(LiveActor* parentActor, const char* name, u32 hitSensorType, f32 radius,
-                         u16 maxSensorCount, const sead::Vector3f* followPos,
-                         const sead::Matrix34f* followMatrix, const sead::Vector3f& offset);
+    HitSensor* addSensor(LiveActor*, const char*, u32, f32, u16, const sead::Vector3f*,
+                         const sead::Matrix34f*, const sead::Vector3f&);
     void update();
     s32 getSensorNum() const;
-    HitSensor* getSensor(s32 index) const;
+    HitSensor* getSensor(s32) const;
     void attackSensor();
     void clear();
     void validate();
     void invalidate();
     void validateBySystem();
     void invalidateBySystem();
-    HitSensor* getSensor(const char* name) const;
+    HitSensor* getSensor(const char*) const;
 
 public:
-    s32 mMaxSensors;
-    s32 mSensorCount = 0;
+    s32 mSensorCount;
     HitSensor** mSensors;
 };
 
