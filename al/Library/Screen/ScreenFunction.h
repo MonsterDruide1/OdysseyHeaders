@@ -37,17 +37,6 @@ public:
     bool mIsCaptured;
 };
 
-class ScreenCoverCtrl {
-public:
-    ScreenCoverCtrl();
-    void requestCaptureScreenCover(s32 totalFrames);
-    void update();
-
-public:
-    s32 mFrameTimer;
-    bool mIsActive;
-};
-
 u32 getDisplayWidth();
 u32 getDisplayHeight();
 u32 getLayoutDisplayWidth();
