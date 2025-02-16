@@ -6,13 +6,13 @@
 
 namespace al {
 struct NfpCharacterId;
-struct NfpInfo;
+class NfpInfo;
 class IUseMessageSystem;
 class IUseSceneObjHolder;
 }  // namespace al
 
 namespace ShopItem {
-struct ItemInfo;
+class ItemInfo;
 }
 
 class SearchAmiiboDataTable;

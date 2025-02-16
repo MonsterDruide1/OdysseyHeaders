@@ -11,10 +11,8 @@ namespace al {
 class PlacementId;
 }
 
-class ChangeStageInfo;
 class GameDataFile;
-class GameSequenceInfo;
-class TimeBalloonSequenceInfo;
+class ChangeStageInfo;
 
 struct ItemAmiiboInfo {
     s32 mCharacterId;
@@ -113,8 +111,6 @@ public:
 
     const sead::PtrArray<ItemListInfo>& getStickerList() const { return mItemSticker; }
 
-    GameSequenceInfo* getSequenceInfo() const { return mSequenceInfo; }
-
 public:
     s32 padding;
     GameDataFile** mDataFileArr;
@@ -141,9 +137,7 @@ public:
     sead::PtrArray<ItemListInfo> mItemSticker;
     u8 gap_150[0x190 - 0x150];
     WorldList* mWorldList;
-    u8 gap_198[0x258 - 0x198];
-    GameSequenceInfo* mSequenceInfo;
-    TimeBalloonSequenceInfo* mTimeBalloonSequenceInfo;
+    u8 gap_198[0x268 - 0x198];
 };
 
 static_assert(sizeof(GameDataHolder) == 0x268);

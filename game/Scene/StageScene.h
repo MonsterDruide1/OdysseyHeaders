@@ -4,6 +4,8 @@
 
 #include "Layout/StageSceneLayout.h"
 
+class PlayerActorHakoniwa;
+
 class StageScene : public al::Scene {
 public:
     StageScene();
@@ -27,5 +29,5 @@ public:
 };
 
 namespace rs {
-al::LiveActor* getPlayerActor(const al::Scene*);
+PlayerActorHakoniwa* getPlayerActor(const al::Scene*);
 }
