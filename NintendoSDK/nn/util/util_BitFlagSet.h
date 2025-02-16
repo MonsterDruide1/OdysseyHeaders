@@ -212,7 +212,7 @@ struct BitFlagSet {
 
         static constexpr BitFlagSet buildMask() {
             BitFlagSet tmp;
-            tmp._storage[StorageIndex] = StorageMask;
+            tmp.data[StorageIndex] = StorageMask;
             return tmp;
         }
 
