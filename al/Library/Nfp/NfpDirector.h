@@ -38,7 +38,7 @@ public:
     void executeCommandStop();
 
 public:
-    char filler[0xd4];
+    char filler[0xdc];
 };
 
 }  // namespace al

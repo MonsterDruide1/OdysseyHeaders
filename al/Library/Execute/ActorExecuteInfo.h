@@ -13,12 +13,6 @@ public:
     void addUpdater(ExecutorActorExecuteBase* updater);
     void addDrawer(ModelDrawerBase* drawer);
 
-    ExecuteRequestKeeper* getRequestKeeper() const { return mRequestKeeper; }
-
-    ModelDrawerBase* getDrawer(s32 idx) const { return mDrawers[idx]; }
-
-    s32 getDrawerCount() const { return mDrawerCount; }
-
 public:
     ExecuteRequestKeeper* mRequestKeeper = nullptr;
     s32 mUpdaterCount = 0;

@@ -17,10 +17,6 @@ public:
     void showError(const nn::Result& result) override;
     al::NfpInfo* tryGetTriggerTouchNfpInfo();
 
-    bool isNfpErrorHandled() { return mIsNfpErrorHandled; }
-
 public:
-    bool mIsNfpErrorHandled;
+    bool _dc;
 };
-
-static_assert(sizeof(ProjectNfpDirector) == 0xe0, "ProjectNfpDirector Size");
