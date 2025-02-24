@@ -5,7 +5,6 @@
 
 #pragma once
 
-#include <nn/album/album_types.h>
 #include <nn/settings.h>
 #include <nn/types.h>
 
@@ -29,37 +28,26 @@ enum FocusHandlingMode {
     FocusHandlingMode_AlwaysSuspend
 };
 
-enum FocusState {
-    FocusState_InFocus = 1,
-    FocusState_OutOfFocus = 2,
-    FocusState_Background = 3,
-};
-
 struct DisplayVersion {
     char name[16];
 };
 
-typedef s32 PerformanceConfiguration;
-
 void Initialize();
-void FinishStartupLogo();
-void EnableGamePlayRecording(void*, u64);
-void SetExpectedVolumeBalance(f32, f32);
-void SetPerformanceConfiguration(nn::oe::PerformanceMode, nn::oe::PerformanceConfiguration);
+void SetPerformanceConfiguration(nn::oe::PerformanceMode, s32);
+OperationMode GetOperationMode();
+PerformanceMode GetPerformanceMode();
 void SetResumeNotificationEnabled(bool);
 void SetOperationModeChangedNotificationEnabled(bool);
 void SetPerformanceModeChangedNotificationEnabled(bool);
 void SetFocusHandlingMode(nn::oe::FocusHandlingMode);
-void setScreenShotImageOrientation(nn::album::ImageOrientation);
-void SetUserInactivityDetectionTimeExtended(bool);
-bool IsUserInactivityDetectionTimeExtended();
 bool TryPopNotificationMessage(u32*);
-bool TryPopLaunchParameter(size_t*, void*, size_t);
-void GetExpectedVolumeBalance(f32*, f32*);
-void GetDisplayVersion(DisplayVersion*);
-FocusState GetCurrentFocusState();
-OperationMode GetOperationMode();
-PerformanceMode GetPerformanceMode();
+s32 GetCurrentFocusState();
+void EnableGamePlayRecording(void*, u64);
+bool IsUserInactivityDetectionTimeExtended();
+void SetUserInactivityDetectionTimeExtended(bool);
+void FinishStartupLogo();
 nn::settings::LanguageCode GetDesiredLanguage();
+void GetDisplayVersion(DisplayVersion*);
+bool TryPopLaunchParameter(size_t*, void*, size_t);
 
 }  // namespace nn::oe
