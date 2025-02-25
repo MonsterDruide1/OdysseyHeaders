@@ -63,6 +63,8 @@ public:
 
     ExecuteDirector* getExecuteDirector() const { return mExecuteDirector; }
 
+    ActorResourceHolder* getActorResourceHolder() const { return mActorResourceHolder; }
+
 public:
     LiveActorGroup* mKitDrawingGroup = nullptr;
     const PlacementInfo* mPlacementInfo = nullptr;
