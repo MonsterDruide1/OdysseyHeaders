@@ -35,7 +35,6 @@
 #include <vapours/results/loader_results.hpp>
 #include <vapours/results/lr_results.hpp>
 #include <vapours/results/ncm_results.hpp>
-#include <vapours/results/nfp_results.hpp>
 #include <vapours/results/nim_results.hpp>
 #include <vapours/results/ns_results.hpp>
 #include <vapours/results/os_results.hpp>
