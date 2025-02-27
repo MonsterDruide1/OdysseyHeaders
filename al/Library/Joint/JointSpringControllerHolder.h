@@ -3,9 +3,10 @@
 #include <basis/seadTypes.h>
 
 namespace al {
+
 class ByamlIter;
-class JointSpringController;
 class LiveActor;
+class JointSpringController;
 
 class JointSpringControllerHolder {
 public:
@@ -28,11 +29,8 @@ public:
     s32 calcInitFileSpringControlJointNum(const LiveActor*, const char*);
 
 public:
-    JointSpringController** mJointSpringControllerEntries;
-    s32 mSize;
-    s32 mMaxSize;
+    void* field_0;
+    void* field_8;
 };
-
-static_assert(sizeof(JointSpringControllerHolder) == 0x10);
 
 }  // namespace al
