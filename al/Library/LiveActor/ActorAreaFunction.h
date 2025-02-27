@@ -3,14 +3,9 @@
 namespace al {
 class ActorInitInfo;
 class AreaObj;
-class AreaObjGroup;
 class LiveActor;
 class SwitchKeepOnAreaGroup;
 class SwitchOnAreaGroup;
-
-AreaObjGroup* createLinkAreaGroup(const ActorInitInfo&, const char*, const char*, const char*);
-AreaObjGroup* createLinkAreaGroup(LiveActor*, const ActorInitInfo&, const char*, const char*,
-                                  const char*);
 
 bool isInAreaObj(const LiveActor*, const char*);
 bool isInDeathArea(const LiveActor*);
