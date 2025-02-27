@@ -32,7 +32,7 @@ struct GameSystemInfo {
     void* field_28;
     GamePadSystem* gamePadSystem;
     DrawSystemInfo* drawSystemInfo;
-    FontHolder* fontHolder;
+    FontHolder* mFontHolder;
     NfpDirector* nfpDirector;
     HtmlViewer* htmlViewer;
     ApplicationMessageReceiver* applicationMessageReciever;
