@@ -219,12 +219,6 @@ inline void Vector3<T>::rotate(const Mtx34& m)
 }
 
 template <typename T>
-inline void Vector3<T>::rotate(const Quat& q)
-{
-    setRotated(q, *this);
-}
-
-template <typename T>
 inline void Vector3<T>::multScalar(T t)
 {
     Vector3CalcCommon<T>::multScalar(*this, *this, t);
@@ -288,12 +282,6 @@ template <typename T>
 inline void Vector3<T>::setRotated(const Mtx34& m, const Vector3<T>& a)
 {
     Vector3CalcCommon<T>::rotate(*this, m, a);
-}
-
-template <typename T>
-inline void Vector3<T>::setRotated(const Quat& q, const Vector3<T>& a)
-{
-    Vector3CalcCommon<T>::rotate(*this, q, a);
 }
 
 template <typename T>

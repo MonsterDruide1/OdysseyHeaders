@@ -7,14 +7,13 @@ class LayoutInitInfo;
 
 class WipeSimple : public LayoutActor {
 public:
-    WipeSimple(const char* name, const char* layoutName, const LayoutInitInfo& info,
-               const char* actorName);
+    WipeSimple(const char*, const char*, const LayoutInitInfo&, const char*);
 
-    void startClose(s32 frames);
-    void tryStartClose(s32 frames);
+    void startClose(s32);
+    void tryStartClose(s32);
     void startCloseEnd();
-    void startOpen(s32 frames);
-    void tryStartOpen(s32 frames);
+    void startOpen(s32);
+    void tryStartOpen(s32);
     bool isCloseEnd() const;
     bool isOpenEnd() const;
     void exeClose();
@@ -24,7 +23,7 @@ public:
     void appear() override;
 
 public:
-    s32 mFrames = -1;
+    s32 mTime = -1;
 };
 
 }  // namespace al

@@ -78,7 +78,6 @@ struct Vector3 : public Policies<T>::Vec3Base
 {
     using Mtx33 = typename Policies<T>::Mtx33Base;
     using Mtx34 = typename Policies<T>::Mtx34Base;
-    using Quat = typename Policies<T>::QuatBase;
 
     /// @warning This constructor leaves member variables uninitialized.
     Vector3() {}
@@ -150,8 +149,6 @@ struct Vector3 : public Policies<T>::Vec3Base
     void rotate(const Mtx33& m);
     /// Apply a rotation `m` to this vector.
     void rotate(const Mtx34& m);
-    /// Apply a rotation `q` to this vector.
-    void rotate(const Quat& q);
     void multScalar(T t);
 
     T normalize();
@@ -164,7 +161,6 @@ struct Vector3 : public Policies<T>::Vec3Base
     void setMul(const Mtx34& m, const Vector3& a);
     void setRotated(const Mtx33& m, const Vector3& a);
     void setRotated(const Mtx34& m, const Vector3& a);
-    void setRotated(const Quat& q, const Vector3& a);
 
     static const Vector3 zero;
     static const Vector3 ex;
