@@ -38,28 +38,31 @@ void initChildActorWithArchiveNameWithPlacementInfo(LiveActor* actor, const Acto
 void initChildActorWithArchiveNameNoPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo,
                                                   const sead::SafeString& archiveName,
                                                   const char* suffix);
-LiveActor* createChildLinkSimpleActor(const char* actorName, const char* archiveName,
+LiveActor* createChildLinkSimpleActor(const char* actorName, const char* linkName,
                                       const ActorInitInfo& initInfo, bool alive);
-LiveActor* createChildLinkMapPartsActor(const char* actorName, const char* archiveName,
+LiveActor* createChildLinkMapPartsActor(const char* actorName, const char* linkName,
                                         const ActorInitInfo& initInfo, s32 linkIndex, bool alive);
 void initMapPartsActor(LiveActor* actor, const ActorInitInfo& initInfo, const char* suffix);
 void initLinksActor(LiveActor* actor, const ActorInitInfo& initInfo, const char* suffix,
                     s32 linkIndex);
 ActorInitInfo* createLinksPlayerActorInfo(LiveActor* actor, const ActorInitInfo& initInfo);
-const char* getLinksActorClassName(const ActorInitInfo&, const char*, s32);
-const char* getLinksActorDisplayName(const ActorInitInfo&, const char*, s32);
-const char* getLinksActorObjectName(const ActorInitInfo&, const char*, s32);
-void initCreateActorWithPlacementInfo(LiveActor*, const ActorInitInfo&);
-void initCreateActorWithPlacementInfo(LiveActor*, const ActorInitInfo&, const PlacementInfo&);
-void initCreateActorNoPlacementInfo(LiveActor*, const ActorInitInfo&);
-void initCreateActorNoPlacementInfoNoViewId(LiveActor*, const ActorInitInfo&);
-LiveActor* createPlacementActorFromFactory(const ActorInitInfo&, const PlacementInfo*);
-LiveActor* createLinksActorFromFactory(const ActorInitInfo& info, const char* linkName,
+const char* getLinksActorClassName(const ActorInitInfo& initInfo, const char* linkName,
+                                   s32 linkIndex);
+const char* getLinksActorDisplayName(const ActorInitInfo& initInfo, const char* linkName,
+                                     s32 linkIndex);
+const char* getLinksActorObjectName(const ActorInitInfo& initInfo, const char* linkName,
+                                    s32 linkIndex);
+void initCreateActorWithPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo);
+void initCreateActorWithPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo, const PlacementInfo& placementInfo);
+void initCreateActorNoPlacementInfo(LiveActor* actor, const ActorInitInfo& initInfo);
+void initCreateActorNoPlacementInfoNoViewId(LiveActor* actor, const ActorInitInfo& initInfo);
+LiveActor* createPlacementActorFromFactory(const ActorInitInfo& initInfo, const PlacementInfo* placementInfo);
+LiveActor* createLinksActorFromFactory(const ActorInitInfo& initInfo, const char* linkName,
                                        s32 linkNum);
-LiveActorGroup* createLinksActorGroupFromFactory(const ActorInitInfo&, const char*, const char*);
-LiveActorGroup* tryCreateLinksActorGroupFromFactory(const ActorInitInfo&, const char*, const char*);
-LiveActorGroup* tryCreateLinksActorFromFactorySingle(const ActorInitInfo&, const char*);
-void createAndRegisterLinksActorFromFactory(LiveActorGroup*, const ActorInitInfo&, const char*);
+LiveActorGroup* createLinksActorGroupFromFactory(const ActorInitInfo& initInfo, const char* linkName, const char* groupName);
+LiveActorGroup* tryCreateLinksActorGroupFromFactory(const ActorInitInfo& initInfo, const char* linkName, const char* groupName);
+LiveActor* tryCreateLinksActorFromFactorySingle(const ActorInitInfo& initInfo, const char* linkName);
+void createAndRegisterLinksActorFromFactory(LiveActorGroup* group, const ActorInitInfo& initInfo, const char* linkName);
 void makeMapPartsModelName(sead::BufferedSafeString*, sead::BufferedSafeString*,
                            const PlacementInfo&);
 void makeMapPartsModelName(sead::BufferedSafeString*, sead::BufferedSafeString*,
