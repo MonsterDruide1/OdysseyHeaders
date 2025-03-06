@@ -2,7 +2,6 @@
 
 #include <math/seadMatrix.h>
 #include <math/seadVector.h>
-#include <prim/seadStorageFor.h>
 
 namespace al {
 class Triangle;
@@ -82,10 +81,6 @@ public:
     bool isCollisionAtCorner() const;
     const sead::Vector3f& tryGetHitEdgeNormal() const;
 
-    friend class ArrowHitInfo;
-    friend class SphereHitInfo;
-    friend class DiskHitInfo;
-
 public:
     Triangle mTriangle;
     f32 _70 = 0.0f;
@@ -95,49 +90,18 @@ public:
     CollisionLocation mCollisionLocation = CollisionLocation::None;
 };
 
-class ArrowHitInfo {
-public:
-    HitInfo* operator*() { return mHitInfo.data(); }
+class ArrowHitInfo : public HitInfo {};
 
-    const HitInfo* operator*() const { return mHitInfo.data(); }
-
-    HitInfo& operator->() { return *mHitInfo; }
-
-    const HitInfo& operator->() const { return *mHitInfo; }
-
-    sead::StorageFor<HitInfo> mHitInfo{sead::ZeroInitializeTag{}};
-};
-
-class SphereHitInfo {
+class SphereHitInfo : public HitInfo {
 public:
     void calcFixVector(sead::Vector3f* a1, sead::Vector3f* a2) const;
     void calcFixVectorNormal(sead::Vector3f* a1, sead::Vector3f* a2) const;
-
-    HitInfo* operator*() { return mHitInfo.data(); }
-
-    const HitInfo* operator*() const { return mHitInfo.data(); }
-
-    HitInfo& operator->() { return *mHitInfo; }
-
-    const HitInfo& operator->() const { return *mHitInfo; }
-
-    sead::StorageFor<HitInfo> mHitInfo{sead::ZeroInitializeTag{}};
 };
 
-class DiskHitInfo {
+class DiskHitInfo : public HitInfo {
 public:
     void calcFixVector(sead::Vector3f* a1, sead::Vector3f* a2) const;
     void calcFixVectorNormal(sead::Vector3f* a1, sead::Vector3f* a2) const;
-
-    HitInfo* operator*() { return mHitInfo.data(); }
-
-    const HitInfo* operator*() const { return mHitInfo.data(); }
-
-    HitInfo& operator->() { return *mHitInfo; }
-
-    const HitInfo& operator->() const { return *mHitInfo; }
-
-    sead::StorageFor<HitInfo> mHitInfo{sead::ZeroInitializeTag{}};
 };
 
 }  // namespace al
