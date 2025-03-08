@@ -32,11 +32,11 @@ public:
 public:
     s32 mIndex;
     bool mIsValid = true;
-    bool mIsActiveInterpole = true;
+    bool _5 = true;
     bool _6 = false;
     const sead::LookAtCamera& mLookAtCam;
     const Projection& mProjection;
-    const CameraViewFlag& mViewFlag;
+    const CameraViewFlag& mCamViewFlag;
     const OrthoProjectionInfo& mOrthoProjectionInfo;
 };
 }  // namespace al

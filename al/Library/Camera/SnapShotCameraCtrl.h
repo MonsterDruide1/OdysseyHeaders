@@ -14,7 +14,7 @@ struct CameraParam {
 };
 
 namespace al {
-struct SnapShotCameraSceneInfo;
+class SnapShotCameraSceneInfo;
 class ICameraInput;
 class IUseCollision;
 
