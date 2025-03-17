@@ -67,7 +67,6 @@ public:
                       f32 release_threshold, s32 start_bit);
     u32 createStickCrossMask_();
 
-public:
     enum
     {
         cPadIdx_MaxBase = 32
