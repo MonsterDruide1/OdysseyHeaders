@@ -11,8 +11,7 @@ class MessageTagDataHolder {
 public:
     MessageTagDataHolder(s32 size);
     void registerMessageTagData(MessageTagDataBase*);
-    void replaceMessage(sead::BufferedSafeStringBase<char16>*, const IUseMessageSystem*,
-                        const char16*) const;
+    void replaceMessage(sead::WBufferedSafeString*, const IUseMessageSystem*, const char16*) const;
 
 public:
     const char** mMessageArray;

@@ -2,10 +2,9 @@
 
 #include <prim/seadSafeString.h>
 
-#include "Library/Resource/Resource.h"
-
 namespace al {
+class Resource;
 
 Resource* findOrCreateResource(const sead::SafeString&, const char*);
 
-}
+}  // namespace al
