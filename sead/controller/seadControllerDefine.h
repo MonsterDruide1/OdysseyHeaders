@@ -45,9 +45,7 @@ public:
         cAddon_Null = 0,
         cAddon_Accelerometer = 1,
         cAddon_PatternRumble = 2,
-        cAddon_UserDefine = 3,
-        cAddon_Gyro = 4,
-        cAddon_UiKeyInput = 5
+        cAddon_UserDefine = 3
     };
 };
 

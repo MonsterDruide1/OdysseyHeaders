@@ -5,7 +5,6 @@
 #include "Library/Message/MessageSystem.h"
 #include "Library/Scene/GameDataHolderBase.h"
 
-#include "Scene/SceneObjFactory.h"
 #include "System/WorldList.h"
 
 namespace al {
@@ -23,8 +22,6 @@ class TimeBalloonSequenceInfo;
 
 class GameDataHolder : public al::GameDataHolderBase {
 public:
-    static constexpr s32 sSceneObjId = SceneObjID_GameDataHolder;
-
     GameDataHolder(const al::MessageSystem*);
     GameDataHolder();
 
