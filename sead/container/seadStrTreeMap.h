@@ -74,14 +74,16 @@ inline void StrTreeMap<N, Value>::Node::erase_()
 template <s32 N, typename Value>
 inline void StrTreeMap<N, Value>::allocBuffer(s32 node_max, Heap* heap, s32 alignment)
 {
+    s32 node_size = sizeof(Node);
+
     SEAD_ASSERT(mFreeList.work() == nullptr);
     if (node_max <= 0)
     {
         SEAD_ASSERT_MSG(false, "node_max[%d] must be larger than zero", node_max);
-        AllocFailAssert(heap, node_max * sizeof(Node), alignment);
+        AllocFailAssert(heap, node_max * node_size, alignment);
     }
 
-    void* work = AllocBuffer(node_max * sizeof(Node), heap, alignment);
+    void* work = AllocBuffer(node_max * node_size, heap, alignment);
     if (work)
         setBuffer(node_max, work);
 }
@@ -108,21 +110,26 @@ inline void StrTreeMap<N, Value>::freeBuffer()
 template <s32 N, typename Value>
 inline Value* StrTreeMap<N, Value>::insert(const SafeString& key, const Value& value)
 {
-    if (mSize >= mCapacity)
+    Value* ptr = nullptr;
+
+    if (mSize < mCapacity)
     {
-        if (Node* node = find(key))
-        {
-            node->value() = value;
-            return &node->value();
-        }
+        Node* node = new (mFreeList.alloc()) Node(this, key, value);
+        ptr = &node->value();
+        ++mSize;
+        MapImpl::insert(node);
+    }
+    else if (Node* node = find(key))
+    {
+        ptr = &node->value();
+        new (ptr) Value(value);
+    }
+    else
+    {
         SEAD_ASSERT_MSG(false, "map is full.");
-        return nullptr;
     }
 
-    Node* node = new (mFreeList.alloc()) Node(this, key, value);
-    ++mSize;
-    MapImpl::insert(node);
-    return &node->value();
+    return ptr;
 }
 
 template <s32 N, typename Value>
