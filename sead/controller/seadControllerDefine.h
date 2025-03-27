@@ -4,6 +4,7 @@
 
 namespace sead
 {
+// from Wii U-decomp, not adjusted to switch
 class ControllerDefine
 {
 public:
@@ -20,8 +21,9 @@ public:
         cController_CafeDRC = 8,
         cController_Merge = 9,
         cController_UserDefine = 10,
-        cController_Npad = 15,
-        cController_PadTouch = 16
+
+        _15 = 15,
+        _16 = 16
     };
 
     enum DeviceId
@@ -35,10 +37,7 @@ public:
         cDevice_CafeDebugPad = 6,
         cDevice_CafeWPad = 7,
         cDevice_CafeVPad = 8,
-        cDevice_UserDefine = 9,
-        cDevice_NinDebugPad = 11,
-        cDevice_NinJoyNpad = 13,
-        cDevice_PadTouch = 15
+        cDevice_UserDefine = 9
     };
 
     enum AddonId
