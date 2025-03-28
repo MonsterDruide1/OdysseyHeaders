@@ -15,13 +15,13 @@ void deleteSceneObj(const IUseSceneObjHolder* user, s32 sceneObjId);
 bool tryDeleteSceneObj(const IUseSceneObjHolder* user, s32 sceneObjId);
 
 template <typename T>
-inline T* getSceneObj(const IUseSceneObjHolder* user) {
-    return static_cast<T*>(getSceneObj(user, T::sSceneObjId));
+inline T* getSceneObj(const IUseSceneObjHolder* user, s32 sceneObjId) {
+    return static_cast<T*>(getSceneObj(user, sceneObjId));
 }
 
 template <typename T>
-inline T* tryGetSceneObj(const IUseSceneObjHolder* user) {
-    return static_cast<T*>(tryGetSceneObj(user, T::sSceneObjId));
+inline T* tryGetSceneObj(const IUseSceneObjHolder* user, s32 sceneObjId) {
+    return static_cast<T*>(tryGetSceneObj(user, sceneObjId));
 }
 
 }  // namespace al

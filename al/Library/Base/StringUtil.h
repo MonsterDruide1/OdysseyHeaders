@@ -3,9 +3,7 @@
 #include <prim/seadSafeString.h>
 
 namespace al {
-struct MatchStr {
-    const char* str;
-};
+class MatchStr;
 
 const char* createStringIfInStack(const char* str);
 const char* createConcatString(const char* start, const char* end);
