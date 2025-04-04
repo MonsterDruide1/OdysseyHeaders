@@ -55,14 +55,11 @@ public:
         bool unkBool3;
     };
 
-    bool isGameClear() const;
-    bool isUnlockedWorld(s32 index) const;
-    bool isAlreadyGoWorld(s32 index) const;
     void wearCostume(const char*);
     void wearCap(const char*);
 
 public:
-    char filler0[0x6a8];
+    unsigned char filler0[0x6A8];
     GameProgressData* mGameProgressData;
     char filler1[0x1a0];
     GameDataHolder* mGameDataHolder;
