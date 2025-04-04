@@ -7,7 +7,7 @@
 #include "Util/IUseDimension.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class HitSensor;
 class NerveStateBase;
 class SensorMsg;

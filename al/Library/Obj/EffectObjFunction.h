@@ -2,7 +2,7 @@
 
 namespace al {
 class LiveActor;
-struct ActorInitInfo;
+class ActorInitInfo;
 
 namespace EffectObjFunction {
 void initActorEffectObj(LiveActor* actor, const ActorInitInfo& info);

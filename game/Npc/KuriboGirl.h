@@ -6,7 +6,7 @@
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class AreaObjGroup;
 class ActorCameraTarget;
 class CameraTicket;

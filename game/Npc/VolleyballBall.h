@@ -7,7 +7,7 @@
 
 namespace al {
 
-struct ActorInitInfo;
+class ActorInitInfo;
 class HitSensor;
 class ParabolicPath;
 class SensorMsg;

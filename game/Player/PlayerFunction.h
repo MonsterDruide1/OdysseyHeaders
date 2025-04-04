@@ -1,11 +1,11 @@
 #pragma once
 
-#include <math/seadMatrix.h>
+#include <math/seadVector.h>
 #include <prim/seadSafeString.h>
 
 namespace al {
 class LiveActor;
-struct ActorInitInfo;
+class ActorInitInfo;
 class Resource;
 class AudioKeeper;
 }  // namespace al
@@ -18,7 +18,6 @@ class PlayerJointControlPartsDynamics;
 class PlayerFunction {
 public:
     static u32 getPlayerInputPort(const al::LiveActor*);
-    static const sead::Matrix34f& getPlayerViewMtx(const al::LiveActor*);
     static bool tryActivateAmiiboPreventDamage(const al::LiveActor*);
     static bool isPlayerDeadStatus(const al::LiveActor* player);
     static void syncBodyHairVisibility(al::LiveActor*, al::LiveActor*);

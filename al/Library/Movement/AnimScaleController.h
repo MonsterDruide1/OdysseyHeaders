@@ -6,7 +6,7 @@
 #include "Library/Nerve/NerveExecutor.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 
 struct AnimScaleParam {
     AnimScaleParam();

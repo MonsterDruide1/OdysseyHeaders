@@ -1,7 +1,7 @@
 #pragma once
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class EventFlowExecutor;
 class LiveActor;
 class MessageTagDataHolder;

@@ -4,7 +4,7 @@
 #include <math/seadVector.h>
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class PlacementInfo;
 
 // TODO: I'm not sure about this

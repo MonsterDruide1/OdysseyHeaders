@@ -5,7 +5,7 @@
 namespace al {
 struct NfpInfo;
 
-struct ActorInitInfo;
+class ActorInitInfo;
 class LiveActor;
 }  // namespace al
 

@@ -3,7 +3,7 @@
 #include "Library/Nerve/NerveExecutor.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 
 class SwingMovement : public NerveExecutor {
 public:

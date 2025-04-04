@@ -3,7 +3,7 @@
 #include "Library/Placement/PlacementId.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class LiveActor;
 class HitSensor;
 

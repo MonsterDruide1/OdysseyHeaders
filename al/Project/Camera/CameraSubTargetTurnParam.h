@@ -3,7 +3,7 @@
 #include <basis/seadTypes.h>
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 
 class CameraSubTargetTurnParam {
 public:

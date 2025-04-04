@@ -15,7 +15,7 @@ class CameraSubTargetTurnParam;
 class SceneCameraInfo;
 class PlacementId;
 class Resource;
-struct ActorInitInfo;
+class ActorInitInfo;
 class LiveActor;
 class PlacementInfo;
 class CameraPoser;
