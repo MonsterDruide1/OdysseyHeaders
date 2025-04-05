@@ -5,7 +5,7 @@
 namespace al {
 class LiveActor;
 class HitSensor;
-struct ActorInitInfo;
+class ActorInitInfo;
 }  // namespace al
 
 class PlayerRecoverySafetyPoint;

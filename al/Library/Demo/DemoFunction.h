@@ -4,7 +4,7 @@
 
 namespace al {
 class AddDemoInfo;
-struct ActorInitInfo;
+class ActorInitInfo;
 class DemoActorHolder;
 class LiveActor;
 class Scene;

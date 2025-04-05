@@ -63,7 +63,7 @@ public:
     void exeShineCountAppear();
     void updateLifeCounter();
     void updateKidsModeLayout();
-    void startShineCountAnim(bool isAddTenShines);
+    void startShineCountAnim(bool);
     bool isEndShineCountAnim() const;
 
 public:

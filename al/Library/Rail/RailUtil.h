@@ -5,7 +5,7 @@
 #include <math/seadVector.h>
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class IUseRail;
 class LiveActor;
 class LiveActorGroup;

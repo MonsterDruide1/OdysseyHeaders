@@ -7,7 +7,7 @@
 namespace al {
 class AudioDirector;
 class LayoutInitInfo;
-struct ActorInitInfo;
+class ActorInitInfo;
 
 class SimpleAudioUser : public IUseAudioKeeper {
 public:

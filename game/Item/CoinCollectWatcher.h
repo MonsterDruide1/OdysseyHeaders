@@ -7,7 +7,7 @@
 #include "Scene/SceneObjFactory.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class IUseSceneObjHolder;
 class LiveActor;
 }  // namespace al

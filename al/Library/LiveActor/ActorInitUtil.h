@@ -12,7 +12,7 @@ class NerveActionCollector;
 }
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class AudioDirector;
 class CollisionDirector;
 class GraphicsSystemInfo;

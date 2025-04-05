@@ -3,7 +3,7 @@
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 }  // namespace al
 
 class BarrierField : public al::LiveActor {

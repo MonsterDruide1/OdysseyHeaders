@@ -5,7 +5,7 @@
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class HitSensor;
 class SensorMsg;
 }  // namespace al

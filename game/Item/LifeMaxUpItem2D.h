@@ -8,7 +8,7 @@
 #include "Util/IUseDimension.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class HitSensor;
 }  // namespace al
 

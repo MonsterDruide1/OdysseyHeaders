@@ -5,7 +5,7 @@
 #include "System/GameDataHolderAccessor.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class HtmlViewer;
 class KeyRepeatCtrl;
 class LayoutInitInfo;
