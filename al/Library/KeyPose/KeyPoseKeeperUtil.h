@@ -3,7 +3,7 @@
 #include <math/seadQuat.h>
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class KeyPoseKeeper;
 class LiveActor;
 class PlacementInfo;

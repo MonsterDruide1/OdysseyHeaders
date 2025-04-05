@@ -13,7 +13,7 @@ class ParameterC4f;
 class ParameterArray;
 class LiveActor;
 class Resource;
-struct ActorInitInfo;
+class ActorInitInfo;
 
 class ActorPrePassLightKeeper {
 public:

@@ -4,7 +4,7 @@
 
 namespace al {
 class LiveActor;
-struct ActorInitInfo;
+class ActorInitInfo;
 class PartsModel;
 }  // namespace al
 class PlayerCostumeInfo;

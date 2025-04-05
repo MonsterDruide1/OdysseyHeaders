@@ -12,7 +12,7 @@ class NerveActionCollector;
 }
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class ActorResource;
 class ByamlIter;
 class HitSensor;

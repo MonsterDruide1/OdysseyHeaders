@@ -3,7 +3,7 @@
 #include "Library/Movement/MoveType.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 class PlacementInfo;
 class KeyPose;
 class LiveActor;

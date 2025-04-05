@@ -3,7 +3,7 @@
 #include "Library/Nerve/NerveStateBase.h"
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 
 class RailMoveMovement : public HostStateBase<LiveActor> {
 public:

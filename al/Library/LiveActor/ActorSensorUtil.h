@@ -11,7 +11,7 @@ class SensorMsg;
 class LiveActor;
 class HitSensor;
 class SensorMsg;
-struct ActorInitInfo;
+class ActorInitInfo;
 class SensorSortCmpFuncBase;
 class ActorSensorController;
 class ComboCounter;

@@ -73,7 +73,7 @@ public:                                                                         
 
 namespace al {
 class LiveActor;
-struct ActorInitInfo;
+class ActorInitInfo;
 
 struct SubActorSync {
     enum Enum {

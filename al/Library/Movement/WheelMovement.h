@@ -8,7 +8,7 @@
 
 namespace al {
 class LiveActor;
-struct ActorInitInfo;
+class ActorInitInfo;
 class SensorMsg;
 class HitSensor;
 

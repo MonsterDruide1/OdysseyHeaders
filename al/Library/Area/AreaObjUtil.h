@@ -1,6 +1,5 @@
 #pragma once
 
-#include <math/seadMatrix.h>
 #include <math/seadVector.h>
 
 namespace al {
@@ -19,8 +18,6 @@ bool tryGetAreaObjArg(s32*, const AreaObj*, const char*);
 bool tryGetAreaObjArg(f32*, const AreaObj*, const char*);
 bool tryGetAreaObjArg(bool*, const AreaObj*, const char*);
 bool tryGetAreaObjStringArg(const char**, const AreaObj*, const char*);
-AreaObjGroup* tryFindAreaObjGroup(const IUseAreaObj* areaObj, const char* name);
+AreaObjGroup* tryFindAreaObjGroup(const IUseAreaObj* AreaObj, const char* name);
 AreaObj* tryGetAreaObj(const AreaObjGroup*, const sead::Vector3f&);
-
-const sead::Matrix34f& getAreaObjBaseMtx(const AreaObj*);
 }  // namespace al

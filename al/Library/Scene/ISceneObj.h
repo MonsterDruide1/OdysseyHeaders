@@ -1,7 +1,7 @@
 #pragma once
 
 namespace al {
-struct ActorInitInfo;
+class ActorInitInfo;
 
 class ISceneObj {
 public:
