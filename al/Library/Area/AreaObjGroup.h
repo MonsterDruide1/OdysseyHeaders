@@ -16,8 +16,6 @@ public:
     AreaObj* getAreaObj(s32 index) const;
     AreaObj* getInVolumeAreaObj(const sead::Vector3f&) const;
 
-    s32 getSize() const { return mSize; }
-
 public:
     const char* mName;
     AreaObj** mAreaObjEntries;
