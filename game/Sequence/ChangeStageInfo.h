@@ -21,11 +21,10 @@ public:
 
     ChangeStageInfo(const GameDataHolder* holder, const al::PlacementInfo& info);
     ChangeStageInfo(const GameDataHolder* holder, const al::PlacementInfo& info,
-                    const char* entranceName, const char* stageName, bool isReturn = false,
-                    s32 scenario = -1, SubScenarioType = SubScenarioType::NO_SUB_SCENARIO);
-    ChangeStageInfo(const GameDataHolder*, const char* entranceName, const char* stageName,
-                    bool isReturn = false, s32 scenario = -1,
-                    SubScenarioType subScenarioType = SubScenarioType::NO_SUB_SCENARIO);
+                    const char* entranceName, const char* stageName, bool, s32 scenario,
+                    ChangeStageInfo::SubScenarioType);
+    ChangeStageInfo(const GameDataHolder*, const char* entranceName, const char* stageName, bool,
+                    s32 scenario, SubScenarioType subScenarioType);
     void copy(const ChangeStageInfo& other);
     void findScenarioNoByList(const GameDataHolder*);
     void init();

@@ -10,7 +10,6 @@ namespace al {
 class LayoutActor;
 }
 class Shine;
-class GameDataHolderAccessor;
 class GameDataHolder;
 class MapLayout;
 class ProjectItemDirector;
@@ -21,13 +20,14 @@ class StageSceneLayout;
 class StageScene : public al::Scene {
 public:
     StageScene();
-    ~StageScene() override;
-    void init(const al::SceneInitInfo&) override;
-    void appear() override;
-    void kill() override;
 
-    void control() override;
-    void drawMain() const override;
+    virtual ~StageScene();
+    virtual void init(const al::SceneInitInfo&);
+    virtual void appear();
+    virtual void kill();
+
+    virtual void control();
+    virtual void drawMain();
 
     bool isEnableSave() const;
 

@@ -2,12 +2,12 @@
 
 #include <basis/seadTypes.h>
 
-namespace al {
-class GameDataHolderBase;
+#include "System/GameDataHolderAccessor.h"
 
+namespace al {
 struct SceneInitInfo {
     struct GameSystemInfo* gameSysInfo;
-    GameDataHolderBase* gameDataHolder;
+    GameDataHolderAccessor* gameDataHolder;
     char field_0x10[8];
     char* initStageName;
     u32 scenarioNo;

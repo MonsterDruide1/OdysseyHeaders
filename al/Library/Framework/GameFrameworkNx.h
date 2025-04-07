@@ -35,10 +35,6 @@ public:
     void initAgl(sead::Heap* heap, s32 virtWidth, s32 virtHeight, s32 dockedWidth, s32 dockedHeight,
                  s32 handheldWidth, s32 handheldHeight);
 
-    void enableClearRenderBuffer() { mIsClearRenderBuffer = true; }
-
-    void disableClearRenderBuffer() { mIsClearRenderBuffer = false; }
-
 public:
     void procFrame_() override;
     void procDraw_() override;

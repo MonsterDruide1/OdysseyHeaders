@@ -1,7 +1,5 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 // TODO: Someone should add this to nnheaders!
 namespace nn::g3d {
 class MaterialObj;
@@ -14,8 +12,6 @@ class GraphicsContext;
 
 namespace al {
 class Scene;
-
-f32 getDepthClearValue();
 
 void setDepthFuncNearDraw(sead::GraphicsContext* context);
 void setDepthFuncFarDraw(sead::GraphicsContext* context);

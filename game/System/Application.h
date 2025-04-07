@@ -6,7 +6,7 @@ namespace al {
 class SystemKit;
 class GameFrameworkNx;
 class AccountHolder;
-struct DrawSystemInfo;
+class DrawSystemInfo;
 }  // namespace al
 
 class RootTask;

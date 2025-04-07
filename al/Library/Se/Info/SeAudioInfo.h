@@ -4,13 +4,8 @@
 #include <prim/seadSafeString.h>
 
 namespace al {
-template <typename T>
 class AudioInfoListWithParts;
 class ByamlIter;
-class SeActionInfo;
-class SeEmitterInfo;
-class SeHitReactionInfo;
-class SePlayInfo;
 
 struct SeUserInfo {
     static SeUserInfo* createInfo(const ByamlIter&, const sead::SafeString&);
@@ -25,9 +20,9 @@ struct SeUserInfo {
     const char* name;
     bool isPartsUser = false;
     sead::PtrArray<const char*> partsUserNameList;
-    AudioInfoListWithParts<SeEmitterInfo>* emitterInfoList;
-    AudioInfoListWithParts<SeActionInfo>* actionInfoList;
-    AudioInfoListWithParts<SePlayInfo>* playInfoList;
-    AudioInfoListWithParts<SeHitReactionInfo>* hitReactionInfoList;
+    AudioInfoListWithParts* emitterInfoList;
+    AudioInfoListWithParts* actionInfoList;
+    AudioInfoListWithParts* playInfoList;
+    AudioInfoListWithParts* hitReactionInfoList;
 };
 }  // namespace al

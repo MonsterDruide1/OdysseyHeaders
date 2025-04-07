@@ -6,7 +6,6 @@ namespace al {
 class Sequence;
 struct GameSystemInfo;
 class AudioSystem;
-template <typename T>
 class AudioInfoListWithParts;
 class AccountHolder;
 class NetworkSystem;
@@ -14,7 +13,6 @@ class HtmlViewer;
 class GamePadSystem;
 class ApplicationMessageReceiver;
 class WaveVibrationHolder;
-class AudioResourceLoadGroupInfo;
 }  // namespace al
 
 class GameConfigData;
@@ -35,7 +33,7 @@ public:
     al::Sequence* mSequence;
     al::GameSystemInfo* mSystemInfo;
     al::AudioSystem* mAudioSystem;
-    al::AudioInfoListWithParts<al::AudioResourceLoadGroupInfo>* mAudioInfoList;
+    al::AudioInfoListWithParts* mAudioInfoList;
     al::AccountHolder* mAccountHolder;
     al::NetworkSystem* mNetworkSystem;
     void* field_40;

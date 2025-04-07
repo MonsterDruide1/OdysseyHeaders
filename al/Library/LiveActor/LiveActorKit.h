@@ -9,7 +9,7 @@ class DrawContext;
 }
 
 namespace al {
-struct GraphicsInitArg;
+class GraphicsInitArg;
 class ActorResourceHolder;
 class AreaObjDirector;
 class ExecuteDirector;
@@ -124,8 +124,6 @@ public:
     NatureDirector* getNatureDirector() const { return mNatureDirector; }
 
     ModelGroup* getModelGroup() const { return mModelGroup; }
-
-    void setDemoDirector(DemoDirector* demoDirector) { mDemoDirector = demoDirector; }
 
 public:
     s32 mMaxActors;
