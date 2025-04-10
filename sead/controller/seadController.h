@@ -65,9 +65,8 @@ public:
     virtual bool isIdle_();
     virtual void setIdle_();
 
-    ControllerDefine::ControllerId mId;
-
 public:
+    ControllerDefine::ControllerId mId;
     ControllerMgr* mMgr;
     OffsetList<ControllerAddon> mAddons;
     OffsetList<ControllerWrapperBase> mWrappers;
