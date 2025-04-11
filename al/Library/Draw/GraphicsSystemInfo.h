@@ -133,6 +133,14 @@ public:
 
     const ViewRenderer* getViewRenderer() const { return mViewRenderer; }
 
+    ModelLodAllCtrl* getModelLodAllCtrl() const { return mModelLodAllCtrl; }
+
+    MaterialCategoryKeeper* getMaterialCategoryKeeper() const { return mMaterialCategoryKeeper; }
+
+    GraphicsQualityController* getGraphicsQualityController() const {
+        return mGraphicsQualityController;
+    }
+
 public:
     sead::StrTreeMap<128, const sead::PtrArray<UniformBlock>*> mViewIndexedUboArrayTree;
     GraphicsInitArg mInitArg;
