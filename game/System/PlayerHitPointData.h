@@ -1,13 +1,6 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 #include "System/ByamlSave.h"
-
-namespace al {
-class ByamlIter;
-class ByamlWriter;
-}  // namespace al
 
 class PlayerHitPointData : public ByamlSave {
 public:

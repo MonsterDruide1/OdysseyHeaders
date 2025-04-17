@@ -1,10 +1,8 @@
 #pragma once
 
-#include <container/seadBuffer.h>
-
 namespace al {
-class PlacementInfo;
 class PlacementId;
+class PlacementInfo;
 
 class ViewIdHolder {
 public:

@@ -4,7 +4,6 @@
 
 namespace al {
 struct AnimPlayerInitInfo;
-struct AnimResInfo;
 
 class AnimPlayerMat : public AnimPlayerSimple {
 public:

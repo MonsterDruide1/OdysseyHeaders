@@ -1,23 +1,19 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <math/seadQuat.h>
 #include <math/seadVector.h>
 
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-struct ActorInitInfo;
-class HitSensor;
-class IUseNerve;
 class MtxConnector;
 }  // namespace al
 
-class CoinStateAppearRotate;
 class CoinRotateCalculator;
-class WaterSurfaceShadow;
-class SaveObjInfo;
+class CoinStateAppearRotate;
 class ExternalForceKeeper;
+class SaveObjInfo;
+class WaterSurfaceShadow;
 
 class Coin : public al::LiveActor {
 public:

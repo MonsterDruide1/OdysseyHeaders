@@ -4,12 +4,6 @@
 
 #include "Util/IUseDimension.h"
 
-namespace al {
-struct ActorInitInfo;
-class HitSensor;
-class SensorMsg;
-}  // namespace al
-
 class ActorDimensionKeeper;
 class Coin2DCityDirector;
 

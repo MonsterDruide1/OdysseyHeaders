@@ -4,6 +4,10 @@
 
 #include "Library/Nerve/NerveStateBase.h"
 
+namespace al {
+class LiveActor;
+}  // namespace al
+
 struct ParamEnemyStateRunAway {
     f32 field_0;
     f32 field_4;

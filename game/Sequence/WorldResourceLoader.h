@@ -1,11 +1,16 @@
 #pragma once
 
-#include <heap/seadFrameHeap.h>
+class GameDataHolder;
 
-#include "Library/Resource/Resource.h"
-#include "Library/Thread/AsyncFunctorThread.h"
+namespace al {
+class AsyncFunctorThread;
+class Resource;
+}  // namespace al
 
-#include "System/GameDataHolder.h"
+namespace sead {
+class FrameHeap;
+class Heap;
+}  // namespace sead
 
 class WorldResourceLoader {
 public:

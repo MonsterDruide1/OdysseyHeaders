@@ -2,6 +2,10 @@
 
 #include "Library/Nerve/NerveStateBase.h"
 
+namespace al {
+class LiveActor;
+}  // namespace al
+
 class EnemyStateWander : public al::ActorStateBase {
 public:
     EnemyStateWander(al::LiveActor* actor, const char* stateName);

@@ -2,9 +2,10 @@
 
 #include <prim/seadSafeString.h>
 
-#include "Library/Base/StringUtil.h"
-
 namespace al {
+template <s32 L>
+class StringTmp;
+
 bool tryGetComputerName(sead::BufferedSafeString* computerName);
 void getComputerName(sead::BufferedSafeString* computerName);
 void getUserName(sead::BufferedSafeString* userName);

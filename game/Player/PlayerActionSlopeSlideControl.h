@@ -5,9 +5,9 @@
 namespace al {
 class LiveActor;
 }
+class IUsePlayerCollision;
 class PlayerConst;
 class PlayerInput;
-class IUsePlayerCollision;
 
 class PlayerActionSlopeSlideControl {
 public:

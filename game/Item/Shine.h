@@ -1,10 +1,15 @@
 #pragma once
 
+#include <math/seadQuat.h>
 #include <math/seadVector.h>
 
 #include "Library/LiveActor/LiveActor.h"
 
 #include "Util/IUseDimension.h"
+
+namespace al {
+struct ActorInitInfo;
+}  // namespace al
 
 class Shine : public al::LiveActor, public IUseDimension {
 public:

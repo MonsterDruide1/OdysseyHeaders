@@ -3,12 +3,12 @@
 #include <math/seadVector.h>
 
 namespace al {
-class PlayerHolder;
 class CameraDirector;
+class LiveActor;
+class PadRumbleKeeper;
+class PlayerHolder;
 class WaveVibrationHolder;
 struct PadRumbleParam;
-class PadRumbleKeeper;
-class LiveActor;
 
 class PadRumbleDirector {
 public:

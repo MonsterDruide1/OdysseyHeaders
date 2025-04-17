@@ -1,13 +1,14 @@
 #pragma once
 
+#include <math/seadVector.h>
+
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
 class KeyPoseKeeper;
+class RippleCtrl;
 class SwitchKeepOnAreaGroup;
 class SwitchOnAreaGroup;
-class RippleCtrl;
-class FunctorBase;
 
 class KeyMoveMapParts : public LiveActor {
 public:

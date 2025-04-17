@@ -2,6 +2,8 @@
 
 #include <basis/seadTypes.h>
 #include <framework/nx/seadGameFrameworkNx.h>
+#include <hostio/seadHostIOMgr.h>
+#include <prim/seadRuntimeTypeInfo.h>
 
 #include "Library/HostIO/HioNode.h"
 
@@ -14,7 +16,8 @@ class RenderTargetColor;
 
 namespace sead {
 class Event;
-}
+class Heap;
+}  // namespace sead
 
 namespace al {
 

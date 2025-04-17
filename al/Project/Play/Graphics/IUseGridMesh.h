@@ -1,17 +1,15 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-#include <common/aglDrawContext.h>
-
 #include "Library/HostIO/HioNode.h"
 
 namespace agl {
+class DrawContext;
 class IndexStream;
-}
+}  // namespace agl
 
 namespace al {
-class QuadNode;
 class MeshQuadtree;
+class QuadNode;
 
 class IUseGridMesh : public IUseHioNode {
 public:

@@ -16,11 +16,10 @@ class TextureData;
 }
 
 namespace al {
+class IUseLayout;
 class LayoutActor;
 class LayoutPaneGroup;
-class IUseLayout;
 class MessageHolder;
-
 template <typename T>
 class Matrix43;
 

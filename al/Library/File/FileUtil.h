@@ -1,7 +1,11 @@
 #pragma once
 
-#include <filedevice/seadArchiveFileDevice.h>
 #include <prim/seadSafeString.h>
+
+namespace sead {
+class ArchiveRes;
+class Heap;
+}  // namespace sead
 
 namespace al {
 class IAudioResourceLoader;

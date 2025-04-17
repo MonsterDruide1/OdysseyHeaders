@@ -1,16 +1,19 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-#include <container/seadPtrArray.h>
 #include <math/seadVector.h>
 
+namespace sead {
+template <typename T>
+class PtrArray;
+}  // namespace sead
+
 namespace al {
-class BgmDirector;
-class BgmSituationDirector;
 class Bgm3DParamsController;
+class BgmDirector;
 class BgmLine;
 class BgmMultiPlayingController;
 class BgmPlayingRequest;
+class BgmSituationDirector;
 class FunctorBase;
 class IBgmParamsChanger;
 class IUseAudioKeeper;

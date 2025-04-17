@@ -4,6 +4,7 @@
 #include "Library/Scene/ISceneObj.h"
 
 namespace al {
+class ActorInitInfo;
 class SupportFreezeSyncGroup;
 
 class SupportFreezeSyncGroupHolder : public LiveActor, public ISceneObj {

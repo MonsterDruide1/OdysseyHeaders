@@ -6,6 +6,12 @@
 
 #include "Util/IUseDimension.h"
 
+class ActorDimensionKeeper;
+
+namespace al {
+class HitSensor;
+}  // namespace al
+
 class Togezo2D : public al::LiveActor, public IUseDimension {
 public:
     Togezo2D(const char* name);

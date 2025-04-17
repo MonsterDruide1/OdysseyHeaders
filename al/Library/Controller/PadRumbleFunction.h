@@ -3,8 +3,8 @@
 #include <math/seadVector.h>
 
 namespace al {
-class LiveActor;
 class LayoutActor;
+class LiveActor;
 class PadRumbleDirector;
 
 struct PadRumbleParam {

@@ -1,12 +1,12 @@
 #pragma once
 
 #include <math/seadMatrix.h>
+#include <math/seadQuat.h>
 #include <math/seadVector.h>
-#include <prim/seadStorageFor.h>
+#include <prim/seadStorageFor.h>  // IWYU pragma: export
 
 namespace al {
 class Triangle;
-class KCollisionServer;
 }  // namespace al
 
 bool operator==(const al::Triangle& tri1, const al::Triangle& tri2);
@@ -16,9 +16,9 @@ namespace al {
 class ByamlIter;
 class CollisionParts;
 class HitSensor;
+class LiveActor;
 struct KCPrismData;
 struct KCPrismHeader;
-class LiveActor;
 
 class Triangle {
 public:

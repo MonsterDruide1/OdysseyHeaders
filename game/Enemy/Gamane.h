@@ -1,11 +1,8 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-struct ActorInitInfo;
 class CollisionPartsFilterSpecialPurpose;
 class EnemyStateBlowDown;
 class HitSensor;
@@ -13,11 +10,11 @@ class SensorMsg;
 }  // namespace al
 
 class CapTargetInfo;
-class EnemyStateSwoon;
 class EnemyStateHackStart;
+class EnemyStateSwoon;
 class GamaneHackState;
-class HackerJudgeNormalFall;
 class HackerDepthShadowMapCtrl;
+class HackerJudgeNormalFall;
 class IUsePlayerHack;
 
 class Gamane : public al::LiveActor {

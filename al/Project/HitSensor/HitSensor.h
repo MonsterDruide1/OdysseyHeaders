@@ -4,11 +4,9 @@
 #include <math/seadVector.h>
 
 namespace al {
-class LiveActor;
-class HitSensorDirectror;
-class HitSensorKeeper;
-class SensorHitGroup;
 class HitSensor;
+class LiveActor;
+class SensorHitGroup;
 
 using SensorSortCmpFunc = bool (*)(HitSensor* a, HitSensor* b);
 

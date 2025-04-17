@@ -3,11 +3,12 @@
 #include <math/seadBoundBox.h>
 #include <math/seadMatrix.h>
 #include <math/seadQuat.h>
+#include <math/seadVector.h>
 
 namespace al {
-class RollingCubePose;
-class PlacementInfo;
 class LiveActor;
+class PlacementInfo;
+class RollingCubePose;
 struct ActorInitInfo;
 
 // TODO: Complete RollingCubePoseKeeper

@@ -1,7 +1,10 @@
 #pragma once
 
 #include "Library/HostIO/HioNode.h"
-#include "Library/Yaml/ByamlIter.h"
+
+namespace al {
+class ByamlIter;
+}  // namespace al
 
 class PlayerConst : public al::HioNode {
 public:

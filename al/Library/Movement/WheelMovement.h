@@ -7,10 +7,10 @@
 #include "Library/Nerve/NerveExecutor.h"
 
 namespace al {
-class LiveActor;
-struct ActorInitInfo;
-class SensorMsg;
 class HitSensor;
+class LiveActor;
+class SensorMsg;
+struct ActorInitInfo;
 
 class WheelMovement : public NerveExecutor {
 public:

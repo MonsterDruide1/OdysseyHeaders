@@ -1,26 +1,20 @@
 #pragma once
 
 #include <math/seadMatrix.h>
+#include <math/seadVector.h>
 #include <prim/seadSafeString.h>
 
 namespace sead {
 class Color4f;
 }
 
-namespace alNerveFunction {
-class NerveActionCollector;
-}
-
 namespace al {
-struct ActorInitInfo;
 class ActorResource;
 class ByamlIter;
 class HitSensor;
 class LiveActor;
-class Nerve;
-class PlacementInfo;
 class Resource;
-class ShadowMaskBase;
+struct ActorInitInfo;
 
 void initActorSceneInfo(LiveActor* actor, const ActorInitInfo& info);
 void initExecutorUpdate(LiveActor* actor, const ActorInitInfo& info, const char*);

@@ -6,8 +6,9 @@
 #include "Library/Nerve/NerveStateBase.h"
 
 namespace al {
+class LiveActor;
 struct ActorParamMove;
-}
+}  // namespace al
 
 class FlyerStateWanderParam {
 public:

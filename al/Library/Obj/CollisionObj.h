@@ -1,8 +1,12 @@
 #pragma once
 
+#include <math/seadMatrix.h>
+
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
+struct ActorInitInfo;
+class HitSensor;
 class Resource;
 
 class CollisionObj : public LiveActor {

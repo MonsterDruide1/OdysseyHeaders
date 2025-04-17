@@ -3,8 +3,8 @@
 #include <math/seadVector.h>
 
 namespace al {
-class AreaObjGroup;
 class AreaObj;
+class AreaObjGroup;
 class SwitchAreaTargetInfo;
 
 class SwitchKeepOnAreaGroup {

@@ -1,24 +1,26 @@
 #pragma once
 
-#include <prim/seadSafeString.hpp>
+#include <basis/seadTypes.h>
+#include <prim/seadSafeString.h>
 #include <thread/seadCriticalSection.h>
 
 namespace sead {
 class FileDevice;
+class Heap;
 class Resource;
 }  // namespace sead
 
 namespace al {
-class IAudioResourceLoader;
 class ByamlIter;
-class SoundItemHolder;
 class FileEntryBase;
+class IAudioResourceLoader;
+class SoundItemHolder;
 }  // namespace al
 
 namespace al {
 
-class FileLoaderThread;
 class ArchiveHolder;
+class FileLoaderThread;
 
 class FileLoader {
 public:

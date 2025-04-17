@@ -27,13 +27,11 @@ public:
     f32 mTrackVolume5 = 0;
 };
 
-struct BgmUserInfo;
-class ByamlIter;
-class SafeString;
-template <typename T>
-class AudioInfoListWithParts;
 class BgmActionInfo;
 class BgmSourceInfo;
+class ByamlIter;
+template <typename T>
+class AudioInfoListWithParts;
 
 struct BgmUserInfo {
     static BgmUserInfo* createInfo(const ByamlIter&, const sead::SafeString&);

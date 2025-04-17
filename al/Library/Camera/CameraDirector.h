@@ -9,12 +9,12 @@ namespace al {
 class AreaObjDirector;
 class CameraAngleVerticalRequester;
 class CameraFlagCtrl;
-class CameraInputHolder;
 class CameraInSwitchOnAreaDirector;
+class CameraInputHolder;
 class CameraParamTransfer;
+class CameraPoseUpdater;
 class CameraPoser;
 class CameraPoserFactory;
-class CameraPoseUpdater;
 class CameraRailHolder;
 class CameraResourceHolder;
 class CameraStartParamCtrl;

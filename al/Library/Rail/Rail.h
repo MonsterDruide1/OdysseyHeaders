@@ -2,8 +2,6 @@
 
 #include <math/seadVector.h>
 
-#include "Library/Rail/RailPart.h"
-
 namespace al {
 class PlacementInfo;
 class RailPart;

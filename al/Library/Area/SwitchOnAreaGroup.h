@@ -4,7 +4,6 @@
 
 namespace al {
 class AreaObjGroup;
-class PlayerHolder;
 
 class SwitchOnAreaGroup {
 public:

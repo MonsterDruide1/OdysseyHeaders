@@ -3,8 +3,8 @@
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-class CollisionObj;
 class CameraTicket;
+class CollisionObj;
 class MtxConnector;
 }  // namespace al
 

@@ -3,8 +3,9 @@
 #include "Library/Nerve/NerveStateBase.h"
 
 namespace al {
-class SensorMsg;
 class HitSensor;
+class LiveActor;
+class SensorMsg;
 }  // namespace al
 
 class IUsePlayerHack;

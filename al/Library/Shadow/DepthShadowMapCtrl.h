@@ -7,13 +7,13 @@
 
 namespace al {
 
-class Resource;
 class ByamlIter;
+class DepthShadowMapInfo;
 class GraphicsSystemInfo;
 class LiveActor;
-class DepthShadowMapInfo;
 class ModelDrawerDepthShadowMap;
 class ModelDrawerMask;
+class Resource;
 
 class DepthShadowMapCtrl : public HioNode {
 public:

@@ -6,10 +6,9 @@
 #include "Library/HostIO/HioNode.h"
 
 namespace al {
+class AreaObj;
 class AreaObjDirector;
 class AreaObjGroup;
-class AreaObj;
-class PlacementInfo;
 
 class CameraAngleVerticalRequester : public HioNode, public IUseAreaObj {
 public:

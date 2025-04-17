@@ -1,24 +1,30 @@
 #pragma once
 
-#include <gfx/seadColor.h>
+#include <basis/seadTypes.h>
 #include <math/seadBoundBox.h>
 #include <math/seadMatrix.h>
 #include <math/seadQuat.h>
+#include <math/seadVector.h>
 #include <nn/g3d/ResFile.h>
-#include <nn/gfx/gfx_DescriptorSlot.h>
+#include <nn/gfx/gfx_Types.h>
+
+namespace sead {
+class Color4f;
+}  // namespace sead
 
 namespace agl {
 class UniformBlock;
 }
 
 namespace nn::gfx {
+class DescriptorSlot;
 class ResTexture;
-}
+}  // namespace nn::gfx
 
 namespace al {
+class ClippingDirector;
 class LayoutTextureRenderObj;
 class LiveActor;
-class ClippingDirector;
 
 void updateMaterialCodeGround(LiveActor* actor, const char*);
 void updateMaterialCodeAll(LiveActor* actor);

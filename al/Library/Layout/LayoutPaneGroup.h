@@ -1,6 +1,10 @@
 #pragma once
 
-#include <nn/ui2d/Layout.h>
+namespace nn {
+namespace ui2d {
+class Layout;
+}  // namespace ui2d
+}  // namespace nn
 
 namespace eui {
 class Animator;

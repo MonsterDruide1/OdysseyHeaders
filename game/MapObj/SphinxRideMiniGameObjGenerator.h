@@ -1,6 +1,7 @@
 #pragma once
 
 #include <container/seadPtrArray.h>
+#include <math/seadVector.h>
 
 #include "Library/LiveActor/LiveActor.h"
 

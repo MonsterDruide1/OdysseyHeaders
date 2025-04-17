@@ -5,10 +5,10 @@
 namespace al {
 class LiveActor;
 }
-class PlayerConst;
-class PlayerInput;
 class IUsePlayerCollision;
+class PlayerConst;
 class PlayerEffect;
+class PlayerInput;
 
 class PlayerSandSinkAffect {
 public:

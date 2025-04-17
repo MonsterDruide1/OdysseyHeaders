@@ -5,13 +5,13 @@
 #include "Library/Nerve/NerveStateBase.h"
 
 namespace al {
-class LiveActor;
 class HitSensor;
+class LiveActor;
 }  // namespace al
-class PlayerConst;
-class PlayerInput;
 class IUsePlayerCollision;
 class PlayerAnimator;
+class PlayerConst;
+class PlayerInput;
 class PlayerTrigger;
 
 class PlayerStateHipDrop : public al::ActorStateBase {

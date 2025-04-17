@@ -1,6 +1,11 @@
 #pragma once
 
 #include <controller/seadControllerWrapper.h>
+#include <prim/seadRuntimeTypeInfo.h>
+
+namespace sead {
+class Controller;
+}  // namespace sead
 
 namespace al {
 class IUsePadDataReader;

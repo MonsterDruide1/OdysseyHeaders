@@ -1,12 +1,14 @@
 #pragma once
 
+#include <math/seadVector.h>
+
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
+class ConveyerKeyKeeper;
+class ConveyerStep;
 template <class T>
 class DeriveActorGroup;
-class ConveyerStep;
-class ConveyerKeyKeeper;
 
 class ConveyerMapParts : public LiveActor {
 public:

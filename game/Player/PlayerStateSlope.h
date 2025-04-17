@@ -2,11 +2,15 @@
 
 #include "Library/Nerve/NerveStateBase.h"
 
+class IUsePlayerCollision;
+class PlayerActionSlopeSlideControl;
+class PlayerAnimator;
 class PlayerConst;
 class PlayerInput;
-class IUsePlayerCollision;
-class PlayerAnimator;
-class PlayerActionSlopeSlideControl;
+
+namespace al {
+class LiveActor;
+}  // namespace al
 
 class PlayerStateSlope : public al::ActorStateBase {
 public:

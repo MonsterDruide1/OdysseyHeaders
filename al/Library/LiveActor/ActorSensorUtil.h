@@ -3,18 +3,16 @@
 #include <math/seadBoundBox.h>
 #include <math/seadMatrix.h>
 #include <math/seadVector.h>
-#include <prim/seadRuntimeTypeInfo.h>
 
 namespace al {
 
-class SensorMsg;
-class LiveActor;
-class HitSensor;
-class SensorMsg;
-struct ActorInitInfo;
-class SensorSortCmpFuncBase;
 class ActorSensorController;
 class ComboCounter;
+class HitSensor;
+class LiveActor;
+class SensorMsg;
+class SensorSortCmpFuncBase;
+struct ActorInitInfo;
 
 HitSensor* addHitSensor(LiveActor*, const ActorInitInfo&, const char*, u32, f32, u16,
                         const sead::Vector3f&);

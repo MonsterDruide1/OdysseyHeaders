@@ -1,10 +1,15 @@
 #pragma once
 
 #include <container/seadPtrArray.h>
-#include <container/seadRingBuffer.h>
 #include <math/seadQuat.h>
 #include <math/seadVector.h>
-#include <prim/seadDelegate.h>
+
+namespace sead {
+template <typename A1, typename A2>
+class IDelegate2;
+template <typename T, s32 N>
+class FixedRingBuffer;
+}  // namespace sead
 
 namespace al {
 class ByamlIter;

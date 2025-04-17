@@ -5,8 +5,8 @@
 #include <thread/seadMessageQueue.h>
 
 namespace sead {
-class Heap;
 class DelegateThread;
+class Heap;
 class Thread;
 }  // namespace sead
 

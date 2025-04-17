@@ -6,10 +6,7 @@
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-struct ActorInitInfo;
 class BgmBeatCounter;
-class HitSensor;
-class SensorMsg;
 }  // namespace al
 
 class Coin2DCity;

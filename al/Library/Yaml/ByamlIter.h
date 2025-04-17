@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Library/Yaml/ByamlData.h"
-#include "Library/Yaml/ByamlHeader.h"
-
 namespace al {
+class ByamlData;
+class ByamlHeader;
+
 class ByamlIter {
 public:
     ByamlIter();

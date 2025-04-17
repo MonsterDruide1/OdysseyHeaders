@@ -1,12 +1,9 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 #include "Library/Layout/LayoutActor.h"
 
 namespace al {
 class LayoutInitInfo;
-class LiveActor;
 }  // namespace al
 
 class CoinCounter : public al::LayoutActor {

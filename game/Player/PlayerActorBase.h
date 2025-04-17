@@ -1,18 +1,22 @@
 #pragma once
 
+#include <math/seadMatrix.h>
+
 #include "Library/LiveActor/LiveActor.h"
 
 #include "Player/IUsePlayerHack.h"
 
 namespace al {
 class DemoActor;
-}
+class HitSensor;
+class SensorMsg;
+struct ActorInitInfo;
+}  // namespace al
 
 class IUsePlayerCollision;
 class PlayerAnimator;
 class PlayerInfo;
 class PlayerInitInfo;
-class PlayerHackKeeper;
 class PlayerPuppet;
 
 class PlayerActorBase : public al::LiveActor, public IUsePlayerHack {

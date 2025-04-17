@@ -3,9 +3,9 @@
 #include <math/seadVector.h>
 
 namespace al {
-class LiveActor;
 class AreaObj;
 class IUseAreaObj;
+class LiveActor;
 }  // namespace al
 
 namespace rs {

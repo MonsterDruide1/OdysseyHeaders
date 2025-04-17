@@ -4,11 +4,11 @@
 #include <math/seadVector.h>
 
 namespace al {
-struct ActorInitInfo;
 class LiveActor;
+struct ActorInitInfo;
 }  // namespace al
-class Shine;
 class KuriboMini;
+class Shine;
 
 class ItemGenerator {
 public:

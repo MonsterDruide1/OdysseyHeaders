@@ -2,8 +2,6 @@
 
 #include "Library/Execute/ExecuteOrder.h"
 #include "Library/Execute/ExecuteTable.h"
-#include "Library/Execute/ExecuteTableHolderDraw.h"
-#include "Library/Execute/ExecuteTableHolderUpdate.h"
 
 static constexpr al::ExecuteOrder drawTableArr[] = {
     // ３Ｄ（カリング）

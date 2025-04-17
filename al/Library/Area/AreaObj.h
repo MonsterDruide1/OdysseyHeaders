@@ -9,9 +9,11 @@
 
 namespace al {
 
+class AreaInitInfo;
 class AreaShape;
 class PlacementInfo;
-class AreaInitInfo;
+class SceneObjHolder;
+class StageSwitchKeeper;
 
 class AreaObj : public IUseStageSwitch, public IUseSceneObjHolder, public HioNode {
 public:

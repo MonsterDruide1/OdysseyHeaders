@@ -1,10 +1,17 @@
 #pragma once
 
-#include <gfx/seadCamera.h>
+#include <math/seadVector.h>
 
 #include "Library/Audio/IUseAudioKeeper.h"
 #include "Library/Nerve/NerveExecutor.h"
-#include "Library/Yaml/ByamlIter.h"
+
+namespace al {
+class ByamlIter;
+}  // namespace al
+
+namespace sead {
+class LookAtCamera;
+}  // namespace sead
 
 struct CameraParam {
     bool hasMin;
@@ -14,9 +21,9 @@ struct CameraParam {
 };
 
 namespace al {
-struct SnapShotCameraSceneInfo;
 class ICameraInput;
 class IUseCollision;
+struct SnapShotCameraSceneInfo;
 
 class SnapShotCameraCtrl : public NerveExecutor, public IUseAudioKeeper {
 public:

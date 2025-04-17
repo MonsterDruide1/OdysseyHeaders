@@ -3,12 +3,12 @@
 #include <prim/seadSafeString.h>
 
 namespace al {
+class ActorResource;
 class ByamlIter;
 class LiveActor;
-class ActorResource;
-struct ActorInitInfo;
 class ParameterIo;
 class Resource;
+struct ActorInitInfo;
 
 bool isExistModelResource(const LiveActor*);
 bool isExistAnimResource(const LiveActor*);

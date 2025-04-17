@@ -5,16 +5,18 @@
 #include "System/GameDataHolderAccessor.h"
 
 namespace al {
-struct ActorInitInfo;
 class HtmlViewer;
 class KeyRepeatCtrl;
 class LayoutInitInfo;
+class LiveActor;
+class Nerve;
 class PauseCameraCtrl;
 class Scene;
-struct SceneInitInfo;
 class SimpleLayoutAppearWaitEnd;
 class WindowConfirm;
 class WipeSimple;
+struct ActorInitInfo;
+struct SceneInitInfo;
 }  // namespace al
 class FooterParts;
 class GameDataHolder;

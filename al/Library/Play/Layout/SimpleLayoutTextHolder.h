@@ -1,7 +1,10 @@
 #pragma once
 
-#include <gfx/seadColor.h>
 #include <math/seadVector.h>
+
+namespace sead {
+class Color4u8;
+}  // namespace sead
 
 namespace al {
 class LayoutInitInfo;

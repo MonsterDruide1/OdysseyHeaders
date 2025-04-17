@@ -1,6 +1,5 @@
 #pragma once
 
-#include <gfx/seadColor.h>
 #include <math/seadBoundBox.h>
 #include <math/seadVector.h>
 
@@ -8,8 +7,8 @@
 #include "Library/Yaml/ByamlIter.h"
 
 namespace sead {
-class WriteStream;
-}
+class Color4f;
+}  // namespace sead
 
 namespace al {
 bool tryGetByamlU8(u8*, const ByamlIter&, const char*);

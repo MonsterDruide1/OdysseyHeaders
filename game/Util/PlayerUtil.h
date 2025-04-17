@@ -1,10 +1,7 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <math/seadMatrix.h>
 #include <math/seadVector.h>
-
-#include "Library/Base/StringUtil.h"
 
 namespace al {
 class GamePadSystem;
@@ -12,6 +9,8 @@ class HitSensor;
 class IUseMessageSystem;
 class LiveActor;
 struct SklAnimRetargettingInfo;
+template <s32 L>
+class StringTmp;
 }  // namespace al
 
 class CapTargetInfo;

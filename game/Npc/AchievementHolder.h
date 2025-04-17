@@ -1,9 +1,8 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <container/seadPtrArray.h>
 
-#include "System/GameDataHolderAccessor.h"
+class GameDataHolderAccessor;
 
 namespace al {
 struct ActorInitInfo;

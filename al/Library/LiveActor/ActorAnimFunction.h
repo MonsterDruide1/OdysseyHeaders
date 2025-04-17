@@ -11,7 +11,7 @@
 
 namespace al {
 class AnimPlayerMat;
-class LiveActor;
+class AnimPlayerVis;
 struct SklAnimRetargettingInfo;
 
 // Inlined

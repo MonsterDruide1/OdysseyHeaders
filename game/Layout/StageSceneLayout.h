@@ -3,19 +3,19 @@
 #include "Library/Nerve/NerveStateBase.h"
 
 namespace al {
-class PlayerHolder;
 class LayoutActor;
 class LayoutInitInfo;
+class PlayerHolder;
 class SubCameraRenderer;
 }  // namespace al
 
 class CoinCounter;
 class CounterLifeCtrl;
-class ShineCounter;
-class ShineChipLayoutParts;
-class PlayGuideCamera;
-class PlayGuideBgm;
 class MapMini;
+class PlayGuideBgm;
+class PlayGuideCamera;
+class ShineChipLayoutParts;
+class ShineCounter;
 
 class StageSceneLayout : public al::NerveStateBase {
 public:

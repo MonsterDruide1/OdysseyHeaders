@@ -4,13 +4,13 @@
 #include <prim/seadSafeString.h>
 
 namespace al {
-template <typename T>
-class AudioInfoListWithParts;
 class ByamlIter;
 class SeActionInfo;
 class SeEmitterInfo;
 class SeHitReactionInfo;
 class SePlayInfo;
+template <typename T>
+class AudioInfoListWithParts;
 
 struct SeUserInfo {
     static SeUserInfo* createInfo(const ByamlIter&, const sead::SafeString&);

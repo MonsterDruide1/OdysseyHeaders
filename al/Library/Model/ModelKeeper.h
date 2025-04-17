@@ -8,17 +8,16 @@
 namespace al {
 class ActorResource;
 class AnimPlayerMat;
-class AnimPlayerSimple;
 class AnimPlayerSkl;
 class AnimPlayerVis;
-class ModelCtrl;
 class DitherAnimator;
-class ModelLodCtrl;
 class GpuMemAllocator;
-class ModelShaderHolder;
+class ModelCtrl;
+class ModelLodCtrl;
 class ModelOcclusionCullingDirector;
-class ShadowDirector;
+class ModelShaderHolder;
 class PrepassTriangleCulling;
+class ShadowDirector;
 
 class ModelKeeper : public HioNode {
 public:

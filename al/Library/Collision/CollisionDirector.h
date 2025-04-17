@@ -1,25 +1,29 @@
 #pragma once
 
-#include <container/seadPtrArray.h>
 #include <math/seadVector.h>
-#include <prim/seadDelegate.h>
 
 #include "Library/Execute/IUseExecutor.h"
 #include "Library/HostIO/HioNode.h"
 
+namespace sead {
+template <typename A1>
+class IDelegate1;
+template <typename T>
+class PtrArray;
+}  // namespace sead
+
 namespace al {
-class ICollisionPartsKeeper;
+class CollisionParts;
+class CollisionPartsFilterBase;
 class CollisionPartsKeeperOctree;
 class CollisionPartsKeeperPtrArray;
-class CollisionPartsFilterBase;
+class ExecuteDirector;
+class ICollisionPartsKeeper;
 class TriangleFilterBase;
-class Strike;
-struct HitInfo;
 struct ArrowHitInfo;
 struct DiskHitInfo;
+struct HitInfo;
 struct SphereHitInfo;
-class CollisionParts;
-class ExecuteDirector;
 
 class CollisionDirector : public HioNode, public IUseExecutor {
 public:

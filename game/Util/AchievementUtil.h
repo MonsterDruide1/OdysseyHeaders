@@ -1,10 +1,10 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <math/seadVector.h>
-#include <time/seadDateTime.h>
 
-#include "System/GameDataHolderAccessor.h"
+namespace sead {
+class DateTime;
+}  // namespace sead
 
 namespace al {
 class IUseMessageSystem;
@@ -14,6 +14,8 @@ class LiveActor;
 
 class AchievementHolder;
 class AchievementNpc;
+class GameDataHolder;
+class GameDataHolderAccessor;
 
 namespace rs {
 

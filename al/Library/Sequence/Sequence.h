@@ -7,12 +7,14 @@
 #include "Library/Sequence/IUseSceneCreator.h"
 
 namespace al {
-struct GameSystemInfo;
-struct DrawSystemInfo;
-struct SequenceInitInfo;
-struct AudioSystemInfo;
 class AudioDirector;
+class AudioKeeper;
 class Scene;
+class SceneCreator;
+struct AudioSystemInfo;
+struct DrawSystemInfo;
+struct GameSystemInfo;
+struct SequenceInitInfo;
 
 class Sequence : public NerveExecutor, public IUseAudioKeeper, public IUseSceneCreator {
 public:

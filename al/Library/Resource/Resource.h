@@ -2,20 +2,20 @@
 
 #include <prim/seadSafeString.h>
 
+namespace nn::g3d {
+class ResFile;
+}  // namespace nn::g3d
+
 namespace sead {
 class ArchiveFileDevice;
 class ArchiveRes;
+class Heap;
 }  // namespace sead
 
-namespace nn::g3d {
-class ResFile;
-}
-
 namespace al {
+class ActorInitResourceData;
 class InitResourceDataAction;
 class InitResourceDataAnim;
-struct ActionAnimCtrlInfo;
-class ActorInitResourceData;
 
 class Resource {
 public:

@@ -1,13 +1,17 @@
 #pragma once
 
-#include <gfx/seadCamera.h>
 #include <math/seadMatrix.h>
+
+namespace sead {
+class LookAtCamera;
+class Projection;
+}  // namespace sead
 
 namespace al {
 
 class CameraViewFlag;
-struct OrthoProjectionInfo;
 class Projection;
+struct OrthoProjectionInfo;
 
 class CameraViewInfo {
 public:

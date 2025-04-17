@@ -1,22 +1,28 @@
 #pragma once
 
 #include <math/seadQuat.h>
+#include <math/seadVector.h>
 
 #include "Library/Scene/Scene.h"
 
-#include "Layout/StageSceneLayout.h"
+class GameDataHolderAccessor;
+class StageSceneLayout;
 
 namespace al {
+class LiveActor;
+}  // namespace al
+
+namespace al {
+class IUseCamera;
+class IUseNerve;
 class LayoutActor;
-}
-class Shine;
-class GameDataHolderAccessor;
+class Nerve;
+}  // namespace al
 class GameDataHolder;
 class MapLayout;
-class ProjectItemDirector;
-class PlayerActorHakoniwa;
 class ProjectDemoDirector;
-class StageSceneLayout;
+class ProjectItemDirector;
+class Shine;
 
 class StageScene : public al::Scene {
 public:

@@ -2,10 +2,14 @@
 
 #include <heap/seadDisposer.h>
 
+namespace sead {
+class Heap;
+}  // namespace sead
+
 namespace al {
-class SystemKit;
-class GameFrameworkNx;
 class AccountHolder;
+class GameFrameworkNx;
+class SystemKit;
 struct DrawSystemInfo;
 }  // namespace al
 

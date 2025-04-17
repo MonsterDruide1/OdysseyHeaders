@@ -5,8 +5,9 @@
 #include "Library/Nerve/NerveStateBase.h"
 
 namespace al {
+class LiveActor;
 struct ActorInitInfo;
-}
+}  // namespace al
 
 class EnemyCap;
 

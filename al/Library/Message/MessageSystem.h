@@ -4,12 +4,13 @@
 #include <container/seadStrTreeMap.h>
 
 namespace sead {
+class Heap;
 class MessageProject;
-}
+}  // namespace sead
 
 namespace al {
-class MessageProjectEx;
 class MessageHolder;
+class MessageProjectEx;
 
 class MessageSystem {
 public:

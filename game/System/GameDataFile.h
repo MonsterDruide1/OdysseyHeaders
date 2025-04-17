@@ -4,8 +4,8 @@
 #include <prim/seadBitFlag.h>
 #include <prim/seadSafeString.h>
 
-class GameProgressData;
 class GameDataHolder;
+class GameProgressData;
 
 class GameDataFile {
 public:

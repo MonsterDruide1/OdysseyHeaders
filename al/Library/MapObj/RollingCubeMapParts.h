@@ -1,10 +1,14 @@
 #pragma once
 
+#include <math/seadMatrix.h>
+#include <math/seadQuat.h>
+#include <math/seadVector.h>
+
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-class RollingCubePoseKeeper;
 class PartsModel;
+class RollingCubePoseKeeper;
 
 class RollingCubeMapParts : public LiveActor {
 public:

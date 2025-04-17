@@ -1,7 +1,9 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-#include <prim/seadSafeString.h>
+namespace sead {
+template <s32 L>
+class FixedSafeString;
+}  // namespace sead
 
 namespace al {
 class IUseAudioKeeper;

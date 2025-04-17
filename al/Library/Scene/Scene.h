@@ -4,21 +4,23 @@
 
 #include "Library/Audio/IUseAudioKeeper.h"
 #include "Library/Camera/IUseCamera.h"
-#include "Library/LiveActor/ActorInitInfo.h"
 #include "Library/Nerve/NerveExecutor.h"
 #include "Library/Scene/IUseSceneObjHolder.h"
-#include "Project/Scene/SceneInitInfo.h"
 
 namespace al {
+struct ActorInitInfo;
 class AudioDirector;
-class StageResourceKeeper;
-class LiveActorKit;
+class AudioKeeper;
 class LayoutKit;
+class LiveActorKit;
 class SceneMsgCtrl;
+class SceneObjHolder;
 class SceneStopCtrl;
 class ScreenCoverCtrl;
-struct GraphicsInitArg;
+class StageResourceKeeper;
 struct DrawSystemInfo;
+struct GraphicsInitArg;
+struct SceneInitInfo;
 
 class Scene : public NerveExecutor,
               public IUseAudioKeeper,

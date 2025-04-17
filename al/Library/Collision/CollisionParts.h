@@ -1,13 +1,18 @@
 #pragma once
 
-#include <container/seadTList.h>
 #include <math/seadMatrix.h>
+#include <math/seadQuat.h>
 #include <math/seadVector.h>
 
+namespace sead {
+template <typename T>
+class TList;
+}  // namespace sead
+
 namespace al {
+class HitSensor;
 class KCollisionServer;
 class LiveActor;
-class HitSensor;
 
 class CollisionParts {
 public:

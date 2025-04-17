@@ -1,6 +1,5 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <math/seadMatrix.h>
 #include <math/seadQuat.h>
 #include <math/seadVector.h>
@@ -8,10 +7,8 @@
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
-class HitSensor;
 class MtxConnector;
 class PlacementId;
-class SensorMsg;
 }  // namespace al
 
 class CoinCollectEmpty;

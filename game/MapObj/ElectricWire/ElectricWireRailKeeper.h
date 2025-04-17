@@ -1,6 +1,7 @@
 #pragma once
 
 #include <container/seadPtrArray.h>
+#include <math/seadVector.h>
 
 #include "Library/LiveActor/LiveActor.h"
 
@@ -8,8 +9,6 @@ class ElectricWire;
 
 namespace al {
 class CameraTicket;
-class CameraTicketId;
-class CameraPoser;
 class PlacementInfo;
 }  // namespace al
 

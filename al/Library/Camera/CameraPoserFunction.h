@@ -1,16 +1,19 @@
 #pragma once
 
-#include <gfx/seadCamera.h>
 #include <math/seadMatrix.h>
 #include <math/seadQuat.h>
 #include <math/seadVector.h>
 
+namespace sead {
+class LookAtCamera;
+}  // namespace sead
+
 namespace al {
 class CameraPoser;
-struct CameraStartInfo;
-struct CameraObjectRequestInfo;
 class IUseCollision;
 class PlacementInfo;
+struct CameraObjectRequestInfo;
+struct CameraStartInfo;
 }  // namespace al
 
 namespace alCameraPoserFunction {
