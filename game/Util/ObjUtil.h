@@ -11,6 +11,7 @@ class LiveActor;
 class IUsePlayerCollision;
 class PlayerConst;
 class PlayerModelHolder;
+class PlayerWallActionHistory;
 
 namespace rs {
 
@@ -43,4 +44,8 @@ void slerpUpFront(al::LiveActor*, const sead::Vector3f&, const sead::Vector3f&, 
 bool calcSlideDir(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&);
 
 void moveDivingJump(al::LiveActor*, const sead::Vector3f&, f32, f32, f32, f32, f32, f32, f32, f32);
+
+bool judgeEnableWallKeepHistory(const al::LiveActor* player, const PlayerWallActionHistory* history,
+    const sead::Vector3f& calcPos, const sead::Vector3f& wallNormal, f32 unk, bool unk2);
+
 }  // namespace rs
