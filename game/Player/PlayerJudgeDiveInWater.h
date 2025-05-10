@@ -17,10 +17,8 @@ public:
                            const IUsePlayerHeightCheck* heightCheck,
                            const IUsePlayerFallDistanceCheck* fallDistanceCheck);
 
-    void reset() override {}
-
-    void update() override {}
-
+    void reset() override;
+    void update() override;
     bool judge() const override;
 
 public:

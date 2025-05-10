@@ -19,8 +19,7 @@ public:
     bool isTriggerTouch(const al::NfpInfo& nfpInfo) const override;
     bool execute() override;
     void activate() override;
-
-    HelpAmiiboType getType() const override { return HelpAmiiboType::Yoshi; }
+    HelpAmiiboType getType() const override;
 
 public:
     Yoshi* mYoshi = nullptr;

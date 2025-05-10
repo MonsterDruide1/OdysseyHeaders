@@ -10,12 +10,9 @@ class Nerve;
 class PlayerJudgeSameNerve : public IJudge {
 public:
     PlayerJudgeSameNerve(const al::IUseNerve* nerveUser, const al::Nerve* nerve);
-
-    void reset() override {}
-
-    void update() override {}
-
-    bool judge() const override;
+    void reset();
+    void update();
+    bool judge() const;
 
 public:
     const al::IUseNerve* mNerveUser;
