@@ -14,7 +14,8 @@ public:
     void control() override;
     void appear() override;
     void kill() override;
-    const sead::Matrix34f* getBaseMtx() const override;
+
+    const sead::Matrix34f* getBaseMtx() const override { return &mBaseMtx; }
 
 public:
     sead::Matrix34f mBaseMtx = sead::Matrix34f::ident;

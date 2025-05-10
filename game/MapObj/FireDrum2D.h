@@ -21,8 +21,8 @@ public:
     void exeWait();
     void exeBurn();
 
-    ActorDimensionKeeper* getActorDimensionKeeper() const override;
+    ActorDimensionKeeper* getActorDimensionKeeper() const override { return mDimensionKeeper; }
 
 public:
-    ActorDimensionKeeper* mActorDimensionKeeper = nullptr;
+    ActorDimensionKeeper* mDimensionKeeper = nullptr;
 };
