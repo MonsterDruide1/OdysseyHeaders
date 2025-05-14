@@ -12,8 +12,7 @@ public:
     CameraStopJudge();
     bool isStop() const;
     void update(const sead::Vector3f&);
-
-    AreaObjDirector* getAreaObjDirector() const override { return mAreaObjDirector; }
+    AreaObjDirector* getAreaObjDirector() const override;
 
 public:
     bool mIsInCameraStopArea = false;

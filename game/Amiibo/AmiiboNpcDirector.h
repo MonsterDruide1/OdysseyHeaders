@@ -28,8 +28,7 @@ public:
 
     AmiiboNpcDirector();
 
-    const char* getSceneObjName() const override { return "AmiiboNpc用データホルダ"; }
-
+    const char* getSceneObjName() const override;
     void init(ProjectNfpDirector* nfpDirector, al::AudioDirector* audioDirector);
     void initAfterPlacementSceneObj(const al::ActorInitInfo& initInfo) override;
     void updateSearchAmiiboName();
@@ -48,8 +47,7 @@ public:
     void trySetAmiiboCostumeName(s32 id);
     void checkTimeReverseAndRestore();
     al::NfpInfo* tryGetTriggerTouchNfpInfo();
-
-    al::AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
+    al::AudioKeeper* getAudioKeeper() const override;
 
     AmiiboNpcLayout* getAmiiboNpcLayout() const { return mNpcLayout; }
 

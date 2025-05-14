@@ -57,10 +57,8 @@ class LiveActor : public IUseNerve,
 public:
     LiveActor(const char* actorName);
 
-    NerveKeeper* getNerveKeeper() const override { return mNerveKeeper; }
-
-    virtual void init(const ActorInitInfo& info) {}
-
+    NerveKeeper* getNerveKeeper() const override;
+    virtual void init(const ActorInitInfo& info);
     virtual void initAfterPlacement();
     virtual void appear();
     virtual void makeActorAlive();
@@ -71,28 +69,15 @@ public:
     virtual void draw() const;
     virtual void startClipped();
     virtual void endClipped();
-
-    virtual void attackSensor(HitSensor* self, HitSensor* other) {}
-
-    virtual bool receiveMsg(const SensorMsg* message, HitSensor* other, HitSensor* self) {
-        return false;
-    }
-
+    virtual void attackSensor(HitSensor* self, HitSensor* other);
+    virtual bool receiveMsg(const SensorMsg* message, HitSensor* other, HitSensor* self);
     virtual bool receiveMsgScreenPoint(const SensorMsg* message, ScreenPointer* source,
-                                       ScreenPointTarget* target) {
-        return false;
-    }
-
-    virtual const char* getName() const override { return mName; }
-
+                                       ScreenPointTarget* target);
+    virtual const char* getName() const override;
     virtual const sead::Matrix34f* getBaseMtx() const;
-
-    virtual EffectKeeper* getEffectKeeper() const override { return mEffectKeeper; }
-
-    virtual AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
-
-    virtual StageSwitchKeeper* getStageSwitchKeeper() const override { return mStageSwitchKeeper; }
-
+    virtual EffectKeeper* getEffectKeeper() const override;
+    virtual AudioKeeper* getAudioKeeper() const override;
+    virtual StageSwitchKeeper* getStageSwitchKeeper() const override;
     virtual RailRider* getRailRider() const override;
     virtual SceneObjHolder* getSceneObjHolder() const override;
     virtual CollisionDirector* getCollisionDirector() const override;
@@ -100,9 +85,7 @@ public:
     virtual CameraDirector* getCameraDirector() const override;
     NatureDirector* getNatureDirector() const;
     virtual void initStageSwitchKeeper() override;
-
-    virtual void control() {}
-
+    virtual void control();
     virtual void updateCollider();
 
     ActorSceneInfo* getSceneInfo() const;

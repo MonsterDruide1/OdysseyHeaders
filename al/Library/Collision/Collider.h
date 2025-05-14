@@ -7,7 +7,7 @@
 #include "Library/HostIO/HioNode.h"
 
 namespace al {
-class SphereInterpolator;
+struct SphereInterpolator;
 struct SphereHitInfo;
 class CollisionPartsFilterBase;
 class TriangleFilterBase;

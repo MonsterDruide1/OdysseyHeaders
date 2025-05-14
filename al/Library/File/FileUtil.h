@@ -1,12 +1,7 @@
 #pragma once
 
-#include <basis/seadTypes.h>
+#include <filedevice/seadArchiveFileDevice.h>
 #include <prim/seadSafeString.h>
-
-namespace sead {
-class ArchiveRes;
-class Heap;
-}  // namespace sead
 
 namespace al {
 class IAudioResourceLoader;
@@ -19,19 +14,16 @@ bool isExistArchive(const sead::SafeString& fileName, const char* ext);
 u32 getFileSize(const sead::SafeString& fileName);
 u32 calcFileAlignment(const sead::SafeString& fileName);
 u32 calcBufferSizeAlignment(const sead::SafeString& fileName);
-u8* loadFile(const sead::SafeString& fileName, s32 size);
-bool tryLoadFileToBuffer(const sead::SafeString& fileName, u8*, u32 bufferSize, s32 size);
+u8* loadFile(const sead::SafeString& fileName);
+void tryLoadFileToBuffer(const sead::SafeString& fileName, u8*, u32, s32);
 sead::ArchiveRes* loadArchive(const sead::SafeString& fileName);
-sead::ArchiveRes* loadArchiveWithExt(const sead::SafeString& fileName, const char* ext);
-bool tryRequestLoadArchive(const sead::SafeString& fileName, sead::Heap* heap);
-
-// TODO: Replace unknown with a proper name
-void loadSoundItem(u32 soundEntryId, u32 unknown, IAudioResourceLoader* resLoader);
-
-bool tryRequestLoadSoundItem(u32 soundEntryId);
-bool tryRequestPreLoadFile(const Resource* res, s32, sead::Heap* heap,
+void loadArchiveWithExt(const sead::SafeString& fileName, const char* ext);
+void tryRequestLoadArchive(const sead::SafeString& fileName, sead::Heap* heap);
+void loadSoundItem(u32, u32, IAudioResourceLoader* resLoader);
+void tryRequestLoadSoundItem(u32);
+void tryRequestPreLoadFile(const Resource* res, s32, sead::Heap* heap,
                            IAudioResourceLoader* resLoader);
-bool tryRequestPreLoadFile(const Resource* res, const sead::SafeString& fileName, sead::Heap* heap,
+void tryRequestPreLoadFile(const Resource* res, const sead::SafeString& fileName, sead::Heap* heap,
                            IAudioResourceLoader* resLoader);
 void waitLoadDoneAllFile();
 void clearFileLoaderEntry();

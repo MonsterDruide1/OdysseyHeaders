@@ -24,7 +24,7 @@ public:
                        const CameraDirector* cameraDirector, s32 switchOnAreaGroupCount,
                        s32 switchKeepOnAreaGroupCount);
 
-    AreaObjDirector* getAreaObjDirector() const override { return mAreaObjDirector; }
+    AreaObjDirector* getAreaObjDirector() const override;
 
     void update();
     void endInit();

@@ -5,8 +5,7 @@ namespace al {
 class IUseExecutor {
 public:
     virtual void execute() = 0;
-
-    virtual void draw() const {}
+    virtual void draw() const;
 };
 
 static_assert(sizeof(IUseExecutor) == 0x8);

@@ -24,8 +24,7 @@ public:
     void endClipped() override;
     bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
                     al::HitSensor* self) override;
-
-    ActorDimensionKeeper* getActorDimensionKeeper() const override { return mDimensionKeeper; }
+    ActorDimensionKeeper* getActorDimensionKeeper() const override;
 
     void listenAppear();
     void appearCountUp();

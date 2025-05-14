@@ -19,8 +19,7 @@ public:
     bool isTriggerTouch(const al::NfpInfo& nfpInfo) const override;
     void activate() override;
     bool execute() override;
-
-    HelpAmiiboType getType() const override { return HelpAmiiboType::Koopa; }
+    HelpAmiiboType getType() const override;
 
 public:
     ItemAmiiboKoopa* mItemAmiiboKoopa = nullptr;

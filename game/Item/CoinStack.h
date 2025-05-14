@@ -16,7 +16,7 @@ class CoinStackGroup;
 class CoinStack : public al::LiveActor {
 public:
     CoinStack(const char* name);
-    virtual ~CoinStack() = default;
+    virtual ~CoinStack();
 
     void init(const al::ActorInitInfo& initInfo) override;
     bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,

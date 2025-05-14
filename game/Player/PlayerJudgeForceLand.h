@@ -7,11 +7,8 @@ class PlayerTrigger;
 class PlayerJudgeForceLand : public IJudge {
 public:
     PlayerJudgeForceLand(const IJudge* judgeLongFall, const PlayerTrigger* trigger);
-
-    void reset() override {}
-
-    void update() override {}
-
+    void reset() override;
+    void update() override;
     bool judge() const override;
 
 public:

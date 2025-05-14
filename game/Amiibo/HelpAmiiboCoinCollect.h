@@ -25,8 +25,7 @@ public:
     bool isEnableUse() override;
     bool execute() override;
     void activate() override;
-
-    HelpAmiiboType getType() const override { return HelpAmiiboType::Koopa; }
+    HelpAmiiboType getType() const override;
 
     void deleteHintEffect();
     void appearEffect();

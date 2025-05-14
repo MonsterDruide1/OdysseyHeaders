@@ -3,8 +3,8 @@
 #include <basis/seadTypes.h>
 
 namespace al {
-struct ActorInitInfo;
 class LiveActor;
+struct ActorInitInfo;
 struct SubActorInfo;
 
 class SubActorKeeper {

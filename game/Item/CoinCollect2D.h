@@ -25,7 +25,7 @@ public:
                     al::HitSensor* self) override;
     void endClipped() override;
 
-    ActorDimensionKeeper* getActorDimensionKeeper() const override { return mDimensionKeeper; }
+    ActorDimensionKeeper* getActorDimensionKeeper() const override;
 
     void appearHintEffect();
     void deleteHintEffect();

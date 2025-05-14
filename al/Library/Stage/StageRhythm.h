@@ -15,10 +15,8 @@ public:
 
     StageSyncCounter();
 
-    void execute() override { mCounter++; }
-
-    const char* getSceneObjName() const override { return "ステージ同期カウンタ"; }
-
+    void execute() override;
+    const char* getSceneObjName() const override;
     void initAfterPlacementSceneObj(const ActorInitInfo& initInfo) override;
 
     s32 getCounter() const { return mCounter; }
