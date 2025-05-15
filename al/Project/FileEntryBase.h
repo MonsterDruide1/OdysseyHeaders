@@ -6,6 +6,13 @@
 
 namespace al {
 
+enum class FileState : s32 {
+    None,
+    IsLoadRequested,
+    IsSendMessageDone,
+    IsLoadDone,
+};
+
 class FileEntryBase {
 public:
     FileEntryBase();
@@ -19,9 +26,10 @@ public:
     void clear();
     void setLoadStateRequested();
 
-public:
-    enum class FileState : s32 { None, IsLoadRequested, IsSendMessageDone, IsLoadDone };
+    // TODO: Remove, mFileState optimizes differently using a getter
+    friend class ArchiveHolder;
 
+public:
     sead::FixedSafeString<0x40> mFileName;
     FileState mFileState = FileState::None;
     sead::MessageQueue mMessageQueue;
