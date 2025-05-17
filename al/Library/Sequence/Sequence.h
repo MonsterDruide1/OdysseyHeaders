@@ -18,9 +18,7 @@ class Sequence : public NerveExecutor, public IUseAudioKeeper, public IUseSceneC
 public:
     Sequence(const char* name);
     virtual ~Sequence() override;
-
     virtual void init(const SequenceInitInfo& initInfo);
-
     virtual void update();
     virtual void kill();
     virtual void drawMain() const;
@@ -28,16 +26,11 @@ public:
 
     virtual bool isDisposable() const;
 
-    virtual Scene* getCurrentScene() const { return nullptr; }
+    virtual Scene* getCurrentScene() const;
+    virtual SceneCreator* getSceneCreator() const override;
+    virtual void setSceneCreator(SceneCreator* sceneCreator) override;
 
-    virtual SceneCreator* getSceneCreator() const override { return mSceneCreator; }
-
-    virtual void setSceneCreator(SceneCreator* sceneCreator) override {
-        mSceneCreator = sceneCreator;
-    }
-
-    AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
-
+    AudioKeeper* getAudioKeeper() const override;
     void initAudio(const GameSystemInfo&, const char*, s32, s32, s32, const char*);
     void initAudioKeeper(const char*);
     void initDrawSystemInfo(const SequenceInitInfo&);
@@ -47,12 +40,12 @@ public:
 
 public:
     sead::FixedSafeString<0x40> mName;
-    Scene* mCurrentScene = nullptr;
-    Scene* mNextScene = nullptr;
-    SceneCreator* mSceneCreator = nullptr;
-    AudioDirector* mAudioDirector = nullptr;
-    AudioKeeper* mAudioKeeper = nullptr;
-    DrawSystemInfo* mDrawSystemInfo = nullptr;
-    bool mIsAlive = true;
+    Scene* mCurrentScene;
+    Scene* mNextScene;
+    SceneCreator* mSceneCreator;
+    AudioDirector* mAudioDirector;
+    AudioKeeper* mAudioKeeper;
+    DrawSystemInfo* mDrawSystemInfo;
+    bool mIsAlive;
 };
 }  // namespace al

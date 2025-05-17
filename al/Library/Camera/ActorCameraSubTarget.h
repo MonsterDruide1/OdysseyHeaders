@@ -13,7 +13,6 @@ public:
     ActorCameraSubTarget(const LiveActor* actor);
 
     const char* getTargetName() const override;
-
     void calcTrans(sead::Vector3f* trans) const override;
     void calcSide(sead::Vector3f* side) const override;
     void calcUp(sead::Vector3f* up) const override;
@@ -36,8 +35,7 @@ public:
     ActorBackAroundCameraSubTarget(const LiveActor* actor);
 
     void calcTrans(sead::Vector3f* trans) const override;
-
-    const char* getTargetName() const override { return mTargetName.cstr(); }
+    const char* getTargetName() const override;
 
 public:
     sead::FixedSafeString<128> mTargetName{""};

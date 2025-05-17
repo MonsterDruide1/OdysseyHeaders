@@ -21,7 +21,7 @@ public:
     void exeDamage();
     void exeHideWait();
 
-    ActorDimensionKeeper* getActorDimensionKeeper() const override { return mDimensionKeeper; }
+    ActorDimensionKeeper* getActorDimensionKeeper() const override;
 
     inline void checkFacingTarget(al::HitSensor* target);
 

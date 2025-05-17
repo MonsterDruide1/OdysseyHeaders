@@ -22,7 +22,7 @@ class ItemDirectorBase;
 class LayoutInitInfo;
 class LiveActor;
 class LiveActorGroup;
-struct ModelDrawBufferCounter;
+class ModelDrawBufferCounter;
 class ModelGroup;
 class NatureDirector;
 class PadRumbleDirector;

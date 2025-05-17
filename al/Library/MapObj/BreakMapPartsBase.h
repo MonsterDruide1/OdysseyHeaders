@@ -20,8 +20,7 @@ public:
     void exeBreak();
     void startBreakByProgram();
     bool receiveMsg(const SensorMsg* message, HitSensor* other, HitSensor* self) override;
-
-    virtual JudgeFuncPtr getJudgeFunction(const char* name) const { return nullptr; }
+    virtual JudgeFuncPtr getJudgeFunction(const char* name) const;
 
 public:
     JudgeFuncPtr mJudgeFunction = nullptr;

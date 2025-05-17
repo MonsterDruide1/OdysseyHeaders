@@ -21,8 +21,7 @@ public:
     void control() override;
     bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
                     al::HitSensor* self) override;
-
-    ActorDimensionKeeper* getActorDimensionKeeper() const override { return mDimensionKeeper; }
+    ActorDimensionKeeper* getActorDimensionKeeper() const override;
 
     void startLight();
     void endLight();
