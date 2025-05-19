@@ -18,7 +18,7 @@ class MemoryPoolHeap;
 
 class GPUMemBlockBase {
 public:
-    GPUMemBlockBase();
+    explicit GPUMemBlockBase(sead::Heap* p_heap);
     virtual ~GPUMemBlockBase();
 
     void clear();
@@ -50,10 +50,7 @@ static_assert(sizeof(GPUMemBlockBase) == 0x38);
 
 // TODO
 template <typename T>
-class GPUMemBlockT : public GPUMemBlockBase {
-public:
-    ~GPUMemBlockT() override { ; }
-};
+class GPUMemBlockT : public GPUMemBlockBase {};
 
 // TODO
 template <typename T>

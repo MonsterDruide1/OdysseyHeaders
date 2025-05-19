@@ -10,10 +10,6 @@ class Heap;
 namespace agl {
 class GPUMemAddrBase {
 public:
-    GPUMemAddrBase() {}
-    GPUMemAddrBase(const GPUMemAddrBase& other, int alignmentOffset)
-        : mMemoryPool(other.mMemoryPool), mAlignmentAddr(other.mAlignmentAddr + alignmentOffset),
-          mMemoryBlock(other.mMemoryBlock) {}
     GPUMemAddrBase(const GPUMemBlockBase& memBlock, u64 offset);
 
     u32 verify_() const;
@@ -25,12 +21,10 @@ public:
     void flushCPUCache(u64);
     void invalidateCPUCache(u64);
 
-    bool isValid() const { return mMemoryPool != nullptr; }
-
 public:
-    detail::MemoryPool* mMemoryPool = nullptr;
-    int mAlignmentAddr = 0;
-    GPUMemBlockBase* mMemoryBlock = nullptr;
+    detail::MemoryPool* mMemoryPool;
+    int mAlignmentAddr;
+    GPUMemBlockBase* mMemoryBlock;
 };
 
 template <typename T>
