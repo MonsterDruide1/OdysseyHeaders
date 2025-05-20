@@ -45,7 +45,6 @@ bool isCollisionCodeSandSink(const IUsePlayerCollision*);
 bool isCollidedWall(const IUsePlayerCollision*);
 bool isCollidedCeiling(const IUsePlayerCollision*);
 bool isActionCodeNoWallGrab(const IUsePlayerCollision*);
-bool isActionCodeNoActionWall(const IUsePlayerCollision*);
 
 bool isCollisionCodeGrabCeilAny(const IUsePlayerCollision*);
 bool isCollisionCodeGrabCeilWall(const IUsePlayerCollision*);
