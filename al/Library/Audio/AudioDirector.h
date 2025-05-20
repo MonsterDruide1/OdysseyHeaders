@@ -55,10 +55,6 @@ public:
     void pauseSystem(bool, const char*, bool, f32, bool, bool, bool) override;
     AreaObjDirector* getAreaObjDirector() const override;
 
-    void setIsSafeFinalizingInParallelThread(bool isSafe) {
-        mIsSafeFinalizingInParallelThread = isSafe;
-    }
-
 public:
     SeDirector* mSeDirector;
     BgmDirector* mBgmDirector;
@@ -68,8 +64,7 @@ public:
     const AudioSystemInfo* mAudioSystemInfo;
     AreaObjDirector* mAreaObjDirector;
     AudioDuckingDirector* mAudioDuckingDirector;
-    sead::PtrArray<PauseSystemEntry>* mPauseSystemEntries;
-    bool mIsSafeFinalizingInParallelThread;
+    sead::PtrArray<PauseSystemEntry> mPauseSystemEntries;
     aal::AudioFrameProcessMgr* mAudioFrameProcessMgr;
     AudioEffectController* mAudioEffectController;
 };

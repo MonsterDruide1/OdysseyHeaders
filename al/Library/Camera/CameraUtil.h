@@ -8,7 +8,7 @@
 namespace al {
 class CameraTicket;
 class ICameraInput;
-struct CameraFlagCtrl;
+class CameraFlagCtrl;
 class IUseCamera;
 class CameraSubTargetBase;
 class CameraSubTargetTurnParam;

@@ -8,6 +8,7 @@
 namespace al {
 class AreaObjDirector;
 class CameraAngleVerticalRequester;
+class CameraFlagCtrl;
 class CameraInputHolder;
 class CameraInSwitchOnAreaDirector;
 class CameraParamTransfer;
@@ -30,7 +31,6 @@ class PlayerHolder;
 class SceneCameraCtrl;
 class SceneCameraInfo;
 class SpecialCameraHolder;
-struct CameraFlagCtrl;
 struct CameraPoserSceneInfo;
 
 class CameraDirector : public HioNode, public IUseExecutor {
