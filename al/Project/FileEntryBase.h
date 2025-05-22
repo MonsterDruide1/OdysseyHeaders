@@ -28,7 +28,6 @@ public:
 
     // TODO: Remove, mFileState optimizes differently using a getter
     friend class ArchiveHolder;
-    friend class SoundItemHolder;
 
 public:
     sead::FixedSafeString<0x40> mFileName;
