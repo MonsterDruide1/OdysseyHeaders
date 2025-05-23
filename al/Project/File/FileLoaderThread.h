@@ -17,6 +17,8 @@ public:
     void threadFunction(sead::Thread* thread, s64 fileEntryPtr);
     void requestLoadFile(FileEntryBase* fileEntry);
 
+    sead::DelegateThread* getThread() const { return mThread; }
+
 public:
     sead::DelegateThread* mThread = nullptr;
 };
