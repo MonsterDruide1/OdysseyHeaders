@@ -14,6 +14,8 @@ public:
 
     const CameraSwitchRequester* getSwitchRequester() const { return mSwitchRequester; }
 
+    void resetViewName() { mViewName = nullptr; }
+
 public:
     CameraSwitchRequester* mSwitchRequester = nullptr;
     const char* mViewName = "Start";
@@ -27,7 +29,9 @@ public:
     SceneCameraCtrl();
     void init(s32 viewNum);
 
-    const SceneCameraViewCtrl& getSceneViewAt(s32 idx) const { return mViewArray[idx]; }
+    SceneCameraViewCtrl* getSceneViewAt(s32 idx) const { return &mViewArray[idx]; }
+
+    CameraRequestParamHolder* getRequestParamHolder() const { return mRequestParamHolder; }
 
 public:
     s32 mViewNum = 0;
