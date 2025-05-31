@@ -19,7 +19,6 @@ public:
     bool receiveMsg(const al::SensorMsg* msg, al::HitSensor* self, al::HitSensor* other) override;
 
     void exeWait();
-    inline const char* getNextAction();
     void exeReactionCap();
 
 public:

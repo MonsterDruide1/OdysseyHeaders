@@ -23,7 +23,6 @@ public:
 
     ActorDimensionKeeper* getActorDimensionKeeper() const override { return mDimensionKeeper; }
 
-    inline void checkFacingTarget(al::HitSensor* target);
 
 public:
     ActorDimensionKeeper* mDimensionKeeper = nullptr;
