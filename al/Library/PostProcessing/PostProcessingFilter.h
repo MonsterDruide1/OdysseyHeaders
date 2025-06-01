@@ -43,9 +43,9 @@ public:
     void update();
     PostProcessingFilterPreset* findPreset(s32) const;
     void updateViewGpu(s32, const sead::Camera*, const Projection*);
-    void drawFilter(agl::DrawContext*, s32, SimpleModelEnv*, const agl::RenderBuffer&,
+    void drawFilter(agl::DrawContext*, s32, SimpleModelEnv*, agl::RenderBuffer&,
                     const agl::TextureData&, const agl::TextureData&, const agl::TextureData&,
-                    const sead::Camera&, const Projection&, f32, f32, f32) const;
+                    const sead::Camera&, const Projection&, f32, f32, f32);
 
     void validate() { mIsValid = true; }
 
