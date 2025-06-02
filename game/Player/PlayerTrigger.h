@@ -8,8 +8,6 @@ public:
     enum ECollisionTrigger : u32 {
         // used in PlayerStateHipDrop
         ECollisionTrigger_val1 = 1,
-        // used in PlayerStateDamageLife
-        ECollisionTrigger_val6 = 6,
         // used in PlayerJudgeWallHitDown
         ECollisionTrigger_val9 = 9,
     };
@@ -22,8 +20,6 @@ public:
     enum EActionTrigger : u32 {
         // used in PlayerStateHipDrop
         EActionTrigger_val3 = 3,
-        // used in PlayerStateDamageLife
-        EActionTrigger_val6 = 6,
         // used in PlayerJudgeForceLand
         EActionTrigger_val11 = 11,
         // used in PlayerJudgeWallCatch
@@ -33,10 +29,7 @@ public:
 
     enum EReceiveSensorTrigger : u32 {};
 
-    enum EPreMovementTrigger : u32 {
-        // used in PlayerStateDamageLife
-        EPreMovementTrigger_val2 = 2,
-    };
+    enum EPreMovementTrigger : u32 {};
 
     enum EDemoEndTrigger : u32 {};
 
