@@ -15,13 +15,9 @@ public:
 
     ExecuteRequestKeeper* getRequestKeeper() const { return mRequestKeeper; }
 
-    s32 getUpdaterCount() const { return mUpdaterCount; }
-
-    ExecutorActorExecuteBase* getUpdater(s32 idx) const { return mUpdaters[idx]; }
+    ModelDrawerBase* getDrawer(s32 idx) const { return mDrawers[idx]; }
 
     s32 getDrawerCount() const { return mDrawerCount; }
-
-    ModelDrawerBase* getDrawer(s32 idx) const { return mDrawers[idx]; }
 
 public:
     ExecuteRequestKeeper* mRequestKeeper = nullptr;
