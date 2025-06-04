@@ -20,10 +20,6 @@ bool findWallCatchPos(const al::CollisionParts**, sead::Vector3f*, sead::Vector3
                       const al::LiveActor*, const sead::Vector3f&, const sead::Vector3f&,
                       const sead::Vector3f&, f32, f32, f32, f32, f32, f32, f32);
 
-bool findWallCatchPosWallHit(const al::CollisionParts**, sead::Vector3f*, sead::Vector3f*,
-                             sead::Vector3f*, const al::LiveActor*, const sead::Vector3f&,
-                             const sead::Vector3f&, f32, f32, f32, f32, f32, f32, f32, f32);
-
 bool findGrabCeilPosNoWallHit(const al::CollisionParts**, sead::Vector3f*, sead::Vector3f*,
                               sead::Vector3f*, const al::LiveActor*, const sead::Vector3f&,
                               const sead::Vector3f&, f32, f32, f32);
@@ -31,13 +27,6 @@ bool findGrabCeilPosNoWallHit(const al::CollisionParts**, sead::Vector3f*, sead:
 bool findGrabCeilPosWallHit(const al::CollisionParts**, sead::Vector3f*, sead::Vector3f*,
                             sead::Vector3f*, const al::LiveActor*, const sead::Vector3f&,
                             const sead::Vector3f&, f32, f32, f32);
-
-void brakeLandVelocityGroundNormal(al::LiveActor*, sead::Vector3f*, const IUsePlayerCollision*,
-                                   const sead::Vector3f&, f32, f32);
-
-void faceToCamera(al::LiveActor*);
-
-void slerpUp(al::LiveActor*, const sead::Vector3f&, f32, f32);
 
 void calcOffsetAllRoot(sead::Vector3f* offset, const PlayerModelHolder* model);
 
@@ -56,6 +45,4 @@ bool calcSlideDir(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&)
 void moveDivingJump(al::LiveActor*, const sead::Vector3f&, f32, f32, f32, f32, f32, f32, f32, f32);
 
 void sendPlayerCollisionTouchMsg(const al::LiveActor*, al::HitSensor*, const IUsePlayerCollision*);
-
-bool calcAlongSkyFront(sead::Vector3f*, const al::LiveActor*);
 }  // namespace rs
