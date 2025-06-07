@@ -15,7 +15,7 @@ public:
     bool isWait() const;
     bool isWalk() const;
     bool isFall() const;
-    void changeWalkAnim(const char*);
+    void changeWalkAnim(const char* animName);
 
 public:
     const char* mStateName;
