@@ -35,7 +35,6 @@ bool isOnGroundSlopeSlideStart(const al::LiveActor*, const IUsePlayerCollision*,
                                const PlayerConst*);
 bool isOnGroundForceSlideCode(const al::LiveActor*, const IUsePlayerCollision*, const PlayerConst*);
 bool isOnGroundForceRollingCode(const al::LiveActor*, const IUsePlayerCollision*);
-bool isOnGroundSkateCode(const al::LiveActor*, const IUsePlayerCollision*);
 bool isOnGroundLessAngle(const al::LiveActor*, const IUsePlayerCollision*, f32);
 bool isPlayerOnGround(const al::LiveActor*);
 bool isOnGround(const al::LiveActor*, const IUsePlayerCollision*);
@@ -60,7 +59,5 @@ al::HitSensor* tryGetCollidedCeilingSensor(const IUsePlayerCollision*);
 
 bool isOnGroundSlopeSlideEnd(const al::LiveActor*, const IUsePlayerCollision*, const PlayerConst*);
 bool isAutoRunOnGroundSkateCode(const al::LiveActor*, const IUsePlayerCollision*, f32);
-
-void startHitReactionLandIfLanding(const al::LiveActor*, const IUsePlayerCollision*, bool);
 
 }  // namespace rs
