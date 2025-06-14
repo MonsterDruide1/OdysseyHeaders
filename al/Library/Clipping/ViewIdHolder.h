@@ -14,8 +14,6 @@ public:
 
     static ViewIdHolder* tryCreate(const PlacementInfo& placementInfo);
 
-    s32 getNumPlacements() const { return mNumPlacements; }
-
 public:
     s32 mNumPlacements = 0;
     PlacementId* mPlacementIds = nullptr;
