@@ -236,13 +236,10 @@ public:
         return new (storage) T(item);
     }
 
-    static s32 compareT(const void* a, const void* b)
+    static int compareT(const void* a_, const void* b_)
     {
-        return compareT(static_cast<const T*>(a), static_cast<const T*>(b));
-    }
-
-    static s32 compareT(const T* a, const T* b)
-    {
+        const T* a = static_cast<const T*>(a_);
+        const T* b = static_cast<const T*>(b_);
         if (*a < *b)
             return -1;
         if (*b < *a)
