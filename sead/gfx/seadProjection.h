@@ -182,7 +182,7 @@ public:
 
 class DirectProjection : public Projection
 {
-    SEAD_RTTI_OVERRIDE(FrustumProjection, Projection)
+    SEAD_RTTI_OVERRIDE(DirectProjection, Projection)
 
 public:
     DirectProjection();
