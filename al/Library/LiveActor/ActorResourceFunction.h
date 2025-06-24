@@ -14,7 +14,7 @@ bool isExistModelResource(const LiveActor*);
 bool isExistAnimResource(const LiveActor*);
 void tryGetAnimResource(const LiveActor*);
 bool isExistModelResourceYaml(const LiveActor*, const char*, const char*);
-void getModelResource(const LiveActor*);
+Resource* getModelResource(const LiveActor*);
 bool isExistAnimResourceYaml(const LiveActor*, const char*, const char*);
 void getAnimResource(const LiveActor*);
 bool isExistModelOrAnimResourceYaml(const LiveActor*, const char*, const char*);
@@ -28,7 +28,7 @@ void tryMakeInitFileName(sead::BufferedSafeString*, const Resource*, const char*
 void tryGetSuffixIter(ByamlIter*, const Resource*, const char*, const char*);
 void tryGetInitFileIterAndName(ByamlIter*, sead::BufferedSafeString*, const Resource*, const char*,
                                const char*, const char*);
-void tryGetActorInitFileIterAndName(ByamlIter*, sead::BufferedSafeString*, const Resource*,
+bool tryGetActorInitFileIterAndName(ByamlIter*, sead::BufferedSafeString*, const Resource*,
                                     const char*, const char*);
 bool tryGetActorInitFileIter(ByamlIter*, const Resource*, const char*, const char*);
 bool tryGetActorInitFileIterAndName(ByamlIter*, sead::BufferedSafeString*, const LiveActor*,
