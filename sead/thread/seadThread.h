@@ -96,14 +96,7 @@ public:
 
     virtual void run_();
     virtual void calc_(MessageQueue::Element msg) = 0;
-#if SEAD_THREAD_GETFIBER
-public:
-    virtual nn::os::FiberType* getFiber() const;
-
-public:
-#else
     virtual uintptr_t getStackCheckStartAddress_() const;
-#endif
 
     void initStackCheck_();
     void initStackCheckWithCurrentStackPointer_();
@@ -132,9 +125,7 @@ public:
 
 class ThreadMgr : public hostio::Node
 {
-#if not SEAD_THREADMGR_MOVED_SINGLETON_DISPOSER
     SEAD_SINGLETON_DISPOSER(ThreadMgr)
-#endif
 public:
     ThreadMgr();
     virtual ~ThreadMgr();
@@ -200,10 +191,6 @@ public:
     CriticalSection mListCS;
     Thread* mMainThread = nullptr;
     ThreadLocalStorage mThreadPtrTLS;
-
-#if SEAD_THREADMGR_MOVED_SINGLETON_DISPOSER
-    SEAD_SINGLETON_DISPOSER(ThreadMgr)
-#endif
 };
 
 class MainThread : public Thread
