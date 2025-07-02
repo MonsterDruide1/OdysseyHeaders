@@ -50,9 +50,6 @@ public:
     bool mIsHeavyGravity = false;
     bool mIsTriggerTrampled = false;
 
-    inline void setVertFlip();
-    inline void clearVertFlip();
-    inline bool isInClippingFrustum() const;
 };
 
 static_assert(sizeof(Nokonoko2D) == 0x168);

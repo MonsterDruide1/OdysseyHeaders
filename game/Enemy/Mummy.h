@@ -13,10 +13,6 @@ public:
 
     void init(const al::ActorInitInfo& info) override;
 
-    inline void setupEffectMatrix();
-    inline void checkEffects();
-    inline void adjustVelocity();
-    inline bool isAsleep() const;
 
     void startSleep();
     void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
@@ -41,7 +37,6 @@ public:
     void exeWalkStart();
     void walk();
     void exeWalk();
-    inline bool isOnSpecialGround() const;
     bool isHideByTimeLimit() const;
     void exeHeadLost();
     void exeHalfReaction();

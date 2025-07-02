@@ -64,7 +64,6 @@ public:
     };
 
     struct LocalInterpole {
-        inline void interpolate(sead::LookAtCamera* cam);
 
         s32 step = -1;
         s32 end = 0;
@@ -84,7 +83,6 @@ public:
     static_assert(sizeof(LookAtInterpole) == 0x10);
 
     struct CameraInterpoleStep {
-        inline void load(const ByamlIter& iter);
 
         CameraInterpoleStepType stepType = CameraInterpoleStepType::Undefined;
         s32 stepNum = -1;
@@ -96,8 +94,6 @@ public:
         inline CameraInterpoleParam()
             : CameraInterpoleStep({CameraInterpoleStepType::ByCameraDistance}) {}
 
-        inline void load(const ByamlIter& iter);
-        inline void set(CameraInterpoleStepType type, s32 step, bool isInterpolate);
 
         s8 isEaseOut = false;
         bool isInterpolateByStep = false;
@@ -108,7 +104,6 @@ public:
     struct OrthoProjectionParam {
         OrthoProjectionParam() {}
 
-        inline void load(const ByamlIter& iter);
 
         bool isSetInfo = false;
         OrthoProjectionInfo info;

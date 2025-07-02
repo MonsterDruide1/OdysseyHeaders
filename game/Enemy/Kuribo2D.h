@@ -35,8 +35,6 @@ public:
     sead::Vector3f mInitTrans = sead::Vector3f::zero;
     sead::Vector3f mInitFront = sead::Vector3f::zero;
 
-    inline bool receiveDefeatMsg(const al::SensorMsg* message, al::HitSensor* other,
-                                 al::HitSensor* self, al::Nerve* nextNerve);
 };
 
 static_assert(sizeof(Kuribo2D) == 0x130);

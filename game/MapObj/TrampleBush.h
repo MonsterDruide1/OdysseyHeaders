@@ -15,8 +15,6 @@ public:
     bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
                     al::HitSensor* self) override;
 
-    inline bool isReady();
-    inline bool isSensorOnSwitch(const al::SensorMsg* message, al::HitSensor* other);
 
     void exeWait();
     void exeReaction();

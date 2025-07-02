@@ -21,7 +21,6 @@ public:
 
     void endCapture();
 
-    inline bool updateAccelStick();
 
     void exeWait();
     void exeSwoon();

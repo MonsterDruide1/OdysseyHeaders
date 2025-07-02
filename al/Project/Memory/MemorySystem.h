@@ -53,7 +53,6 @@ public:
     }
 
 public:
-    inline u64 getSceneResourceHeapSize(const char* stageName) const;
 
     sead::ExpHeap* mStationedHeap = nullptr;
     sead::ExpHeap* mSequenceHeap = nullptr;
