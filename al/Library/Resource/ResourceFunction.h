@@ -2,7 +2,6 @@
 
 #include <prim/seadSafeString.h>
 
-// this probably isnt a good spot
 namespace al {
 
 class Resource;
