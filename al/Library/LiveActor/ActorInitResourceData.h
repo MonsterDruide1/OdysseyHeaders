@@ -10,8 +10,6 @@ class ActorInitResourceData {
 public:
     ActorInitResourceData(Resource* res);
 
-    InitResourceDataAnim* getAnimData() const { return mResDataAnim; }
-
     InitResourceDataAction* getDataAction() const { return mResDataAction; }
 
 public:
