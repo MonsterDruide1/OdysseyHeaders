@@ -2,6 +2,7 @@
 #define SEAD_TASK_ID_H_
 
 #include <basis/seadTypes.h>
+#include <framework/seadHeapPolicies.h>
 
 namespace sead
 {
@@ -21,10 +22,16 @@ struct TaskConstructArg
 
 typedef TaskBase* (*TaskFactory)(const TaskConstructArg&);
 
+template <typename T = TaskBase>
+TaskBase* TTaskFactory(const TaskConstructArg& arg)
+{
+    return new (arg.heap_array->getPrimaryHeap()) T(arg);
+}
+
 class TaskClassID
 {
 public:
-    enum Type : u64
+    enum Type : u32
     {
         cInvalid = 0,
         cInt = 1,

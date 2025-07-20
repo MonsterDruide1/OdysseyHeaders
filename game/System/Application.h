@@ -16,7 +16,7 @@ class Application {
 
 public:
     Application();
-    void init(s32 argc, char** argv);
+    void init(s32 argc, char* argv[]);
     void run();
     RootTask* getRootTask() const;
 
@@ -29,11 +29,14 @@ public:
     al::AccountHolder* getAccountHolder() const { return mAccountHolder; }
 
 public:
-    friend class ApplicationFunction;
-
-public:
-    al::SystemKit* mSystemKit;
-    al::GameFrameworkNx* mGameFramework;
-    al::DrawSystemInfo* mDrawSystemInfo;
-    al::AccountHolder* mAccountHolder;
+    al::SystemKit* mSystemKit = nullptr;
+    al::GameFrameworkNx* mGameFramework = nullptr;
+    al::DrawSystemInfo* mDrawSystemInfo = nullptr;
+    al::AccountHolder* mAccountHolder = nullptr;
 };
+
+namespace ApplicationFunction {
+
+void initialize(s32 argc, char** argv);
+
+}

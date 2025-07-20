@@ -70,6 +70,7 @@ public:
     virtual void waitForGpuDone_();
     virtual void setGpuTimeStamp_();
 
+    static void initialize(const Framework::InitializeArg&);
     void initializeArg(const Framework::InitializeArg&);
     void initializeGraphicsSystem(Heap*, const Vector2f&);
     void outOfMemoryCallback_(NVNcommandBuffer*, NVNcommandBufferMemoryEvent, size_t, void*);

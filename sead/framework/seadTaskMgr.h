@@ -5,6 +5,7 @@
 #include <framework/seadTaskBase.h>
 #include <heap/seadHeapMgr.h>
 #include <thread/seadCriticalSection.h>
+#include <hostio/seadHostIONode.h>
 
 namespace sead
 {

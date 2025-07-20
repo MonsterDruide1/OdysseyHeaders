@@ -41,7 +41,7 @@ public:
     {
         InitializeArg();
 
-        u32 heap_size;
+        u64 heap_size;
         Arena* arena;
     };
 
@@ -77,7 +77,7 @@ public:
     virtual MethodTreeMgr* createMethodTreeMgr_(Heap*) = 0;
     virtual void procReset_();
 
-    void initialize(const InitializeArg&);
+    static void initialize(const InitializeArg&);
 
     MethodTreeMgr* getMethodTreeMgr() const { return mMethodTreeMgr; }
 
