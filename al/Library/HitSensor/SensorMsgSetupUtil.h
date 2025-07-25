@@ -83,6 +83,16 @@ SENSOR_MSG_WITH_DATA_CUSTOM_CTOR(MyVecMsg, ((sead::Vector3f, Vec)), ((const sead
     public:                                                                                       \
         DECL_MEMBER_VAR_MULTI SensorMsgParams;                                                     \
     };                                                                                             \
+    inline SensorMsg##Type::SensorMsg##Type(PARAM_LIST CtorParams)
+
+// Use this in the edge cases where there's no macro to implement a specific type of isMsg
+#define MSG_TYPE_CHECK_(MsgVar, Type) sead::IsDerivedFrom<SensorMsg##Type>(MsgVar)
+
+/*
+
+Implements an isMsg function that checkes if the given message is one of multiple message types.
+Implementing a function called isMsgTestAll that checks if the given message is of type
+SensorMsgTest or SensorMsgTest2: IS_MSG_MULTIPLE_IMPL(TestAll, Test, Test2);
 
 */
 
