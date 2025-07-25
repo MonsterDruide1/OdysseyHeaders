@@ -45,6 +45,17 @@ Creating a SensorMsg class called SensorMsgTest2 that holds a string referenced 
     class SensorMsg##Type : public al::SensorMsg {                                                 \
         SEAD_RTTI_OVERRIDE(SensorMsg##Type, al::SensorMsg)                                         \
     public:                                                                                        \
+        inline SensorMsg##Type(PARAM_LIST(__VA_ARGS__)) {                                          \
+            SET_MEMBER_PARAM_MULTI(__VA_ARGS__);                                                   \
+        }                                                                                          \
+                                                                                                   \
+        DECL_GET_MULTI(__VA_ARGS__)                                                                \
+                                                                                                   \
+        virtual ~SensorMsg##Type() = default;                                                      \
+                                                                                                   \
+    public:                                                                                       \
+        DECL_MEMBER_VAR_MULTI(__VA_ARGS__);                                                        \
+    };
 
 /*
 
@@ -64,6 +75,14 @@ SENSOR_MSG_WITH_DATA_CUSTOM_CTOR(MyVecMsg, ((sead::Vector3f, Vec)), ((const sead
         SEAD_RTTI_OVERRIDE(SensorMsg##Type, al::SensorMsg)                                         \
                                                                                                    \
     public:                                                                                        \
+                                                                                                   \
+        DECL_GET_MULTI SensorMsgParams;                                                            \
+                                                                                                   \
+        virtual ~SensorMsg##Type() = default;                                                      \
+                                                                                                   \
+    public:                                                                                       \
+        DECL_MEMBER_VAR_MULTI SensorMsgParams;                                                     \
+    };                                                                                             \
 
 */
 
