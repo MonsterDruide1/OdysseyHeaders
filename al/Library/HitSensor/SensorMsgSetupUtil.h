@@ -75,6 +75,7 @@ SENSOR_MSG_WITH_DATA_CUSTOM_CTOR(MyVecMsg, ((sead::Vector3f, Vec)), ((const sead
         SEAD_RTTI_OVERRIDE(SensorMsg##Type, al::SensorMsg)                                         \
                                                                                                    \
     public:                                                                                        \
+        inline SensorMsg##Type(PARAM_LIST CtorParams);                                             \
                                                                                                    \
         DECL_GET_MULTI SensorMsgParams;                                                            \
                                                                                                    \
