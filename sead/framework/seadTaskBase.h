@@ -49,6 +49,9 @@ public:
 
     struct CreateArg
     {
+        CreateArg();
+        CreateArg(const TaskClassID& factory);
+
         typedef void (*SingletonFunc)(TaskBase*);
 
         TaskClassID factory;

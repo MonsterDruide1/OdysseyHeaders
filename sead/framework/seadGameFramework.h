@@ -33,7 +33,7 @@ public:
     virtual void initHostIO_();
 
     void startDisplay();
-    void initialize(const Framework::InitializeArg&);
+    static void initialize(const Framework::InitializeArg&);
     void lockFrameDrawContext();
     void unlockFrameDrawContext();
 
