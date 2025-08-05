@@ -39,11 +39,7 @@ struct InterProcessEventType {
 };
 }  // namespace detail
 
-struct Tick {
-    Tick(u64 val) : value(val) {}
-
-    u64 value;
-};
+typedef u64 Tick;
 
 struct LightEventType {
     std::aligned_storage_t<0xc, 4> storage;

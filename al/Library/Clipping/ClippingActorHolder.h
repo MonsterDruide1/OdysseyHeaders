@@ -10,7 +10,7 @@ class Thread;
 
 namespace al {
 struct ActorInitInfo;
-class ClippingActorInfo;
+struct ClippingActorInfo;
 class ClippingGroupHolder;
 class ClippingJudge;
 class LiveActor;

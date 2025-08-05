@@ -171,13 +171,7 @@ f32 getRandomRadian();
 void getRandomVector(sead::Vector3f* vec, f32 factor);
 void getRandomDir(sead::Vector3f* vec);
 void getRandomDirH(sead::Vector3f*, const sead::Vector3f&);
-void rotateVectorDegree(sead::Vector3f* out, const sead::Vector3f& vec, const sead::Vector3f& axis,
-                        f32 degree);
-
-inline void rotateVectorDegree(sead::Vector3f* vec, const sead::Vector3f& axis, f32 degree) {
-    rotateVectorDegree(vec, *vec, axis, degree);
-}
-
+void rotateVectorDegree(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&, f32);
 void getRandomOnCircle(sead::Vector2f*, f32);
 void getRandomInCircle(sead::Vector2f*, f32);
 void getRandomInCircleMinMaxRadius(sead::Vector2f*, f32, f32);
@@ -345,20 +339,8 @@ bool turnQuatFrontToDirDegreeH(sead::Quatf*, const sead::Vector3f&, f32);
 void rotateQuatAndTransDegree(sead::Quatf*, sead::Vector3f*, const sead::Quatf&,
                               const sead::Vector3f&, const sead::Vector3f&, const sead::Vector3f&,
                               f32);
-bool turnVecToVecDegree(sead::Vector3f* out, const sead::Vector3f& vec, const sead::Vector3f& other,
-                        f32 degree);
-
-inline void turnVecToVecDegree(sead::Vector3f* vec, const sead::Vector3f& other, f32 degree) {
-    turnVecToVecDegree(vec, *vec, other, degree);
-}
-
-void turnVecToVecRate(sead::Vector3f* out, const sead::Vector3f& vec, const sead::Vector3f& other,
-                      f32 rate);
-
-inline void turnVecToVecRate(sead::Vector3f* vec, const sead::Vector3f& other, f32 rate) {
-    turnVecToVecRate(vec, *vec, other, rate);
-}
-
+bool turnVecToVecDegree(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&, f32);
+void turnVecToVecRate(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&, f32);
 bool turnVecToVecCos(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&, f32,
                      const sead::Vector3f&, f32);
 bool turnVecToVecCosOnPlane(sead::Vector3f*, const sead::Vector3f&, const sead::Vector3f&,
