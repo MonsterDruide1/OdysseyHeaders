@@ -14,7 +14,11 @@ class PlacementInfo;
 }  // namespace al
 
 namespace alCameraPoserFunction {
-class CameraCollisionHitResult;
+struct CameraCollisionHitResult {
+    sead::Vector3f mCollisionHitPos = {0.0f, 0.0f, 0.0f};
+    sead::Vector3f mTriangleNormal = {0.0f, 0.0f, 0.0f};
+    int mCollisionLocation = 0;
+};
 
 void getViewIndex(const al::CameraPoser*);
 sead::LookAtCamera* getLookAtCamera(const al::CameraPoser*);
@@ -193,11 +197,11 @@ bool isSceneCameraFirstCalc(const al::CameraPoser*);
 bool isActiveInterpole(const al::CameraPoser*);
 bool isInvalidEndEntranceCamera(const al::CameraPoser*);
 bool isPause(const al::CameraPoser*);
-void checkFirstCameraCollisionArrow(sead::Vector3f*, sead::Vector3f*, const al::IUseCollision*,
+bool checkFirstCameraCollisionArrow(sead::Vector3f*, sead::Vector3f*, const al::IUseCollision*,
                                     const sead::Vector3f&, const sead::Vector3f&);
-void checkFirstCameraCollisionArrow(CameraCollisionHitResult*, const al::IUseCollision*,
+bool checkFirstCameraCollisionArrow(CameraCollisionHitResult*, const al::IUseCollision*,
                                     const sead::Vector3f&, const sead::Vector3f&);
-void checkFirstCameraCollisionArrowOnlyCeiling(sead::Vector3f*, sead::Vector3f*,
+bool checkFirstCameraCollisionArrowOnlyCeiling(sead::Vector3f*, sead::Vector3f*,
                                                const al::IUseCollision*, const sead::Vector3f&,
                                                const sead::Vector3f&);
 void checkCameraCollisionMoveSphere(sead::Vector3f*, const al::IUseCollision*,
