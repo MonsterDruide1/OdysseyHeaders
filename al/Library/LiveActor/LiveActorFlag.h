@@ -8,7 +8,7 @@ struct LiveActorFlag {
     bool isClippingInvalid = true;
     bool isDrawClipped = false;
     bool isDisableCalcAnim = false;
-    bool isModelHidden = false;
+    bool isModelVisible = false;
     bool isCollideOff = true;
     bool field_07 = false;
     bool isMaterialCodeValid = false;
