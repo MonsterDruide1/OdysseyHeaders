@@ -4,15 +4,16 @@
 
 namespace al {
 class AreaObjGroup;
+class PlayerHolder;
 
 class SwitchOnAreaGroup {
 public:
     SwitchOnAreaGroup(AreaObjGroup* areaObjGroup);
 
-    virtual bool isExternalCondition() const;
+    void update(const sead::Vector3f* trans, s32);
+    void update(const sead::Vector3f& trans);
 
-    void update(const sead::Vector3f* positions, s32 posCount);
-    void update(const sead::Vector3f& position);
+    virtual bool isExternalCondition() const;
 
 public:
     AreaObjGroup* mAreaObjGroup;
