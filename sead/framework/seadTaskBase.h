@@ -49,22 +49,19 @@ public:
 
     struct CreateArg
     {
-        CreateArg();
-        CreateArg(const TaskClassID& factory);
-
         typedef void (*SingletonFunc)(TaskBase*);
 
         TaskClassID factory;
         HeapPolicies heap_policies;
-        TaskBase* parent = nullptr;
-        TaskParameter* parameter = nullptr;
-        FaderTaskBase* fader = nullptr;
-        TaskBase* src_task = nullptr;
-        TaskBase** created_task = nullptr;
-        DelegateEvent<TaskBase*>::Slot* create_callback = nullptr;
+        TaskBase* parent;
+        TaskParameter* parameter;
+        FaderTaskBase* fader;
+        TaskBase* src_task;
+        TaskBase** created_task;
+        DelegateEvent<TaskBase*>::Slot* create_callback;
         TaskUserID user_id;
-        Tag tag = cApp;
-        SingletonFunc instance_cb = nullptr;
+        Tag tag;
+        SingletonFunc instance_cb;
     };
 
 public:

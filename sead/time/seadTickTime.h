@@ -18,7 +18,7 @@ public:
     u64 toTicks() const { return mTick; }
 
 #ifdef NNSDK
-    void setNow() { mTick = nn::os::GetSystemTick().value; }
+    void setNow() { mTick = nn::os::GetSystemTick(); }
 #else
     void setNow();
 #endif
@@ -28,13 +28,13 @@ public:
 
     TickTime& operator+=(const TickSpan& span)
     {
-        mTick += span.toS64();
+        mTick += span.toTicks();
         return *this;
     }
 
     TickTime& operator-=(const TickSpan& span)
     {
-        mTick -= span.toS64();
+        mTick -= span.toTicks();
         return *this;
     }
 
