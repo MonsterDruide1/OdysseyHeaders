@@ -13,7 +13,6 @@ class ValidatorBase;
 class AreaObjMtxConnecter {
 public:
     AreaObjMtxConnecter(AreaObj* areaObj, const PlacementInfo& placementInfo);
-
     bool trySetParentMtx(const sead::Matrix34f* parentMtx, const PlacementInfo& placementInfo,
                          const ValidatorBase* validatorBase);
     bool trySyncParentMtx(const sead::Matrix34f* parentMtx, const PlacementInfo& placementInfo,
@@ -25,13 +24,12 @@ public:
     sead::Matrix34f mMatrix;
     MtxConnector* mMtxConnector = nullptr;
     PlacementInfo mPlacementInfo;
-    const ValidatorBase* mValidatorBase = nullptr;
+    ValidatorBase* mValidatorBase = nullptr;
 };
 
 class AreaObjMtxConnecterHolder {
 public:
     AreaObjMtxConnecterHolder(s32 capacity);
-
     void registerParentMtx(const sead::Matrix34f* parentMtx, const PlacementInfo& placementInfo,
                            const ValidatorBase* validatorBase);
     void registerSyncParentMtx(const sead::Matrix34f* parentMtx, const PlacementInfo& placementInfo,
