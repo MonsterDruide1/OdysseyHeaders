@@ -49,8 +49,6 @@ public:
     const sead::Matrix34f& getBaseInvMtx() const;
     const sead::Matrix34f& getPrevBaseMtx() const;
 
-    const CollisionParts* getCollisionParts() const { return mCollisionParts; }
-
     // clang-format off
     friend bool ::operator==(const Triangle& lhs, const Triangle& rhs);
     friend bool ::operator!=(const Triangle& lhs, const Triangle& rhs);
