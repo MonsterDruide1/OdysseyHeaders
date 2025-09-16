@@ -198,12 +198,12 @@ public:
 
 class CollisionPartsFilterActor : public CollisionPartsFilterBase {
 public:
-    CollisionPartsFilterActor(const LiveActor* actor) : mActor(actor) {}
+    CollisionPartsFilterActor(LiveActor* actor) : mActor(actor) {}
 
     bool isInvalidParts(CollisionParts* collisionParts) override;
 
 public:
-    const LiveActor* mActor;
+    LiveActor* mActor;
     bool mIsCompareEqual = true;
 };
 

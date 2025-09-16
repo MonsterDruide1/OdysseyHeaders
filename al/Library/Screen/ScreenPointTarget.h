@@ -1,13 +1,10 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-#include <math/seadMatrix.h>
 #include <math/seadVector.h>
 
 namespace al {
 class LiveActor;
 class ParameterObj;
-class ScreenPointCheckGroup;
 
 class ScreenPointTarget {
 public:
@@ -30,19 +27,9 @@ public:
 
     ParameterObj* getParameterObj() const { return mParameterObj; }
 
-    sead::Matrix34f* getJointMtx() const { return mJointMtx; }
-
-    LiveActor* getActor() const { return mActor; }
-
 public:
     void* filler;
     ParameterObj* mParameterObj;
-    char filler2[0x28];
-    sead::Vector3f* _38;
-    sead::Matrix34f* mJointMtx;
-    sead::Vector3f _48;
-    sead::Vector3f _54;
-    LiveActor* mActor;
-    ScreenPointCheckGroup* mCheckGroup;
+    char filler2[0x60];
 };
 }  // namespace al
