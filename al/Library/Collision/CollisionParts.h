@@ -11,17 +11,19 @@ class HitSensor;
 
 class CollisionParts {
 public:
+    CollisionParts(void* kcl, const void* byml);
+
     const LiveActor* getConnectedHost() const;
     void calcForceMovePower(sead::Vector3f*, const sead::Vector3f&) const;
     void calcForceRotatePower(sead::Quatf*) const;
+    void initParts(const sead::Matrix34f&);
+    void invalidateBySystem();
 
     const sead::Matrix34f& getBaseMtx() const { return mBaseMtx; }
 
     const sead::Matrix34f& getBaseInvMtx() const { return mBaseInvMtx; }
 
     const sead::Matrix34f& getPrevBaseMtx() const { return mPrevBaseMtx; }
-
-    const sead::Matrix34f& getPrevBaseInvMtx() const { return mPrevBaseInvMtx; }
 
     KCollisionServer* getKCollisionServer() const { return mKCollisionServer; }
 
@@ -31,11 +33,23 @@ public:
 
     const HitSensor* getConnectedSensor() const { return mConnectedSensor; }
 
+    void set_16e(bool val) { _16e = val; }
+
+    void setSpecialPurpose(const char* specialPurpose) { mSpecialPurpose = specialPurpose; }
+
+    void setOptionalPurpose(const char* optionalPurpose) { mOptionalPurpose = optionalPurpose; }
+
+    void setPriority(s32 priority) { mPriority = priority; }
+
+    void setConnectedSensor(HitSensor* sensor) { mConnectedSensor = sensor; }
+
+    void setJointMtx(const sead::Matrix34f* jointMtx) { mJointMtx = jointMtx; }
+
 public:
     void* unk[2];
     CollisionParts* _10;  // self-reference
     sead::TList<CollisionParts*>* mPartsList;
-    sead::Matrix34f* mJointMtx;
+    const sead::Matrix34f* mJointMtx;
     sead::Matrix34f mSyncMtx;
     sead::Matrix34f mBaseMtx;
     sead::Matrix34f mBaseInvMtx;
