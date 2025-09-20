@@ -14,9 +14,9 @@ public:
     void setAnimToModel(const AnimResInfo*) override;
 
 public:
+    void* _18;
+    void* _20;
     s32 mMatType;
-    void* _30;
-    void* _38;
 };
 
 class AnimPlayerVis : public AnimPlayerSimple {
