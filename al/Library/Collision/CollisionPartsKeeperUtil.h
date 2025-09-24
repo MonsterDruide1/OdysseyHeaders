@@ -1,15 +1,8 @@
 #pragma once
 
-#include <basis/seadTypes.h>
 #include <container/seadPtrArray.h>
 #include <math/seadVector.h>
-
-#include "Library/Collision/CollisionPartsTriangle.h"
-
-namespace sead {
-template <typename>
-class IDelegate1;
-}
+#include <prim/seadDelegate.h>
 
 namespace al {
 struct ArrowHitInfo;
@@ -26,54 +19,11 @@ struct SphereHitInfo;
 class Triangle;
 class TriangleFilterBase;
 
-const char* getMaterialCodeName(const Triangle&);
-const char* getCollisionCodeName(const Triangle&, const char*);
-const char* getFloorCodeName(const Triangle&);
-const char* getWallCodeName(const Triangle&);
-const char* getCameraCodeName(const Triangle&);
-const char* getMaterialCodeName(const HitInfo*);
-const char* getFloorCodeName(const HitInfo*);
-const char* getWallCodeName(const HitInfo*);
-const char* getCameraCodeName(const HitInfo*);
-const char* getCollisionCodeName(const HitInfo*, const char*);
-bool isMaterialCode(const Triangle&, const char*);
 bool isFloorCode(const Triangle&, const char*);
-bool isWallCode(const Triangle&, const char*);
-bool isCameraCode(const Triangle&, const char*);
-bool isCollisionCode(const Triangle&, const char*, const char*);
-bool isMaterialCode(const HitInfo*, const char*);
-bool isFloorCode(const Triangle&, const char*);
-bool isWallCode(const HitInfo*, const char*);
-bool isCameraCode(const HitInfo*, const char*);
-bool isCollisionCode(const HitInfo*, const char*, const char*);
-const char* getSpecialPurposeName(const HitInfo*);
-bool isCollisionValid(const CollisionParts*);
-bool isCollisionMoving(const CollisionParts*);
-bool calcForceMovePower(sead::Vector3f*, const CollisionParts*, const sead::Vector3f&);
-bool calcForceMovePowerExceptNormal(sead::Vector3f*, const CollisionParts*, const sead::Vector3f&,
-                                    const sead::Vector3f&);
 }  // namespace al
 
 namespace alCollisionUtil {
-struct SphereMoveHitInfo {
-    f32 _0;
-    char filler[20];
-    al::Triangle _18;
-    char filler2[0x18];
-    al::Triangle _a0;
-    char filler3[0x18];
-    al::Triangle _128;
-    char filler4[0x18];
-    al::Triangle _1b0;
-    char filler5[0x18];
-    al::Triangle _238;
-    char filler6[0x18];
-    al::Triangle _2c0;
-    char filler7[0x18];
-    al::Triangle _348;
-    char filler8[0x18];
-    al::Triangle _3d0;
-};
+class SphereMoveHitInfo;
 
 al::ICollisionPartsKeeper* getCollisionPartsKeeper(const al::IUseCollision*);
 bool isCollisionMoving(const al::HitInfo*);
