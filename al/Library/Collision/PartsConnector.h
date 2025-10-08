@@ -15,15 +15,13 @@ public:
     bool isConnecting() const override;
     void clear() override;
 
-    // TODO: Rename parameters
-    void init(const sead::Matrix34f* mtxA, const sead::Matrix34f& mtxB,
-              const CollisionParts* collisionParts);
-    const HitSensor* getConnectingSensor() const;
+    void init(const sead::Matrix34f*, const sead::Matrix34f&, const CollisionParts*);
+    HitSensor* getConnectingSensor() const;
     bool isMoved() const;
     bool isConnectInvalidCollision() const;
 
 public:
-    const CollisionParts* mCollisionParts = nullptr;
+    void* _0[1];
 };
 
 static_assert(sizeof(CollisionPartsConnector) == 0x68);

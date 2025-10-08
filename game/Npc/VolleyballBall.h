@@ -51,10 +51,6 @@ public:
     void exeRetry();
     void exeRetryEnd();
 
-    void setNpc(VolleyballNpc* npc) { mNpc = npc; }
-
-    void endGame() { mIsEndGame = true; }
-
 public:
     sead::Vector3f mEndPosition = sead::Vector3f::zero;
     al::ParabolicPath* mAttackPath = nullptr;
@@ -62,7 +58,7 @@ public:
     f32 mAttackSpeed = 0.0f;
     s32 mPathTime = 0;
     VolleyballNpc* mNpc = nullptr;
-    bool mIsEndGame = false;
+    bool _138 = false;
     sead::Quatf mOrientation = sead::Quatf::unit;
     s32 mLastSmashCoins = 0;
     s32 mMissReactionDelay = 0;

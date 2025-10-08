@@ -1,7 +1,6 @@
 #pragma once
 
 #include <basis/seadTypes.h>
-#include <math/seadMatrix.h>
 
 namespace nn::g3d {
 class ModelObj;
@@ -24,14 +23,10 @@ public:
     void show();
     void hide();
     void recreateDisplayList();
-    void setCameraInfo(const sead::Matrix34f*, const sead::Matrix34f*, const sead::Matrix44f*,
-                       const sead::Matrix44f*);
 
     nn::g3d::ModelObj* getModelObj() const { return mModelObj; }
 
     ActorDitherAnimator* getActorDitherAnimator() const { return mActorDitherAnimator; }
-
-    s32 getCalcViewCore() const { return mCalcViewCore; }
 
     void setCalcViewCore(s32 core) { mCalcViewCore = core; }
 
