@@ -15,7 +15,7 @@ class PlayerAnimator;
 class PlayerColliderYoshi;
 class PlayerConst;
 class PlayerEffect;
-struct PlayerJumpMessageRequest;
+class PlayerJumpMessageRequest;
 class PlayerModelHolder;
 class PlayerModelChangerYoshi;
 class PlayerPushReceiver;

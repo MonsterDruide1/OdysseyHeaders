@@ -39,7 +39,7 @@ class PlayerCarryKeeper;
 class PlayerEquipmentUser;
 class PlayerHackKeeper;
 class PlayerFormSensorCollisionArranger;
-struct PlayerJumpMessageRequest;
+class PlayerJumpMessageRequest;
 class PlayerSandSinkAffect;
 class PlayerSpinCapAttack;
 class PlayerActionDiveInWater;
