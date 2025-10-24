@@ -85,6 +85,8 @@ public:
 
     void setIgnoreGround() { mIsIgnoreGround = true; }
 
+    void set48(f32 value) { _48 = value; }
+
 public:
     void* _18[5];
     s32 _40;
