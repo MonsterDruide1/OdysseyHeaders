@@ -13,13 +13,7 @@ namespace sead
 template <typename T>
 inline T QuatCalcCommon<T>::length(const Base& v)
 {
-    return MathCalcCommon<T>::sqrt(squaredLength(v));
-}
-
-template <typename T>
-inline T QuatCalcCommon<T>::squaredLength(const Base& v)
-{
-    return (v.w * v.w) + (v.x * v.x) + (v.y * v.y) + (v.z * v.z);
+    return std::sqrt(dot(v, v));
 }
 
 template <typename T>
@@ -45,24 +39,6 @@ inline T QuatCalcCommon<T>::dot(const Base& u, const Base& v)
 }
 
 template <typename T>
-inline void QuatCalcCommon<T>::add(Base& out, const Base& a, const Base& b)
-{
-    out.w = a.w + b.w;
-    out.x = a.x + b.x;
-    out.y = a.y + b.y;
-    out.z = a.z + b.z;
-}
-
-template <typename T>
-inline void QuatCalcCommon<T>::sub(Base& out, const Base& a, const Base& b)
-{
-    out.w = a.w - b.w;
-    out.x = a.x - b.x;
-    out.y = a.y - b.y;
-    out.z = a.z - b.z;
-}
-
-template <typename T>
 inline void QuatCalcCommon<T>::setMul(Base& out, const Base& u, const Base& v)
 {
     T w = (u.w * v.w) - (u.x * v.x) - (u.y * v.y) - (u.z * v.z);
@@ -73,15 +49,6 @@ inline void QuatCalcCommon<T>::setMul(Base& out, const Base& u, const Base& v)
     out.x = x;
     out.y = y;
     out.z = z;
-}
-
-template <typename T>
-inline void QuatCalcCommon<T>::setMulScalar(Base& out, const Base& q, T t)
-{
-    out.w = q.w * t;
-    out.x = q.x * t;
-    out.y = q.y * t;
-    out.z = q.z * t;
 }
 
 template <typename T>
