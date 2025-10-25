@@ -52,7 +52,7 @@ public:
     void update();
     void endInit(const PlayerHolder*);
 
-    CameraPoseUpdater* getPoseUpdater(s32 index) const;
+    CameraPoseUpdater* getPoseUpdater(s32 index);
     CameraTicket* createCameraFromFactory(const char*, const PlacementId*, const char*, s32,
                                           const sead::Matrix34f&);
     CameraTicket* createCamera(CameraPoser*, const PlacementId*, const char*, s32,
@@ -64,12 +64,12 @@ public:
     CameraTicket* createMirrorObjectCamera(const PlacementId*, const char*, s32,
                                            const sead::Matrix34f&);
 
-    ICameraInput* getCameraInput(s32) const;
+    ICameraInput* getCameraInput();
     void setCameraInput(const ICameraInput* input);
     void setViewCameraInput(const ICameraInput* input, s32);
     void registerCameraRailHolder(CameraRailHolder* railHolder);
     void setCameraParamTransferFuncTable(const NameToCameraParamTransferFunc*, s32);
-    f32 getSceneFovyDegree() const;
+    f32 getSceneFovyDegree();
     void validateCameraArea2D();
     void invalidateCameraArea2D();
     void stopByDeathPlayer();

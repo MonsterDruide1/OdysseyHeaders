@@ -16,12 +16,12 @@ public:
     void init(const ActorResource*, const char*, const char*);
     bool start(const char*);
     bool trySetFrame(f32);
-    bool isExistAction(const char*) const;
-    bool isActionOneTime(const char*) const;
-    bool isActionEnd() const;
+    bool isExistAction(const char*);
+    bool isActionOneTime(const char*);
+    bool isActionEnd();
     void sortCtrlInfo();
-    ActionAnimCtrlInfo* findAnimInfo(const char*) const;
-    const char* getPlayingActionName() const;
+    const char* findAnimInfo(const char*) const;
+    const char* getPlayingActionName();
     f32 getActionFrameMax(const char*) const;
     f32 getFrame() const;
     f32 getFrameRate() const;
