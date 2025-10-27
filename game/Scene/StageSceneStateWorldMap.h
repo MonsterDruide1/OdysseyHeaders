@@ -51,9 +51,9 @@ public:
     void exeEnd();
 
     void tryOpenWorldMap();
-    bool isCloseEndWipe() const;
-    bool isOpenEndWipe() const;
-    bool isOpenCollectionList() const;
+    void isCloseEndWipe();
+    void isOpenEndWipe();
+    void isOpenCollectionList();
 
     static StageSceneStateWorldMap* tryCreate(al::Scene*, const al::SceneInitInfo&,
                                               const al::ActorInitInfo&, const al::LayoutInitInfo&,
