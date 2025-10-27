@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SEAD_TASKMGR_H_
+#define SEAD_TASKMGR_H_
 
 #include <framework/seadHeapPolicies.h>
 #include <framework/seadMethodTree.h>
@@ -13,22 +14,24 @@ class Framework;
 class Heap;
 class NullFaderTask;
 
-class TaskMgr final : sead::hostio::Node
+class TaskMgr
 {
 public:
     struct InitializeArg
     {
     public:
-        InitializeArg(const TaskBase::CreateArg& roottask_arg) : roottask_create_arg(roottask_arg)
+        InitializeArg(const TaskBase::CreateArg& roottask_arg)
+            : create_queue_size(0x20), prepare_stack_size(0x8000), prepare_priority(-1),
+              roottask_create_arg(roottask_arg), heap(NULL), parent_framework(NULL)
         {
         }
 
-        u32 create_queue_size = 0x20;
-        u32 prepare_stack_size = 0x8000;
-        s32 prepare_priority = -1;
+        u32 create_queue_size;
+        u32 prepare_stack_size;
+        s32 prepare_priority;
         const TaskBase::CreateArg& roottask_create_arg;
-        Heap* heap = nullptr;
-        Framework* parent_framework = nullptr;
+        Heap* heap;
+        Framework* parent_framework;
     };
 
     class TaskCreateContextMgr;
@@ -121,3 +124,5 @@ public:                                                                         
     }                                                                                              \
                                                                                                    \
     CLASS* CLASS::sInstance = nullptr;
+
+#endif  // SEAD_TASKMGR_H_

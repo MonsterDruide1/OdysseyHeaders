@@ -80,9 +80,9 @@ public:
     }
     SafeStringBase(const SafeStringBase& other) = default;
 
-    SEAD_SAFESTRING_VIRTUAL_TOKEN ~SafeStringBase() = default;
+    virtual ~SafeStringBase() = default;
 
-    SEAD_SAFESTRING_VIRTUAL_TOKEN SafeStringBase& operator=(const SafeStringBase& other);
+    virtual SafeStringBase& operator=(const SafeStringBase& other);
 
     bool operator==(const SafeStringBase& rhs) const { return isEqual(rhs); }
     bool operator!=(const SafeStringBase& rhs) const { return !(*this == rhs); }
@@ -141,7 +141,7 @@ public:
     static const s32 cMaximumLength = 0x80000;
 
 public:
-    SEAD_SAFESTRING_VIRTUAL_TOKEN void assureTerminationImpl_() const {}
+    virtual void assureTerminationImpl_() const {}
     const T& unsafeAt_(s32 idx) const { return mStringTop[idx]; }
 
     const T* mStringTop;
@@ -176,10 +176,9 @@ public:
     }
 
     BufferedSafeStringBase(const BufferedSafeStringBase&) = default;
-    ~BufferedSafeStringBase() SEAD_SAFESTRING_OVERRIDE_TOKEN = default;
+    ~BufferedSafeStringBase() override = default;
 
-    BufferedSafeStringBase<T>&
-    operator=(const SafeStringBase<T>& other) SEAD_SAFESTRING_OVERRIDE_TOKEN;
+    BufferedSafeStringBase<T>& operator=(const SafeStringBase<T>& other) override;
 
     const T& operator[](s32 idx) const;
 
@@ -296,7 +295,7 @@ public:
     inline void clear() { getMutableStringTop_()[0] = this->cNullChar; }
 
 public:
-    void assureTerminationImpl_() const SEAD_SAFESTRING_OVERRIDE_TOKEN;
+    void assureTerminationImpl_() const override;
 
     T* getMutableStringTop_() { return const_cast<T*>(this->mStringTop); }
 
@@ -324,7 +323,7 @@ public:
         this->copy(str);
     }
 
-    ~FixedSafeStringBase() SEAD_SAFESTRING_OVERRIDE_TOKEN = default;
+    ~FixedSafeStringBase() override = default;
 
     FixedSafeStringBase& operator=(const FixedSafeStringBase& other)
     {
@@ -332,7 +331,7 @@ public:
         return *this;
     }
 
-    FixedSafeStringBase& operator=(const SafeStringBase<T>& other) SEAD_SAFESTRING_OVERRIDE_TOKEN
+    FixedSafeStringBase& operator=(const SafeStringBase<T>& other) override
     {
         this->copy(other);
         return *this;
@@ -380,7 +379,7 @@ public:
         return *this;
     }
 
-    FixedSafeString<L>& operator=(const SafeStringBase<char>& other) SEAD_SAFESTRING_OVERRIDE_TOKEN
+    FixedSafeString<L>& operator=(const SafeStringBase<char>& other) override
     {
         this->copy(other);
         return *this;
@@ -394,18 +393,6 @@ public:
     WFixedSafeString() : FixedSafeStringBase<char16, L>() {}
 
     WFixedSafeString(const WSafeString& str) : FixedSafeStringBase<char16, L>(str) {}
-
-    WFixedSafeString& operator=(const WFixedSafeString& other)
-    {
-        this->copy(other);
-        return *this;
-    }
-
-    WFixedSafeString& operator=(const WSafeString& other) SEAD_SAFESTRING_OVERRIDE_TOKEN
-    {
-        this->copy(other);
-        return *this;
-    }
 };
 
 template <s32 L>
@@ -425,7 +412,7 @@ public:
         this->formatV(format, args);
         va_end(args);
     }
-    ~FormatFixedSafeString() SEAD_SAFESTRING_OVERRIDE_TOKEN = default;
+    ~FormatFixedSafeString() override = default;
 };
 
 template <s32 L>
@@ -439,7 +426,7 @@ public:
         this->formatV(format, args);
         va_end(args);
     }
-    ~WFormatFixedSafeString() SEAD_SAFESTRING_OVERRIDE_TOKEN = default;
+    ~WFormatFixedSafeString() override = default;
 };
 
 template <typename T>
@@ -468,13 +455,13 @@ public:
         return *this;
     }
 
-    ~HeapSafeStringBase() SEAD_SAFESTRING_OVERRIDE_TOKEN
+    ~HeapSafeStringBase() override
     {
         if (this->mStringTop)
             delete[] this->mStringTop;
     }
 
-    HeapSafeStringBase<T>& operator=(const SafeStringBase<T>& other) SEAD_SAFESTRING_OVERRIDE_TOKEN;
+    HeapSafeStringBase<T>& operator=(const SafeStringBase<T>& other) override;
 };
 
 using HeapSafeString = HeapSafeStringBase<char>;

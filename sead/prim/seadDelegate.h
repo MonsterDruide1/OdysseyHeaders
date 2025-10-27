@@ -35,9 +35,7 @@ class IDelegate
 public:
     virtual void invoke() = 0;
     virtual IDelegate* clone(Heap*) const { return nullptr; }
-#if SEAD_DELEGATE_ISNODUMMY
     virtual bool isNoDummy() const { return true; }
-#endif
     void operator()() { return invoke(); }
 };
 
@@ -48,9 +46,7 @@ class IDelegateR
 public:
     virtual R invoke() = 0;
     virtual IDelegateR* clone(Heap*) const { return nullptr; }
-#if SEAD_DELEGATE_ISNODUMMY
     virtual bool isNoDummy() const { return true; }
-#endif
     R operator()() { return invoke(); }
 };
 
@@ -62,9 +58,7 @@ class IDelegate1
 public:
     virtual void invoke(A1 a1) = 0;
     virtual IDelegate1* clone(Heap*) const { return nullptr; }
-#if SEAD_DELEGATE_ISNODUMMY
     virtual bool isNoDummy() const { return true; }
-#endif
     void operator()(A1 a1) { return invoke(a1); }
 };
 
@@ -76,9 +70,7 @@ class IDelegate1R
 public:
     virtual R invoke(A1 a1) = 0;
     virtual IDelegate1R* clone(Heap*) const { return nullptr; }
-#if SEAD_DELEGATE_ISNODUMMY
     virtual bool isNoDummy() const { return true; }
-#endif
     R operator()(A1 a1) { return invoke(a1); }
 };
 
@@ -91,9 +83,7 @@ class IDelegate2
 public:
     virtual void invoke(A1 a1, A2 a2) = 0;
     virtual IDelegate2* clone(Heap*) const { return nullptr; }
-#if SEAD_DELEGATE_ISNODUMMY
     virtual bool isNoDummy() const { return true; }
-#endif
     void operator()(A1 a1, A2 a2) { return invoke(a1, a2); }
 };
 
@@ -106,9 +96,7 @@ class IDelegate2R
 public:
     virtual R invoke(A1 a1, A2 a2) = 0;
     virtual IDelegate2R* clone(Heap*) const { return nullptr; }
-#if SEAD_DELEGATE_ISNODUMMY
     virtual bool isNoDummy() const { return true; }
-#endif
     R operator()(A1 a1, A2 a2) { return invoke(a1, a2); }
 };
 
@@ -528,10 +516,8 @@ public:
         return getDelegate()->invoke(std::forward<Args>(args)...);
     }
 
-#if SEAD_DELEGATE_ISNODUMMY
     /// Checks if a non-dummy function is stored.
     explicit operator bool() const { return getDelegate()->isNoDummy(); }
-#endif
 
     Interface* getDelegate() { return reinterpret_cast<Interface*>(&mStorage); }
     const Interface* getDelegate() const { return reinterpret_cast<const Interface*>(&mStorage); }
@@ -554,9 +540,7 @@ public:
     {
     public:
         void invoke() override {}
-#if SEAD_DELEGATE_ISNODUMMY
         bool isNoDummy() const override { return false; }
-#endif
     };
     using Base::Base;
     using Base::operator=;
@@ -575,9 +559,7 @@ public:
     {
     public:
         R invoke() override { return {}; }
-#if SEAD_DELEGATE_ISNODUMMY
         bool isNoDummy() const override { return false; }
-#endif
     };
     using Base::Base;
     using Base::operator=;
@@ -596,9 +578,7 @@ public:
     {
     public:
         void invoke(A1) override {}
-#if SEAD_DELEGATE_ISNODUMMY
         bool isNoDummy() const override { return false; }
-#endif
     };
     using Base::Base;
     using Base::operator=;
@@ -617,9 +597,7 @@ public:
     {
     public:
         R invoke(A1) override { return {}; }
-#if SEAD_DELEGATE_ISNODUMMY
         bool isNoDummy() const override { return false; }
-#endif
     };
     using Base::Base;
     using Base::operator=;
@@ -638,9 +616,7 @@ public:
     {
     public:
         void invoke(A1, A2) override {}
-#if SEAD_DELEGATE_ISNODUMMY
         bool isNoDummy() const override { return false; }
-#endif
     };
     using Base::Base;
     using Base::operator=;
@@ -660,9 +636,7 @@ public:
     {
     public:
         R invoke(A1, A2) override { return {}; }
-#if SEAD_DELEGATE_ISNODUMMY
         bool isNoDummy() const override { return false; }
-#endif
     };
     using Base::Base;
     using Base::operator=;
