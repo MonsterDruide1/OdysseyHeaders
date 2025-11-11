@@ -5,70 +5,19 @@
 #include <math/seadVector.h>
 
 namespace al {
-class ArrowHitResultBuffer;
-class DiskHitResultBuffer;
-struct HitInfo;
-class HitSensor;
 class KCollisionServer;
 class LiveActor;
-class SphereHitResultBuffer;
-class TriangleFilterBase;
-
-enum class ForceCollisionFlag : u8 {
-    ScaleNone,
-    ScaleAverage,
-    ScaleOne,
-};
+class HitSensor;
 
 class CollisionParts {
 public:
     CollisionParts(void* kcl, const void* byml);
 
-    void calcInvMtxScale();
     const LiveActor* getConnectedHost() const;
-    void initParts(const sead::Matrix34f&);
-    void resetAllMtx(const sead::Matrix34f&);
-    void updateBoundingSphereRange(sead::Vector3f);
-    void validateByUser();
-    void invalidateByUser();
-    void validateBySystem();
-    void invalidateBySystem();
-    void onJoinList();
-    void makeEqualScale(sead::Matrix34f*);
-    void resetAllMtxPrivate(const sead::Matrix34f&);
-    void resetAllMtx();
-    void updateBoundingSphereRange();
-    void forceResetAllMtxAndSetUpdateMtxOneTime(const sead::Matrix34f&);
-    void forceResetAllMtxAndSetUpdateMtxOneTime();
-    void syncMtx(const sead::Matrix34f&);
-    void syncMtx();
-    void updateMtx();
-    void updateScale();
-    void updateBoundingSphereRangePrivate(f32);
-    s32 checkBoundingSphereRange(const sead::Vector3f&, f32);
-    s32 checkStrikePoint(HitInfo*, const sead::Vector3f&, const TriangleFilterBase*) const;
-    s32 checkStrikeSphere(SphereHitResultBuffer*, const sead::Vector3f&, f32, bool,
-                          const sead::Vector3f&, const TriangleFilterBase*) const;
-    s32 checkStrikeSphereCore(SphereHitResultBuffer*, const sead::Vector3f&, const sead::Vector3f&,
-                              const sead::Vector3f&, f32, const TriangleFilterBase*) const;
-    s32 checkStrikeArrow(ArrowHitResultBuffer*, const sead::Vector3f&, const sead::Vector3f&,
-                         const TriangleFilterBase*) const;
-    s32 checkStrikeSphereForPlayer(SphereHitResultBuffer*, const sead::Vector3f&, f32,
-                                   const TriangleFilterBase*) const;
-    s32 checkStrikeSphereForPlayerCore(SphereHitResultBuffer*, const sead::Vector3f&,
-                                       const sead::Vector3f&, const sead::Vector3f&,
-                                       const sead::Vector3f&, f32, const TriangleFilterBase*) const;
-    s32 checkStrikeDisk(DiskHitResultBuffer*, const sead::Vector3f&, f32, f32,
-                        const sead::Vector3f&, const TriangleFilterBase*) const;
-    s32 checkStrikeDiskCore(DiskHitResultBuffer*, const sead::Vector3f&, const sead::Vector3f&,
-                            const sead::Vector3f&, f32, f32, const sead::Vector3f&,
-                            const TriangleFilterBase*) const;
     void calcForceMovePower(sead::Vector3f*, const sead::Vector3f&) const;
     void calcForceRotatePower(sead::Quatf*) const;
-
-    const sead::Matrix34f* getSyncCollisonMtx() const { return mSyncCollisionMtx; }
-
-    void setSyncCollisionMtx(const sead::Matrix34f* mtx) { mSyncCollisionMtx = mtx; }
+    void initParts(const sead::Matrix34f&);
+    void invalidateBySystem();
 
     const sead::Matrix34f& getBaseMtx() const { return mBaseMtx; }
 
@@ -78,17 +27,7 @@ public:
 
     const sead::Matrix34f& getPrevBaseInvMtx() const { return mPrevBaseInvMtx; }
 
-    void setPriority(s32 priority) { mPriority = priority; }
-
     KCollisionServer* getKCollisionServer() const { return mKCollisionServer; }
-
-    HitSensor* getConnectedSensor() const { return mConnectedSensor; }
-
-    void setConnectedSensor(HitSensor* sensor) { mConnectedSensor = sensor; }
-
-    void setSpecialPurpose(const char* specialPurpose) { mSpecialPurpose = specialPurpose; }
-
-    void setOptionalPurpose(const char* optionalPurpose) { mOptionalPurpose = optionalPurpose; }
 
     s32 get_15c() const { return _15c; }
 
@@ -96,19 +35,25 @@ public:
 
     bool isMoving() const { return mIsMoving; }
 
-    void setIsMoving(bool isMoving) { mIsMoving = isMoving; }
+    const HitSensor* getConnectedSensor() const { return mConnectedSensor; }
 
-    void setForceCollisionScaleNone() { mForceCollisionFlag = ForceCollisionFlag::ScaleNone; }
+    void set_16e(bool val) { _16e = val; }
 
-    void setForceCollisionScaleAverage() { mForceCollisionFlag = ForceCollisionFlag::ScaleAverage; }
+    void setSpecialPurpose(const char* specialPurpose) { mSpecialPurpose = specialPurpose; }
 
-    void setForceCollisionScaleOne() { mForceCollisionFlag = ForceCollisionFlag::ScaleOne; }
+    void setOptionalPurpose(const char* optionalPurpose) { mOptionalPurpose = optionalPurpose; }
+
+    void setPriority(s32 priority) { mPriority = priority; }
+
+    void setConnectedSensor(HitSensor* sensor) { mConnectedSensor = sensor; }
+
+    void setJointMtx(const sead::Matrix34f* jointMtx) { mJointMtx = jointMtx; }
 
 public:
     void* unk[2];
     CollisionParts* _10;  // self-reference
     sead::TList<CollisionParts*>* mPartsList;
-    const sead::Matrix34f* mSyncCollisionMtx;
+    const sead::Matrix34f* mJointMtx;
     sead::Matrix34f mSyncMtx;
     sead::Matrix34f mBaseMtx;
     sead::Matrix34f mBaseInvMtx;
@@ -132,7 +77,7 @@ public:
     bool _16b;
     bool _16c;
     bool mIsMoving;
-    ForceCollisionFlag mForceCollisionFlag;
+    bool _16e;
 };
 
 }  // namespace al

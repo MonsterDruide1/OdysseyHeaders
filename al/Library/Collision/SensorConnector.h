@@ -14,11 +14,11 @@ public:
     bool isConnecting() const override;
     void clear() override;
 
-    void init(const sead::Matrix34f* parentMtx, const sead::Matrix34f& mtx, HitSensor* sensor);
+    void init(const sead::Matrix34f*, const sead::Matrix34f&, HitSensor*);
     HitSensor* getConnectingSensor() const;
 
 public:
-    HitSensor* mHitSensor = nullptr;
+    HitSensor* mHitSensor;
 };
 
 static_assert(sizeof(SensorConnector) == 0x68);
