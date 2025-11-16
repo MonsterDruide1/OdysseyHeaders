@@ -10,7 +10,7 @@ class Shine : public al::LiveActor, public IUseDimension {
 public:
     Shine(const char*);
 
-    void init(const al::ActorInitInfo& info) override;
+    void init(const al::ActorInitInfo&) override;
     al::LiveActor* getCurrentModel();
     bool tryExpandShadowAndClipping();
     void initAppearDemo(const al::ActorInitInfo&);
@@ -117,7 +117,7 @@ public:
     bool isMainShine() const { return mIsMainShine; }
 
 public:
-    char filler_110[92];
+    char filler_16c[92];
     sead::Vector3f _16c;
     void* filler[35];
     s32 filler2;

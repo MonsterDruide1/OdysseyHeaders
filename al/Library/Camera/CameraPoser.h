@@ -112,7 +112,7 @@ public:
     static_assert(sizeof(OrthoProjectionParam) == 0xC);
 
     CameraPoser(const char* name);
-    AreaObjDirector* getAreaObjDirector() const override;
+    virtual AreaObjDirector* getAreaObjDirector() const override;
 
     virtual void init() {}
 
@@ -140,15 +140,15 @@ public:
 
     virtual void endSnapShotMode() {}
 
-    const char* getName() const override { return mPoserName; }
+    virtual const char* getName() const override { return mPoserName; }
 
-    CollisionDirector* getCollisionDirector() const override;
+    virtual CollisionDirector* getCollisionDirector() const override;
 
-    NerveKeeper* getNerveKeeper() const override { return mNerveKeeper; }
+    virtual NerveKeeper* getNerveKeeper() const override { return mNerveKeeper; }
 
-    AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
+    virtual AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
 
-    RailRider* getRailRider() const override;
+    virtual RailRider* getRailRider() const override;
 
     virtual void load(const ByamlIter& iter);
     virtual void movement();  // TODO: implementation missing
@@ -206,6 +206,14 @@ public:
 
     CameraViewInfo* getViewInfo() const { return mViewInfo; }
 
+    CameraViewInfo* getCameraViewInfo() const { return mViewInfo; }
+
+    CameraOffsetCtrlPreset* getCameraOffsetCtrlPreset() const { return mOffsetCtrlPreset; }
+
+    CameraPoserSceneInfo* getCameraPoserSceneInfo() const { return mSceneInfo; }
+
+    CameraVerticalAbsorber* getCameraVerticalAbsorber() const { return mVerticalAbsorber; }
+
     // set
     void setPosition(const sead::Vector3f& vec) { mPosition.set(vec); };
 
@@ -216,6 +224,8 @@ public:
     void setViewMtx(const sead::Matrix34f& mtx) { mViewMtx = mtx; }
 
     void setFovyDegree(f32 fovy) { mFovyDegree = fovy; }
+
+    void setVerticalAbsorber(al::CameraVerticalAbsorber* cameraVerticalAbsorber) { mVerticalAbsorber = cameraVerticalAbsorber; }
 
 public:
     const char* mPoserName;

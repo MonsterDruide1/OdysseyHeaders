@@ -12,8 +12,8 @@ struct CameraObjectRequestInfo {
     bool isUpToTargetAngleBySpeed;
     f32 targetAngleV;
     f32 angleSpeed;
-    bool isMoveDownAngle;
-    bool isSetAngleV;
+    bool moveDownAngle;
+    bool setAngleV;
     f32 angleV;
 };
 

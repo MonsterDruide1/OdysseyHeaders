@@ -83,23 +83,23 @@ public:
         return false;
     }
 
-    const char* getName() const override { return mName; }
+    virtual const char* getName() const override { return mName; }
 
     virtual const sead::Matrix34f* getBaseMtx() const;
 
-    EffectKeeper* getEffectKeeper() const override { return mEffectKeeper; }
+    virtual EffectKeeper* getEffectKeeper() const override { return mEffectKeeper; }
 
-    AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
+    virtual AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
 
-    StageSwitchKeeper* getStageSwitchKeeper() const override { return mStageSwitchKeeper; }
+    virtual StageSwitchKeeper* getStageSwitchKeeper() const override { return mStageSwitchKeeper; }
 
-    RailRider* getRailRider() const override;
-    SceneObjHolder* getSceneObjHolder() const override;
-    CollisionDirector* getCollisionDirector() const override;
-    AreaObjDirector* getAreaObjDirector() const override;
-    CameraDirector* getCameraDirector() const override;
+    virtual RailRider* getRailRider() const override;
+    virtual SceneObjHolder* getSceneObjHolder() const override;
+    virtual CollisionDirector* getCollisionDirector() const override;
+    virtual AreaObjDirector* getAreaObjDirector() const override;
+    virtual CameraDirector* getCameraDirector() const override;
     NatureDirector* getNatureDirector() const;
-    void initStageSwitchKeeper() override;
+    virtual void initStageSwitchKeeper() override;
 
     virtual void control() {}
 

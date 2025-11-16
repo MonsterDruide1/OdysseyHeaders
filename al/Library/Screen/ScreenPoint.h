@@ -5,5 +5,5 @@ class LiveActor;
 }  // namespace al
 
 namespace alScreenPointFunction {
-void updateScreenPointAll(al::LiveActor* actor);
+void updateScreenPointAll(al::LiveActor*);
 }  // namespace alScreenPointFunction

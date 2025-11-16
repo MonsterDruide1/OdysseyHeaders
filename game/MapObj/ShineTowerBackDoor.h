@@ -26,7 +26,7 @@ public:
 
 public:
     al::MtxConnector* mMtxConnector = nullptr;
-    bool _110 = false;
+    bool _118 = false;
     s32 mBindTimer = 0;
     IUsePlayerPuppet* mPlayerPuppet = nullptr;
 };

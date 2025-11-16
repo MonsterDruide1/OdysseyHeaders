@@ -29,7 +29,7 @@ class ClippingRequestKeeper {
 public:
     ClippingRequestKeeper(s32 capacity);
     void executeRequest();
-    void request(LiveActor* actor, ClippingRequestType clippingRequestType);
+    void request(LiveActor* actor, ClippingRequestType requestType);
 
 public:
     ClippingRequestTable* mRequestTable;

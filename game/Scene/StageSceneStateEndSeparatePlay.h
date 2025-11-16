@@ -16,7 +16,7 @@ public:
                                    const al::LayoutInitInfo& info, al::WipeSimple* wipeSimple,
                                    al::GamePadSystem* gamePadSystem);
 
-    void appear() override;
+    virtual void appear();
 
     bool isNeedRequestGraphicsPreset() const;
     void exeFadeOut();

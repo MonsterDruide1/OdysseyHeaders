@@ -34,7 +34,7 @@ public:
     void stopAll(s32, const char*);
     void separatePlayingSePosFromEmitter();
     void tryGetCurrentStreamSamplePos(const char*, const char*) const;
-    bool isPlaying(const char*);
+    void isPlaying(const char*);
     void checkIsPlayingSe(const char*, const char*);
     void validate();
     void invalidate();

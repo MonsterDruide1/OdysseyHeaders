@@ -27,9 +27,9 @@ class Scene : public NerveExecutor,
 public:
     Scene(const char* name);
 
-    ~Scene() override;
+    virtual ~Scene();
 
-    virtual void init(const SceneInitInfo& info) {}
+    virtual void init(const SceneInitInfo& initInfo) {}
 
     virtual void appear();
     virtual void kill();
@@ -49,21 +49,22 @@ public:
 
     CameraDirector* getCameraDirector() const override;
 
-    void initializeAsync(const SceneInitInfo& info);
-    void initDrawSystemInfo(const SceneInitInfo& info);
+    void initializeAsync(const SceneInitInfo& initInfo);
+    void initDrawSystemInfo(const SceneInitInfo& initInfo);
     void initSceneObjHolder(SceneObjHolder* sceneObjHolder);
     void initAndLoadStageResource(const char* stageName, s32 scenarioNo);
-    void initLiveActorKit(const SceneInitInfo& info, s32 maxActors, s32 maxPlayers, s32 maxCameras);
-    void initLiveActorKitImpl(const SceneInitInfo& info, s32 maxActors, s32 maxPlayers,
+    void initLiveActorKit(const SceneInitInfo& initInfo, s32 maxActors, s32 maxPlayers,
+                          s32 maxCameras);
+    void initLiveActorKitImpl(const SceneInitInfo& initInfo, s32 maxActors, s32 maxPlayers,
                               s32 maxCameras);
     void initLiveActorKitWithGraphics(const GraphicsInitArg& graphicsInitArg,
-                                      const SceneInitInfo& info, s32 maxActors, s32 maxPlayers,
+                                      const SceneInitInfo& initInfo, s32 maxActors, s32 maxPlayers,
                                       s32 maxCameras);
-    void initLayoutKit(const SceneInitInfo& info);
+    void initLayoutKit(const SceneInitInfo& initInfo);
     void initSceneStopCtrl();
     void initSceneMsgCtrl();
     void initScreenCoverCtrl();
-    void endInit(const ActorInitInfo& info);
+    void endInit(const ActorInitInfo& initInfo);
 
     StageResourceKeeper* getStageResourceKeeper() const { return mStageResourceKeeper; }
 

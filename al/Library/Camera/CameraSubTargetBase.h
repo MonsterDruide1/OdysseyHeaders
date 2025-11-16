@@ -9,10 +9,12 @@ class CameraSubTargetBase : public CameraTargetBase {
 public:
     CameraSubTargetBase();
 
-    void calcSide(sead::Vector3f* side) const override;
-    void calcUp(sead::Vector3f* up) const override;
-    void calcFront(sead::Vector3f* front) const override;
-    void calcVelocity(sead::Vector3f* velocity) const override;
+    virtual void calcSide(sead::Vector3f* side) const override;
+    virtual void calcUp(sead::Vector3f* up) const override;
+    virtual void calcFront(sead::Vector3f* front) const override;
+    virtual void calcVelocity(sead::Vector3f* velocity) const override;
+
+    CameraSubTargetTurnParam* getSubTargetTurnParam() const { return mTurnParam; }
 
 public:
     CameraSubTargetTurnParam* mTurnParam;

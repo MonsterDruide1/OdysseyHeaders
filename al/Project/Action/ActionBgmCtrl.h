@@ -15,7 +15,7 @@ public:
 
     ActionBgmCtrl(AudioKeeper*, BgmUserInfo*);
     void startAction(const char*);
-    void update(f32 frame, f32 frameRateMax, f32 frameRate, bool isStop);
+    void update(f32, f32, f32, bool);
 
     AudioKeeper* getAudioKeeper() const override;
 };

@@ -14,13 +14,13 @@ struct PlayerHackStartShaderParam;
 struct EnemyStateHackStartParam {
     EnemyStateHackStartParam(const char* actionName, const char* visAnimName,
                              const char* mtpAnimName, bool hasSubActors,
-                             bool isUpdateSubActorShadowMap);
+                             bool updateSubActorShadowMap);
 
     const char* actionName;
     const char* visAnimName;
     const char* mtpAnimName;
     bool hasSubActors;
-    bool isUpdateSubActorShadowMap;
+    bool updateSubActorShadowMap;
 };
 
 class EnemyStateHackStart : public al::ActorStateBase {

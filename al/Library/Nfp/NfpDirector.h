@@ -30,7 +30,7 @@ public:
     void start();
     void clearCommand();
     void resetError();
-    virtual void showError(const nn::Result& result);
+    virtual void showError(const nn::Result&);
     void executeCommandInitialize();
     void executeCommandFinalize();
     void executeCommandListDevices();

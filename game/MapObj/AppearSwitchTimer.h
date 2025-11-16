@@ -21,7 +21,7 @@ class AppearSwitchTimer : public al::NerveExecutor {
 public:
     AppearSwitchTimer();
     void init(const al::ActorInitInfo& info, const al::IUseAudioKeeper* audioKeeper,
-              al::IUseStageSwitch* stageSwitch, al::IUseCamera* camera, al::LiveActor* host);
+              al::IUseStageSwitch* stageSwitch, al::IUseCamera* camera, al::LiveActor* actor);
     void onSwitch();
     bool isSwitchOn();
     void offSwitch();

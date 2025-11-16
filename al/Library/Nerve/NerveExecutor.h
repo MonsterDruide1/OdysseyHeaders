@@ -13,7 +13,7 @@ class NerveExecutor : public IUseNerve, public HioNode {
 public:
     NerveExecutor(const char* name);
 
-    NerveKeeper* getNerveKeeper() const override { return mKeeper; }
+    virtual NerveKeeper* getNerveKeeper() const { return mKeeper; }
 
     virtual ~NerveExecutor();
 

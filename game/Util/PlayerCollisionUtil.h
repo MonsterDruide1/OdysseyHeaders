@@ -1,6 +1,5 @@
 #pragma once
 
-#include <math/seadQuat.h>
 #include <math/seadVector.h>
 
 namespace al {
@@ -31,11 +30,6 @@ const sead::Vector3f& getCollidedCeilingPos(const IUsePlayerCollision*);
 const sead::Vector3f& getCollidedCeilingNormal(const IUsePlayerCollision*);
 const al::CollisionParts* getCollidedCeilingCollisionParts(const IUsePlayerCollision*);
 
-void resetCollision(IUsePlayerCollision*);
-void resetCollisionPose(const IUsePlayerCollision*, const sead::Quatf&);
-void resetCollisionExpandCheck(IUsePlayerCollision*);
-
-bool isCollided(const IUsePlayerCollision*);
 bool isCollidedGround(const IUsePlayerCollision*);
 bool isCollidedGroundRunAngle(const al::LiveActor*, const IUsePlayerCollision*, const PlayerConst*);
 bool isOnGroundSlopeSlideStart(const al::LiveActor*, const IUsePlayerCollision*,
@@ -61,8 +55,6 @@ bool isCollisionCodeGrabCeilAny(const IUsePlayerCollision*);
 bool isCollisionCodeGrabCeilWall(const IUsePlayerCollision*);
 bool isCollisionCodeGrabCeilCeiling(const IUsePlayerCollision*);
 bool isCollisionCodeGrabCeilGrround(const IUsePlayerCollision*);
-
-u32 reboundVelocityPart(al::LiveActor*, const IUsePlayerCollision*, f32, f32, f32, f32);
 
 void setColliderFilterCollisionParts(IUsePlayerCollision*, const al::CollisionPartsFilterBase*);
 

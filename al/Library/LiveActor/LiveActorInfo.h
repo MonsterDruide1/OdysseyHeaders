@@ -5,6 +5,7 @@
 // TODO: bring this up to sanae
 // temp solution to figure out a solution to bitflag enums (stole this right from nvn headers)
 #define AL_BITS(CLASS)                                                                             \
+public:                                                                                            \
     CLASS() : m_value(-1) {}                                                                       \
     CLASS(const CLASS& c) : m_value(c.m_value) {}                                                  \
     CLASS(s32 i) : m_value(i) {}                                                                   \
@@ -81,6 +82,7 @@
             m_value &= ~e;                                                                         \
     }                                                                                              \
                                                                                                    \
+public:                                                                                           \
     s32 m_value;
 
 namespace al {

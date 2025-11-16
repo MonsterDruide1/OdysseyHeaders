@@ -46,23 +46,25 @@ public:
     virtual void movement();
     virtual void calcAnim(bool recursive);
 
-    NerveKeeper* getNerveKeeper() const override { return mNerveKeeper; }
+    virtual NerveKeeper* getNerveKeeper() const override { return mNerveKeeper; }
 
-    const char* getName() const override { return mName.cstr(); }
+    virtual const char* getName() const override { return mName.cstr(); }
 
-    EffectKeeper* getEffectKeeper() const override { return mEffectKeeper; }
+    virtual EffectKeeper* getEffectKeeper() const override { return mEffectKeeper; }
 
-    AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
+    virtual AudioKeeper* getAudioKeeper() const override { return mAudioKeeper; }
 
-    LayoutActionKeeper* getLayoutActionKeeper() const override { return mLayoutActionKeeper; }
+    virtual LayoutActionKeeper* getLayoutActionKeeper() const override {
+        return mLayoutActionKeeper;
+    }
 
-    LayoutKeeper* getLayoutKeeper() const override { return mLayoutKeeper; }
+    virtual LayoutKeeper* getLayoutKeeper() const override { return mLayoutKeeper; }
 
-    CameraDirector* getCameraDirector() const override;
+    virtual CameraDirector* getCameraDirector() const override;
 
-    SceneObjHolder* getSceneObjHolder() const override;
+    virtual SceneObjHolder* getSceneObjHolder() const override;
 
-    const MessageSystem* getMessageSystem() const override;
+    virtual const MessageSystem* getMessageSystem() const override;
 
     virtual void control() {}
 

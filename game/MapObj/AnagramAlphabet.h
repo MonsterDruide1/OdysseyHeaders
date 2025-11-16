@@ -17,7 +17,7 @@ class SaveObjInfo;
 class AnagramAlphabet : public al::LiveActor {
 public:
     AnagramAlphabet(const char*);
-    void init(const al::ActorInitInfo& info);
+    void init(const al::ActorInitInfo&);
     bool testBase(AnagramAlphabetCharacter*);
     bool testEndHack();
     bool testComplete();

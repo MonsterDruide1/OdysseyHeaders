@@ -8,8 +8,6 @@ class PadRumbleKeeper {
 public:
     PadRumbleKeeper(s32 port);
 
-    s32 getPort() const { return mPort; }
-
 public:
     s32 mPort;
 };

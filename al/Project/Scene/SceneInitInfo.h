@@ -1,24 +1,18 @@
 #pragma once
 
 #include <basis/seadTypes.h>
-#include <prim/seadSafeString.h>
 
 namespace al {
-struct GameSystemInfo;
-class GameDataHolderBase;
-class ScreenCaptureExecutor;
 class AudioDirector;
+class GameDataHolderBase;
 
 struct SceneInitInfo {
-    SceneInitInfo(const GameSystemInfo* gameSystemInfo, GameDataHolderBase* gameDataHolder,
-                  ScreenCaptureExecutor* screenCaptureExecutor, const char* initStageName,
-                  s32 scenarioNo, const char* sceneName, AudioDirector* audioDirector);
-    const GameSystemInfo* gameSystemInfo;
+    struct GameSystemInfo* gameSysInfo;
     GameDataHolderBase* gameDataHolder;
-    ScreenCaptureExecutor* screenCaptureExecutor;
-    const char* initStageName;
-    s32 scenarioNo;
-    sead::FixedSafeString<512> sceneName;
+    char field_0x10[8];
+    char* initStageName;
+    u32 scenarioNo;
+    char filler[0x218];
     AudioDirector* audioDirector;
 };
 

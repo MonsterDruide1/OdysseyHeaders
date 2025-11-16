@@ -85,16 +85,14 @@ public:
 
     void setIgnoreGround() { mIsIgnoreGround = true; }
 
-    void set48(f32 value) { _48 = value; }
-
 public:
     void* _18[5];
-    s32 _40;
+    s32 _3x;
     bool mIsSupportGround;
     f32 _48;
     f32 _4c;
     sead::Vector3f mUp;
-    sead::Vector3f _5c;
+    sead::Vector3f _60;
     bool mIsIgnoreGround;
 };
 

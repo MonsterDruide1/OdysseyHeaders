@@ -21,24 +21,23 @@ public:
     void startAnim(const char*);
     void update();
     void clearAnim();
-    f32 getAnimFrame() const;
+
+    const char* getPlayingAnimName();
+    f32 getAnimFrame();
+    f32 getAnimFrameMax();
+    f32 getAnimFrameMax(const char*);
+    f32 getAnimFrameRate();
+
     void setAnimFrame(f32);
-    f32 getAnimFrameMax() const;
-    f32 getAnimFrameMax(const char*) const;
-    f32 getAnimFrameRate() const;
+    void setAnimFrameMax(const char*);
     void setAnimFrameRate(f32);
-    bool isAnimExist(const char*) const;
-    bool isAnimEnd() const;
-    bool isAnimOneTime() const;
-    bool isAnimOneTime(const char*) const;
-    bool isAnimPlaying() const;
-    const char* getPlayingAnimName() const;
+
+    bool isAnimExist(const char*);
+    bool isAnimEnd();
+    bool isAnimOneTime();
+    bool isAnimOneTime(const char*);
+    bool isAnimPlaying();
 
 public:
-    void* _18;
-    const char* mPlayingAnimName;
 };
-
-static_assert(sizeof(AnimPlayerSimple) == 0x28);
-
 }  // namespace al
