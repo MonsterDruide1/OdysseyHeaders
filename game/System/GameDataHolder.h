@@ -227,6 +227,8 @@ public:
 
     GameSequenceInfo* getSequenceInfo() const { return mSequenceInfo; }
 
+    GameConfigData* getGameConfigData() const { return mGameConfigData; }
+
 public:
     al::MessageSystem* mMessageSystem;
     GameDataFile** mFiles;
