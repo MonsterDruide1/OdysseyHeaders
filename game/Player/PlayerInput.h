@@ -65,8 +65,6 @@ public:
     bool isHoldPoleClimbDown() const;
     // TODO: Add proper parameter name
     bool isTriggerAppendCapAttack(bool a1) const;
-    bool isTriggerCameraReset() const;
-    bool isTriggerCameraSubjective() const;
 
     bool isHoldSpinCap() const;
     bool isHoldCapAction() const;
