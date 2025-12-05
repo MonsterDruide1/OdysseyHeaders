@@ -19,9 +19,7 @@ public:
     void endSubAnim();
 
     void updateAnimFrame();
-    void updateModelAlpha();
     void clearUpperBodyAnim();
-    void resetModelAlpha();
 
     bool isAnim(const sead::SafeString& animName) const;
     bool isAnimEnd() const;
@@ -35,7 +33,6 @@ public:
     f32 getSubAnimFrame() const;
     f32 getSubAnimFrameMax() const;
     f32 getBlendWeight(s32 index);
-    f32 getModelAlpha() const;
 
     void setAnimRate(f32);
     void setAnimRateCommon(f32);
@@ -62,5 +59,3 @@ public:
     char padding_180[0x1A2 - 0x180];
     bool mIsSubAnimPlaying;
 };
-
-static_assert(sizeof(PlayerAnimator) == 0x1a8);
