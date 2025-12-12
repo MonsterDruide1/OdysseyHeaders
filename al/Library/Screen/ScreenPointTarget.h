@@ -34,8 +34,6 @@ public:
 
     LiveActor* getActor() const { return mActor; }
 
-    const sead::Vector3f& getTargetPos() const { return mTargetPos; }
-
 public:
     void* filler;
     ParameterObj* mParameterObj;
@@ -43,7 +41,7 @@ public:
     sead::Vector3f* _38;
     sead::Matrix34f* mJointMtx;
     sead::Vector3f _48;
-    sead::Vector3f mTargetPos;
+    sead::Vector3f _54;
     LiveActor* mActor;
     ScreenPointCheckGroup* mCheckGroup;
 };
