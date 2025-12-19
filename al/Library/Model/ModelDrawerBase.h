@@ -10,7 +10,7 @@ class DrawContext;
 
 namespace al {
 class GraphicsSystemInfo;
-struct ModelDrawBufferCounter;
+class ModelDrawBufferCounter;
 class ModelKeeper;
 class ModelDrawDisplayList;
 class ModelCtrl;

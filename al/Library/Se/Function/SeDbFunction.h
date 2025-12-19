@@ -13,7 +13,7 @@ class SePlayInfo;
 class SeResourceSpecificInfo;
 class SeResourceRtpcInfo;
 class SeRtpcSetting;
-struct SeUserInfo;
+class SeUserInfo;
 }  // namespace al
 
 namespace alSeDbFunction {
