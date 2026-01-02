@@ -110,8 +110,6 @@ public:
     virtual ~TreeMapNode() = default;
     virtual void erase_() = 0;
 
-    Key& key() { return mKey; }
-
     const Key& key() const { return mKey; }
 
 public:

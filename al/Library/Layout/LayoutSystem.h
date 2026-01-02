@@ -39,8 +39,6 @@ public:
 
     nn::ui2d::DrawInfo* getDrawInfo() const { return mDrawInfo; }
 
-    agl::DrawContext* getDrawContext() const { return mDrawContext; }
-
 public:
     FontHolder* mFontHolder;
     ExecuteDirector* mExecuteDirector;
