@@ -18,6 +18,8 @@ public:
 
     virtual void execute() const = 0;
 
+    const char* getName() const { return mName; }
+
 public:
     const char* mName;
     sead::PtrArray<LiveActor> mActors;
