@@ -34,6 +34,8 @@ public:
     void createModelDrawDisplayList(s32);
     bool isDraw() const;
 
+    const char* getName() const { return mName; }
+
 public:
     const char* mName;
     agl::DrawContext* mDrawCtx;
