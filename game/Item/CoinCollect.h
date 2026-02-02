@@ -49,6 +49,8 @@ public:
     void exeCountUp();
     void exeBlow();
 
+    bool isHintEnabled() const { return mIsHintEnabled; }
+
 public:
     CoinStateCountUp* mStateCountUp = nullptr;
     CoinCollectHintState* mHintState = nullptr;
@@ -62,5 +64,5 @@ public:
     bool mIsSurfaceUpdated = false;
     sead::Matrix34f mSurfaceMatrix = sead::Matrix34f::ident;
     CoinCollectEmpty* mCoinCollectEmpty = nullptr;
-    bool _198 = false;  // Only assigned `false` later, never read
+    bool mIsHintEnabled = false;
 };
