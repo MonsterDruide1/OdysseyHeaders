@@ -5,6 +5,6 @@ class MessageSystem;
 
 class IUseMessageSystem {
 public:
-    virtual const MessageSystem* getMessageSystem() const = 0;
+    virtual const MessageSystem* getMessageSystem() const;
 };
 }  // namespace al
