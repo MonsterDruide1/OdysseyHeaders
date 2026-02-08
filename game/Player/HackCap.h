@@ -11,7 +11,7 @@ class PlayerSeparateCapFlag;
 class IUsePlayerCollision;
 class IUsePlayerHeightCheck;
 class PlayerWetControl;
-class PlayerJointControlKeeper;
+class PlayerWetControl;
 class HackCapJudgePreInputSeparateThrow;
 class HackCapJudgePreInputSeparateJump;
 class CapTargetInfo;
@@ -24,7 +24,7 @@ public:
             const PlayerWallActionHistory*, const PlayerCapActionHistory*,
             const PlayerEyeSensorHitHolder*, const PlayerSeparateCapFlag*,
             const IUsePlayerCollision*, const IUsePlayerHeightCheck*, const PlayerWetControl*,
-            const PlayerJointControlKeeper*, HackCapJudgePreInputSeparateThrow*,
+            const PlayerWetControl*, HackCapJudgePreInputSeparateThrow*,
             HackCapJudgePreInputSeparateJump*);
 
     void init(const al::ActorInitInfo&) override;
