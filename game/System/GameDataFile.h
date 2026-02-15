@@ -68,33 +68,33 @@ public:
 
         bool testFunc(s32 curWorldId, bool isGameClear, s32 scenarioNo, bool isInWorld) const;
 
-        sead::FixedSafeString<0x80> mStageName;
-        sead::FixedSafeString<0x80> mObjId;
-        sead::FixedSafeString<0x40> mScenarioName;
-        const char* mObjectName;
-        sead::Vector3f mTrans;
-        sead::Vector3f mTransAgain;
+        sead::FixedSafeString<0x80> stageName;
+        sead::FixedSafeString<0x80> objId;
+        sead::FixedSafeString<0x40> scenarioName;
+        const char* objectName;
+        sead::Vector3f trans;
+        sead::Vector3f transAgain;
         void* unkPtr1;
         void* unkPtr2;
         void* unkPtr3;
         void* unkPtr4;
-        s32 mMainScenarioNo;
-        s32 mWorldIndex;
-        bool mIsMoonRock;
+        s32 mainScenarioNo;
+        s32 worldIndex;
+        bool isMoonRock;
         bool unkBool1;
-        bool mIsAchievement;
-        bool mIsGrand;
-        bool mIsShopMoon;
+        bool isAchievement;
+        bool isGrand;
+        bool isShopMoon;
         s32 unkInt;
-        HintStatus mHintStatus;
-        AchievementStatus mAchievementStatus;
+        HintStatus hintStatus;
+        AchievementStatus achievementStatus;
         s32 unkInt4;
         void* unkPtr6;
-        s32 mUniqueID;
-        s32 mHintIdx;
-        sead::FixedSafeString<0x20> mOptionalID;
-        sead::BitFlag32 mProgressBitflag;
-        bool mIsDisabled;
+        s32 uniqueID;
+        s32 hintIdx;
+        sead::FixedSafeString<0x20> optionalID;
+        sead::BitFlag32 progressBitflag;
+        bool isDisabled;
         bool unkBool3;
     };
 
@@ -475,19 +475,19 @@ public:
     sead::FixedSafeString<64>* getGiftName() { return mGiftNamePtr; }
 
 public:
-    char _000[0x18];
+    char _0[0x18];
     FixedHeapArray<s32, sNumWorlds> mShopShineNum;
     FixedHeapArray<s32, sNumWorlds> mMainScenarioNo;
     s32 mStartShineIndex;
-    char _02c[0x98];
+    char _2c[0x98];
     sead::FixedSafeString<128> mPlayerStartIdForSave;
-    char _15c[0x30];
+    char _160[0x30];
     WorldList* mWorldList;
     char _198[0x60];
     sead::FixedSafeString<128> mCheckpointName;
-    char _28c[0x98];
+    char _290[0x98];
     sead::FixedSafeString<128> mCurrentStageName;
-    char _3bc[0xa0];
+    char _3c0[0xa0];
     FixedHeapArray<bool, sNumWorlds> mIsWorldWarpHoleThrough;
     sead::DateTime mSaveTimeForDisp;
     sead::DateTime mSaveTime;
@@ -571,7 +571,7 @@ public:
     char _858[0x8];
     PlayerHitPointData* mPlayerHitPointData;
     sead::BufferedSafeString mNextStageName;
-    char _884[0x11c];
+    char _880[0x11c];
     FixedHeapArray<HintInfo, 1024> mHintList;
     char _9a8[0x48];
     s32 mCurrentWorldId;
