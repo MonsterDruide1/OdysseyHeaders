@@ -3,6 +3,7 @@
 #include <container/seadOffsetList.h>
 #include <container/seadPtrArray.h>
 #include <container/seadStrTreeMap.h>
+#include <container/seadTList.h>
 #include <gfx/seadCamera.h>
 #include <gfx/seadFrameBuffer.h>
 #include <nn/g3d/ViewVolume.h>
@@ -297,7 +298,7 @@ public:
     EffectSystem* mEffectSystem;
     SceneCameraInfo* mSceneCameraInfo;
     const char* _948;
-    void* _950[3];  // sead::OffsetList
+    sead::TList<PartsGraphics*> mPartsGraphics;
     VastGridMeshDirector* mVastGridMeshDirector;
     FullScreenTriangle* mFullScreenTriangle;
     s32 _978;
