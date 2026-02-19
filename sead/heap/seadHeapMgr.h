@@ -83,6 +83,7 @@ public:
     static RootHeaps sRootHeaps;
     static IndependentHeaps sIndependentHeaps;
     static CriticalSection sHeapTreeLockCS;
+    static Atomic<u32> sHeapCheckTag;
     static TickSpan sSleepSpanAtRemoveCacheFailure;
 
     /// fallback heap that is returned when getting the current heap outside of an sead::Thread
