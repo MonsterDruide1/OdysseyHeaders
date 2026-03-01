@@ -2,7 +2,7 @@
 
 class HackCap;
 class PlayerAnimator;
-struct HackObjInfo;
+class HackObjInfo;
 
 namespace CapFunction {
 
