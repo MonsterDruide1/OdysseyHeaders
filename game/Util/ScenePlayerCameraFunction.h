@@ -8,7 +8,7 @@ class CameraTicket;
 class AreaObj;
 }  // namespace al
 
-struct HackObjInfo;
+class HackObjInfo;
 
 namespace PlayerCameraFunction {
 void calcCameraMoveInput(sead::Vector2f* input, const al::LiveActor* actor);
