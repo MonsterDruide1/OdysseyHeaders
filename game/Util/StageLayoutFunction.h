@@ -10,7 +10,7 @@ class LayoutActor;
 class PlacementInfo;
 class PlacementId;
 }  // namespace al
-struct CollectBgm;
+class CollectBgm;
 class GameDataHolderAccessor;
 
 namespace rs {
