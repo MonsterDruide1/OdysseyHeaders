@@ -5,19 +5,8 @@
 #include <nn/util.h>
 
 namespace nn::gfx {
+
 class DeviceInfo;
-
-template <typename TTarget>
-class TCommandBuffer;
-
-template <typename TType, typename TVersion>
-class ApiVariation;
-
-template <int T>
-class ApiType;
-
-template <int T>
-class ApiVersion;
 
 template <class TTarget>
 class TDevice : public detail::DeviceImpl<TTarget>,
@@ -36,8 +25,5 @@ public:
     void* GetUserPtr();
     const void* GetUserPtr() const;
 };
-
-typedef TDevice<ApiVariation<ApiType<4>, ApiVersion<8>>> Device;
-typedef TCommandBuffer<gfx::ApiVariation<gfx::ApiType<4>, gfx::ApiVersion<8>>> CommandBuffer;
 
 }  // namespace nn::gfx
