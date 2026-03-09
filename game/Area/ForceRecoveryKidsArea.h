@@ -11,6 +11,6 @@ public:
     void init(const al::AreaInitInfo& info) override;
 
 public:
-    sead::Vector3f mRecoveryPos = {0.0f, 0.0f, 0.0f};
-    sead::Vector3f mRecoveryUp;
+    sead::Vector3f mTargetPos;
+    sead::Vector3f mTargetUp;
 };

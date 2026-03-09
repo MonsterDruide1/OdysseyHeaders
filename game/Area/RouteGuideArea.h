@@ -12,6 +12,6 @@ public:
     void calcGuidePos(sead::Vector3f* guidePos) const;
 
 public:
-    sead::Vector3f mTargetPosition = sead::Vector3f::zero;
+    sead::Vector3f mTargetPosition = {0.0f, 0.0f, 0.0f};
     bool mIsGuide3D = false;
 };
