@@ -11,7 +11,7 @@ class DateTimeUtc;
 class DateTime
 {
 public:
-    DateTime(u64 unix_time = 0);
+    DateTime(u64 unix_time);
     DateTime(const CalendarTime& time);
     DateTime(const CalendarTime::Year& year, const CalendarTime::Month& month,
              const CalendarTime::Day& day, const CalendarTime::Hour& hour,
