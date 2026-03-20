@@ -21,6 +21,9 @@ public:
     SubActorInfo* getActorInfo(s32 index) const { return mBuffer[index]; }
 
 public:
+    friend class alSubActorFunction;
+
+public:
     LiveActor* mRootActor;
     s32 mMaxActorCount = 0;
     s32 mCurActorCount = 0;
