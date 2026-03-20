@@ -8,20 +8,20 @@ class LiveActor;
 
 class LoopAnimState : public al::ActorStateBase {
 public:
-    LoopAnimState(al::LiveActor* actor, const char* name, bool isSyncSubActor);
+    LoopAnimState(al::LiveActor*, const char*, bool);
     void appear() override;
     void end();
     void exeStart();
-    void startAction(const char* actionName);
+    void startAction(const char*);
     void exeLoop();
     void exeEnd();
 
 public:
-    const char* mName = nullptr;
-    const char* mStartSuffix = "Start";
-    const char* mLoopSuffix = "Loop";
-    const char* mEndSuffix = "End";
-    bool mIsSyncSubActor = false;
+    const char* _20;
+    const char* _28;
+    const char* _30;
+    const char* _38;
+    bool _40;
 };
 
 static_assert(sizeof(LoopAnimState) == 0x48);
