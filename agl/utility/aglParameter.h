@@ -86,7 +86,7 @@ public:
                                               const sead::hostio::PropertyEvent* event);
 #endif
 
-    virtual void writeToXML(sead::XmlElement* element, sead::Heap* heap) const;
+    virtual void writeToXML(sead::XmlElement* element, sead::Heap* heap);
     virtual bool readFromXML(const sead::XmlElement& element, bool x);
 
     virtual ParameterType getParameterType() const = 0;
@@ -377,7 +377,7 @@ public:
     bool copy(const ParameterBase& other) override;
     void copyUnsafe(const ParameterBase& other) override;
 
-    void writeToXML(sead::XmlElement* element, sead::Heap* heap) const override;
+    void writeToXML(sead::XmlElement* element, sead::Heap* heap) override;
     bool readFromXML(const sead::XmlElement& element, bool x) override;
 
     ParameterType getParameterType() const override;
