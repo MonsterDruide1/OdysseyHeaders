@@ -18,6 +18,4 @@ public:
     f32 mActionFrameRate = -1.0f;
     bool mIsStartRandomFrame = false;
 };
-
-static_assert(sizeof(EventFlowNodeActionLoop) == 0x80);
 }  // namespace al

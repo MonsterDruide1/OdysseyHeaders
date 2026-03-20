@@ -25,8 +25,6 @@ public:
 
     void setPoseMatrix(sead::Matrix34f* mtx) { mPoseMatrix = mtx; }
 
-    const char* getHackName() const { return mHackName; }
-
 public:
     friend CapTargetInfoFunction;
     const al::LiveActor* mActor = nullptr;

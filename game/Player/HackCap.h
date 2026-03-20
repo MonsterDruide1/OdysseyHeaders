@@ -184,16 +184,12 @@ public:
     bool stayWallHit();
     void endHackThrow();
 
-    CapTargetInfo* getCapTargetInfo() const { return mCapTargetInfo; }
-
 public:
     unsigned char _108[0x10];
     al::LiveActor* mActorA;
     unsigned char _120[0x08];
     al::LiveActor* mPlayerActor;
-    void* _130[0x1f];
-    CapTargetInfo* mCapTargetInfo;
-    void* _230[0x7c];
+    void* _130[0x9c];
 };
 
 static_assert(sizeof(HackCap) == 0x610);
