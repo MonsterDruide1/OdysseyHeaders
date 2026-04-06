@@ -37,14 +37,10 @@ public:
     };
 
     class iterator {
-    public:
         typedef difference_type difference_type;
         typedef reference reference;
         typedef pointer pointer;
-        typedef std::random_access_iterator_tag iterator_category;
-        typedef value_type value_type;
 
-    public:
         BitArray* m_pParent;
         difference_type m_Pos;
 
@@ -73,14 +69,10 @@ public:
     };
 
     class const_iterator {
-    public:
         typedef difference_type difference_type;
         typedef const_reference reference;
         typedef const_pointer pointer;
-        typedef std::random_access_iterator_tag iterator_category;
-        typedef value_type value_type;
 
-    public:
         const BitArray* m_pParent;
         difference_type m_Pos;
 
