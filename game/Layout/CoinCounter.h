@@ -33,6 +33,8 @@ public:
     void exeCountAnimAdd();
     void exeCountAnimSub();
 
+    void setUpdateCount(bool isUpdateCount) { mIsUpdateCount = isUpdateCount; }
+
 public:
     s32 mPrevCoinCount = 0;
     s32 mCoinNum = 0;
