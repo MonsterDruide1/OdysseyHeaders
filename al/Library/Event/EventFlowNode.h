@@ -51,6 +51,8 @@ public:
 
     LiveActor* getActor() const { return mActor; }
 
+    const char* getName() const { return mName; }
+
 public:
     LiveActor* mActor = nullptr;
     s32 mId = -1;

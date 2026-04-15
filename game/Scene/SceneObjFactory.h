@@ -74,7 +74,7 @@ enum SceneObjID : s32 {
     SceneObjID_TalkNpcSceneEventSwitcher,
     SceneObjID_TestStageTimeDirector,
     SceneObjID_TimeBalloonDirector,
-    SceneObjID_TouchActionMessageDirector,
+    SceneObjID__42,
     SceneObjID_alTrafficAreaDirector,
     SceneObjID_TrafficRailWatcher,
     SceneObjID_TRexScrollBreakMapPartsBreakJudge,
