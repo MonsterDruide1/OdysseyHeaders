@@ -1,7 +1,5 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
@@ -10,24 +8,17 @@ class HitSensor;
 class SensorMsg;
 }  // namespace al
 
-class TreasureBoxKeyOpener : public al::LiveActor {
+class TimeBalloonNpc : public al::LiveActor {
 public:
-    TreasureBoxKeyOpener(const char*);
     void init(const al::ActorInitInfo& info) override;
     void initAfterPlacement() override;
-    void appear() override;
-    void makeActorAlive() override;
+    void attackSensor(al::HitSensor* self, al::HitSensor* other) override;
     bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
                     al::HitSensor* self) override;
     void control() override;
-    bool isGot();
-    void exeAppear();
-    void exeWait();
-    void exeGot();
-    virtual void setHostForClipping(al::LiveActor*);
 
-public:
-    void* filler[4];
+    void exeEvent();
+    void exeReaction();
+    bool isReaction() const;
+    void exeScared();
 };
-
-static_assert(sizeof(TreasureBoxKeyOpener) == 0x128);
