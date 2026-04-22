@@ -14,6 +14,7 @@ public:
 
 public:
     bool mIsAlive = true;
+    bool mIsKillIfEnter = false;
     f32* mAngleH = nullptr;
     f32* mAngleV = nullptr;
 };
