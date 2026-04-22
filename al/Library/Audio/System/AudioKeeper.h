@@ -16,7 +16,7 @@ class AudioMic;
 class SeKeeper;
 class BgmKeeper;
 
-class AudioKeeper : public HioNode {
+class AudioKeeper : public IUseHioNode {
 public:
     AudioKeeper(const AudioDirector*);
     virtual ~AudioKeeper();
