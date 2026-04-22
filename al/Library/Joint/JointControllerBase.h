@@ -6,7 +6,6 @@
 
 #include "Library/HostIO/HioNode.h"
 
-// BUG: outside of `al` namespace
 class IJointController {
 public:
     virtual void calcJointCallback(s32, sead::Matrix34f*) = 0;
