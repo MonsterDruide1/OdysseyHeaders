@@ -54,10 +54,5 @@ public:
     void setEmitterPoseMtxPtr(const sead::Matrix34f*, const char*);
     void setEmitterPosePosPtr(const sead::Vector3f*, const char*);
     void loadSe(IAudioResourceLoader*);
-
-public:
-    void* _0[0x78 / 8];
 };
-
-static_assert(sizeof(SeKeeper) == 0x78);
 }  // namespace al
