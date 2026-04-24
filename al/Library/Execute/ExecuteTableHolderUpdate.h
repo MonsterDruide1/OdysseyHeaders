@@ -2,8 +2,6 @@
 
 #include <container/seadPtrArray.h>
 
-#include "Library/HostIO/HioNode.h"
-
 namespace al {
 class ExecuteDirector;
 struct ExecuteOrder;
@@ -19,7 +17,7 @@ class IUseExecutor;
 class LayoutActor;
 class LiveActor;
 
-class ExecuteTableHolderUpdate : public HioNode {
+class ExecuteTableHolderUpdate {
 public:
     ExecuteTableHolderUpdate();
     virtual ~ExecuteTableHolderUpdate();
