@@ -16,4 +16,6 @@ public:
 public:
     PlacementId* mClippingViewId;
 };
+
+static_assert(sizeof(ViewCtrlArea) == 0x78);
 }  // namespace al
