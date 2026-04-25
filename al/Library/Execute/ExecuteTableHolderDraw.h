@@ -2,8 +2,6 @@
 
 #include <basis/seadTypes.h>
 
-#include "Library/HostIO/HioNode.h"
-
 namespace al {
 struct ExecuteOrder;
 struct ExecuteSystemInitInfo;
@@ -18,7 +16,7 @@ class IUseExecutor;
 class LayoutActor;
 class LiveActor;
 
-class ExecuteTableHolderDraw : public HioNode {
+class ExecuteTableHolderDraw {
 public:
     ExecuteTableHolderDraw();
     virtual ~ExecuteTableHolderDraw();

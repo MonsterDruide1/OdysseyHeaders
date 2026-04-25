@@ -20,8 +20,6 @@ public:
     bool receiveMsg(const al::SensorMsg* msg, al::HitSensor* other, al::HitSensor* self) override;
     ActorDimensionKeeper* getActorDimensionKeeper() const override;
 
-    void setMtxConnector(al::MtxConnector* mtxConnector) { mMtxConnector = mtxConnector; }
-
 public:
     bool mIsConnectToCollisionBack = false;
     al::MtxConnector* mMtxConnector = nullptr;
