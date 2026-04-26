@@ -14,6 +14,8 @@ public:
     void procMessage(u32 message);
     void update();
 
+    nn::oe::OperationMode getStoredOperationMode() const { return mOperationMode; }
+
 public:
     bool mIsUpdatedOperationMode = false;
     bool mIsUpdatedPerformanceMode = false;
