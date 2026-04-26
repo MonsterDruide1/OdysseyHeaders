@@ -30,6 +30,16 @@ public:
     const sead::Vector3f& mDown;
 };
 
+class TriangleFilterFunc : public TriangleFilterBase {
+public:
+    using Func = bool (*)(const Triangle&);
+
+    bool isInvalidTriangle(const Triangle& triangle) const override;
+
+public:
+    Func mFunc;
+};
+
 template <typename T>
 class TriangleFilterDelegator : public TriangleFilterBase {
 public:
