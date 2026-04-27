@@ -1,31 +1,33 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 #include "Library/LiveActor/LiveActor.h"
+#include "Library/MapObj/BreakMapPartsBase.h"
+
+#include "Util/BreakJudgeUtil.h"
 
 namespace al {
 struct ActorInitInfo;
-class CollisionObj;
 class HitSensor;
 class SensorMsg;
 }  // namespace al
 
-class BossKnuckleFix : public al::LiveActor {
+class PoleClimbParts : public al::LiveActor {
 public:
-    BossKnuckleFix(const char* name);
+    PoleClimbParts(const char* name);
 
     void init(const al::ActorInitInfo& info) override;
+    void movement() override;
+    void calcAnim() override;
     bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
                     al::HitSensor* self) override;
 
     void exeWait();
+    void exeBreak();
     void exeReaction();
-    void exeReactionLarge();
 
 public:
-    al::CollisionObj* mCollisionObj = nullptr;
-    s32 mReactionCount = 0;
+    bool mIsBreak = false;
+    al::JudgeFuncPtr mBreakJudgeFunction = nullptr;
 };
 
-static_assert(sizeof(BossKnuckleFix) == 0x118);
+static_assert(sizeof(PoleClimbParts) == 0x118);
