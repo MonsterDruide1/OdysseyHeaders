@@ -9,9 +9,6 @@ struct ActorInitInfo;
 class HitSensor;
 class SensorMsg;
 }  // namespace al
-class CapTargetInfo;
-class ItemGenerator;
-class SaveObjInfo;
 
 class CapHanger : public al::LiveActor {
 public:
@@ -34,15 +31,15 @@ public:
     void setPeachCastleCap(const sead::Vector3f&);
 
 public:
-    CapTargetInfo* mCapTargetInfo;
+    void* _108;
     void* _110;
     s32 _118;
-    s32 mAppearItemNum;
+    s32 _11c;
     s32 _120;
-    ItemGenerator* mItemGenerator;
-    bool mIsEmitEffect;
+    void* _128;
+    bool _130;
     void* _138;
-    SaveObjInfo* _140;
+    void* _140;
     sead::Matrix34f _148;
     sead::Matrix34f _178;
     bool _1a8;
