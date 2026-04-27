@@ -35,13 +35,7 @@ public:
     const char* getTypeName() const override;
     void forceResetCount();
 
-    void set_110(bool update) { _110 = update; }
-
 public:
-    unsigned char _8[0x108];
-    bool _110 = false;
-    unsigned char _111[0x17];
+    unsigned char padding[0x128 - sizeof(IUseFluidSurface)];
 };
-
-static_assert(sizeof(RippleCtrl) == 0x128);
 }  // namespace al
