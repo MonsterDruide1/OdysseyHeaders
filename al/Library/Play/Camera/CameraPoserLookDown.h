@@ -4,24 +4,19 @@
 
 namespace al {
 
-class CameraPoserFixPoint : public CameraPoser {
+class CameraPoserLookDown : public CameraPoser {
 public:
-    CameraPoserFixPoint(const char* name);
+    CameraPoserLookDown(const char* name);
 
-    void init() override;
     void loadParam(const ByamlIter& iter) override;
     void start(const CameraStartInfo& info) override;
     void update() override;
     void makeLookAtCamera(sead::LookAtCamera* cam) const override;
 
 public:
-    f32 mOffsetY;
-    sead::Vector3f mCameraPos;
-    bool mIsUsePrePoserPos;
-    bool mIsKeepDistanceFromLookAt;
-    f32 mKeepDistance;
+    s8 filler[0x150 - sizeof(CameraPoser)];
 };
 
-static_assert(sizeof(CameraPoserFixPoint) == 0x158);
-
 }  // namespace al
+
+static_assert(sizeof(al::CameraPoserLookDown) == 0x150, "al::CameraPoserLookDown size");
