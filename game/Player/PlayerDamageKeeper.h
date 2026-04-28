@@ -24,6 +24,8 @@ public:
     void updatePreventDamage();
     void updateKidsModeLifeRecovery(bool isRecover);
 
+    bool isUpdateModel() const { return mIsUpdateModel; }
+
 public:
     al::LiveActor* mPlayer = nullptr;
     PlayerEffect* mPlayerEffect = nullptr;
