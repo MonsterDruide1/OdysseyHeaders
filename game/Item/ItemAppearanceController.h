@@ -14,12 +14,10 @@ public:
 
     bool requestAppear(const al::SensorMsg* message, const al::HitSensor* hitSensor);
 
-    void exeWait() {}
-
+    void exeWait();
     void exeCount();
     void exeAppear();
-
-    void exeDone() {}
+    void exeDone();
 
 public:
     al::LiveActor* mActor;
