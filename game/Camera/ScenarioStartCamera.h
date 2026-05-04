@@ -27,7 +27,7 @@ public:
     s32 getMaxPlayStep();
 
 public:
-    void* _110[0x8];
+    void* _padding[0x8];
 };
 
 static_assert(sizeof(ScenarioStartCamera) == 0x150);
