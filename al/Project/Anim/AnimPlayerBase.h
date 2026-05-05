@@ -13,7 +13,7 @@ public:
 
     virtual bool calcNeedUpdateAnimNext() = 0;
 
-    AnimInfoTable* getAnimInfoTable() { return mInfoTable; }
+    AnimInfoTable* getAnimInfoTable() const { return mInfoTable; }
 
 public:
     AnimInfoTable* mInfoTable = nullptr;
