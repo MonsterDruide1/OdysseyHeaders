@@ -1,31 +1,23 @@
 #pragma once
 
-#include <basis/seadTypes.h>
-
 #include "Library/LiveActor/LiveActor.h"
 
 namespace al {
 struct ActorInitInfo;
-class CollisionObj;
 class HitSensor;
 class SensorMsg;
 }  // namespace al
 
-class BossKnuckleFix : public al::LiveActor {
+class SnowVolumeEraser : public al::LiveActor {
 public:
-    BossKnuckleFix(const char* name);
+    SnowVolumeEraser(const char* actorName);
 
     void init(const al::ActorInitInfo& info) override;
+    void start();
     bool receiveMsg(const al::SensorMsg* message, al::HitSensor* other,
                     al::HitSensor* self) override;
 
-    void exeWait();
-    void exeReaction();
-    void exeReactionLarge();
-
-public:
-    al::CollisionObj* mCollisionObj = nullptr;
-    s32 mReactionCount = 0;
+    void exeAppear();
 };
 
-static_assert(sizeof(BossKnuckleFix) == 0x118);
+static_assert(sizeof(SnowVolumeEraser) == 0x108);
