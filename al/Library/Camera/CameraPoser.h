@@ -208,6 +208,14 @@ public:
 
     CameraViewInfo* getViewInfo() const { return mViewInfo; }
 
+    CameraViewInfo* getCameraViewInfo() const { return mViewInfo; }
+
+    CameraOffsetCtrlPreset* getCameraOffsetCtrlPreset() const { return mOffsetCtrlPreset; }
+
+    CameraPoserSceneInfo* getCameraPoserSceneInfo() const { return mSceneInfo; }
+
+    CameraVerticalAbsorber* getCameraVerticalAbsorber() const { return mVerticalAbsorber; }
+
     // set
     void setPosition(const sead::Vector3f& vec) { mPosition.set(vec); };
 
@@ -218,6 +226,10 @@ public:
     void setViewMtx(const sead::Matrix34f& mtx) { mViewMtx = mtx; }
 
     void setFovyDegree(f32 fovy) { mFovyDegree = fovy; }
+
+    void setVerticalAbsorber(CameraVerticalAbsorber* cameraVerticalAbsorber) {
+        mVerticalAbsorber = cameraVerticalAbsorber;
+    }
 
 public:
     const char* mPoserName;
