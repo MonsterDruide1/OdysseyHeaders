@@ -4,22 +4,20 @@
 
 namespace al {
 
+class LiveActor;
+
 class CameraPoserFixPoint : public CameraPoser {
 public:
-    CameraPoserFixPoint(const char* name);
+    CameraPoserFixPoint(const LiveActor* actor);
 
     void init() override;
     void loadParam(const ByamlIter& iter) override;
-    void start(const CameraStartInfo& info) override;
+    void start(const CameraStartInfo& startInfo) override;
     void update() override;
-    void makeLookAtCamera(sead::LookAtCamera* cam) const override;
+    void makeLookAtCamera(sead::LookAtCamera* lookAtCam) const override;
 
 public:
-    f32 mOffsetY;
-    sead::Vector3f mCameraPos;
-    bool mIsUsePrePoserPos;
-    bool mIsKeepDistanceFromLookAt;
-    f32 mKeepDistance;
+    char _140[24];
 };
 
 static_assert(sizeof(CameraPoserFixPoint) == 0x158);

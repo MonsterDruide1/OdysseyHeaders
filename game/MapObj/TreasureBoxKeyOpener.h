@@ -8,7 +8,6 @@ namespace al {
 struct ActorInitInfo;
 class HitSensor;
 class SensorMsg;
-class MtxConnector;
 }  // namespace al
 
 class TreasureBoxKeyOpener : public al::LiveActor {
@@ -28,12 +27,7 @@ public:
     virtual void setHostForClipping(al::LiveActor*);
 
 public:
-    al::LiveActor* mHostForClipping;
-    al::MtxConnector* mMtxConnector;
-    f32 _118;
-    f32 _11c;
-    s32 _120;
-    s32 _124;
+    void* filler[4];
 };
 
 static_assert(sizeof(TreasureBoxKeyOpener) == 0x128);

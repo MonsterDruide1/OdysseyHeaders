@@ -1,7 +1,6 @@
 #pragma once
 
 #include <basis/seadTypes.h>
-#include <container/seadPtrArray.h>
 #include <math/seadQuat.h>
 #include <math/seadVector.h>
 
@@ -40,8 +39,7 @@ public:
     al::CameraDirector* getCameraDirector() const override;
 
 public:
-    sead::PtrArray<PlayerStartInfo> mPlayerStartInfoList;
-    al::CameraDirector* mCameraDirector;
+    char _10[0x18];
 };
 
 static_assert(sizeof(PlayerStartInfoHolder) == 0x28);
