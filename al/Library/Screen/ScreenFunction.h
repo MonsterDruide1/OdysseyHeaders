@@ -15,7 +15,7 @@ namespace al {
 class SceneCameraInfo;
 class ScreenCapture;
 
-class ScreenCaptureExecutor : public HioNode {
+class ScreenCaptureExecutor : public IUseHioNode {
 public:
     ScreenCaptureExecutor(s32);
     ~ScreenCaptureExecutor();

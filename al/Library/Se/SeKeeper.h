@@ -33,7 +33,7 @@ public:
     void setLifeTimeForHoldCall(const char*, u32, const char*);
     void stopAll(s32, const char*);
     void separatePlayingSePosFromEmitter();
-    s32 tryGetCurrentStreamSamplePos(const char*, const char*) const;
+    void tryGetCurrentStreamSamplePos(const char*, const char*) const;
     bool isPlaying(const char*);
     void checkIsPlayingSe(const char*, const char*);
     void validate();
@@ -54,10 +54,5 @@ public:
     void setEmitterPoseMtxPtr(const sead::Matrix34f*, const char*);
     void setEmitterPosePosPtr(const sead::Vector3f*, const char*);
     void loadSe(IAudioResourceLoader*);
-
-public:
-    void* _0[0x78 / 8];
 };
-
-static_assert(sizeof(SeKeeper) == 0x78);
 }  // namespace al

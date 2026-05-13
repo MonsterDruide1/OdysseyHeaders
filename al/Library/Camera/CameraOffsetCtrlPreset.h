@@ -4,29 +4,12 @@
 
 namespace al {
 class ByamlIter;
-class CameraOffsetPreset;
 
 class CameraOffsetCtrlPreset : public CameraOffsetCtrl {
 public:
     CameraOffsetCtrlPreset();
 
     void load(const ByamlIter& iter) override;
-    const sead::Vector3f& getOffset() const override;
-
-public:
-    CameraOffsetPreset* mPreset = nullptr;
+    f32 getOffset() const override;
 };
-
-static_assert(sizeof(CameraOffsetCtrlPreset) == 0x10);
-
-class CameraOffsetCtrlY : public CameraOffsetCtrl {
-public:
-    void load(const ByamlIter& iter) override;
-
-    const sead::Vector3f& getOffset() const override { return mOffset; }
-
-public:
-    sead::Vector3f mOffset = sead::Vector3f::zero;
-};
-
 }  // namespace al
