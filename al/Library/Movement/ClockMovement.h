@@ -10,7 +10,6 @@ struct ActorInitInfo;
 class ClockMovement : public NerveExecutor {
 public:
     ClockMovement(const ActorInitInfo& info);
-
     void exeDelay();
     void exeRotateSign();
     void exeRotate();
@@ -19,8 +18,6 @@ public:
     bool isFirstStepRotateSign() const;
     bool isFirstStepRotate() const;
     bool isFirstStepWait() const;
-
-    const sead::Quatf& getCurrentQuat() const { return mCurrentQuat; }
 
 public:
     sead::Quatf mCurrentQuat = sead::Quatf::unit;
