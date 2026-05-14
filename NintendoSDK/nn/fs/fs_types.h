@@ -1,11 +1,9 @@
 #pragma once
 
+#include <nn/nn.h>
 #include <nn/types.h>
 
-namespace nn {
-typedef u64 ApplicationId;
-
-namespace fs {
+namespace nn::fs {
 using namespace ams::fs;  // for errors
 
 typedef u64 UserId;
@@ -78,5 +76,4 @@ struct WriteOption {
         return op;
     }
 };
-}  // namespace fs
-}  // namespace nn
+}  // namespace nn::fs
