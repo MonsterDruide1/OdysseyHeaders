@@ -23,7 +23,10 @@ public:
     void appear() override;
     void kill() override;
     void exeWait();
-    al::RailRider* getRailRider() const override;
+
+    al::RailRider* getRailRider() const override {
+        return mRailRider ?: al::LiveActor::getRailRider();
+    }
 
 public:
     al::Rail* mRail = nullptr;
