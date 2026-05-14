@@ -33,7 +33,7 @@ public:
     void setLifeTimeForHoldCall(const char*, u32, const char*);
     void stopAll(s32, const char*);
     void separatePlayingSePosFromEmitter();
-    s32 tryGetCurrentStreamSamplePos(const char*, const char*) const;
+    void tryGetCurrentStreamSamplePos(const char*, const char*) const;
     bool isPlaying(const char*);
     void checkIsPlayingSe(const char*, const char*);
     void validate();
