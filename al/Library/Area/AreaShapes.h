@@ -78,8 +78,7 @@ public:
     bool calcNearestEdgePoint(sead::Vector3f* out, const sead::Vector3f& trans) const override;
     bool checkArrowCollision(sead::Vector3f* outPos, sead::Vector3f* outNormal,
                              const sead::Vector3f& pos1, const sead::Vector3f& pos2) const override;
-
-    bool calcLocalBoundingBox(sead::BoundBox3f* out) const override { return false; }
+    bool calcLocalBoundingBox(sead::BoundBox3f* out) const override;
 };
 
 class AreaShapeCylinder : public AreaShape {
