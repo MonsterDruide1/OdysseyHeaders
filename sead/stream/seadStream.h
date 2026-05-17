@@ -32,6 +32,10 @@ public:
     void setMode(Modes mode);
     void setUserFormat(StreamFormat* format);
 
+    Endian::Types getBinaryEndian() const { return mEndian; }
+    StreamFormat* getUserFormat() const { return mFormat; }
+    StreamSrc* getSrc() const { return mSrc; }
+
 public:
     static StreamFormat* BASIC_STREAM_FORMAT[2];
 
