@@ -10,11 +10,10 @@ class Resource;
 
 class InitResourceDataActionAnim {
 public:
-    static InitResourceDataActionAnim*
-    tryCreate(Resource* resource, const InitResourceDataAnim* dataAnim, const char* suffix);
+    static InitResourceDataActionAnim* tryCreate(Resource*, const InitResourceDataAnim*,
+                                                 const char*);
 
-    InitResourceDataActionAnim(Resource* resource, const InitResourceDataAnim* dataAnim,
-                               const char* suffix);
+    InitResourceDataActionAnim(Resource*, const InitResourceDataAnim*, const char* resourceYml);
     void sortCtrlInfo();
 
 public:
@@ -25,6 +24,5 @@ public:
 
 namespace alAnimFunction {
 bool checkPass(f32, f32, f32, bool, f32);
-const al::AnimInfoTable* createAnimInfoTableIfNeed(const al::AnimInfoTable* table1,
-                                                   const al::AnimInfoTable* table2);
+al::AnimInfoTable* createAnimInfoTableIfNeed(const al::AnimInfoTable*, const al::AnimInfoTable*);
 }  // namespace alAnimFunction
