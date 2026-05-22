@@ -12,8 +12,6 @@
 
 namespace sead
 {
-class ReadStream;
-
 class Resource
 {
 public:
@@ -31,7 +29,8 @@ public:
     DirectResource();
     ~DirectResource() override;
 
-    virtual s32 getLoadDataAlignment() const { return 4; }
+    virtual s32 getLoadDataAlignment() const;
+    virtual void doCreate_(u8* buffer, u32 bufferSize, Heap* heap);
 
     void create(u8* buffer, u32 bufferSize, u32 allocSize, bool allocated, Heap* heap);
 
@@ -42,30 +41,10 @@ public:
     static constexpr size_t cLoadDataAlignment = 4;
 
 public:
-    virtual void doCreate_([[maybe_unused]] u8* buffer, [[maybe_unused]] u32 bufferSize,
-                           [[maybe_unused]] Heap* heap)
-    {
-    }
     u8* mRawData = 0;
     u32 mRawSize = 0;
     u32 mBufferSize = 0;
     BitFlag32 mSettingFlag;
-};
-
-class IndirectResource : public Resource
-{
-    SEAD_RTTI_OVERRIDE(IndirectResource, Resource)
-
-public:
-    IndirectResource();
-
-    void create(sead::ReadStream* stream, u32 size, sead::Heap* heap);
-
-public:
-    virtual void doCreate_([[maybe_unused]] ReadStream* stream, [[maybe_unused]] u32 size,
-                           [[maybe_unused]] Heap* heap)
-    {
-    }
 };
 
 class ResourceFactory : public TListNode<ResourceFactory*>, public IDisposer
@@ -116,21 +95,6 @@ public:
     {
         return new (heap, alignment) T;
     }
-};
-
-class IndirectResourceFactoryBase : public ResourceFactory
-{
-    SEAD_RTTI_OVERRIDE(IndirectResourceFactoryBase, ResourceFactory)
-public:
-    IndirectResourceFactoryBase() : ResourceFactory() {}
-
-    ~IndirectResourceFactoryBase() override {}
-
-    Resource* create(const ResourceMgr::CreateArg& createArg) override;
-    Resource* tryCreate(const ResourceMgr::LoadArg& loadArg) override;
-    Resource* tryCreateWithDecomp(const ResourceMgr::LoadArg& loadArg,
-                                  Decompressor* decompressor) override;
-    virtual IndirectResource* newResource_(Heap* heap, s32 alignment) = 0;
 };
 
 }  // namespace sead
