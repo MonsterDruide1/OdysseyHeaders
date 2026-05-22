@@ -202,10 +202,6 @@ public:
 
     CapTargetInfo* getCapTargetInfo() const { return mCapTargetInfo1; }
 
-    bool isSeparateFlying() const { return mIsSeparateFlying; }
-
-    void setIsHide(bool isHide) { mIsHide = isHide; }
-
 public:
     al::LiveActor* mEquipmentHat;
     al::LiveActor* mEquipmentHatDepthShadow;
@@ -253,12 +249,8 @@ public:
     f32 _288;
     f32 _28c;
     s32 _290;
-    char filler_294[4];
     s32 _298;
-    char filler_29c[4];
-    char _2a0[4];
-    bool mIsSeparateFlying;
-    char _2a5[11];
+    bool _2a0[17];
     const PlayerWallActionHistory* mPlayerWallActionHistory;
     const PlayerCapActionHistory* mPlayerCapActionHistory;
     const PlayerInput* mInput;
@@ -294,7 +286,7 @@ public:
     s32 _580;
     s32 mLockOnCounter;
     sead::Matrix34f _588;
-    bool mIsHide;
+    bool _5b8;
     bool mIsHackDamageVisible;
     bool _5ba;
     bool _5bb;

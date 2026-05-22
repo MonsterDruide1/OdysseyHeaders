@@ -11,7 +11,7 @@ class ExecutorListIUseExecutorBase : public ExecutorListBase {
 public:
     ExecutorListIUseExecutorBase(const char* name, s32 size);
 
-    bool isActive() const override { return mSize > 0; }
+    bool isActive() const override;
 
     void registerUser(IUseExecutor* user);
 

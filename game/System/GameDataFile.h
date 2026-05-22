@@ -707,10 +707,6 @@ public:
 
     sead::FixedSafeString<64>* getGiftList() { return mItemGift.begin(); }
 
-    GameProgressData* getGameProgressData() { return mGameProgressData; }
-
-    void setWarpHoleWorldId(s32 worldId) { mWarpHoleWorldId = worldId; }
-
 public:
     struct WorldHintList {
         sead::PtrArray<HintInfo> list;
@@ -921,7 +917,7 @@ public:
     FixedHeapArray<s32, sNumWorlds> mWorldWarpIndex;
     s32 mWorldWarpNum = 0;
     s32 mUnlockedWorldNum = 1;
-    s32 mWarpHoleWorldId = 0;
+    s32 _b60 = 0;
     bool mIsKoopaLv3 = false;
     bool mIsEnableCapMessageLifeOneKidsMode = true;
 };

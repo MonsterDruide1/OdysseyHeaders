@@ -1,17 +1,10 @@
 #pragma once
 
-#include <heap/seadHeapMgr.h>
-
 namespace al {
 
-class SceneHeapSetter : public sead::ScopedCurrentHeapSetter {
+class SceneHeapSetter {
 public:
-    explicit SceneHeapSetter();
-
-    sead::Heap* getSceneHeap() const { return mSceneHeap; }
-
-public:
-    sead::Heap* mSceneHeap = nullptr;
+    SceneHeapSetter();
 };
 
 }  // namespace al
