@@ -23,18 +23,16 @@ public:
     void makeLockOnMtx(sead::Matrix34f* outMtx) const;
     void calcLockOnFollowTargetScale(sead::Vector3f* targetScale) const;
 
-    void setPoseMatrix(const sead::Matrix34f* mtx) { mPoseMatrix = mtx; }
+    void setPoseMatrix(sead::Matrix34f* mtx) { mPoseMatrix = mtx; }
 
     const char* getHackName() const { return mHackName; }
-
-    void setIsLockOnOnly() { mIsLockOnOnly = true; }
 
 public:
     friend CapTargetInfoFunction;
     const al::LiveActor* mActor = nullptr;
     const char* mHackName = nullptr;
     IUsePlayerCollision* mPlayerCollision = nullptr;
-    const sead::Matrix34f* mPoseMatrix = nullptr;
+    sead::Matrix34f* mPoseMatrix = nullptr;
     const sead::Matrix34f* mJointMtx = nullptr;
     sead::Vector3f mLocalTrans = sead::Vector3f::zero;
     sead::Vector3f mLocalRotate = sead::Vector3f::zero;

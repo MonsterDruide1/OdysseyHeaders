@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Library/Movement/MoveType.h"
 #include "Library/Nerve/NerveStateBase.h"
 
 namespace al {
@@ -13,6 +12,8 @@ public:
     void exeMove();
 
 public:
+    enum class MoveType : u32 { Loop, Turn, Ahead };
+
     f32 mSpeed = 10.0f;
     MoveType mMoveType = MoveType::Loop;
 };
