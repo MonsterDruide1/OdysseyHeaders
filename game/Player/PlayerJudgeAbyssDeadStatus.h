@@ -11,10 +11,8 @@ public:
                                const PlayerRecoverySafetyPoint* safePoint);
 
     bool judge() const override;
-
-    void reset() override {}
-
-    void update() override {}
+    void reset() override;
+    void update() override;
 
 public:
     const PlayerJudgeSameNerve* mNerve;

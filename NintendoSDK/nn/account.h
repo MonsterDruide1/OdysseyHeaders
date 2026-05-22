@@ -10,12 +10,8 @@
 
 namespace nn {
 namespace account {
-struct Nickname {
-    char m_Buffer[0x21];
-};
-struct NetworkServiceAccountId {
-    u64 m_Id;
-};
+typedef char Nickname[0x21];
+typedef u64 NetworkServiceAccountId;
 
 class AsyncContext;
 
@@ -44,7 +40,6 @@ Result LoadNetworkServiceAccountIdTokenCache(u64*, char*, u64, UserHandle const&
 
 Result GetLastOpenedUser(Uid*);
 Result GetNickname(Nickname* nickname, Uid const& userID);
-Result GetNetworkServiceAccountId(NetworkServiceAccountId*, const UserHandle&);
 
 Result GetUserId(Uid* uid, const UserHandle& handle);
 Result OpenPreselectedUser(UserHandle* handle);
@@ -52,7 +47,6 @@ Result OpenPreselectedUser(UserHandle* handle);
 class AsyncContext {
 public:
     AsyncContext();
-    ~AsyncContext();
 
     Result HasDone(bool*);
     Result GetResult();

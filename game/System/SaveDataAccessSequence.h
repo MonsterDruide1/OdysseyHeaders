@@ -6,6 +6,7 @@
 #include "Library/Nerve/NerveExecutor.h"
 
 class GameDataHolder;
+class SaveDataAccessor;
 
 namespace al {
 class LayoutInitInfo;
@@ -48,13 +49,8 @@ public:
     void setWindowDelete();
     bool isExistRequest() const;
 
-    void setDevelop() { mIsDevelop = true; }
-
 public:
-    char filler[0x10];
-    bool _20;
-    bool mIsDevelop;
-    char filler_22[0x3e];
+    char filler_8[0x50];
 };
 
 static_assert(sizeof(SaveDataAccessSequence) == 0x60);
