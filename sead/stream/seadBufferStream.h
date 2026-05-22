@@ -16,13 +16,14 @@ public:
     u32 skip(s32 offset) override;
     void rewind() override;
     bool isEOF() override;
+    bool flush() override;
 
 public:
     StreamSrc* mSrc;
-    void* mBuffer;
+    u8* mBuffer;
     u32 mBufferSize;
-    u32 mCurrentSize = 0;
-    u32 mCurrentPos = 0;
+    u32 mCurrentSize;
+    u32 mCurrentPos;
 };
 
 class BufferReadStream : public ReadStream
@@ -45,14 +46,14 @@ public:
     u32 write(const void* data, u32 size) override;
     u32 skip(s32 offset) override;
     void rewind() override;
-    bool isEOF() override { return mSrc->isEOF(); }
+    bool isEOF() override { return false; }
     bool flush() override;
 
 public:
     StreamSrc* mSrc;
-    void* mBuffer;
-    u32 mBufferSize = 0;
-    u32 mCurrentPos = 0;
+    u8* mBuffer;
+    u32 mBufferSize;
+    u32 mCurrentPos;
 };
 
 class BufferWriteStream : public WriteStream

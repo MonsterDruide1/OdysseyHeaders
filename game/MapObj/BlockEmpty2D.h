@@ -18,10 +18,7 @@ public:
     void control() override;
     void appear() override;
     bool receiveMsg(const al::SensorMsg* msg, al::HitSensor* other, al::HitSensor* self) override;
-
-    ActorDimensionKeeper* getActorDimensionKeeper() const override { return mDimensionKeeper; }
-
-    void setMtxConnector(al::MtxConnector* mtxConnector) { mMtxConnector = mtxConnector; }
+    ActorDimensionKeeper* getActorDimensionKeeper() const override;
 
 public:
     bool mIsConnectToCollisionBack = false;

@@ -26,12 +26,6 @@ class PadRumbleDirector;
 class Resource;
 class SeadAudioPlayer;
 class SeDataBase;
-class IUseAudioKeeper;
-
-void activateAudioEventController(const IUseAudioKeeper* user);
-void deactivateAudioEventController(const IUseAudioKeeper* user);
-void banAudioEventActivation(const IUseAudioKeeper* user);
-void allowAudioEventActivation(const IUseAudioKeeper* user);
 }  // namespace al
 
 namespace alAudioSystemFunction {
