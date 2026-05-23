@@ -2,8 +2,6 @@
 
 #include <container/seadPtrArray.h>
 #include <math/seadMatrix.h>
-#include <math/seadQuat.h>
-#include <math/seadVector.h>
 
 namespace al {
 class LiveActor;
@@ -18,22 +16,12 @@ class PlayerInput;
 class PlayerDamageKeeper;
 class IPlayerModelChanger;
 class IUsePlayerHeightCheck;
-struct HackObjInfo;
+class HackObjInfo;
+class HackEndParam;
 class PlayerCollider;
 class CapTargetInfo;
 class PlayerHackStartTexKeeper;
 class IUsePlayerHack;
-
-struct HackEndParam {
-    sead::Vector3f vel = {0.0f, 0.0f, 0.0f};
-    sead::Vector3f dir = {0.0f, 0.0f, 0.0f};
-    sead::Quatf quat = sead::Quatf::unit;
-    sead::Vector3f targetPos = {0.0f, 0.0f, 0.0f};
-    f32 escapeScale = 1.0f;
-    s32 delayFrames = 0;
-    bool isDamage = false;
-    bool hasVelocity = false;
-};
 
 class PlayerHackKeeper {
 public:
@@ -69,7 +57,7 @@ public:
     void sendMarioDeathArea();
     void sendMsgEnableMapCheckPointWarp();
     void sendMsgSelfCeilingCheckMiss();
-    bool receiveRequestTransferHack(al::HitSensor*);
+    void receiveRequestTransferHack(al::HitSensor*);
     bool requestDamage();
     void receiveRequestDamage();
     void sendSyncDamageVisibility();
@@ -91,25 +79,7 @@ public:
     void startDemo();
     void endDemo();
 
-    al::LiveActor* getParent() const { return mParent; }
-
-    HackCap* getHackCap() const { return mHackCap; }
-
-    PlayerRecoverySafetyPoint* getRecoverySafePoint() const { return mRecoverySafePoint; }
-
-    PlayerInput* getInput() const { return mInput; }
-
-    PlayerDamageKeeper* getDamageKeeper() const { return mDamageKeeper; }
-
-    IPlayerModelChanger* getModelChanger() const { return mModelChanger; }
-
-    IUsePlayerHeightCheck* getHeightCheck() const { return mHeightCheck; }
-
     void setPuppetable(bool isPuppetable) { mIsPuppetable = isPuppetable; }
-
-    bool isPuppetable() const { return mIsPuppetable; }
-
-    bool isCancellingHack() const { return mIsCancellingHack; }
 
     bool isPuppetable2() const { return mIsPuppetable2; }
 

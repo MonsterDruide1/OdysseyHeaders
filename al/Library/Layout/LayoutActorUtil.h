@@ -22,7 +22,7 @@ class IUseLayout;
 class MessageHolder;
 
 template <typename T>
-struct Matrix43;
+class Matrix43;
 
 typedef Matrix43<f32> Matrix43f;
 

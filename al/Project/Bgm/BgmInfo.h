@@ -4,14 +4,6 @@
 
 namespace al {
 
-struct BgmUserInfo;
-class ByamlIter;
-class SafeString;
-template <typename T>
-class AudioInfoListWithParts;
-class BgmActionInfo;
-class BgmSourceInfo;
-
 class BgmChangeableParams {
 public:
     BgmChangeableParams();
@@ -35,21 +27,13 @@ public:
     f32 mTrackVolume5 = 0;
 };
 
-struct BgmRegionChangeParams {
-    BgmRegionChangeParams();
-
-    BgmRegionChangeParams(const BgmRegionChangeParams& other);
-
-    void operator=(const BgmRegionChangeParams& other);
-
-    bool operator==(const BgmRegionChangeParams& other) const;
-
-    s32 _0 = 0;
-    s32 _4 = 0;
-    s32 _8 = 0;
-    bool _c = false;
-    bool _d = false;
-};
+struct BgmUserInfo;
+class ByamlIter;
+class SafeString;
+template <typename T>
+class AudioInfoListWithParts;
+class BgmActionInfo;
+class BgmSourceInfo;
 
 struct BgmUserInfo {
     static BgmUserInfo* createInfo(const ByamlIter&, const sead::SafeString&);
@@ -63,36 +47,4 @@ struct BgmUserInfo {
     AudioInfoListWithParts<BgmActionInfo>* bgmActionInfoList = nullptr;
     AudioInfoListWithParts<BgmSourceInfo>* bgmSourceInfoList = nullptr;
 };
-
-struct BgmRhythmInfo {
-    static BgmRhythmInfo* createInfo(const ByamlIter& iter);
-    static s32 compareInfo(const BgmRhythmInfo* lhs, const BgmRhythmInfo* rhs);
-
-    BgmRhythmInfo();
-    BgmRhythmInfo(const BgmRhythmInfo&);
-
-    f32 beat = 0.0f;
-    s32 animId = 0;
-};
-
-static_assert(sizeof(BgmRhythmInfo) == 0x8);
-
-struct BgmChordInfo {
-    static BgmChordInfo* createInfo(const ByamlIter& iter);
-    static BgmChordInfo* createInfoDefault();
-    static s32 compareInfo(const BgmChordInfo* lhs, const BgmChordInfo* rhs);
-
-    BgmChordInfo();
-    BgmChordInfo(const BgmChordInfo&);
-
-    f32 beat = 0.0f;
-    s32 root = 0;
-    s32 chordSize = 0;
-    s32 scaleSize = 0;
-    s32* chordList = nullptr;
-    s32* scaleList = nullptr;
-};
-
-static_assert(sizeof(BgmChordInfo) == 0x20);
-
 }  // namespace al

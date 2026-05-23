@@ -15,10 +15,5 @@ public:
     void resume(s32);
 
 public:
-    al::AudioDirector* mAudioDirector;
-    s32 mResumeDelay = -1;
-    bool mIsPausedBgm = false;
-    bool mIsPaused = false;
+    void* filler[2];
 };
-
-static_assert(sizeof(SceneAudioSystemPauseController) == 0x10);

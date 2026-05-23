@@ -171,6 +171,9 @@ public:
     void setCollisionParts(CollisionParts* collisionParts) { mCollisionParts = collisionParts; }
 
 public:
+    friend class alActorFunction;
+
+public:
     const char* mName = nullptr;
     ActorPoseKeeperBase* mPoseKeeper = nullptr;
     ActorExecuteInfo* mExecuteInfo = nullptr;

@@ -59,10 +59,6 @@ public:
         mIsSafeFinalizingInParallelThread = isSafe;
     }
 
-    SeDirector* getSeDirector() const { return mSeDirector; }
-
-    const AudioSystemInfo* getAudioSystemInfo() const { return mAudioSystemInfo; }
-
 public:
     SeDirector* mSeDirector;
     BgmDirector* mBgmDirector;

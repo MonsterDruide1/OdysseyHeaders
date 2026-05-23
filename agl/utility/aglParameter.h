@@ -86,7 +86,7 @@ public:
                                               const sead::hostio::PropertyEvent* event);
 #endif
 
-    virtual void writeToXML(sead::XmlElement* element, sead::Heap* heap) const;
+    virtual void writeToXML(sead::XmlElement* element, sead::Heap* heap);
     virtual bool readFromXML(const sead::XmlElement& element, bool x);
 
     virtual ParameterType getParameterType() const = 0;
@@ -102,8 +102,7 @@ public:
     void applyResource(ResParameter res, f32 t);
     void applyString(const sead::SafeString& string, bool x);
     virtual void postApplyResource_(const void*, size_t) {}
-    static ParameterBase* createByTypeName(const sead::SafeString& name,
-                                           const sead::SafeString& bufferSize);
+    void createByTypeName(const sead::SafeString& a, const sead::SafeString& b);
 
     virtual bool isBinary() const { return false; }
     virtual bool isBinaryInternalBuffer() const { return true; }
@@ -303,19 +302,17 @@ public:
 template <typename T>
 class ParameterBuffer : public Parameter<T*> {
 public:
-    ParameterBuffer() = default;
-
-    ~ParameterBuffer() override { freeBuffer(); }
-
-    void allocateBuffer(sead::Heap* heap, u32 num) {
+    ParameterBuffer(sead::Heap* heap, s32 num) {
         SEAD_ASSERT(!isBinaryInternalBuffer());
         this->mValue = new (heap) T[num];
         mBufferSize = num;
         mBufferAllocated = true;
 
-        for (u32 i = 0; i < num; ++i)
+        for (s32 i = 0; i < num; ++i)
             this->mValue[i] = {};
     }
+
+    ~ParameterBuffer() override { freeBuffer(); }
 
     void freeBuffer() {
         if (!mBufferAllocated)
@@ -346,7 +343,7 @@ public:
     void postApplyResource_(const void* data, size_t size) override {
         if (isBinaryInternalBuffer())
             return;
-        this->mValue = const_cast<T*>(static_cast<const T*>(data));
+        this->mValue = data;
         mBufferSize = size / sizeof(T);
     }
 
@@ -372,8 +369,6 @@ public:
 template <u32 N>
 class ParameterCurve : public ParameterBase {
 public:
-    ParameterCurve() { reset(); }
-
     ParameterCurve(const sead::SafeString& name, const sead::SafeString& label,
                    IParameterObj* param_obj);
 
@@ -382,7 +377,7 @@ public:
     bool copy(const ParameterBase& other) override;
     void copyUnsafe(const ParameterBase& other) override;
 
-    void writeToXML(sead::XmlElement* element, sead::Heap* heap) const override;
+    void writeToXML(sead::XmlElement* element, sead::Heap* heap) override;
     bool readFromXML(const sead::XmlElement& element, bool x) override;
 
     ParameterType getParameterType() const override;

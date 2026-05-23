@@ -33,15 +33,10 @@ public:
     static void AllocateMemory(size_t);
     static void FreeMemory(void* src);
 
-    Pane* GetPane() const { return mPane; }
-
-public:
-    u64 _8;
     u64 _10;
-    Pane* mPane;
+    u64 _18;
     u64 _20;
-    f32 _28;
-    f32 _2c;
+    u64 _28;
     u64 _30;
 
     u64 _40;

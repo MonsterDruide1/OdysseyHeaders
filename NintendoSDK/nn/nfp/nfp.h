@@ -3,21 +3,22 @@
 #include <nn/types.h>
 
 namespace nn::os {
-struct SystemEventType;
+class SystemEventType;
 }  // namespace nn::os
 
 namespace nn::nfp {
+
+using DeviceHandle = u64;
 
 enum State : u32;
 enum DeviceState : u32;
 enum ModelType : u32;
 enum MountTarget : u32;
 
+struct TagInfo;
 struct CommonInfo;
-struct DeviceHandle;
 struct ModelInfo;
 struct RegisterInfo;
-struct TagInfo;
 
 Result Initialize();
 Result Finalize();

@@ -6,40 +6,23 @@
 
 class MoveArea2D : public al::AreaObj {
 public:
-    enum class ShapeType {
-        None = 0,
-        CubeBase = 1,
-        Cylinder = 2,
-        CylinderCenter = 3,
-        CylinderCenterReverse = 4,
-    };
-
-    enum class SnapGravityType {
-        Default = 0,
-        Normal = 1,
-        Reverse = 2,
-    };
+    enum class ShapeType { Cube = 1, Cylinder, CylinderCenter, Disk };
 
     MoveArea2D(const char* name);
 
     void init(const al::AreaInitInfo& info) override;
 
-    bool calcGravityCylinderCenterAxis(sead::Vector3f* dirH, f32* outDist,
-                                       const sead::Vector3f& pos, bool isReverse) const;
-    bool calcGravityDir(sead::Vector3f* outDir, f32* outDist, const sead::Vector3f& pos) const;
-    bool calcGravityYDir(sead::Vector3f* outDir, f32* outDist) const;
+    bool calcGravityCylinderCenterAxis(sead::Vector3f*, f32*, const sead::Vector3f&, bool) const;
+    bool calcGravityDir(sead::Vector3f*, f32*, const sead::Vector3f&) const;
+    bool calcGravityYDir(sead::Vector3f*, f32*) const;
 
-    bool calcSnapPower(sead::Vector3f* outDir, f32* outPower, const sead::Vector3f& pos,
-                       f32 surfaceDistance) const;
-    bool calcSnapPowerCube(sead::Vector3f* outDir, f32* outPower, const sead::Vector3f& pos,
-                           f32 surfaceDistance) const;
-    bool calcSnapPowerCylinder(sead::Vector3f* dirH, f32* outPower, const sead::Vector3f& pos,
-                               f32 surfaceDistance) const;
-    bool calcSnapPowerDisk(sead::Vector3f* outDir, f32* outPower, const sead::Vector3f& pos,
-                           f32 surfaceDistance) const;
+    bool calcSnapPower(sead::Vector3f*, f32*, const sead::Vector3f&, f32);
+    bool calcSnapPowerCube(sead::Vector3f*, f32*, const sead::Vector3f&, f32);
+    bool calcSnapPowerCylinder(sead::Vector3f*, f32*, const sead::Vector3f&, f32);
+    bool calcSnapPowerDisk(sead::Vector3f*, f32*, const sead::Vector3f&, f32);
 
 public:
-    ShapeType mShapeType = ShapeType::None;
-    f32 mSurfaceDistance = 0.0f;
-    f32 mGravityOffset = 0.0f;
+    ShapeType mShapeType;
+    f32 mSurfaceDistance;
+    f32 mGravityOffset;
 };

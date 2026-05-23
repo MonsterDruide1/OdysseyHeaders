@@ -123,7 +123,7 @@ public:
         return reinterpret_cast<Heap*>(mPreviousHeap) != reinterpret_cast<Heap*>(1);
     }
 
-    uintptr_t mPreviousHeap = 0;
+    uintptr_t mPreviousHeap;
 };
 
 class FindContainHeapCache
