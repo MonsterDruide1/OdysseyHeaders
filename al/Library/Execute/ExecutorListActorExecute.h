@@ -12,8 +12,7 @@ class ExecutorListActorExecuteBase : public ExecutorListBase {
 public:
     ExecutorListActorExecuteBase(const char* name, s32 size);
 
-    bool isActive() const override { return mSize > 0; }
-
+    bool isActive() const override;
     void executeList() const override;
     virtual ExecutorActorExecuteBase* createExecutor(const char* name) const = 0;
 
