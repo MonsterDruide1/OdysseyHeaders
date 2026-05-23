@@ -20,8 +20,7 @@ public:
                                    const ExecuteSystemInitInfo& initInfo);
     ~ExecutorListActorModelDrawBase() override;
 
-    bool isActive() const override { return mSize > 0; }
-
+    bool isActive() const override;
     void executeList() const override;
 
     void registerActorModel(LiveActor* actor);

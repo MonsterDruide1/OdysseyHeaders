@@ -78,11 +78,7 @@ public:
     JobQueue();
 
     virtual void begin() {}
-    virtual bool run([[maybe_unused]] u32 size, u32* finished_jobs, [[maybe_unused]] Worker* worker)
-    {
-        *finished_jobs = 0;
-        return true;
-    }
+    virtual bool run(u32 size, u32* finished_jobs, Worker* worker);
     void runAll(u32* finished_jobs);
 
     virtual u32 getNumJobs() const { return 0; }
@@ -105,7 +101,7 @@ public:
     u32 addNumDoneJobs(u32 num) { return mNumDoneJobs.fetchAdd(num); }
 
 public:
-    virtual bool isDone_() { return mNumDoneJobs == getNumJobs(); }
+    virtual bool isDone_();
 
     SyncType mSyncType = SyncType::cNoSync;
     JobQueueLock mLock;
@@ -135,7 +131,7 @@ public:
 
     void begin() override;
     bool run(u32 size, u32* finished_jobs, Worker* worker) override;
-    u32 getNumJobs() const override { return mNumJobs; }
+    u32 getNumJobs() const override;
 
     void initialize(u32 size, Heap* heap);
     void finalize();

@@ -3,9 +3,6 @@
 #include <basis/seadTypes.h>
 
 namespace al {
-
-enum class ActionAnimType : s32 { Skl, Mcl, Mtp, Mts, Vis };
-
 struct ActionAnimDataInfo {
     const char* actionName = nullptr;
     f32 _8 = -1.0;
@@ -18,11 +15,11 @@ struct ActionAnimCtrlInfo {
 
     const char* actionName;
     u32 sklDataCount;
-    ActionAnimDataInfo* sklDatas;
+    ActionAnimDataInfo** sklDatas;
     ActionAnimDataInfo mclData;
     ActionAnimDataInfo mtpData;
     ActionAnimDataInfo mtsData;
     ActionAnimDataInfo visData;
-    ActionAnimType actionAnimType;
+    s32 partNum;
 };
 }  // namespace al

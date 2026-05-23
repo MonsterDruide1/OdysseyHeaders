@@ -92,7 +92,7 @@ public:
     bool mIsPullDown = false;
     bool mIsLimitterFree = false;
     s32 mTouchDelay = 0;
-    s32 mEndHackDelay = 0;
+    s32 mAirVel = 0;
     al::MtxConnector* mMtxConnector = nullptr;
     al::EventFlowExecutor* mEventFlowExecutor = nullptr;
     PlayerHackStartShaderCtrl* mHackStartShaderCtrl = nullptr;
