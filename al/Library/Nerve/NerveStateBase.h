@@ -41,6 +41,9 @@ public:
     T* getHost() const { return mHost; }
 
 public:
+    T** getHostPtr() { return &mHost; }
+
+public:
     T* mHost;
 };
 
