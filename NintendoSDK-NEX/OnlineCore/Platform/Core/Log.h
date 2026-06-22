@@ -16,7 +16,8 @@ public:
     virtual ~Log();
     virtual void Output(const char*, ...);
     virtual void OutputString(const char*, ...);
-    virtual void AddCustomPrefix(char*, s32, void*);
+
+    virtual void AddCustomPrefix(char*, s32, void*) {}
 
     void OutputImpl(const char*, std::va_list, void*);
     void PrepareOutput(char*, u32, void*);

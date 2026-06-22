@@ -9,7 +9,7 @@ namespace nn::nex {
 class OutputFormat : public RootObject {
 public:
     OutputFormat();
-    virtual ~OutputFormat();
+    virtual ~OutputFormat() = default;
 
     virtual void StartString(char*, u32);
     virtual u32 StartPrefixes(char*, u32);

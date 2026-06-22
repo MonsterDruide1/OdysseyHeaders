@@ -20,8 +20,11 @@ public:
     MemoryManager(const char* watermarkName);
 
     virtual ~MemoryManager();
-    virtual void BeginProtection();
-    virtual void EndProtection();
+
+    virtual void BeginProtection() {}
+
+    virtual void EndProtection() {}
+
     static void* Allocate(u64);
     static void* GenericMalloc(u64);
     static void AllocateForPbPool(void*, fcnFree, void*);
