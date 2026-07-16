@@ -12,7 +12,7 @@ public:
     NN_RUNTIME_TYPEINFO_BASE();
 
     ControlBase();
-    virtual ~ControlBase() = default;
+    virtual ~ControlBase();
 
     virtual void Update(float);
 
