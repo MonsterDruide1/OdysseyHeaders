@@ -8,9 +8,7 @@ namespace sead::hostio
 class Node : public Reflexible
 {
 public:
-#if not SEAD_HOSTIO_NONVIRTUAL
     NodeClassType getNodeClassType() const override { return Reflexible::NodeClassType::Node; }
-#endif
 
 #ifdef SEAD_DEBUG
 public:
