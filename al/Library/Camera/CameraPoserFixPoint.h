@@ -14,10 +14,12 @@ public:
     void update() override;
     void makeLookAtCamera(sead::LookAtCamera* cam) const override;
 
+    void validateUsePreCameraPos() { mIsUsePreCameraPos = true; }
+
 public:
     f32 mOffsetY;
     sead::Vector3f mCameraPos;
-    bool mIsUsePrePoserPos;
+    bool mIsUsePreCameraPos;
     bool mIsKeepDistanceFromLookAt;
     f32 mKeepDistance;
 };
