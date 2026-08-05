@@ -9,7 +9,6 @@
 
 #include "Npc/SessionEventProgress.h"
 #include "Npc/SessionMusicianType.h"
-#include "System/FixedHeapArray.h"
 #include "System/UniqObjInfo.h"
 #include "Util/ScenePrepoFunction.h"
 
@@ -167,6 +166,26 @@ public:
     };
 
     static_assert(sizeof(CheckpointInfo) == 0x148);
+
+    // NOTE: no bounds check done for any operations
+    template <typename T, s32 Size>
+    class FixedHeapArray {
+    public:
+        void alloc() { mPtr = new T[Size]; }
+
+        s32 size() const { return Size; }
+
+        T& operator[](s32 index) { return mPtr[index]; }
+
+        const T& operator[](s32 index) const { return mPtr[index]; }
+
+        T* begin() const { return mPtr; }
+
+        T* end() const { return mPtr + Size; }
+
+    public:
+        T* mPtr = nullptr;
+    };
 
     enum class CountType { Value_0, Value_1, Value_2 };
 
@@ -510,6 +529,8 @@ public:
     GameProgressData* getGameProgressData() const { return mGameProgressData; }
 
     MoonRockData* getMoonRockData() const { return mMoonRockData; }
+
+    BossSaveData* getBossSaveData() const { return mBossSaveData; }
 
     NetworkUploadFlag* getNetworkUploadFlag() const { return mNetworkUploadFlag; }
 
