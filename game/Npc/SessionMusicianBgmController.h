@@ -11,8 +11,6 @@ class ISceneObj;
 class LiveActor;
 }  // namespace al
 
-class CollectBgmPlayer;
-
 class SessionMusicianBgmController : public al::NerveExecutor {
 public:
     SessionMusicianBgmController(al::LiveActor* actor, const al::ActorInitInfo& initInfo,
@@ -27,11 +25,11 @@ public:
 
 public:
     al::LiveActor* mActor;
-    al::AudioGeneralPurposeAreaChecker* mAudioChecker = nullptr;
+    al::AudioGeneralPurposeAreaChecker* mAudioChecker;
     const char* mPrevBgmName = nullptr;
     bool mIsFullBandPerformance = false;
     al::BgmBeatCounter* mBeatCounter = nullptr;
-    CollectBgmPlayer* mCollectBgmPlayer = nullptr;
+    al::ISceneObj* mSceneObj = nullptr;
 };
 
 static_assert(sizeof(SessionMusicianBgmController) == 0x40);
