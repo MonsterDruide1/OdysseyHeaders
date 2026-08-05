@@ -36,7 +36,7 @@ class SaveDataAccessSequence;
 class TemporaryScenarioCameraHolder;
 class TempSaveData;
 class TimeBalloonSequenceInfo;
-struct UniqObjInfo;
+class UniqObjInfo;
 class WorldList;
 
 struct HackObjInfo {
