@@ -2,7 +2,10 @@
 
 #include <nn/account.h>
 #include <nn/fs/fs_types.h>
-#include <nn/nn.h>
+
+namespace nn {
+typedef u64 ApplicationId;
+};
 
 namespace nn::fs {
 

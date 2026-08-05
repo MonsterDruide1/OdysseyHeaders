@@ -26,9 +26,7 @@ public:
         Other = 2,
     };
 
-#if not SEAD_HOSTIO_NONVIRTUAL
     virtual NodeClassType getNodeClassType() const { return NodeClassType::Reflexible; }
-#endif
 
     enum class AllocFlg
     {

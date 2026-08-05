@@ -8,10 +8,8 @@
 #include <nn/types.h>
 
 namespace nn {
-struct ApplicationId {
-    u64 m_Id;
+typedef u64 ApplicationId;
 };
-}  // namespace nn
 
 #ifdef __cplusplus
 extern "C" {

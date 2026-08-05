@@ -64,11 +64,7 @@ public:
     void* m10;
     sead::CriticalSection mCS;
 };
-#if not SEAD_HOSTIO_NONVIRTUAL
 static_assert(sizeof(GPUMemBlockMgrHeapEx) == 0x80);
-#else
-static_assert(sizeof(GPUMemBlockMgrHeapEx) == 0x78);
-#endif
 
 enum class GPUMemBlockMgrFlags : u8 {
     MemoryPoolRelated = 1 << 0,

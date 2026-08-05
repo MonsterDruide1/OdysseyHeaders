@@ -147,7 +147,6 @@ struct VoiceType {
 };
 
 struct DeviceSinkType {
-    struct DownMixParameter;
     u64* _0;
 };
 

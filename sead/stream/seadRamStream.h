@@ -14,8 +14,8 @@ public:
     u32 read(void* data, u32 size) override;
     u32 write(const void* data, u32 size) override;
     u32 skip(s32 offset) override;
-    void rewind() override { mCurrentPos = 0; }
-    bool isEOF() override { return mCurrentPos >= mBufferSize; }
+    void rewind() override;
+    bool isEOF() override;
 
 public:
     u8* mBuffer = nullptr;

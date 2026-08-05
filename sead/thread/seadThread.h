@@ -155,22 +155,6 @@ public:
 
     CriticalSection* getListCS() { return &mListCS; }
 
-#if SEAD_FINDCONTAINHEAPCACHE_FIXED
-    bool tryRemoveFromFindContainHeapCache(Heap* heap)
-    {
-        ScopedLock<CriticalSection> lock(getListCS());
-        const auto end = mList.end();
-        bool found = false;
-        for (auto it = mList.begin(); it != end; ++it)
-        {
-            bool result = !(*it)->getFindContainHeapCache()->tryRemoveHeap(heap);
-            found |= result;
-            if (found)
-                break;
-        }
-        return found;
-    }
-#else
     bool tryRemoveFromFindContainHeapCache(Heap* heap)
     {
         const auto end = mList.end();
@@ -185,7 +169,6 @@ public:
         }
         return found;
     }
-#endif
 
 #ifdef SEAD_DEBUG
     void initHostIO();

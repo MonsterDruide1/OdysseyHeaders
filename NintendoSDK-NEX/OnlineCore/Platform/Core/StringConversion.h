@@ -2,7 +2,7 @@
 
 #include "nn/types.h"
 
-namespace nn::nex::StringConversion {
+namespace StringConversion {
 
 void Utf8ToWideChar(const char*, wchar_t*, u64);
 void WideCharToUtf8(const wchar_t*, char*, u64);
@@ -34,4 +34,4 @@ void GetCharValue(wchar_t);
 void StringToHex(const wchar_t*, unsigned char*, u64);
 void HexToString(const unsigned char*, wchar_t*, u64);
 
-}  // namespace nn::nex::StringConversion
+}  // namespace StringConversion

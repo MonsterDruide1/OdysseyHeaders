@@ -313,8 +313,8 @@ public:
         T* const* mPPtr;
     };
 
-    iterator begin() const { return iterator(dataBegin()); }
-    iterator end() const { return iterator(dataEnd()); }
+    iterator begin() const { return iterator(data()); }
+    iterator end() const { return iterator(data() + mPtrNum); }
 
     class constIterator
     {
@@ -334,12 +334,12 @@ public:
         const T* const* mPPtr;
     };
 
-    constIterator constBegin() const { return constIterator(dataBegin()); }
-    constIterator constEnd() const { return constIterator(dataEnd()); }
+    constIterator constBegin() const { return constIterator(data()); }
+    constIterator constEnd() const { return constIterator(data() + mPtrNum); }
 
     T** data() const { return reinterpret_cast<T**>(mPtrs); }
     T** dataBegin() const { return data(); }
-    T** dataEnd() const { return &data()[mPtrNum]; }
+    T** dataEnd() const { return data() + mPtrNum; }
 
 public:
     static void* constCast(const T* ptr)

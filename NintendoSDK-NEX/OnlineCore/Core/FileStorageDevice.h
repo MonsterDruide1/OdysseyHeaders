@@ -9,11 +9,10 @@ class StorageUnit;
 class FileStorageDevice : public StorageDevice {
 public:
     FileStorageDevice();
-    ~FileStorageDevice() override;
-
-    StorageUnit* Create(const String&) override;
-    StorageUnit* Open(const String&) override;
-    bool Close(StorageUnit*) override;
-    bool Delete(const String&) override;
+    virtual ~FileStorageDevice();
+    StorageUnit* Create(const String&);
+    StorageUnit* Open(const String&);
+    bool Close(StorageUnit*);
+    bool Delete(const String&);
 };
 }  // namespace nn::nex

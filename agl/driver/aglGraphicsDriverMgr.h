@@ -16,8 +16,8 @@ public:
     GraphicsDriverMgr();
     virtual ~GraphicsDriverMgr();
 
-    virtual void dumpInfo() const;
-    virtual void waitDrawDone() const;
+    void waitDrawDone() const;
+    void dumpInfo() const;
     void setPointLimits(agl::DrawContext* draw_context, float min, float max) const;
     void setPointSize(agl::DrawContext* draw_context, float point_size) const;
     void setLineWidth(agl::DrawContext* draw_context, float line_width) const;
