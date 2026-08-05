@@ -1,7 +1,6 @@
 #pragma once
 
 #include <basis/seadTypes.h>
-#include <prim/seadEnum.h>
 
 #include "Library/HostIO/HioNode.h"
 
@@ -13,13 +12,13 @@ struct ActorInitInfo;
 
 class HelpAmiiboDirector;
 
-SEAD_ENUM(HelpAmiiboType,
-    Mario,
-    Peach,
-    Koopa,
-    Yoshi,
-    All,
-)
+enum class HelpAmiiboType : s64 {
+    Mario = 0,
+    Peach = 1,
+    Koopa = 2,
+    Yoshi = 3,
+    All = 4,
+};
 
 class HelpAmiiboExecutor : public al::IUseHioNode {
 public:
@@ -37,9 +36,9 @@ public:
     bool tryTouch(const al::NfpInfo& nfpInfo);
     void tryExecute();
 
-    HelpAmiiboDirector* getDirector() const { return mHelpAmiiboDirector; }
-
     bool isTouched() const { return mIsTouched; }
+
+    HelpAmiiboDirector* getDirector() const { return mHelpAmiiboDirector; }
 
     al::LiveActor* getActor() const { return mHelpAmiiboActor; }
 
