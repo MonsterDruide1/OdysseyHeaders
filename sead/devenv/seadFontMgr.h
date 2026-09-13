@@ -34,7 +34,7 @@ public:
 class FontBase
 {
 public:
-    virtual ~FontBase();
+    virtual ~FontBase() = default;
 
     virtual float getHeight() const = 0;
     virtual float getWidth() const = 0;
