@@ -67,13 +67,7 @@ public:
     bool tryFindHintTransByScenarioNo(sead::Vector3f* outTrans, s32 scenarioNo, s32 index) const;
 
 public:
-    s32 findHintByScenarioNo(s32 scenarioNo) const {
-        s32 size = mShinePosList.size();
-        for (s32 i = 0; i < size; i++)
-            if (mShinePosList[i]->uniqueId == scenarioNo)
-                return i;
-        return -1;
-    }
+    s32 findHintByScenarioNo(s32 scenarioNo) const;
 
     sead::PtrArray<WorldListEntry> mWorldList;
     sead::StrTreeMap<128, StagePosInfo*> mStagePosList;
