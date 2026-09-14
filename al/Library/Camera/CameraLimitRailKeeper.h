@@ -21,6 +21,8 @@ public:
     f32 calcDistanceFromNearestRailPos(const sead::Vector3f& pos) const;
     void calcNearestRailPos(sead::Vector3f* out, const sead::Vector3f& pos) const;
 
+    f32 getActivateDistance() const { return mActivateDistance; }
+
 public:
     Rail* mRail = nullptr;
     RailRider** mRiders = nullptr;
