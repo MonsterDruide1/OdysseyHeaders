@@ -12,14 +12,14 @@ class AudioEffectDataBase;
 template <typename T>
 class AudioInfoListWithParts;
 class AudioResourceLoadGroupInfo;
-struct AudioResourceLoadingInfo;
+class AudioResourceLoadingInfo;
 class AudioResourcePlayerKeeper;
 class AudioSystem;
 class AudioSystemDebug;
 struct AudioSystemInfo;
 class AudioSystemInitInfo;
 class BgmDataBase;
-struct BgmMusicalInfo;
+class BgmMusicalInfo;
 struct GameSystemInfo;
 class IUseSeadAudioPlayer;
 class PadRumbleDirector;

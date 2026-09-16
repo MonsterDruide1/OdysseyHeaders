@@ -25,10 +25,6 @@ public:
 
     bool isValid() const { return mIsValid; }
 
-    bool isFirstCalc() const { return mIsFirstCalc; }
-
-    bool isActiveInterpole() const { return mIsActiveInterpole; }
-
     const sead::LookAtCamera& getLookAtCam() const { return mLookAtCam; }
 
     const Projection& getProjection() const { return mProjection; }
@@ -36,8 +32,8 @@ public:
 public:
     s32 mIndex;
     bool mIsValid = true;
-    bool mIsFirstCalc = true;
-    bool mIsActiveInterpole = false;
+    bool mIsActiveInterpole = true;
+    bool _6 = false;
     const sead::LookAtCamera& mLookAtCam;
     const Projection& mProjection;
     const CameraViewFlag& mViewFlag;

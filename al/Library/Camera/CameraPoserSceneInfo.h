@@ -33,5 +33,4 @@ struct CameraPoserSceneInfo {
     s32 railHolderNum = 0;
 };
 
-static_assert(sizeof(CameraPoserSceneInfo) == 0x60);
 }  // namespace al
