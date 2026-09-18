@@ -9,7 +9,8 @@ class CameraViewFlag;
 struct OrthoProjectionInfo;
 class Projection;
 
-struct CameraViewInfo {
+class CameraViewInfo {
+public:
     CameraViewInfo(s32 index, const sead::LookAtCamera& lookAtCam, const Projection& projection,
                    const CameraViewFlag& flag, const OrthoProjectionInfo& orthoProjectionInfo);
 
@@ -20,14 +21,26 @@ struct CameraViewInfo {
     f32 getNear() const;
     f32 getFar() const;
 
-    s32 index;
-    bool isValid = true;
-    bool isFirstCalc = true;
-    bool isActiveInterpole = false;
+    s32 getIndex() const { return mIndex; }
 
-    const sead::LookAtCamera& lookAtCam;
-    const Projection& projection;
-    const CameraViewFlag& flag;
-    const OrthoProjectionInfo& orthoProjectionInfo;
+    bool isValid() const { return mIsValid; }
+
+    bool isFirstCalc() const { return mIsFirstCalc; }
+
+    bool isActiveInterpole() const { return mIsActiveInterpole; }
+
+    const sead::LookAtCamera& getLookAtCam() const { return mLookAtCam; }
+
+    const Projection& getProjection() const { return mProjection; }
+
+public:
+    s32 mIndex;
+    bool mIsValid = true;
+    bool mIsFirstCalc = true;
+    bool mIsActiveInterpole = false;
+    const sead::LookAtCamera& mLookAtCam;
+    const Projection& mProjection;
+    const CameraViewFlag& mViewFlag;
+    const OrthoProjectionInfo& mOrthoProjectionInfo;
 };
 }  // namespace al
