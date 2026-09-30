@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -8,25 +10,25 @@ class String;
 class Key : public RootObject {
 public:
     Key();
-    Key(const u8* src, u64 size);
-    Key(u64 size);
+    Key(const uint8_t* src, uint64_t size);
+    Key(uint64_t size);
     Key(const Key&);
     Key(const String&);
 
     virtual ~Key();
 
-    u64* GetContentPtr();
-    u64 GetLength() const;
+    uint64_t* GetContentPtr();
+    uint64_t GetLength() const;
     Key& operator=(const Key&);
     bool operator==(const Key&);
     bool operator!=(const Key&);
-    void PrepareContentPtr(u64);
+    void PrepareContentPtr(uint64_t);
     String* ToString();
     void ExtractToString(String*) const;
-    void Trace(u64) const;
-    void GenerateRandomKey(u64);
+    void Trace(uint64_t) const;
+    void GenerateRandomKey(uint64_t);
 
-    u64* mContentPtrStart;  // _10
-    u64* mContentPtrEnd;    // _18
+    uint64_t* mContentPtrStart;  // _10
+    uint64_t* mContentPtrEnd;    // _18
 };
 }  // namespace nn::nex

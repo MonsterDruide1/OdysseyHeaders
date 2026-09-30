@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include <nn/crypto.h>
 #include "Platform/Core/RootObject.h"
 
@@ -9,9 +11,9 @@ public:
     MD5();
 
     void init();
-    void raw_digest(u8*);
+    void raw_digest(uint8_t*);
     void hex_digest();
 
-    u8 _5C[0x74 - 0x5C];
+    uint8_t _5C[0x74 - 0x5C];
 };
 }  // namespace nn::nex

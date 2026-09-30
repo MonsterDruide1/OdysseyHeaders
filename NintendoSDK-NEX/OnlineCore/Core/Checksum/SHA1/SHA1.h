@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "nn/crypto.h"
 
 namespace nn::nex {
@@ -8,9 +10,9 @@ public:
     Sha1();
     ~Sha1();
     void Init();
-    void Update(const void*, u64);
-    void GetHash(void*, u64);
-    static void GenerateHash(void*, u64, const void*, u64);
+    void Update(const void*, uint64_t);
+    void GetHash(void*, uint64_t);
+    static void GenerateHash(void*, uint64_t, const void*, uint64_t);
 
 public:
     crypto::detail::Sha1Impl* m_Sha1Impl = nullptr;

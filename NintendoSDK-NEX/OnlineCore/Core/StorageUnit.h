@@ -1,6 +1,7 @@
 #pragma once
 
-#include "nn/types.h"
+#include <cstddef>
+#include <cstdint>
 
 namespace nn::nex {
 class StorageUnit {
@@ -11,11 +12,11 @@ public:
     virtual ~StorageUnit();
     virtual size_t GetSize() const;
     virtual void Truncate();
-    virtual size_t Read(u64, u64, u8*) const;
-    virtual size_t Write(u64, u64, u8*);
+    virtual size_t Read(uint64_t, uint64_t, uint8_t*) const;
+    virtual size_t Write(uint64_t, uint64_t, uint8_t*);
 
-    virtual bool Reserve(u64) { return false; }
+    virtual bool Reserve(uint64_t) { return false; }
 
-    virtual u32 GetReservedSize();
+    virtual uint32_t GetReservedSize();
 };
 }  // namespace nn::nex

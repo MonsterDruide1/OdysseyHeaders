@@ -1,6 +1,6 @@
 #pragma once
 
-#include "nn/types.h"
+#include <cstdint>
 
 namespace nn::nex {
 class BadEvents {
@@ -20,11 +20,11 @@ public:
     void ClearExpectedEvent(_ID id);
     bool IsExpected(_ID id) const;
     void ClearCount(_ID id);
-    s32 GetCount(_ID id) const;
+    int32_t GetCount(_ID id) const;
     static bool GlobalNewDeleteAllowed();
     static void Signal(_ID id);
 
-    s32 field_0[10];
-    s32 field_28;
+    int32_t field_0[10];
+    int32_t field_28;
 };
 }  // namespace nn::nex

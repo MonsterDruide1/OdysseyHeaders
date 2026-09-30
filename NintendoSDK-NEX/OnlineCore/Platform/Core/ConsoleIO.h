@@ -1,6 +1,6 @@
 #pragma once
 
-#include <nn/types.h>
+#include <cstdint>
 
 namespace nn::nex {
 
@@ -8,8 +8,8 @@ class ConsoleIO {
 public:
     static bool InputIsSupported();
     static bool OutputIsSupported();
-    static u8 GetChar(bool unk);
-    static void GetCStr(char* ret, u32 unk);
+    static uint8_t GetChar(bool unk);
+    static void GetCStr(char* ret, uint32_t unk);
     static void Print(const char* str, ...);
     static void PutString(const char* str);
     static void Banner(const char* str);

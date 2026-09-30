@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -9,11 +11,11 @@ class InstanceControl;
 class InstantiationContext : public RootObject {
 public:
     InstantiationContext();
-    InstantiationContext(InstanceControl*, u32);
+    InstantiationContext(InstanceControl*, uint32_t);
     virtual ~InstantiationContext();
 
-    void AddInstance(InstanceControl*, u32);
-    void DelInstance(InstanceControl*, u32);
+    void AddInstance(InstanceControl*, uint32_t);
+    void DelInstance(InstanceControl*, uint32_t);
     void InitContext();
 
 public:

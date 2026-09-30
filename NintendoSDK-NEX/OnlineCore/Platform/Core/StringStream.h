@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -12,22 +14,22 @@ public:
     long GetLength() const;
     void Clear();
     void FreeBuffer(char*);
-    void ResizeBuffer(u64);
-    void TestFreeRoom(u64);
-    void StreamNumber(u8);
+    void ResizeBuffer(uint64_t);
+    void TestFreeRoom(uint64_t);
+    void StreamNumber(uint8_t);
     void AddBaseIfRequired();
-    void StreamNumber(u32);
-    void StreamNumber(s32);
+    void StreamNumber(uint32_t);
+    void StreamNumber(int32_t);
     StringStream& operator<<(const char*);
     StringStream& operator<<(const StringStream&);
     StringStream& operator<<(bool);
     StringStream& operator<<(double);
     StringStream& operator<<(float);
     StringStream& operator<<(const void*);
-    StringStream& operator<<(u64);
+    StringStream& operator<<(uint64_t);
     StringStream& operator<<(long);
-    void BytesDump(const unsigned char*, u64);
-    void BytesAsciiDump(const unsigned char*, u64);
+    void BytesDump(const unsigned char*, uint64_t);
+    void BytesAsciiDump(const unsigned char*, uint64_t);
 
     char* Begin() const { return mBegin; }
 

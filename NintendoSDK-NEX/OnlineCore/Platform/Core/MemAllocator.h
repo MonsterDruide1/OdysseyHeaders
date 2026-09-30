@@ -1,8 +1,9 @@
 #pragma once
 
 #include <cstddef>
+#include <cstdint>
+
 #include "Platform/Core/MemoryManager.h"
-#include "nn/types.h"
 
 namespace nn::nex {
 
@@ -23,9 +24,9 @@ public:
 
     bool operator!=(const MemAllocator<T>&) const { return false; }
 
-    T* allocate(u64 size, const void*) { return MemoryManager::Allocate(size); }
+    T* allocate(uint64_t size, const void*) { return MemoryManager::Allocate(size); }
 
-    void deallocate(void* ptr, u64) { MemoryManager::Free(ptr); }
+    void deallocate(void* ptr, uint64_t) { MemoryManager::Free(ptr); }
 
     void construct(T* ptr, const T& other) { *ptr = other; }
 

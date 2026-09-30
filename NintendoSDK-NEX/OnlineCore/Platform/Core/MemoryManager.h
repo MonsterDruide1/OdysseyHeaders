@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -8,7 +10,7 @@ class WaterMark;
 
 class MemoryManager : public RootObject {
 public:
-    enum _InstructionType : u32 {};
+    enum _InstructionType : uint32_t {};
 
     using fcnMalloc = void* (*)(unsigned long);
     using fcnFree = void* (*)(void*);
@@ -25,15 +27,15 @@ public:
 
     virtual void EndProtection() {}
 
-    static void* Allocate(u64);
-    static void* GenericMalloc(u64);
+    static void* Allocate(uint64_t);
+    static void* GenericMalloc(uint64_t);
     static void AllocateForPbPool(void*, fcnFree, void*);
     static void Free(void*);
     static void GenericFree(fcnFree, void*);
-    static void AllocateThreadSafe(u64);
+    static void AllocateThreadSafe(uint64_t);
     static void FreeThreadSafe(void*);
-    static void IncreaseMemUsage(u64);
-    static void DecreaseMemUsage(u64);
+    static void IncreaseMemUsage(uint64_t);
+    static void DecreaseMemUsage(uint64_t);
     static void GetDefaultMemoryManager();
     static void ShutdownDefaultMemoryManager();
     static void Trace();
@@ -47,8 +49,8 @@ public:
 }  // namespace nn::nex
 
 extern "C" {
-void* QuazalCRTAlloc(u64);
-void* QuazalCRTRealloc(u64, void*);
+void* QuazalCRTAlloc(uint64_t);
+void* QuazalCRTRealloc(uint64_t, void*);
 void QuazalCRTFree(void*);
-void* QuazalCRTCalloc(u64, u64);
+void* QuazalCRTCalloc(uint64_t, uint64_t);
 }

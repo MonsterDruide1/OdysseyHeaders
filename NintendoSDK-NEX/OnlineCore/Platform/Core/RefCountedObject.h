@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -11,7 +13,7 @@ public:
     virtual ~RefCountedObject() {}
 
 public:
-    u16 field_8;
+    uint16_t field_8;
 };
 
 }  // namespace nn::nex

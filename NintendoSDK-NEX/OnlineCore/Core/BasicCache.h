@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -10,7 +12,7 @@ public:
     BasicCache(const String&);
     virtual ~BasicCache();
 
-    u64 _8;
-    u8 _10;
+    uint64_t _8;
+    uint8_t _10;
 };
 }  // namespace nn::nex

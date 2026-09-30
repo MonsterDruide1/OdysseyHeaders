@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Common/Protocol.h"
 
 namespace nn::nex {
@@ -11,7 +13,7 @@ class ProtocolRequestBrokerInterface;
 
 class ClientProtocol : public Protocol {
 public:
-    ClientProtocol(u32);
+    ClientProtocol(uint32_t);
 
     virtual ~ClientProtocol();
 
