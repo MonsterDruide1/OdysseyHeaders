@@ -33,7 +33,7 @@ public:
 public:
     const al::LiveActor* mParent;
     const IUsePlayerCollision* mPlayerCollision;
-    FukankunZoomCapMessage* mFukankunZoomCapMessage;
+    FukankunZoomCapMessage* mFukankunZoomCapMessage = nullptr;
 };
 
 static_assert(sizeof(YoshiEgg) == 0x120);
