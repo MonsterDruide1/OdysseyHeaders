@@ -1,6 +1,6 @@
 #pragma once
 
-#include "nn/types.h"
+#include <cstdint>
 
 namespace nn::nex {
 class String;
@@ -10,16 +10,16 @@ public:
     void GetFacility() const;
 
     qResult();
-    qResult(const s32&);
-    qResult(const s32&, const char*, const s32&);
+    qResult(const int32_t&);
+    qResult(const int32_t&, const char*, const int32_t&);
     qResult(const bool&);
 
-    void Equals(const s32&) const;
+    void Equals(const int32_t&) const;
     void Equals(const bool&) const;
     operator bool() const;
     void operator=(const bool&);
-    void operator=(const u32&);
-    void operator=(const s32&);
+    void operator=(const uint32_t&);
+    void operator=(const int32_t&);
     void operator=(const qResult&);
     void GetNnResult() const;
     void GetErrorCodeStruct() const;
@@ -32,7 +32,7 @@ public:
     void IsResetRequired() const;
     void IsProgrammingError() const;
 
-    enum ReturnCode : u32 {
+    enum ReturnCode : uint32_t {
         DOCore__StationNotReached = 0x80060001,
         DOCore__TargetStationDisconnect = 0x80060002,
         DOCore__LocalStationLeaving = 0x80060003,
@@ -248,8 +248,8 @@ public:
     };
 
 public:
-    u32 m_ErrorCode;
+    uint32_t m_ErrorCode;
     const char* field_8;
-    s32 dword_10;
+    int32_t dword_10;
 };
 }  // namespace nn::nex

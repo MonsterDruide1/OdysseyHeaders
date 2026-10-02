@@ -15,10 +15,11 @@ public:
         bool Open(TransportProtocol::Type);
         bool SetAsync(bool);
         bool SetBroadcastMode(bool);
-        bool Bind(u16&);
+        bool Bind(uint16_t&);
         bool LastSocketErrorToResult(const char*, long);
-        s32 GetLastSocketError(long);
-        s32 RecvFrom(u8*, ulong, SocketDriver::InetAddress*, u64*, SocketDriver::_SocketFlag);
+        int32_t GetLastSocketError(long);
+        int32_t RecvFrom(uint8_t*, size_t, SocketDriver::InetAddress*, uint64_t*,
+                         SocketDriver::_SocketFlag);
     };
 
     virtual ~BerkeleySocketDriver();

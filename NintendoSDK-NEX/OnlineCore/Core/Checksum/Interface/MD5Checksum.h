@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Core/Checksum/Interface/ChecksumAlgorithm.h"
 
 namespace nn::nex {
@@ -12,8 +14,8 @@ public:
     virtual ~MD5Checksum();
 
     virtual bool ComputeChecksum(const Buffer&, Buffer*);
-    virtual u32 ComputeChecksumForTransportArray(const u8**, const u64*, u64);
-    virtual u32 GetChecksumLength();
+    virtual uint32_t ComputeChecksumForTransportArray(const uint8_t**, const uint64_t*, uint64_t);
+    virtual uint32_t GetChecksumLength();
 };
 
 }  // namespace nn::nex

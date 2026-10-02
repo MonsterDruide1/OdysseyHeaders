@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -9,6 +11,6 @@ public:
 
     virtual ~DynamicRunTimeInterface();
 
-    u64* GetInstance();
+    uint64_t* GetInstance();
 };
 }  // namespace nn::nex

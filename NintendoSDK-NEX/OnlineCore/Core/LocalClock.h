@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 #include "Platform/Core/Time.h"
 
@@ -15,6 +17,6 @@ public:
     static void DeleteInstance();
 
 public:
-    u64 m_Time;
+    uint64_t m_Time;
 };
 }  // namespace nn::nex

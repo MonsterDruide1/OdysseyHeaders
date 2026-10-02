@@ -1,26 +1,26 @@
 #pragma once
 
-#include <nn/types.h>
+#include <cstdint>
 
 namespace nn::nex {
 class TimeProvider;
 
 class Time {
 public:
-    static u64 GetTime();
+    static uint64_t GetTime();
     static void Reset();
     static void RegisterTimeProvider(TimeProvider* provider);
-    void Multiply(f32) const;
-    void Divide(f32) const;
-    void Scale(f32) const;
-    static Time ConvertTimeoutToDeadline(u32 timeout);
-    static u32 ConvertDeadlineToTimeout(Time deadline);
+    void Multiply(float) const;
+    void Divide(float) const;
+    void Scale(float) const;
+    static Time ConvertTimeoutToDeadline(uint32_t timeout);
+    static uint32_t ConvertDeadlineToTimeout(Time deadline);
 
-    u64 GetTimeVal() const { return m_Time; }
+    uint64_t GetTimeVal() const { return m_Time; }
 
-    operator u64() const { return m_Time; }
+    operator uint64_t() const { return m_Time; }
 
 public:
-    u64 m_Time = 0;
+    uint64_t m_Time = 0;
 };
 }  // namespace nn::nex

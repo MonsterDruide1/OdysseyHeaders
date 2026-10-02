@@ -1,19 +1,19 @@
 #pragma once
 
-#include <nn/types.h>
+#include <cstdint>
 
 namespace nn::nex {
 class VersionInfo {
 public:
     static const char* GetCopyrightString();
-    static u16 V1();
-    static u16 V2();
-    static u16 V3();
-    static u16 V4();
-    static u32 VersionMajor();
-    static u32 VersionMinor();
-    static u32 ExtractFirstNumber(u32 versionNumber);
-    static u32 ExtractSecondNumber(u32 versionNumber);
+    static uint16_t V1();
+    static uint16_t V2();
+    static uint16_t V3();
+    static uint16_t V4();
+    static uint32_t VersionMajor();
+    static uint32_t VersionMinor();
+    static uint32_t ExtractFirstNumber(uint32_t versionNumber);
+    static uint32_t ExtractSecondNumber(uint32_t versionNumber);
     static void Banner(const char*);
 };
 }  // namespace nn::nex

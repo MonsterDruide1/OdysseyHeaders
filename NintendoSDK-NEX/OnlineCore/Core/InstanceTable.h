@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -11,15 +13,15 @@ public:
 
     virtual ~InstanceTable();
 
-    bool AddInstance(InstanceControl*, u32, u32);
-    void DelInstance(InstanceControl*, u32, u32);
-    u32 CreateContext();
-    bool DeleteContext(u32);
-    void AllocateExtraContexts(u64 size);
+    bool AddInstance(InstanceControl*, uint32_t, uint32_t);
+    void DelInstance(InstanceControl*, uint32_t, uint32_t);
+    uint32_t CreateContext();
+    bool DeleteContext(uint32_t);
+    void AllocateExtraContexts(uint64_t size);
     void FreeExtraContexts();
-    u32 GetHighestID() const;
-    u32 FindInstanceContext(InstanceControl*, u32);
+    uint32_t GetHighestID() const;
+    uint32_t FindInstanceContext(InstanceControl*, uint32_t);
 
-    u8 _0[0x94];
+    uint8_t _0[0x94];
 };
 }  // namespace nn::nex

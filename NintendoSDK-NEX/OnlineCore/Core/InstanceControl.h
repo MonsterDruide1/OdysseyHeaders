@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -9,25 +11,25 @@ class InstanceControl : public RootObject {
 public:
     void SetDelegatorInstance(void*);
 
-    InstanceControl(u32, u32);
+    InstanceControl(uint32_t, uint32_t);
     virtual ~InstanceControl();
 
     void CreateContext();
-    void DeleteContext(u32);
-    void AllocateExtraContexts(u64);
+    void DeleteContext(uint32_t);
+    void AllocateExtraContexts(uint64_t);
     void FreeExtraContexts();
     void GetHighestID();
-    void ContextIsValid(u32);
-    void FindInstanceContext(InstanceControl*, u32);
+    void ContextIsValid(uint32_t);
+    void FindInstanceContext(InstanceControl*, uint32_t);
 
 public:
-    u32 mInstanceContext;
-    u32 mInstanceType;
+    uint32_t mInstanceContext;
+    uint32_t mInstanceType;
     void* mDelegateInstance;
     bool mIsValidControl;
-    u8 _19;
-    u8 _1A;
-    u8 _1B;
+    uint8_t _19;
+    uint8_t _1A;
+    uint8_t _1B;
 
     static InstanceTable* s_oInstanceTable;
 };
