@@ -4,7 +4,7 @@
 
 namespace al {
 
-struct CameraViewInfo;
+class CameraViewInfo;
 
 class SceneCameraInfo {
 public:
