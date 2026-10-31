@@ -39,6 +39,8 @@ public:
 
     void disableClearRenderBuffer() { mIsClearRenderBuffer = false; }
 
+    void setDocked(bool isDocked) { mIsDocked = isDocked; }
+
 public:
     void procFrame_() override;
     void procDraw_() override;

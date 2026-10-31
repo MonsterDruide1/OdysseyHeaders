@@ -18,7 +18,7 @@ namespace al {
 class AudioDirector;
 class ByamlIter;
 class CameraAngleCtrlInfo;
-struct CameraAngleSwingInfo;
+class CameraAngleSwingInfo;
 class CameraArrowCollider;
 class CameraInputHolder;
 class CameraOffsetCtrlPreset;
@@ -29,7 +29,7 @@ class CameraTargetCollideInfoHolder;
 class CameraTargetHolder;
 class CameraTurnInfo;
 class CameraVerticalAbsorber;
-struct CameraViewInfo;
+class CameraViewInfo;
 class GyroCameraCtrl;
 class Nerve;
 class PlacementInfo;
@@ -207,29 +207,9 @@ public:
 
     const sead::Matrix34f& getViewMtx() const { return mViewMtx; }
 
-    f32 getNearClipDistance() const { return mNearClipDistance; }
-
     bool is_98() const { return _98; }
 
     CameraViewInfo* getViewInfo() const { return mViewInfo; }
-
-    CameraOffsetCtrlPreset* getCameraOffsetCtrlPreset() const { return mOffsetCtrlPreset; }
-
-    CameraPoserSceneInfo* getSceneInfo() const { return mSceneInfo; }
-
-    CameraVerticalAbsorber* getCameraVerticalAbsorber() const { return mVerticalAbsorber; }
-
-    CameraAngleCtrlInfo* getAngleCtrlInfo() const { return mAngleCtrlInfo; }
-
-    CameraAngleSwingInfo* getAngleSwingInfo() const { return mAngleSwingInfo; }
-
-    CameraOffsetCtrlPreset* getOffsetCtrlPreset() const { return mOffsetCtrlPreset; }
-
-    GyroCameraCtrl* getGyroCtrl() const { return mGyroCtrl; }
-
-    CameraPoserFlag* getPoserFlag() const { return mPoserFlag; }
-
-    SnapShotCameraCtrl* getSnapShotCtrl() const { return mSnapShotCtrl; }
 
     // set
     void setEye(const sead::Vector3f& pos) { mEye.set(pos); }
@@ -243,24 +223,6 @@ public:
     void setViewMtx(const sead::Matrix34f& mtx) { mViewMtx = mtx; }
 
     void setFovyDegree(f32 fovy) { mFovyDegree = fovy; }
-
-    void setViewInfo(CameraViewInfo* info) { mViewInfo = info; }
-
-    void setVerticalAbsorber(CameraVerticalAbsorber* cameraVerticalAbsorber) {
-        mVerticalAbsorber = cameraVerticalAbsorber;
-    }
-
-    void setParamMoveLimit(CameraParamMoveLimit* param) { mParamMoveLimit = param; }
-
-    void setAngleCtrlInfo(CameraAngleCtrlInfo* angleCtrlInfo) { mAngleCtrlInfo = angleCtrlInfo; }
-
-    void setAngleSwingInfo(CameraAngleSwingInfo* info) { mAngleSwingInfo = info; }
-
-    void setOffsetCtrlPreset(CameraOffsetCtrlPreset* preset) { mOffsetCtrlPreset = preset; }
-
-    void setGyroCtrl(GyroCameraCtrl* gyroCtrl) { mGyroCtrl = gyroCtrl; }
-
-    void setSnapShotCtrl(SnapShotCameraCtrl* ctrl) { mSnapShotCtrl = ctrl; }
 
 public:
     const char* mPoserName;

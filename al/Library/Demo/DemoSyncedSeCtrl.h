@@ -9,7 +9,7 @@ class AudioDirector;
 class SeKeeper;
 class BgmDataBase;
 class SeDemoEventController;
-struct SeDemoProcInfo;
+class SeDemoProcInfo;
 class SeDemoSyncedProcInfo;
 
 class DemoSyncedSeCtrl {

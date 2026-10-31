@@ -193,14 +193,14 @@ public:
 
 class CollisionPartsFilterBase {
 public:
-    virtual bool isInvalidParts(const CollisionParts& collisionParts) const = 0;
+    virtual bool isInvalidParts(CollisionParts* collisionParts) = 0;
 };
 
 class CollisionPartsFilterActor : public CollisionPartsFilterBase {
 public:
     CollisionPartsFilterActor(const LiveActor* actor) : mActor(actor) {}
 
-    bool isInvalidParts(const CollisionParts& collisionParts) const override;
+    bool isInvalidParts(CollisionParts* collisionParts) override;
 
 public:
     const LiveActor* mActor;
@@ -211,7 +211,7 @@ class CollisionPartsFilterSubActor : public CollisionPartsFilterBase {
 public:
     CollisionPartsFilterSubActor(const LiveActor* actor) : mActor(actor) {}
 
-    bool isInvalidParts(const CollisionParts& collisionParts) const override;
+    bool isInvalidParts(CollisionParts* collisionParts) override;
 
 public:
     const LiveActor* mActor;
@@ -222,7 +222,7 @@ public:
     CollisionPartsFilterSpecialPurpose(const char* specialPurpose)
         : mSpecialPurpose(specialPurpose) {}
 
-    bool isInvalidParts(const CollisionParts& collisionParts) const override;
+    bool isInvalidParts(CollisionParts* collisionParts) override;
 
 public:
     const char* mSpecialPurpose;
@@ -233,7 +233,7 @@ public:
     CollisionPartsFilterIgnoreOptionalPurpose(const char* specialPurpose)
         : mSpecialPurpose(specialPurpose) {}
 
-    bool isInvalidParts(const CollisionParts& collisionParts) const override;
+    bool isInvalidParts(CollisionParts* collisionParts) override;
 
 public:
     const char* mSpecialPurpose;
@@ -245,7 +245,7 @@ public:
                                   CollisionPartsFilterBase* secondFilter)
         : mFirstFilter(firstFilter), mSecondFilter(secondFilter) {}
 
-    bool isInvalidParts(const CollisionParts& collisionParts) const override;
+    bool isInvalidParts(CollisionParts* collisionParts) override;
 
 public:
     CollisionPartsFilterBase* mFirstFilter;

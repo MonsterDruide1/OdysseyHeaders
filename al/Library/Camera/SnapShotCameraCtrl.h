@@ -30,23 +30,7 @@ public:
     void exeWait();
     void exeReset();
 
-    AudioKeeper* getAudioKeeper() const override;
-
-    f32 getFovyDegree() const { return mFovyDegree; }
-
-    void setIsValidLookAtOffset(bool isValid) { mIsValidLookAtOffset = isValid; }
-
-    void setIsValidZoomFovy(bool isValid) { mIsValidZoomFovy = isValid; }
-
-    void setIsValidRoll(bool isValid) { mIsValidRoll = isValid; }
-
-    void set_68(bool isValid) { _68 = isValid; }
-
-    void setMaxZoomOutFovyDegree(f32 value) { mMaxZoomOutFovyDegree = value; }
-
-    f32 getRollDegree() const { return mRollDegree; }
-
-    const sead::Vector3f& getLookAtOffset() const { return mLookAtOffset; }
+    f32 getFovyDegree() const { return mFovyDegree; };
 
 public:
     SnapShotCameraSceneInfo* mCameraSceneInfo;
@@ -56,15 +40,13 @@ public:
     sead::Vector3f unk1;
     bool mIsValidZoomFovy;
     f32 mFovyDegree;
-    f32 _4c;
-    f32 _50;
+    f32 unk2;
+    f32 unk3;
     f32 mMaxZoomOutFovyDegree;
     bool mIsValidRoll;
     f32 mRollDegree;
     f32 mRollTarget;
-    u32 _64;
-    bool _68;
+    u32 unk4;
+    bool unk5;
 };
-
-static_assert(sizeof(SnapShotCameraCtrl) == 0x70);
 }  // namespace al

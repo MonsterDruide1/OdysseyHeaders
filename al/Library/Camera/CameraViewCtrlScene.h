@@ -14,16 +14,12 @@ public:
 
     const CameraSwitchRequester* getSwitchRequester() const { return mSwitchRequester; }
 
-    void set_10(const char* c) { _10 = c; }
-
-    const char* get_10() const { return _10; }
-
     void resetViewName() { mViewName = nullptr; }
 
 public:
     CameraSwitchRequester* mSwitchRequester = nullptr;
     const char* mViewName = "Start";
-    const char* _10 = nullptr;
+    void* _10 = nullptr;
 };
 
 static_assert(sizeof(SceneCameraViewCtrl) == 0x18);

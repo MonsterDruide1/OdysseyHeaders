@@ -93,6 +93,11 @@ class AudioInfoListWithParts : public AudioInfoList<T> {
 public:
     AudioInfoListWithParts() = default;
 
+    AudioInfoListWithParts(s32 size){
+        init(size, 0);
+    }
+
+
     s32 tryGetInfoIndex(const char* key) const;
     const T* tryFindInfo(const char* key) const;
 

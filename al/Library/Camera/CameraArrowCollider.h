@@ -28,13 +28,5 @@ public:
 
     bool isShrink() const;
     f32 getPushLength() const;
-
-    void set_48c(bool idx) { _48c = idx; }
-
-public:
-    char filler_18[0x474];
-    bool _48c;
 };
-
-static_assert(sizeof(CameraArrowCollider) == 0x490);
 }  // namespace al

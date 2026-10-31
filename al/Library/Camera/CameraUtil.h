@@ -11,7 +11,7 @@ class ICameraInput;
 struct CameraFlagCtrl;
 class IUseCamera;
 class CameraSubTargetBase;
-struct CameraSubTargetTurnParam;
+class CameraSubTargetTurnParam;
 class SceneCameraInfo;
 class PlacementId;
 class Resource;
