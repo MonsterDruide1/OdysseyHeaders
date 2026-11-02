@@ -43,9 +43,10 @@ public:
     class Socket {
         virtual bool Open(TransportProtocol::Type);
         virtual void Close();
-        virtual bool Bind(u16&);
-        virtual s32 RecvFrom(u8*, ulong, InetAddress*, ulong*, SocketDriver::_SocketFlag);
-        virtual s32 SendTo(const u8*, ulong, const SocketDriver::InetAddress&, ulong*);
+        virtual bool Bind(uint16_t&);
+        virtual int32_t RecvFrom(uint8_t*, size_t, InetAddress*, size_t*,
+                                 SocketDriver::_SocketFlag);
+        virtual int32_t SendTo(const uint8_t*, size_t, const SocketDriver::InetAddress&, size_t*);
     };
 
     class PollInfo {};
@@ -54,9 +55,9 @@ public:
 
     virtual Socket* Create();
     virtual void Delete(Socket*);
-    virtual int Poll(PollInfo*, u32, u32);
+    virtual int Poll(PollInfo*, uint32_t, uint32_t);
     virtual bool CanUseGetAllReceivableSockets();
-    virtual void GetAllReceivableSockets(Socket**, ulong, u32);
+    virtual void GetAllReceivableSockets(Socket**, size_t, uint32_t);
 };
 
 class ClientWebSocketDriver : SocketDriver {

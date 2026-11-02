@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include <nn/os.h>
 #include "Platform/Core/RootObject.h"
 
@@ -9,7 +11,7 @@ class ErrorDescriptionTable;
 class Platform : public RootObject {
 public:
     static Platform* _Instance;
-    static u32 s_oRNG[];
+    static uint32_t s_oRNG[];
     static bool s_bSeedIsInitialized;
     static ErrorDescriptionTable
         m_oErrorTable;  // the official symbol is named with m_ even though its static
@@ -21,21 +23,21 @@ public:
     static void CreateInstance();
     static void DeleteInstance();
 
-    void Sleep(u32);
+    void Sleep(uint32_t);
     nn::os::Tick GetTick();
-    static void NetworkToHost(const unsigned char*, u16*);
-    static void NetworkToHost(const unsigned char*, u32*);
-    static void NetworkToHost(const unsigned char*, u64*);
-    static void HostToNetwork(const u16*, unsigned char*);
-    static void HostToNetwork(const u32*, unsigned char*);
-    static void HostToNetwork(const u64*, unsigned char*);
+    static void NetworkToHost(const unsigned char*, uint16_t*);
+    static void NetworkToHost(const unsigned char*, uint32_t*);
+    static void NetworkToHost(const unsigned char*, uint64_t*);
+    static void HostToNetwork(const uint16_t*, unsigned char*);
+    static void HostToNetwork(const uint32_t*, unsigned char*);
+    static void HostToNetwork(const uint64_t*, unsigned char*);
     static void WarnObsoleteMethod(const char*, const char*);
-    static void SetRandomNumberSeed(u32);
-    static void GetRandomNumber(u32);
-    static u32 GetRandomSeed();
+    static void SetRandomNumberSeed(uint32_t);
+    static void GetRandomNumber(uint32_t);
+    static uint32_t GetRandomSeed();
     static void GetRealRandomNumber(float);
-    static u32 GetProcessID();
-    static u64 GetPlatformID();
+    static uint32_t GetProcessID();
+    static uint64_t GetPlatformID();
     static void Breakpoint();
     static void YieldThread();
 };

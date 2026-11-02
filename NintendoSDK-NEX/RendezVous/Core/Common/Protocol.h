@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Core/SystemComponent.h"
 
 namespace nn::nex {
@@ -15,7 +17,7 @@ public:
 
     enum _Type { Client, Server };
 
-    Protocol(u32);
+    Protocol(uint32_t);
 
     virtual ~Protocol();
 
@@ -28,33 +30,33 @@ public:
 
     virtual Protocol::_Type GetProtocolType() const = 0;
     virtual void EndPointDisconnected(EndPoint*);
-    virtual void FaultDetected(EndPoint*, u32);
+    virtual void FaultDetected(EndPoint*, uint32_t);
     virtual Protocol* Clone() const;
     virtual bool Reload();
 
     EndPoint* GetOutgoingConnection() const;
     void SetIncomingConnection(EndPoint*);
-    void SetProtocolID(u16);
-    void AddMethodID(Message*, u32);
+    void SetProtocolID(uint16_t);
+    void AddMethodID(Message*, uint32_t);
     void CopyMembers(const Protocol*);
     void AssociateProtocolRequestBroker(ProtocolRequestBrokerInterface*);
-    void ClearFlag(u32 newFlag);
+    void ClearFlag(uint32_t newFlag);
 
-    static void ExtractProtocolKey(Message*, Protocol::_Command&, u16&);
+    static void ExtractProtocolKey(Message*, Protocol::_Command&, uint16_t&);
     static bool IsOldRVDDLVersion(EndPoint*);
 
-    u16 mProtocolID;
-    u16 _4A;
-    u32 _4C;
+    uint16_t mProtocolID;
+    uint16_t _4A;
+    uint32_t _4C;
     EndPoint* mOutgoingConnection;
     ProtocolRequestBrokerInterface* mBrokerInterface;
-    u32 mFlags;
-    u32 _64;
+    uint32_t mFlags;
+    uint32_t _64;
     EndPoint* mIncomingConnection;
-    u32 mUseLoopback;
-    u32 _74;
-    u64 _78;
-    u32 _80;
-    u32 _84;
+    uint32_t mUseLoopback;
+    uint32_t _74;
+    uint64_t _78;
+    uint32_t _80;
+    uint32_t _84;
 };
 }  // namespace nn::nex

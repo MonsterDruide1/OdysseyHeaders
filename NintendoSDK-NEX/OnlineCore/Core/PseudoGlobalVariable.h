@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Core/PseudoGlobalVariableRoot.h"
 
 namespace nn::nex {
@@ -12,7 +14,7 @@ public:
 
     virtual void AllocateExtraContexts();
     virtual void FreeExtraContexts();
-    virtual void ResetContext(u32);
+    virtual void ResetContext(uint32_t);
     virtual PseudoGlobalVariableRoot* GetNext();
     virtual void SetNext(PseudoGlobalVariableRoot* pNextVariable);
 };

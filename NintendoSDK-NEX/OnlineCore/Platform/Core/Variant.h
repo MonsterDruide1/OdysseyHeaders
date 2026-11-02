@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Platform/Core/DateTime.h"
-#include "nn/types.h"
 
 namespace nn::nex {
 class DateTime;
@@ -13,9 +12,9 @@ void SpecialDeleteArray(T* ptr);
 class Variant {
 public:
     union Data {
-        u64 u64;
-        s64 s64;
-        f64 f64;
+        uint64_t uint64_t;
+        int64_t int64_t;
+        double d;
         bool b;
         char* str;
 
@@ -24,7 +23,7 @@ public:
         ~Data() {}
     };
 
-    enum class Type : s32 {
+    enum class Type : int32_t {
         None = 0,
         Signed = 1,
         Double = 2,
@@ -38,28 +37,28 @@ public:
     Variant(const Variant&);
     void operator=(const Variant&);
     ~Variant();
-    Variant(s64);
-    Variant(u64);
-    Variant(s32);
-    Variant(u32);
-    Variant(f64);
+    Variant(int64_t);
+    Variant(uint64_t);
+    Variant(int32_t);
+    Variant(uint32_t);
+    Variant(double);
     Variant(bool);
     Variant(const String&);
     Variant(const char*);
     Variant(const DateTime&);
     Type GetType() const;
-    u64 GetUInt64Value() const;
-    s64 GetInt64Value() const;
-    s32 GetInt32Value() const;
-    u32 GetUInt32Value() const;
-    f64 GetDoubleValue() const;
+    uint64_t GetUInt64Value() const;
+    int64_t GetInt64Value() const;
+    int32_t GetInt32Value() const;
+    uint32_t GetUInt32Value() const;
+    double GetDoubleValue() const;
     bool GetBoolValue() const;
     String GetStringValue() const;
     DateTime GetDateTimeValue() const;
     bool operator==(const Variant&) const;
     Variant& operator=(Variant&&);
     bool operator!=(const Variant&) const;
-    void Trace(u32) const;
+    void Trace(uint32_t) const;
 
 public:
     Data field_0;

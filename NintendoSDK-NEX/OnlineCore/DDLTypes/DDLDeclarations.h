@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -20,9 +22,9 @@ public:
     void Unload();
     void ResetDOClassIDs();
 
-    u32 mNumDecsLoaded;
-    u8 DDLDeclarations_xC;
-    u64 _10;
+    uint32_t mNumDecsLoaded;
+    uint8_t DDLDeclarations_xC;
+    uint64_t _10;
     bool _18;
 
     static DDLDeclarations* s_pFirstDDLDecl;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Common/Protocol.h"
 
 namespace nn::nex {
@@ -11,7 +13,7 @@ class ProtocolRequestBrokerInterface;
 
 class ServerProtocol : public Protocol {
 public:
-    ServerProtocol(u32);
+    ServerProtocol(uint32_t);
 
     virtual ~ServerProtocol();
 
@@ -22,7 +24,7 @@ public:
     virtual Protocol::_Type GetProtocolType() const = 0;
 
     virtual void DispatchProtocolMessage(Message*, Message*, bool*, EndPoint*) = 0;
-    virtual void DispatchProtocolMessageWithAttemptCount(u64, Message*, Message*, bool*, int*,
+    virtual void DispatchProtocolMessageWithAttemptCount(uint64_t, Message*, Message*, bool*, int*,
                                                          EndPoint*);
     virtual bool UseAttemptCountMethod();
 };

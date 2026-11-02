@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -8,7 +10,7 @@ class Key;
 
 class EncryptionAlgorithm : public RootObject {
 public:
-    EncryptionAlgorithm(u32, u32);
+    EncryptionAlgorithm(uint32_t, uint32_t);
 
     virtual ~EncryptionAlgorithm();
 
@@ -16,19 +18,19 @@ public:
     virtual bool Encrypt(Buffer*);
     virtual bool Decrypt(const Buffer&, Buffer*) = 0;
     virtual bool Decrypt(Buffer*);
-    virtual bool GetErrorString(u32, char* destStr, u64 errLen);
+    virtual bool GetErrorString(uint32_t, char* destStr, uint64_t errLen);
     virtual void KeyHasChanged();
 
     bool SetKey(const Key& key);
 
-    u64 _8;
-    u64 _10;
-    u64 _18;
-    u64 _20;
-    u64 _28;
-    u64 _30;
-    u64 _38;
-    u64 _40;
+    uint64_t _8;
+    uint64_t _10;
+    uint64_t _18;
+    uint64_t _20;
+    uint64_t _28;
+    uint64_t _30;
+    uint64_t _38;
+    uint64_t _40;
 };
 
 }  // namespace nn::nex

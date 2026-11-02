@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Core/LocalClock.h"
 #include "Platform/Core/RootObject.h"
 
@@ -21,8 +23,8 @@ public:
 
 public:
     LocalClock m_LocalClock;
-    u64 qword_18 = 0;
-    s32 dword_20 = 0;
-    s32 dword_24 = 2;
+    uint64_t qword_18 = 0;
+    int32_t dword_20 = 0;
+    int32_t dword_24 = 2;
 };
 }  // namespace nn::nex
