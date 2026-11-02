@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RefCountedObject.h"
 
 namespace nn::nex {
@@ -18,26 +20,26 @@ public:
     Buffer& operator=(Buffer&&);
     Buffer& operator+=(const Buffer&);
     void operator+(const Buffer&);
-    void operator[](u64);
+    void operator[](uint64_t);
 
-    bool AppendData(const void*, u64, u64);
-    bool CopyContent(void*, u64, u64) const;
-    void SetDefaultBufferSize(u64);
+    bool AppendData(const void*, uint64_t, uint64_t);
+    bool CopyContent(void*, uint64_t, uint64_t) const;
+    void SetDefaultBufferSize(uint64_t);
     void GetDefaultBufferSize();
-    void Initialize(u64, u8);
-    void AllocateDataBuffer(u64);
-    void FreeDataBuffer(u8*, u64);
-    void SetHeadShiftSize(u64);
-    void GetAllocateSize(u64, u64);
-    void ResizeByRealSize(u64);
-    void AttemptExpand(u64);
+    void Initialize(uint64_t, uint8_t);
+    void AllocateDataBuffer(uint64_t);
+    void FreeDataBuffer(uint8_t*, uint64_t);
+    void SetHeadShiftSize(uint64_t);
+    void GetAllocateSize(uint64_t, uint64_t);
+    void ResizeByRealSize(uint64_t);
+    void AttemptExpand(uint64_t);
     void Swap(Buffer&);
-    void ComputeCheckSum(u64, u8);
+    void ComputeCheckSum(uint64_t, uint8_t);
     void GetCheckSum();
-    void AppendCheckSum(u8);
+    void AppendCheckSum(uint8_t);
     void StripCheckSum();
-    void IsCheckSumValid(u8);
-    void Trace(u64) const;
+    void IsCheckSumValid(uint8_t);
+    void Trace(uint64_t) const;
     void ToString() const;
 };
 

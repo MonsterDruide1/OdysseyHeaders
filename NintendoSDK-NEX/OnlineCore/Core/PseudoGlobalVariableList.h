@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -13,15 +15,15 @@ public:
 
     void AddVariable(PseudoGlobalVariableRoot*);
     void RemoveVariable(PseudoGlobalVariableRoot*);
-    static PseudoGlobalVariableRoot* GetVariable(u32 idx);
-    static u32 FindVariableIndex(PseudoGlobalVariableRoot*);
+    static PseudoGlobalVariableRoot* GetVariable(uint32_t idx);
+    static uint32_t FindVariableIndex(PseudoGlobalVariableRoot*);
     void AllocateExtraContextsForAllVariables();
     void FreeExtraContextsForAllVariables();
-    void ResetContextForAllVariables(u32);
-    static u32 GetNbOfVariables();
+    void ResetContextForAllVariables(uint32_t);
+    static uint32_t GetNbOfVariables();
 
     static PseudoGlobalVariableRoot* s_pVariableListHead;
-    static u32 m_uiNbOfVariables;
+    static uint32_t m_uiNbOfVariables;
 };
 
 }  // namespace nn::nex

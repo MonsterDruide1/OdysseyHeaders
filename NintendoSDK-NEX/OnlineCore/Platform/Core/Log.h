@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Platform/Core/RootObject.h"
-
 #include <cstdarg>
+#include <cstdint>
+
+#include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
 class OutputFormat;
@@ -17,10 +18,10 @@ public:
     virtual void Output(const char*, ...);
     virtual void OutputString(const char*, ...);
 
-    virtual void AddCustomPrefix(char*, s32, void*) {}
+    virtual void AddCustomPrefix(char*, int32_t, void*) {}
 
     void OutputImpl(const char*, std::va_list, void*);
-    void PrepareOutput(char*, u32, void*);
+    void PrepareOutput(char*, uint32_t, void*);
     void SetOutputFormat(OutputFormat*);
     void SetLogDevice(LogDevice*, bool);
     LogDevice* GetLogDevice();
