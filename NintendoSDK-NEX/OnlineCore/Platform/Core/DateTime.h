@@ -11,15 +11,15 @@ public:
 
     DateTime();
     DateTime(const DateTime&);
-    DateTime(u16, u8, u8, u8, u8, u8);
+    DateTime(uint16_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t);
     DateTime(const time::PosixTime&);
     DateTime& operator=(const DateTime&);
     DateTime(const time::CalendarTime&);
 
-    DateTime(u64 time) { m_ulTime = time; }
+    DateTime(uint64_t time) { m_ulTime = time; }
 
-    operator u64();
-    operator u64() const;
+    operator uint64_t();
+    operator uint64_t() const;
     bool operator==(const DateTime&) const;
     bool operator!=(const DateTime&) const;
     bool operator<(const DateTime&) const;
@@ -28,30 +28,30 @@ public:
     bool operator>=(const DateTime&) const;
     DateTime operator-(const DateTime&) const;
 
-    void FromUnixEpochTime(s64);
-    s64 ToEpochTime() const;
-    s32 GetYear() const;
-    s32 GetMonth() const;
-    s32 GetDay() const;
-    s32 GetHour() const;
-    s32 GetMinute() const;
-    s32 GetSecond() const;
+    void FromUnixEpochTime(int64_t);
+    int64_t ToEpochTime() const;
+    int32_t GetYear() const;
+    int32_t GetMonth() const;
+    int32_t GetDay() const;
+    int32_t GetHour() const;
+    int32_t GetMinute() const;
+    int32_t GetSecond() const;
     bool IsValid() const;
     bool IsNever() const;
-    void Trace(u64);
+    void Trace(uint64_t);
     time::PosixTime ToPosixTime() const;
-    s64 ToUnixEpochTime() const;
+    int64_t ToUnixEpochTime() const;
     time::CalendarTime ToCalendarTime() const;
     static void GetSystemTime(DateTime&);
     static void GetLocalSystemTime(DateTime&);
-    bool IsLeapYear(s32) const;
-    s32 DateToDays(s32, s32, s32) const;
-    void DaysToDate(s32);
-    void FromCustomEpochTime(s64, s32);
-    void FromEpochTime(s64);
+    bool IsLeapYear(int32_t) const;
+    int32_t DateToDays(int32_t, int32_t, int32_t) const;
+    void DaysToDate(int32_t);
+    void FromCustomEpochTime(int64_t, int32_t);
+    void FromEpochTime(int64_t);
 
 public:
-    u64 m_ulTime;
+    uint64_t m_ulTime;
 };
 
 };  // namespace nn::nex

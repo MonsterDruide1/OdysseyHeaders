@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Platform/Core/String.h"
-#include "nn/types.h"
 
 namespace nn::nex {
 
@@ -9,29 +8,29 @@ class InterfaceInfo {
 public:
     InterfaceInfo();
     ~InterfaceInfo();
-    void SetAddress(u32);
-    void SetBroadcastAddress(u32);
-    void SetMask(u32);
-    void SetFlags(u32);
+    void SetAddress(uint32_t);
+    void SetBroadcastAddress(uint32_t);
+    void SetMask(uint32_t);
+    void SetFlags(uint32_t);
     void SetName(char*);
-    bool Addr2Str(u32, char*, u32);
-    bool GetAddress(char*, u32);
-    bool GetBroadcastAddress(char*, u32);
-    bool GetMask(char*, u32);
-    bool GetName(char*, u32);
-    bool GetFlags(char*, u32);
-    u32 GetAddress();
-    u32 GetBroadcastAddress();
-    u32 GetMask();
-    u32 GetFlags();
+    bool Addr2Str(uint32_t, char*, uint32_t);
+    bool GetAddress(char*, uint32_t);
+    bool GetBroadcastAddress(char*, uint32_t);
+    bool GetMask(char*, uint32_t);
+    bool GetName(char*, uint32_t);
+    bool GetFlags(char*, uint32_t);
+    uint32_t GetAddress();
+    uint32_t GetBroadcastAddress();
+    uint32_t GetMask();
+    uint32_t GetFlags();
     const char* GetName();
-    void Trace(u64);
+    void Trace(uint64_t);
 
 public:
-    u32 m_Address;
-    u32 m_BroadcastAddress;
-    u32 m_Mask;
-    u32 m_Flags;
+    uint32_t m_Address;
+    uint32_t m_BroadcastAddress;
+    uint32_t m_Mask;
+    uint32_t m_Flags;
     String m_Name;
 };
 

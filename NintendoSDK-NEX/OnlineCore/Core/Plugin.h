@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
@@ -24,7 +26,7 @@ public:
     virtual void pure_virtual10();
 
     void Unload();
-    void Trace(u64);
+    void Trace(uint64_t);
     void SetLibrary(void*);
     static Plugin* GetInstance();
 

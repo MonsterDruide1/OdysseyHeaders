@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RefCountedObject.h"
 
 namespace nn::nex {
@@ -42,18 +44,18 @@ public:
     _State Initialize();
     _State Terminate();
 
-    u8 SystemComponent_xC;
-    u8 _D;
-    u8 _E;
-    u8 _F;
-    u64 _10;
-    u64 _18;
-    u64 _20;
-    u32 _28;
-    u32 _2C;
-    u64 _30;
+    uint8_t SystemComponent_xC;
+    uint8_t _D;
+    uint8_t _E;
+    uint8_t _F;
+    uint64_t _10;
+    uint64_t _18;
+    uint64_t _20;
+    uint32_t _28;
+    uint32_t _2C;
+    uint64_t _30;
     _State mState;  // _38
-    u32 _3C;
-    u64 _40;
+    uint32_t _3C;
+    uint64_t _40;
 };
 }  // namespace nn::nex

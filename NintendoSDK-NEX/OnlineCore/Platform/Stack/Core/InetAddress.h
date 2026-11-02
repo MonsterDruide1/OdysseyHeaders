@@ -8,8 +8,8 @@ namespace nn::nex {
 struct InetAttributes {
     char byte_8;
     char byte_9;
-    u16 port;
-    u32 addr;
+    uint16_t port;
+    uint32_t addr;
     void* qword_10;
 };
 
@@ -17,30 +17,30 @@ class InetAddress : public RootObject {
 public:
     InetAddress();
     InetAddress(const InetAddress&);
-    InetAddress(void*, u32);
-    InetAddress(const char*, u16);
-    InetAddress(u32, u16);
+    InetAddress(void*, uint32_t);
+    InetAddress(const char*, uint16_t);
+    InetAddress(uint32_t, uint16_t);
     virtual ~InetAddress();
 
-    u64 GetKey() const;
-    u16 GetPortNumber() const;
+    uint64_t GetKey() const;
+    uint16_t GetPortNumber() const;
     static void EnableAutoLookup(bool);
     void Init();
     InetAddress& operator=(const InetAddress&);
     void SetAddress(const char*);
-    void SetPortNumber(u16);
-    void SetAddress(u32);
+    void SetPortNumber(uint16_t);
+    void SetAddress(uint32_t);
     void SetLocalHost();
     bool IsLocalHost() const;
-    u32 GetAddress() const;
-    static u32 String2Address(const char*);
-    bool GetAddress(char*, u64) const;
-    void SetNetworkAddress(u32);
+    uint32_t GetAddress() const;
+    static uint32_t String2Address(const char*);
+    bool GetAddress(char*, uint64_t) const;
+    void SetNetworkAddress(uint32_t);
     String GetAddressStr() const;
-    void SetNetworkPortNumber(u16);
-    bool GetPortNumber(char*, u32) const;
+    void SetNetworkPortNumber(uint16_t);
+    bool GetPortNumber(char*, uint32_t) const;
     String GetPortNumberStr() const;
-    void Trace(u64) const;
+    void Trace(uint64_t) const;
     void ToStr(char*) const;
     String ToStr() const;
 

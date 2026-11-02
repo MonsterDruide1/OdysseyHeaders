@@ -1,9 +1,11 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Platform/Core/RootObject.h"
 
 namespace nn::nex {
-enum SubSystemType : u16 {
+enum SubSystemType : uint16_t {
 
 };
 
@@ -25,25 +27,25 @@ public:
 class SystemError : public nn::nex::RootObject {
 public:
     struct ErrorInfo {
-        u32 lastError;
-        u32 lastExtError;
+        uint32_t lastError;
+        uint32_t lastExtError;
     };
 
     // made up struct
     struct ErrorCode {
-        u32 code;
+        uint32_t code;
 
         ErrorCode() {}
 
-        ErrorCode(u32 c) : code(c) {}
+        ErrorCode(uint32_t c) : code(c) {}
 
-        enum Status : u8 { Success = 0, Informational = 1, Warning = 2, Error = 3 };
+        enum Status : uint8_t { Success = 0, Informational = 1, Warning = 2, Error = 3 };
 
         Status GetStatus() const { return (Status)(code >> 30); }
 
-        u16 GetSubsystem() const { return (code >> 16) & 0xFFF; }
+        uint16_t GetSubsystem() const { return (code >> 16) & 0xFFF; }
 
-        u16 GetDetail() const { return code & 0xFFFF; }
+        uint16_t GetDetail() const { return code & 0xFFFF; }
 
         bool IsSuccess() const { return GetStatus() == Success; }
 
@@ -54,8 +56,9 @@ public:
         bool IsError() const { return GetStatus() == Error; }
     };
 
-    constexpr u32 MakeErrorCode(ErrorCode::Status status, SubSystemType subsystem, u16 detail) {
-        return ((u32)status << 30) | ((u32)subsystem << 16) | detail;
+    constexpr uint32_t MakeErrorCode(ErrorCode::Status status, SubSystemType subsystem,
+                                     uint16_t detail) {
+        return ((uint32_t)status << 30) | ((uint32_t)subsystem << 16) | detail;
     }
 
     SystemError() = default;
@@ -69,16 +72,16 @@ public:
     int GetLast();
     int GetLastExt();
 
-    static void GetErrorString(u32 errorCode, char* buffer, u32 bufferSize);
-    static void SignalError(const char*, u32, u32 lastError, u32 lastExtError);
+    static void GetErrorString(uint32_t errorCode, char* buffer, uint32_t bufferSize);
+    static void SignalError(const char*, uint32_t, uint32_t lastError, uint32_t lastExtError);
     static void EraseErrorElements(unsigned long);
     static void EraseErrorElements();
     static void EraseAllErrorElements();
     static bool IsError();
-    static bool IsError(u32 errorCode);
-    static bool IsWarning(u32 errorCode);
-    static bool IsInformational(u32 errorCode);
-    static bool IsSuccess(u32 errorCode);
+    static bool IsError(uint32_t errorCode);
+    static bool IsWarning(uint32_t errorCode);
+    static bool IsInformational(uint32_t errorCode);
+    static bool IsSuccess(uint32_t errorCode);
     void TraceLast(unsigned long);
 
 public:

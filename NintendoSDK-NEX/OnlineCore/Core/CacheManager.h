@@ -1,7 +1,5 @@
 #pragma once
 
-#include <nn/types.h>
-
 namespace nn::nex {
 class String;
 class BasicCache;

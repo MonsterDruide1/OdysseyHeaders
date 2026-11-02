@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "Core/Checksum/EncryptionAlgorithm.h"
 
 namespace nn::nex {
@@ -24,6 +26,6 @@ public:
     void ReinitStateArray();
     void SetReinitEverytime(bool);
 
-    u8 _48[0x298 - 0x48];
+    uint8_t _48[0x298 - 0x48];
 };
 }  // namespace nn::nex
