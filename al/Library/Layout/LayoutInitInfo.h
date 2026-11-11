@@ -33,6 +33,8 @@ public:
 
     void setOcclusionCullingJudge(OcclusionCullingJudge* judge) { mOcclusionCullingJudge = judge; }
 
+    OcclusionCullingJudge* getOcclusionCullingJudge() const { return mOcclusionCullingJudge; }
+
 public:
     agl::DrawContext* mDrawContext;
     nn::ui2d::DrawInfo* mDrawInfo;
